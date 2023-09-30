@@ -1,6 +1,7 @@
 package de.joh.fnc.wildmagic.util;
 
 import com.ibm.icu.impl.IllegalIcuArgumentException;
+import com.mna.api.spells.SpellPartTags;
 import de.joh.fnc.utils.Registries;
 import org.jetbrains.annotations.NotNull;
 
@@ -65,7 +66,7 @@ public class WildMagicHelper {
      * @param chooseHigherQuality in case of multiple rolls, schuld the better Wild Magic be chosen?
      * @return a Random Wild Magic
      */
-    public static @NotNull WildMagic getRandomWildMagic(int tries, boolean chooseHigherQuality){
+    public static @NotNull WildMagic getRandomWildMagic(int tries, boolean chooseHigherQuality, SpellPartTags componentTag){
         Random random = new Random();
         WildMagic ret = null;
         for(int i = 0; i < Math.max(tries, 1); i++){
@@ -75,7 +76,7 @@ public class WildMagicHelper {
                 WildMagic alternative = getWildMagicAt(random.nextInt(getWeightedListLength()) + 1);
 
                 //todo: Check if this function works
-                if(alternative.quality.ordinal() > ret.quality.ordinal() == chooseHigherQuality){
+                if(alternative.getQuality(componentTag).ordinal() > ret.getQuality(componentTag).ordinal() == chooseHigherQuality){
                     ret = alternative;
                 }
             }

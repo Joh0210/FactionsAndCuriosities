@@ -1,5 +1,6 @@
 package de.joh.fnc.wildmagic.init;
 
+import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.wildmagic.util.Quality;
@@ -34,9 +35,14 @@ public class WildMagicRandomTp extends WildMagic {
     public final boolean targetsCaster;
 
     public WildMagicRandomTp(@NotNull ResourceLocation registryName, int frequency, Quality quality, int maxDistance, boolean targetsCaster) {
-        super(registryName, frequency, quality);
+        super(registryName, frequency);
         this.maxDistance = maxDistance;
         this.targetsCaster = targetsCaster;
+    }
+
+    @Override
+    public Quality getQuality(SpellPartTags spellPartTag) {
+        return Quality.BAD;
     }
 
     @Override

@@ -1,13 +1,13 @@
 {
-  "minecraft:recipes/transportation/acacia_boat": {
+  "mna:tier_4/magic_level_60": {
     "criteria": {
-      "in_water": "2023-09-29 14:27:43 +0200"
+      "magic_level_up": "2023-09-30 14:08:47 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/oak_boat": {
+  "mna:tier_1/magic_level_15": {
     "criteria": {
-      "in_water": "2023-09-29 14:27:43 +0200"
+      "magic_level_up": "2023-09-30 14:08:47 +0200"
     },
     "done": true
   },
@@ -17,15 +17,21 @@
     },
     "done": true
   },
+  "mna:tier_3/advance_tier_4": {
+    "criteria": {
+      "tier": "2023-09-30 14:08:44 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/transportation/birch_boat": {
     "criteria": {
       "in_water": "2023-09-29 14:27:43 +0200"
     },
     "done": true
   },
-  "minecraft:adventure/root": {
+  "mna:tier_1/obtain_inscription_table": {
     "criteria": {
-      "killed_something": "2023-09-29 15:52:01 +0200"
+      "requirement": "2023-09-30 14:08:53 +0200"
     },
     "done": true
   },
@@ -41,9 +47,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/transportation/jungle_boat": {
+  "mna:tier_1/advance_tier_2": {
     "criteria": {
-      "in_water": "2023-09-29 14:27:43 +0200"
+      "tier": "2023-09-30 14:08:44 +0200"
     },
     "done": true
   },
@@ -53,6 +59,54 @@
     },
     "done": false
   },
+  "mna:tier_3/magic_level_45": {
+    "criteria": {
+      "magic_level_up": "2023-09-30 14:08:47 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2023-09-29 14:27:43 +0200"
+    },
+    "done": true
+  },
+  "mna:tier_4/advance_tier_5": {
+    "criteria": {
+      "tier": "2023-09-30 14:08:44 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2023-09-29 14:27:43 +0200"
+    },
+    "done": true
+  },
+  "mna:tier_2/advance_tier_3": {
+    "criteria": {
+      "tier": "2023-09-30 14:08:44 +0200"
+    },
+    "done": true
+  },
+  "mna:tier_1/cast_a_spell": {
+    "criteria": {
+      "cast_spell": "2023-09-30 14:10:10 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2023-09-29 15:52:01 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2023-09-29 14:27:43 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/transportation/spruce_boat": {
     "criteria": {
       "in_water": "2023-09-29 14:27:43 +0200"
@@ -61,10 +115,17 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
+      "minecraft:beach": "2023-09-30 14:13:30 +0200",
       "minecraft:forest": "2023-09-29 14:28:06 +0200",
       "minecraft:old_growth_birch_forest": "2023-09-29 14:26:33 +0200"
     },
     "done": false
+  },
+  "mna:tier_2/magic_level_30": {
+    "criteria": {
+      "magic_level_up": "2023-09-30 14:08:47 +0200"
+    },
+    "done": true
   },
   "DataVersion": 2975
 }

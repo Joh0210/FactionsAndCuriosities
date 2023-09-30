@@ -1,5 +1,6 @@
 package de.joh.fnc.wildmagic.util;
 
+import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.utils.RLoc;
@@ -23,12 +24,17 @@ public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
     /**
      * How good is the effect for the source entity?
      */
-    public final Quality quality;
+    public abstract Quality getQuality(SpellPartTags componentTag);
 
     /**
      * Instance to ensure null save calls
      */
-    public static WildMagic INSTANCE = new WildMagic(RLoc.create("wildmagic/none"), 0, Quality.NEUTRAL) {
+    public static WildMagic INSTANCE = new WildMagic(RLoc.create("wildmagic/none"), 0) {
+        @Override
+        public Quality getQuality(SpellPartTags spellPartTag) {
+            return Quality.NEUTRAL;
+        }
+
         @Override
         public void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
             FactionsAndCuriosities.LOGGER.error("performWildMagic of the Wild Magic phantom instance was called");
@@ -38,11 +44,9 @@ public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
     /**
      * @param registryName ID under which the upgrade can be recognized
      * @param frequency How often does the entry appear in the random-selection-list?
-     * @param quality How good is the effect for the source entity?
      */
-    public WildMagic(@NotNull ResourceLocation registryName, int frequency, Quality quality){
+    public WildMagic(@NotNull ResourceLocation registryName, int frequency){
         this.frequency = frequency;
-        this.quality = quality;
         this.setRegistryName(registryName);
     }
 

@@ -35,8 +35,8 @@ public abstract class WildMagicPotionEffect extends WildMagic{
      */
     public abstract MobEffect getMobEffect();
 
-    public WildMagicPotionEffect(@NotNull ResourceLocation registryName, int frequency, Quality quality, int duration, int level, boolean targetsCaster) {
-        super(registryName, frequency, quality);
+    public WildMagicPotionEffect(@NotNull ResourceLocation registryName, int frequency, int duration, int level, boolean targetsCaster) {
+        super(registryName, frequency);
         this.duration = duration;
         this.level = level;
         this.targetsCaster = targetsCaster;
