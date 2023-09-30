@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[34,)"
+license = "MIT"
+[[mods]]
+modId="fnc"
+version="${file.jarVersion}"
+displayName="Factions And Curiosities"
+# logoFile="fnc.png"
+# credits="todo"
+authors="Joh0210"
+description='''
+todo
+'''
+
+
+[[dependencies.fnc]]
+modId="forge"
+mandatory=true
+versionRange="[40.1.20,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.fnc]]
+modId="mna"
+mandatory=true
+versionRange="[2,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.fnc]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.18.2]"
+ordering="NONE"
+side="BOTH"
