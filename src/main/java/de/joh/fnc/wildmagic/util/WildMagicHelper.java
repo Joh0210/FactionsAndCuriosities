@@ -62,14 +62,14 @@ public class WildMagicHelper {
 
     /**
      * IMPORTANT: Use only on Server Level!
-     * @param tries how often should be rolled. (Minimum of 1)
+     * @param rolls how often should be rolled. (Minimum of 1)
      * @param chooseHigherQuality in case of multiple rolls, schuld the better Wild Magic be chosen?
      * @return a Random Wild Magic
      */
-    public static @NotNull WildMagic getRandomWildMagic(int tries, boolean chooseHigherQuality, SpellPartTags componentTag){
+    public static @NotNull WildMagic getRandomWildMagic(int rolls, boolean chooseHigherQuality, SpellPartTags componentTag){
         Random random = new Random();
         WildMagic ret = null;
-        for(int i = 0; i < Math.max(tries, 1); i++){
+        for(int i = 0; i < Math.max(rolls, 1); i++){
             if(ret == null) {
                 ret = getWildMagicAt(random.nextInt(getWeightedListLength()) + 1);
             } else {

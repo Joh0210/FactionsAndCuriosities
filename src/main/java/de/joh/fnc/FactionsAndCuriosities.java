@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.item.ItemInit;
 import de.joh.fnc.networking.Messages;
+import de.joh.fnc.utils.AttributeInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +30,7 @@ public class FactionsAndCuriosities {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ItemInit.register(eventBus);
         EffectInit.register(eventBus);
+        AttributeInit.register(eventBus);
 
         eventBus.addListener(this::setup);
 
