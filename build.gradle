@@ -116,8 +116,8 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
 
     // M&A and its API
-    compileOnly "com.mithion:mna:${mna_version}:api" //api, compilation only
-    runtimeOnly fg.deobf("com.mithion:mna:${mna_version}") //mod itself, deobf for runtime
+    // compileOnly "com.mithion:mna:${mna_version}:api" //api, compilation only
+    implementation fg.deobf("com.mithion:mna:${mna_version}") //mod itself, deobf for runtime
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
@@ -126,7 +126,7 @@ jar {
         attributes([
                 'Specification-Title'     : modid,
                 'Specification-Vendor'    : author,
-                'Specification-Version'   : '1', // We are version 1 of ourselves
+                'Specification-Version'   : '1',
                 'Implementation-Title'    : project.name,
                 'Implementation-Version'  : project.version,
                 'Implementation-Vendor'   : author,
@@ -136,5 +136,5 @@ jar {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.encoding = 'UTF-8'
 }

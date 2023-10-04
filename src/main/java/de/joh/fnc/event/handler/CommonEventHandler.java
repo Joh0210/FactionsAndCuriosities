@@ -34,6 +34,9 @@ public class CommonEventHandler {
      */
     @SubscribeEvent
     public static void onComponentApplying(ComponentApplyingEvent event){
+        //todo: When the Target is a block, there should be a 50% chance, that it interacts with the target (50& chance to use a prefiltered list)
+        //todo: When the Target is an Living Entity, there should be a 50% chance, that it interacts with the target (50& chance to use a prefiltered list)
+
         LivingEntity source = event.getSource().getPlayer();
         if(source != null && !source.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get()) && !source.getLevel().isClientSide()){
             AttributeInstance modifierAttribute = source.getAttribute(AttributeInit.WILD_MAGIC_LUCK.get());
