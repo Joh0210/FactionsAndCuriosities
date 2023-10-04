@@ -28,7 +28,7 @@ public class CommonEventHandler {
     /**
      * Causes the Wild Magic, when a spell takes place.
      * <br> a small cooldown will be added.
-     * <br>Determination of (dis-)advantage the Wild Magic Roll: {@link AttributeInit#WILD_MAGIC_LUCK link}
+     * <br>Determination of (dis-)advantage the Wild Magic Roll: {@link WildMagicHelper#getWildMagicLuck(LivingEntity) WildMagicHelper.getWildMagicLuck()}
      * @see WildMagicCooldown
      * @see WildMagic
      */
@@ -38,16 +38,14 @@ public class CommonEventHandler {
         //todo: When the Target is an Living Entity, there should be a 50% chance, that it interacts with the target (50& chance to use a prefiltered list)
 
         LivingEntity source = event.getSource().getPlayer();
-        if(source != null && !source.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get()) && !source.getLevel().isClientSide()){
-            AttributeInstance modifierAttribute = source.getAttribute(AttributeInit.WILD_MAGIC_LUCK.get());
-
+        if(source != null && WildMagicHelper.shouldCauseWildMagic(source) && !source.getLevel().isClientSide()){
             source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
             WildMagic wildMagic;
             int tries = 0;
             do{
                 wildMagic = WildMagicHelper.getRandomWildMagic(
-                        modifierAttribute != null ? Math.abs((int)modifierAttribute.getValue()) + 1 : 1,
-                        modifierAttribute == null || modifierAttribute.getValue() >= 0,
+                        Math.abs(WildMagicHelper.getWildMagicLuck(source)) + 1,
+                        WildMagicHelper.getWildMagicLuck(source) >= 0,
                         event.getComponent().getUseTag());
                 tries++;
             } while (!wildMagic.canBePerformed(source, event.getTarget()) && tries <= TRIES);

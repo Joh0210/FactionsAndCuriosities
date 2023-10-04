@@ -2,7 +2,11 @@ package de.joh.fnc.wildmagic.util;
 
 import com.ibm.icu.impl.IllegalIcuArgumentException;
 import com.mna.api.spells.SpellPartTags;
+import de.joh.fnc.effect.EffectInit;
+import de.joh.fnc.utils.AttributeInit;
 import de.joh.fnc.utils.Registries;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -83,5 +87,37 @@ public class WildMagicHelper {
         }
 
         return ret;
+    }
+
+    /**
+     * determent by {@link AttributeInit#WILD_MAGIC_LUCK WildMagicluckAttribute},
+     * {@link EffectInit#BAD_WILD_MAGIC BadWildMagicEffect} and
+     * {@link EffectInit#GOOD_WILD_MAGIC GodWildMagicEffect}
+     * @return Positive value = good luck; Negative = bad luck; Amount = strength of luck
+     */
+    public static int getWildMagicLuck(LivingEntity entity){
+        //todo: Use Event instead
+        //todo: build Uses more performant
+        int wildMagicLuck = 0;
+
+        AttributeInstance modifierAttribute = entity.getAttribute(AttributeInit.WILD_MAGIC_LUCK.get());
+        if(modifierAttribute != null){
+            wildMagicLuck += (int)modifierAttribute.getValue();
+        }
+
+        if(entity.hasEffect(EffectInit.BAD_WILD_MAGIC.get())){
+            wildMagicLuck -= entity.getEffect(EffectInit.BAD_WILD_MAGIC.get()).getAmplifier() + 1;
+        }
+
+        if(entity.hasEffect(EffectInit.GOOD_WILD_MAGIC.get())){
+            wildMagicLuck += entity.getEffect(EffectInit.GOOD_WILD_MAGIC.get()).getAmplifier() + 1;
+        }
+
+        return wildMagicLuck;
+    }
+
+    public static boolean shouldCauseWildMagic(LivingEntity entity){
+        //todo: Use Event instead
+        return !entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get()) && (entity.hasEffect(EffectInit.WILD_MAGIC.get()) || entity.hasEffect(EffectInit.BAD_WILD_MAGIC.get()) || entity.hasEffect(EffectInit.GOOD_WILD_MAGIC.get()));
     }
 }

@@ -15,6 +15,7 @@ public class WildMagicCooldown extends MobEffect {
     public static final int WILD_MAGIC_COOLDOWN = 100;
 
     public WildMagicCooldown() {
+        //todo: adjust color
         super(MobEffectCategory.NEUTRAL, 0);
     }
 }
