@@ -1,8 +1,10 @@
 package de.joh.fnc.wildmagic.util;
 
 import com.ibm.icu.impl.IllegalIcuArgumentException;
+import com.mna.api.ManaAndArtificeMod;
 import com.mna.api.spells.SpellPartTags;
 import de.joh.fnc.effect.EffectInit;
+import de.joh.fnc.factions.FactionInit;
 import de.joh.fnc.utils.AttributeInit;
 import de.joh.fnc.utils.Registries;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Helper Functions for using Wild Magic
@@ -118,6 +121,18 @@ public class WildMagicHelper {
 
     public static boolean shouldCauseWildMagic(LivingEntity entity){
         //todo: Use Event instead
-        return !entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get()) && (entity.hasEffect(EffectInit.WILD_MAGIC.get()) || entity.hasEffect(EffectInit.BAD_WILD_MAGIC.get()) || entity.hasEffect(EffectInit.GOOD_WILD_MAGIC.get()));
+
+        if(entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())){
+            return false;
+        }
+
+        if(entity.hasEffect(EffectInit.WILD_MAGIC.get()) || entity.hasEffect(EffectInit.BAD_WILD_MAGIC.get()) || entity.hasEffect(EffectInit.GOOD_WILD_MAGIC.get())){
+            return true;
+        }
+
+
+        AtomicBoolean isWildMage = new AtomicBoolean(false);
+        entity.getCapability(ManaAndArtificeMod.getProgressionCapability()).ifPresent((p)-> isWildMage.set(p.getAlliedFaction() == FactionInit.WILD));
+        return isWildMage.get();
     }
 }
