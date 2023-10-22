@@ -5,8 +5,8 @@ license = "MIT"
 modId="fnc"
 version="${file.jarVersion}"
 displayName="Factions And Curiosities"
-# logoFile="fnc.png"
-# credits="todo"
+logoFile="factions_and_curiosities.png"
+credits="Thanks to Mithion for helping creating some code elements of this mod! Also thanks to Ceddi and Nico for helping with testing and balancing."
 authors="Joh0210"
 description='''
 todo

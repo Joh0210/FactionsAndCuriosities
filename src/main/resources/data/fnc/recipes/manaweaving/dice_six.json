@@ -1,0 +1,21 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "tier": 2,
+  "output": "fnc:dice_six",
+  "items": [
+    "minecraft:obsidian",
+    "minecraft:obsidian",
+    "minecraft:obsidian",
+    "mna:mote_air",
+    "mna:ritual_focus_lesser",
+    "mna:mote_arcane",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot"
+  ],
+  "patterns": [
+    "mna:square",
+    "mna:triangle",
+    "mna:square"
+  ]
+}

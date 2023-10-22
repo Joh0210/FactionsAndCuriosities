@@ -1,0 +1,134 @@
+{
+  "Component: Wild Damage": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wild Damage"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Unlike other damage spells, this one is unpredictable! It may be that the spell does maximum damage, but it is just as likely that it will do just 1 damage..."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "To make average values more likely, I can increase the "
+          },
+          {
+            "text": "precision",
+            "bold": true
+          },
+          {
+            "text": ". This makes extremely small numbers less likely, but also extremely high numbers."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "The Target of the spell will be cursed with the Wild Magic Effect, defined by "
+          },
+          {
+            "text": "duration ",
+            "bold": true
+          },
+          {
+            "text": "and "
+          },
+          {
+            "text": "magnitude",
+            "bold": true
+          },
+          {
+            "text": ". \n\nIt can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/wild_damage"
+      }
+    ]
+  },
+
+  "Dice": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Dice"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "An important item that combines the coincidence of the world.",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/dice_six"
+      }
+    ]
+  },
+
+  "Ritual of the Wild": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ritual of the Wild"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "todo",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/wild_energy"
+      }
+    ]
+  },
+
+
+  "version": "1.0.0a"
+}

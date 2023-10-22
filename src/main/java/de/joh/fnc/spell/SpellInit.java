@@ -22,6 +22,6 @@ public class SpellInit {
     }
 
     static {
-        SpellInit.WILD_DAMAGE = new WildDamage(RLoc.create("components/wilddamage"), RLoc.create("textures/spell/component/wilddamage.png"));
+        SpellInit.WILD_DAMAGE = new WildDamage(RLoc.create("components/wild_damage"), RLoc.create("textures/spell/component/wild_damage.png"));
     }
 }

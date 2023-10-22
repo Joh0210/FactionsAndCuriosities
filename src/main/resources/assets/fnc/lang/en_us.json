@@ -1,10 +1,22 @@
 {
-  "item.fnc.debug_rod": "Debug Rod",
+  "item.fnc.debug_rod": "Wild Debug Orb",
   "item.fnc.dice_six": "Dice (D6)",
-  "effect.dragonmagicandrelics.wild_magic_cooldown": "Wild Magic Cooldown",
-  "effect.dragonmagicandrelics.wild_magic": "Wild Magic",
+  "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
+  "effect.fnc.wild_magic": "Wild Magic",
 
   "fnc.dice.roll.output.text": "Your roll: ",
   "fnc.feedback.selected.wildmagic": "Selected Wild Magic: ",
-  "fnc.feedback.selected.wildmagic.condition_false" : "The condition of the selected Wild Magic was not fulfilled!"
+  "fnc.feedback.selected.wildmagic.condition_false" : "The condition of the selected Wild Magic was not fulfilled!",
+
+  "fnc:components/wild_damage": "Wild Damage",
+  "fnc:components/wild_damage.desc.delay": "A delay in seconds before applying this component.",
+  "fnc:components/wild_damage.desc.damage": "The maximum damage dealt to affected targets.",
+  "fnc:components/wild_damage.desc.magnitude": "Strength of wild magic that will affect the target.",
+  "fnc:components/wild_damage.desc.duration": "The duration of the wild magic that will affect the target.",
+  "fnc:components/wild_damage.desc.precision": "Makes the damage trend more towards average numbers.",
+
+
+  "fnc:rituals/wild_energy": "Ritual of the Wild",
+
+  "event.fnc.faction_ally_wild": "You feel the unpredictability of the magic around you, uniting with you.  You have allied yourself with the Wilde Courts!"
 }

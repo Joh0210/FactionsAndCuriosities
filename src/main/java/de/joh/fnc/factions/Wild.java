@@ -53,13 +53,11 @@ public class Wild extends BaseFaction {
 
     @Override
     public Component getOcculusTaskPrompt(int i) {
-        //todo: getOcculusTaskPrompt
         return new TranslatableComponent("fnc:rituals/wild_energy");
     }
 
     @Override
     public ResourceLocation getFactionIcon() {
-        //todo: getFactionIcon
         return ResourceIDs.FACTION_WILD_ICON;
     }
 

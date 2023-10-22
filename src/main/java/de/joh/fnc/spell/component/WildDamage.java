@@ -1,6 +1,7 @@
 package de.joh.fnc.spell.component;
 
 import com.mna.api.affinity.Affinity;
+import com.mna.api.faction.IFaction;
 import com.mna.api.sound.SFX;
 import com.mna.api.spells.ComponentApplicationResult;
 import com.mna.api.spells.SpellPartTags;
@@ -14,6 +15,7 @@ import com.mna.api.spells.targeting.SpellSource;
 import com.mna.api.spells.targeting.SpellTarget;
 import com.mna.config.GeneralModConfig;
 import de.joh.fnc.effect.EffectInit;
+import de.joh.fnc.factions.FactionInit;
 import de.joh.fnc.wildmagic.util.WildMagicHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -34,11 +36,9 @@ import java.util.Random;
  * @author Joh0210
  */
 public class WildDamage extends SpellEffect implements IDamageComponent {
-    //todo: Make configurable
-    private static final float FACTOR_MAX_DAMAGE_MULTIPLIER = 2.0F;
 
     public WildDamage(ResourceLocation registryName, ResourceLocation icon) {
-        super(registryName, icon, new AttributeValuePair(Attribute.DAMAGE, 5.0F, 1.0F, 20.0F, 0.5F, 3.0F), new AttributeValuePair(Attribute.MAGNITUDE, 0.0F, 0.0F, 2.0F, 1.0F, 15.0F), new AttributeValuePair(Attribute.DURATION, 30.0F, 15.0F, 300.0F, 15.0F, 3.0F), new AttributeValuePair(Attribute.PRECISION, 1.0F, 1.0F, 4.0F, 1.0F, 5.0F));
+        super(registryName, icon, new AttributeValuePair(Attribute.DAMAGE, 10.0F, 2.0F, 40.0F, 1F, 3.0F), new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 0.0F, 3.0F, 1.0F, 15.0F), new AttributeValuePair(Attribute.DURATION, 30.0F, 15.0F, 300.0F, 15.0F, 3.0F), new AttributeValuePair(Attribute.PRECISION, 1.0F, 1.0F, 4.0F, 1.0F, 5.0F));
     }
 
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {
@@ -56,7 +56,7 @@ public class WildDamage extends SpellEffect implements IDamageComponent {
 
                 for (int i = 0; i < Math.round(modificationData.getValue(Attribute.PRECISION)); i++) {
                     //With max Attribute.DAMAGE: Random between 1-40 -> ~20
-                    alternativDamage += random.nextInt((int) (modificationData.getValue(Attribute.DAMAGE) * FACTOR_MAX_DAMAGE_MULTIPLIER)) + 1;
+                    alternativDamage += random.nextInt((int) (modificationData.getValue(Attribute.DAMAGE))) + 1;
                 }
 
                 alternativDamage /= modificationData.getValue(Attribute.PRECISION);
@@ -68,11 +68,12 @@ public class WildDamage extends SpellEffect implements IDamageComponent {
 
             entity.hurt(createSourcedDamageType(source.getCaster()), damage * GeneralModConfig.getDamageMultiplier());
 
-            entity.addEffect(new MobEffectInstance(
-                    (int)modificationData.getValue(Attribute.MAGNITUDE) >= 1 ? EffectInit.BAD_WILD_MAGIC.get() : EffectInit.WILD_MAGIC.get(),
-                    (int)modificationData.getValue(Attribute.DURATION) * 20,
-                    Math.max((int)modificationData.getValue(Attribute.MAGNITUDE) - 1,0)));
-
+            if((int)modificationData.getValue(Attribute.MAGNITUDE) >= 1) {
+                entity.addEffect(new MobEffectInstance(
+                        (int) modificationData.getValue(Attribute.MAGNITUDE) >= 2 ? EffectInit.BAD_WILD_MAGIC.get() : EffectInit.WILD_MAGIC.get(),
+                        (int) modificationData.getValue(Attribute.DURATION) * 20,
+                        Math.max((int) modificationData.getValue(Attribute.MAGNITUDE) - 2, 0)));
+            }
             return ComponentApplicationResult.SUCCESS;
         }
 
@@ -82,6 +83,11 @@ public class WildDamage extends SpellEffect implements IDamageComponent {
     @Override
     public boolean targetsBlocks() {
         return false;
+    }
+
+    @Override
+    public IFaction getFactionRequirement() {
+        return FactionInit.WILD;
     }
 
     @Override
