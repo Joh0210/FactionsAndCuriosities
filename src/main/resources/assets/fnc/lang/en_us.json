@@ -1,8 +1,10 @@
 {
   "item.fnc.debug_rod": "Debug Rod",
+  "item.fnc.dice_six": "Dice (D6)",
   "effect.dragonmagicandrelics.wild_magic_cooldown": "Wild Magic Cooldown",
   "effect.dragonmagicandrelics.wild_magic": "Wild Magic",
 
+  "fnc.dice.roll.output.text": "Your roll: ",
   "fnc.feedback.selected.wildmagic": "Selected Wild Magic: ",
   "fnc.feedback.selected.wildmagic.condition_false" : "The condition of the selected Wild Magic was not fulfilled!"
 }

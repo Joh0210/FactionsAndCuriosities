@@ -5,10 +5,8 @@ import com.mna.api.faction.BaseFaction;
 import com.mna.api.faction.FactionIDs;
 import com.mna.api.faction.IFaction;
 import com.mna.api.sound.SFX;
-import com.mna.gui.GuiTextures;
 import com.mna.items.ItemInit;
-import de.joh.fnc.factions.castingresource.CastingResourceIDs;
-import de.joh.fnc.utils.RLoc;
+import de.joh.fnc.factions.castingresource.ResourceIDs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -22,7 +20,7 @@ import java.util.List;
 
 public class Wild extends BaseFaction {
     public Wild() {
-        super(RLoc.create("wild"), CastingResourceIDs.WILD_MANA);
+        super(ResourceIDs.FACTION_WILD_ID, ResourceIDs.WILD_MANA);
     }
 
     @Override
@@ -62,7 +60,7 @@ public class Wild extends BaseFaction {
     @Override
     public ResourceLocation getFactionIcon() {
         //todo: getFactionIcon
-        return GuiTextures.Widgets.FACTION_ICON_FEY;
+        return ResourceIDs.FACTION_WILD_ICON;
     }
 
     @Override

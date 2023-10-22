@@ -76,7 +76,6 @@ public class DebugRod extends Item {
             }
 
             wildMagicIterator.set(adjustWildMagicIterator(wildMagicIterator.get() + (isInverted.get() ? -1 : +1)));
-            player.displayClientMessage(new TextComponent(new TranslatableComponent("fnc.feedback.selected.wildmagic").getString() + new TranslatableComponent(getSelectedWildMagic(stack).toString()).getString()), false);
 
             CompoundTag nbtData = new CompoundTag();
             nbtData.putInt(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator", wildMagicIterator.get());
@@ -85,6 +84,8 @@ public class DebugRod extends Item {
             } else {
                 stack.getTag().merge(nbtData);
             }
+
+            player.displayClientMessage(new TextComponent(new TranslatableComponent("fnc.feedback.selected.wildmagic").getString() + new TranslatableComponent(getSelectedWildMagic(stack).toString()).getString()), false);
         }
     }
 

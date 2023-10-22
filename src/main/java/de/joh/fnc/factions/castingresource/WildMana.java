@@ -15,7 +15,7 @@ public class WildMana extends SimpleCastingResource {
     }
 
     public ResourceLocation getRegistryName() {
-        return CastingResourceIDs.WILD_MANA;
+        return ResourceIDs.WILD_MANA;
     }
 
     public void setMaxAmountByLevel(int level) {

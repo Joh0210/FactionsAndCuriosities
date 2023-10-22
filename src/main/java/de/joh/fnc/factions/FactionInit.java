@@ -13,6 +13,6 @@ public class FactionInit {
 
     @SubscribeEvent
     public static void registerFactions(RegistryEvent.Register<IFaction> event) {
-        event.getRegistry().registerAll(WILD);
+        event.getRegistry().register(WILD);
     }
 }
