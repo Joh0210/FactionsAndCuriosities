@@ -1,6 +1,12 @@
 {
   "item.fnc.debug_rod": "Wild Debug Orb",
   "item.fnc.dice_six": "Dice (D6)",
+
+  "item.fnc.mischief_helmet": "Mischief Helmet",
+  "item.fnc.mischief_chestplate": "Mischief Chestplate",
+  "item.fnc.mischief_legging": "Mischief Legging",
+  "item.fnc.mischief_boots": "Mischief Boots",
+
   "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
   "effect.fnc.wild_magic": "Wild Magic",
 

@@ -97,7 +97,7 @@ public class WildDamage extends SpellEffect implements IDamageComponent {
 
     @Override
     public Affinity getAffinity() {
-        return Affinity.EARTH;
+        return Affinity.ARCANE;
     }
 
     @Override
