@@ -1,11 +1,11 @@
 package de.joh.fnc.item.init;
 
+import de.joh.fnc.utils.CreativeModeTabInit;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -23,7 +23,7 @@ public class Dice extends Item {
      * @param size Size of the Dice (e.g. 6 -> random numbers between 1-6)
      */
     public Dice(int size) {
-        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.UNCOMMON).tab(CreativeModeTab.TAB_BREWING));
+        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.UNCOMMON).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
         this.size = size;
     }
 

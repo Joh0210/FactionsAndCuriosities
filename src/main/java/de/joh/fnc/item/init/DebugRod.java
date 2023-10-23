@@ -4,6 +4,7 @@ import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.event.handler.ClientEventHandler;
 import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
+import de.joh.fnc.utils.CreativeModeTabInit;
 import de.joh.fnc.wildmagic.util.WildMagic;
 import de.joh.fnc.wildmagic.util.WildMagicHelper;
 import net.minecraft.nbt.CompoundTag;
@@ -13,7 +14,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class DebugRod extends Item {
     public DebugRod() {
-        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC).tab(CreativeModeTab.TAB_BREWING));
+        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
     }
 
     /**
