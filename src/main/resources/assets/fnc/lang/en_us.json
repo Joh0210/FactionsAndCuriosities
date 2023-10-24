@@ -3,11 +3,12 @@
 
   "item.fnc.debug_rod": "Wild Debug Orb",
   "item.fnc.dice_six": "Dice (D6)",
-
   "item.fnc.mischief_helmet": "Mischief Helmet",
   "item.fnc.mischief_chestplate": "Mischief Chestplate",
   "item.fnc.mischief_legging": "Mischief Legging",
   "item.fnc.mischief_boots": "Mischief Boots",
+
+  "fnc:mischief_armor_set_bonus": "(4) Set Bonus:\n+1 Wild Magic Luck",
 
   "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
   "effect.fnc.wild_magic": "Wild Magic",
