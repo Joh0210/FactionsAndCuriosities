@@ -24,14 +24,14 @@ public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
     /**
      * How good is the effect for the source entity?
      */
-    public abstract Quality getQuality(SpellPartTags componentTag);
+    public @NotNull abstract Quality getQuality(SpellPartTags componentTag);
 
     /**
      * Instance to ensure null save calls
      */
     public static WildMagic INSTANCE = new WildMagic(RLoc.create("wildmagic/none"), 0) {
         @Override
-        public Quality getQuality(SpellPartTags spellPartTag) {
+        public @NotNull Quality getQuality(SpellPartTags spellPartTag) {
             return Quality.NEUTRAL;
         }
 

@@ -1,9 +1,11 @@
 package de.joh.fnc.wildmagic.util;
 
+import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.FactionsAndCuriosities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
@@ -14,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
  * @see WildMagic
  * @author Joh0210
  */
-public abstract class WildMagicPotionEffect extends WildMagic{
+public abstract class WildMagicPotionEffect extends WildMagicCOT {
     /**
      * How long will the effect last. (in Ticks)
      */
@@ -26,20 +28,21 @@ public abstract class WildMagicPotionEffect extends WildMagic{
     public final int level;
 
     /**
-     * Is the wild Magic source(true) or the spellTarget(false) targeted?
-     */
-    public final boolean targetsCaster;
-
-    /**
      * @return the effect that will be Applied
      */
-    public abstract MobEffect getMobEffect();
+    public @NotNull abstract MobEffect getMobEffect();
 
-    public WildMagicPotionEffect(@NotNull ResourceLocation registryName, int frequency, int duration, int level, boolean targetsCaster) {
-        super(registryName, frequency);
+    /**
+     * @param registryName ID under which the upgrade can be recognized
+     * @param frequency How often does the entry appear in the random-selection-list?
+     * @param duration How long will the effect last. (in Ticks)
+     * @param level Which Level will the Effect have (staring at 1)
+     * @param targetsCaster Is the wild Magic source(true) or the spellTarget(false) targeted?
+     */
+    public WildMagicPotionEffect(@NotNull ResourceLocation registryName, int frequency, boolean targetsCaster, int duration, int level) {
+        super(registryName, frequency, targetsCaster);
         this.duration = duration;
         this.level = level;
-        this.targetsCaster = targetsCaster;
     }
 
     @Override
@@ -70,5 +73,17 @@ public abstract class WildMagicPotionEffect extends WildMagic{
             //Update the duration of the effect.
             wildMagicTarget.getEffect(getMobEffect()).update(new MobEffectInstance(getMobEffect(), duration, level - 1));
         }
+    }
+
+    @Override
+    public @NotNull Quality getQuality(SpellPartTags componentTag) {
+        if(getMobEffect().getCategory() == MobEffectCategory.NEUTRAL){
+            return Quality.NEUTRAL;
+        }
+
+        if(targetsCaster || componentTag != SpellPartTags.HARMFUL){
+            return getMobEffect().getCategory() == MobEffectCategory.HARMFUL ? Quality.BAD : Quality.GOOD;
+        }
+        return getMobEffect().getCategory() == MobEffectCategory.HARMFUL ? Quality.GOOD : Quality.BAD;
     }
 }

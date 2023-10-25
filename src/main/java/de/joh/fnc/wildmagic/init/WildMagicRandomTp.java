@@ -24,6 +24,7 @@ public class WildMagicRandomTp extends WildMagic {
      * How often should the TP be tried.
      */
     public static final int TRIES = 10;
+
     /**
      * The max distance of the max TP;
      */
@@ -34,14 +35,14 @@ public class WildMagicRandomTp extends WildMagic {
      */
     public final boolean targetsCaster;
 
-    public WildMagicRandomTp(@NotNull ResourceLocation registryName, int frequency, Quality quality, int maxDistance, boolean targetsCaster) {
+    public WildMagicRandomTp(@NotNull ResourceLocation registryName, int frequency, int maxDistance, boolean targetsCaster) {
         super(registryName, frequency);
         this.maxDistance = maxDistance;
         this.targetsCaster = targetsCaster;
     }
 
     @Override
-    public Quality getQuality(SpellPartTags spellPartTag) {
+    public @NotNull Quality getQuality(SpellPartTags spellPartTag) {
         return Quality.BAD;
     }
 
