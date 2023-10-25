@@ -1,0 +1,21 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "fnc:black_cat_bracelet",
+  "requiredFaction": "fnc:wild",
+  "tier": 3,
+  "items": [
+    "fnc:dice_six",
+    "mna:mana_crystal_fragment",
+    "mna:mundane_bracelet",
+    "minecraft:black_dye",
+    "minecraft:black_dye"
+  ],
+  "patterns": [
+    "mna:triangle",
+    "mna:circle",
+    "mna:split_triangle",
+    "mna:square",
+    "mna:diamond",
+    "mna:diamond"
+  ]
+}

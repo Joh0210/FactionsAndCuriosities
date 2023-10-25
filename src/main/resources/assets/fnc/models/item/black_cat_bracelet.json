@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fnc:item/mischief_bracelet"
+    "layer0": "fnc:item/black_cat_bracelet"
   }
 }

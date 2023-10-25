@@ -4,7 +4,7 @@ import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.item.init.DebugRod;
 import de.joh.fnc.item.init.Dice;
 import de.joh.fnc.item.init.MischiefArmor;
-import de.joh.fnc.item.init.MischiefBracelet;
+import de.joh.fnc.item.init.BlackCatBracelet;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,7 +26,7 @@ public class ItemInit {
     public static final RegistryObject<Item> MISCHIEF_CHESTPLATE = ITEMS.register("mischief_chestplate", () -> new MischiefArmor(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> MISCHIEF_LEGGING = ITEMS.register("mischief_legging", () -> new MischiefArmor(EquipmentSlot.LEGS));
     public static final RegistryObject<Item> MISCHIEF_BOOTS = ITEMS.register("mischief_boots", () -> new MischiefArmor(EquipmentSlot.FEET));
-    public static final RegistryObject<Item> MISCHIEF_BRACELET = ITEMS.register("mischief_bracelet", MischiefBracelet::new);
+    public static final RegistryObject<Item> MISCHIEF_BRACELET = ITEMS.register("black_cat_bracelet", BlackCatBracelet::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

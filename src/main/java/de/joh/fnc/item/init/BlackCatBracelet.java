@@ -11,8 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 
-public class MischiefBracelet extends ChargeableItem implements IPreEnchantedItem<MischiefBracelet> {
-    public MischiefBracelet() {
+public class BlackCatBracelet extends ChargeableItem implements IPreEnchantedItem<BlackCatBracelet> {
+    public BlackCatBracelet() {
         super((new Item.Properties()).setNoRepair().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.UNCOMMON), 1000.0F);
     }
 
