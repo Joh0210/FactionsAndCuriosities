@@ -1,8 +1,10 @@
 package de.joh.fnc.effect;
 
 import de.joh.fnc.FactionsAndCuriosities;
+import de.joh.fnc.effect.beneficial.ExplosionResistance;
 import de.joh.fnc.effect.beneficial.GoodWildMagic;
 import de.joh.fnc.effect.harmful.BadWildMagic;
+import de.joh.fnc.effect.harmful.LivingBomb;
 import de.joh.fnc.effect.neutral.WildMagic;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
 import net.minecraft.world.effect.MobEffect;
@@ -24,6 +26,8 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> WILD_MAGIC = EFFECTS.register("wild_magic", WildMagic::new);
     public static final RegistryObject<MobEffect> BAD_WILD_MAGIC = EFFECTS.register("bad_wild_magic", BadWildMagic::new);
     public static final RegistryObject<MobEffect> GOOD_WILD_MAGIC = EFFECTS.register("good_wild_magic", GoodWildMagic::new);
+    public static final RegistryObject<MobEffect> EXPLOSION_RESISTANCE = EFFECTS.register("explosion_resistance", ExplosionResistance::new);
+    public static final RegistryObject<MobEffect> LIVING_BOMB = EFFECTS.register("living_bomb", LivingBomb::new);
 
     public static void register(IEventBus eventBus){
         EFFECTS.register(eventBus);

@@ -10,7 +10,7 @@ import net.minecraft.world.effect.MobEffectCategory;
  * @see WildMagicHelper
  * @author Joh0210
  */
-public class GoodWildMagic  extends MobEffect {
+public class GoodWildMagic extends MobEffect {
     public GoodWildMagic() {
         //todo: adjust color
         super(MobEffectCategory.BENEFICIAL, -10496);

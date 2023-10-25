@@ -13,6 +13,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 public class BadWildMagic  extends MobEffect {
     public BadWildMagic() {
         //todo: adjust color
-        super(MobEffectCategory.NEUTRAL, -10496);
+        super(MobEffectCategory.HARMFUL, -10496);
     }
 }

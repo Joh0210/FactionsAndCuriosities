@@ -29,6 +29,26 @@ public class WildMagicExplosion extends WildMagicCOT {
     public final boolean breaksBlocks;
 
     /**
+     * Should the source of the magic be spared from the explosion?
+     */
+    public final boolean spareSource;
+
+    /**
+     * @param registryName  ID under which the upgrade can be recognized
+     * @param frequency     How often does the entry appear in the random-selection-list?
+     * @param targetsCaster Is the wild Magic source(true) or the spellTarget(false) targeted?
+     * @param strength      Strength (Radius) of the explosion
+     * @param breaksBlocks  Does the explosion break blocks, if {@link GameRules#RULE_MOBGRIEFING} = true?
+     * @param spareSource   Should the source of the magic be spared from the explosion?
+     */
+    public WildMagicExplosion(@NotNull ResourceLocation registryName, int frequency, boolean targetsCaster, int strength, boolean breaksBlocks, boolean spareSource) {
+        super(registryName, frequency, targetsCaster);
+        this.strength = strength;
+        this.breaksBlocks = breaksBlocks;
+        this.spareSource = spareSource;
+    }
+
+    /**
      * @param registryName  ID under which the upgrade can be recognized
      * @param frequency     How often does the entry appear in the random-selection-list?
      * @param targetsCaster Is the wild Magic source(true) or the spellTarget(false) targeted?
@@ -36,17 +56,18 @@ public class WildMagicExplosion extends WildMagicCOT {
      * @param breaksBlocks  Does the explosion break blocks, if {@link GameRules#RULE_MOBGRIEFING} = true?
      */
     public WildMagicExplosion(@NotNull ResourceLocation registryName, int frequency, boolean targetsCaster, int strength, boolean breaksBlocks) {
-        super(registryName, frequency, targetsCaster);
-        this.strength = strength;
-        this.breaksBlocks = breaksBlocks;
+        this(registryName, frequency, targetsCaster, strength, breaksBlocks, false);
     }
 
     @Override
     public @NotNull Quality getQuality(SpellPartTags componentTag) {
         if(targetsCaster || componentTag != SpellPartTags.HARMFUL){
-            return strength > 1 ? Quality.VERY_BAD : Quality.BAD;
+            if(spareSource){
+                return Quality.NEUTRAL;
+            }
+            return strength > 2 ? Quality.VERY_BAD : Quality.BAD;
         }
-        return Quality.GOOD;
+        return spareSource ? Quality.BAD :Quality.GOOD;
     }
 
     @Override
@@ -62,7 +83,7 @@ public class WildMagicExplosion extends WildMagicCOT {
         }
 
         if (!source.level.isClientSide) {
-            source.level.explode(null, null, null, coordinates.x, coordinates.y, coordinates.z, strength, false, (((ServerLevel)source.level).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && breaksBlocks) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
+            source.level.explode(spareSource ? source : null, null, null, coordinates.x, coordinates.y, coordinates.z, strength, false, (((ServerLevel)source.level).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && breaksBlocks) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
             //MAExplosion.make(source, (ServerLevel)source.level, coordinates.x, coordinates.y, coordinates.z, radius, damage, false, (((ServerLevel)source.level).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && breaksBlocks) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
         }
     }

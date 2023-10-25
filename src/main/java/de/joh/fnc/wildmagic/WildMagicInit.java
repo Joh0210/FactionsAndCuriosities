@@ -23,6 +23,8 @@ public class WildMagicInit {
     public static WildMagic EXPLODE_WEAK_TARGET;
     public static WildMagic EXPLODE_STRONG_SELF;
     public static WildMagic EXPLODE_STRONG_TARGET;
+    public static WildMagic EXPLODE_SPARE_SELF;
+    public static WildMagic EXPLODE_SPARE_TARGET;
     public static WildMagic NAUSEA_SELF;
     public static WildMagic NAUSEA_TARGET;
     public static WildMagic CHRONO_ANCHOR_SELF;
@@ -34,6 +36,10 @@ public class WildMagicInit {
     public static WildMagic WITHER_WEAK_TARGET;
     public static WildMagic WITHER_STRONG_SELF;
     public static WildMagic WITHER_STRONG_TARGET;
+    public static WildMagic LIGHTNING_SELF;
+    public static WildMagic LIGHTNING_TARGET;
+    public static WildMagic LIVING_BOMB_SELF;
+    public static WildMagic LIVING_BOMB_TARGET;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<WildMagic> event) {
@@ -45,6 +51,8 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.EXPLODE_WEAK_TARGET);
         event.getRegistry().register(WildMagicInit.EXPLODE_STRONG_SELF);
         event.getRegistry().register(WildMagicInit.EXPLODE_STRONG_TARGET);
+        event.getRegistry().register(WildMagicInit.EXPLODE_SPARE_SELF);
+        event.getRegistry().register(WildMagicInit.EXPLODE_SPARE_TARGET);
         event.getRegistry().register(WildMagicInit.NAUSEA_SELF);
         event.getRegistry().register(WildMagicInit.NAUSEA_TARGET);
         event.getRegistry().register(WildMagicInit.CHRONO_ANCHOR_SELF);
@@ -56,6 +64,10 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.WITHER_WEAK_TARGET);
         event.getRegistry().register(WildMagicInit.WITHER_STRONG_SELF);
         event.getRegistry().register(WildMagicInit.WITHER_STRONG_TARGET);
+        event.getRegistry().register(WildMagicInit.LIGHTNING_SELF);
+        event.getRegistry().register(WildMagicInit.LIGHTNING_TARGET);
+        event.getRegistry().register(WildMagicInit.LIVING_BOMB_SELF);
+        event.getRegistry().register(WildMagicInit.LIVING_BOMB_TARGET);
     }
 
     //todo: revise frequency
@@ -64,10 +76,12 @@ public class WildMagicInit {
         WildMagicInit.RANDOM_TP_TARGET = new WildMagicRandomTp(RLoc.create("wildmagic/random_tp_target"), 7, 32, false);
         WildMagicInit.REPAIR_SELF = new WildMagicRepair(RLoc.create("wildmagic/repair_self"), 7);
         //WildMagicInit.EXPLODE_FAKE_SELF = new WildMagicExplosion(RLoc.create("wildmagic/explode_fake_self"), 7, true, 0, false);
-        WildMagicInit.EXPLODE_WEAK_SELF = new WildMagicExplosion(RLoc.create("wildmagic/explode_weak_self"), 7, true, 1, false);
-        WildMagicInit.EXPLODE_WEAK_TARGET = new WildMagicExplosion(RLoc.create("wildmagic/explode_weak_target"), 7, false, 1, false);
-        WildMagicInit.EXPLODE_STRONG_SELF = new WildMagicExplosion(RLoc.create("wildmagic/explode_strong_self"), 7, true, 3, false);
-        WildMagicInit.EXPLODE_STRONG_TARGET = new WildMagicExplosion(RLoc.create("wildmagic/explode_strong_target"), 7, false, 3, false);
+        WildMagicInit.EXPLODE_WEAK_SELF = new WildMagicExplosion(RLoc.create("wildmagic/explode_weak_self"), 7, true, 2, false);
+        WildMagicInit.EXPLODE_WEAK_TARGET = new WildMagicExplosion(RLoc.create("wildmagic/explode_weak_target"), 7, false, 2, false);
+        WildMagicInit.EXPLODE_STRONG_SELF = new WildMagicExplosion(RLoc.create("wildmagic/explode_strong_self"), 7, true, 4, false);
+        WildMagicInit.EXPLODE_STRONG_TARGET = new WildMagicExplosion(RLoc.create("wildmagic/explode_strong_target"), 7, false, 4, false);
+        WildMagicInit.EXPLODE_SPARE_SELF = new WildMagicExplosion(RLoc.create("wildmagic/explode_spare_self"), 7, true, 8, false, true);
+        WildMagicInit.EXPLODE_SPARE_TARGET = new WildMagicExplosion(RLoc.create("wildmagic/explode_spare_target"), 7, false, 8, false, true);
         WildMagicInit.NAUSEA_SELF = new WildMagicNausea(RLoc.create("wildmagic/nausea_self"), 7, true);
         WildMagicInit.NAUSEA_TARGET = new WildMagicNausea(RLoc.create("wildmagic/nausea_target"), 7, false);
         WildMagicInit.CHRONO_ANCHOR_SELF = new WildMagicChronoAnchor(RLoc.create("wildmagic/chrono_anchor_self"), 7);
@@ -79,5 +93,9 @@ public class WildMagicInit {
         WildMagicInit.WITHER_STRONG_TARGET = new WildMagicWither(RLoc.create("wildmagic/wither_strong_target"), 7, false, 2);
         WildMagicInit.WITHER_WEAK_SELF = new WildMagicWither(RLoc.create("wildmagic/wither_weak_self"), 7, true, 1);
         WildMagicInit.WITHER_WEAK_TARGET = new WildMagicWither(RLoc.create("wildmagic/wither_weak_target"), 7, false, 1);
+        WildMagicInit.LIGHTNING_SELF = new WildMagicLightning(RLoc.create("wildmagic/lightning_self"), 7, true);
+        WildMagicInit.LIGHTNING_TARGET = new WildMagicLightning(RLoc.create("wildmagic/lightning_target"), 7, false);
+        WildMagicInit.LIVING_BOMB_SELF = new WildMagicLivingBomb(RLoc.create("wildmagic/living_bomb_self"), 7, true, 1);
+        WildMagicInit.LIVING_BOMB_TARGET = new WildMagicLivingBomb(RLoc.create("wildmagic/living_bomb_target"), 7, false, 1);
     }
 }
