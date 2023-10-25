@@ -3,13 +3,19 @@ package de.joh.fnc.wildmagic.util;
 import com.ibm.icu.impl.IllegalIcuArgumentException;
 import com.mna.api.ManaAndArtificeMod;
 import com.mna.api.spells.SpellPartTags;
+import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.effect.EffectInit;
+import de.joh.fnc.effect.neutral.WildMagicCooldown;
+import de.joh.fnc.event.additional.PerformWildMagicEvent;
 import de.joh.fnc.factions.FactionInit;
 import de.joh.fnc.utils.AttributeInit;
 import de.joh.fnc.utils.Registries;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraftforge.common.MinecraftForge;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -21,13 +27,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class WildMagicHelper {
     /**
+     * This number defines how many tries should be made, to finde a random wildMagic, which can be performed.
+     * <br> In case within the tries, no wild Magic can be found, none will occur.
+     */
+    private static final int TRIES = 10;
+
+    /**
      * DO NOT CALL!
      * <br> Only use getAllWildMagic()!
      */
     private static WildMagic[] allWildMagic = null;
 
     /**
-     * @return a list with all registered Wild Magics
+     * @return an array with all registered Wild Magics
      */
     public static WildMagic[] getAllWildMagic(){
         if(allWildMagic == null){
@@ -40,7 +52,7 @@ public class WildMagicHelper {
     /**
      * @return Length of the weighted list in which each Wild Magic appears as often as its frequency corresponds
      */
-    public static int getWeightedListLength(){
+    private static int getWeightedListLength(){
         return Arrays.stream(getAllWildMagic())
                 .mapToInt(wm -> wm.frequency)
                 .sum();
@@ -51,7 +63,7 @@ public class WildMagicHelper {
      * @throws IllegalIcuArgumentException when count lower than 1 or higher than the number of entries
      * @return Selected Wild Magic
      */
-    public static WildMagic getWildMagicAt(int count){
+    private static WildMagic getWildMagicAt(int count){
         if(count < 1){
             throw new IllegalIcuArgumentException("input count was lower than 1");
         }
@@ -134,5 +146,45 @@ public class WildMagicHelper {
         AtomicBoolean isWildMage = new AtomicBoolean(false);
         entity.getCapability(ManaAndArtificeMod.getProgressionCapability()).ifPresent((p)-> isWildMage.set(p.getAlliedFaction() == FactionInit.WILD));
         return isWildMage.get();
+    }
+
+    public static boolean performWildMagic(@NotNull WildMagic wildMagic, @NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag){
+        if(wildMagic.canBePerformed(source, target)){
+            PerformWildMagicEvent event = new PerformWildMagicEvent(source, target, wildMagic, componentTag);
+            MinecraftForge.EVENT_BUS.post(event);
+            if(event.isCanceled()) {
+                return false;
+            }
+            wildMagic.performWildMagic(source, target);
+            return true;
+        }
+        return false;
+    }
+
+
+    public static void performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, @NotNull ExtendedCondition extendedCondition){
+        if(!source.getLevel().isClientSide()){
+            source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
+            WildMagic wildMagic;
+            int tries = 0;
+            int wildMagicLuck = getWildMagicLuck(source);
+            do{
+                wildMagic = getRandomWildMagic(
+                        Math.abs(wildMagicLuck) + 1,
+                        wildMagicLuck >= 0,
+                        componentTag);
+                tries++;
+            } while (!(wildMagic.canBePerformed(source, target) && extendedCondition.condition(wildMagic, source, target, componentTag)) && tries <= TRIES);
+
+            performWildMagic(wildMagic, source, target, componentTag);
+        }
+    }
+
+    public static void performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag){
+        performRandomWildMagic(source, target, componentTag, (wm, s, t, ct) -> true);
+    }
+
+    public interface ExtendedCondition {
+        boolean condition(@NotNull WildMagic wildMagic, @NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag);
     }
 }

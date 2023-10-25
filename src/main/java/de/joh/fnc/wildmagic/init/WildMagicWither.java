@@ -1,16 +1,12 @@
 package de.joh.fnc.wildmagic.init;
 
 import com.mna.api.spells.SpellPartTags;
-import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.wildmagic.util.Quality;
 import de.joh.fnc.wildmagic.util.WildMagicPotionEffect;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Poisons the target of wild magic for 20s
@@ -28,23 +24,8 @@ public class WildMagicWither extends WildMagicPotionEffect {
     }
 
     @Override
-    public boolean canBePerformed(@NotNull LivingEntity source, @Nullable SpellTarget target) {
-        if(targetsCaster){
-            if(!(source instanceof Player)){
-                return false;
-            }
-        } else {
-            if(target == null || !(target.getLivingEntity() instanceof Player)){
-                return false;
-            }
-        }
-
-        return super.canBePerformed(source, target);
-    }
-
-    @Override
     public @NotNull MobEffect getMobEffect() {
-        return MobEffects.CONFUSION;
+        return MobEffects.WITHER;
     }
 
     @Override

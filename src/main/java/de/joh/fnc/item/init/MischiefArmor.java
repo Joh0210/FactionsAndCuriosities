@@ -4,6 +4,7 @@ import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import com.mna.items.armor.IBrokenArmorReplaceable;
 import com.mna.items.armor.ISetItem;
+import de.joh.fnc.event.handler.MagicEventHandler;
 import de.joh.fnc.factions.FactionInit;
 import de.joh.fnc.utils.AttributeInit;
 import de.joh.fnc.utils.CreativeModeTabInit;
@@ -25,7 +26,8 @@ import java.util.function.Consumer;
  * An Armor for the {@link FactionInit#WILD Wilde Courts Faction}
  * <br>Set Effekts (full armor must be worn):
  * <br> - +1 Wild Magic Luck
- * <br> - todo: other stuff
+ * <br> - protects the wearer of VeryBad (and Bad?) Wild Magic Effects
+ * @see MagicEventHandler
  * @author Joh0210
  */
 public class MischiefArmor extends ArmorItem implements ISetItem, ITieredItem<MischiefArmor>, IFactionSpecific, IBrokenArmorReplaceable<MischiefArmor> {

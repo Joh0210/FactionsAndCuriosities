@@ -4,12 +4,18 @@ import com.mna.api.events.ComponentApplyingEvent;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
-import de.joh.fnc.utils.AttributeInit;
+import de.joh.fnc.event.additional.PerformWildMagicEvent;
+import de.joh.fnc.item.init.MischiefArmor;
+import de.joh.fnc.wildmagic.util.Quality;
 import de.joh.fnc.wildmagic.util.WildMagic;
 import de.joh.fnc.wildmagic.util.WildMagicHelper;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -18,13 +24,7 @@ import net.minecraftforge.fml.common.Mod;
  * @author Joh0210
  */
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class CommonEventHandler {
-    /**
-     * This number defines how many tries should be made, to finde a random wildMagic, which can be performed.
-     * <br> In case within the tries, no wild Magic can be found, none will occur.
-     */
-    private static final int TRIES = 10;
-
+public class MagicEventHandler {
     /**
      * Causes the Wild Magic, when a spell takes place.
      * <br> a small cooldown will be added.
@@ -38,22 +38,24 @@ public class CommonEventHandler {
         //todo: When the Target is an Living Entity, there should be a 50% chance, that it interacts with the target (50& chance to use a prefiltered list)
 
         LivingEntity source = event.getSource().getPlayer();
-        if(source != null && WildMagicHelper.shouldCauseWildMagic(source) && !source.getLevel().isClientSide()){
+        if(source != null && WildMagicHelper.shouldCauseWildMagic(source)){
             source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
-            WildMagic wildMagic;
-            int tries = 0;
-            do{
-                wildMagic = WildMagicHelper.getRandomWildMagic(
-                        Math.abs(WildMagicHelper.getWildMagicLuck(source)) + 1,
-                        WildMagicHelper.getWildMagicLuck(source) >= 0,
-                        event.getComponent().getUseTag());
-                tries++;
-            } while (!wildMagic.canBePerformed(source, event.getTarget()) && tries <= TRIES);
+            WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag());
+        }
+    }
 
-            if(wildMagic.canBePerformed(source, event.getTarget())){
-                //todo: cast new Wild-Magic-Event
-                wildMagic.performWildMagic(source, event.getTarget());
+    @SubscribeEvent
+    public static void onPerformWildMagic(PerformWildMagicEvent event){
+        LivingEntity source = event.getSource();
+        if(source.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmor mischiefArmor
+                && mischiefArmor.isSetEquipped(source)
+                && (event.getQuality() == Quality.VERY_BAD /*|| event.getQuality() == Quality.BAD*/)
+        ){
+            event.setCanceled(true);
+            if(source instanceof Player){
+                ((Player) source).displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);
             }
+            source.level.playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
         }
     }
 }

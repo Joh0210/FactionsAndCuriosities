@@ -16,6 +16,7 @@
   "fnc.dice.roll.output.text": "Your roll: ",
   "fnc.feedback.selected.wildmagic": "Selected Wild Magic: ",
   "fnc.feedback.selected.wildmagic.condition_false" : "The condition of the selected Wild Magic was not fulfilled!",
+  "fnc.feedback.wildmagic.accident_protection" : "The disaster was averted!",
 
   "fnc:components/wild_damage": "Wild Damage",
   "fnc:components/wild_damage.desc.delay": "A delay in seconds before applying this component.",

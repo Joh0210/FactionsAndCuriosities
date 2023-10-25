@@ -1,7 +1,7 @@
 package de.joh.fnc.utils;
 
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.event.handler.CommonEventHandler;
+import de.joh.fnc.event.handler.MagicEventHandler;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,7 +16,7 @@ public class AttributeInit {
      * Attribute for all Living Entities.
      * <br>When determining the Wild Magic entry for an entity, the dice are rolled as many times as the amount of this attribute + 1.
      * <br>If the value of this Attribute is positive, the better Wild Magic will be chosen. Otherwise, the worse.
-     * @see CommonEventHandler
+     * @see MagicEventHandler
      */
     public static final RegistryObject<Attribute> WILD_MAGIC_LUCK = ATTRIBUTES.register("wild_magic_luck", () -> new RangedAttribute("attribute.description.fnc.wild_magic_luck", 0.0D, -1024.0D, 1024.0D).setSyncable(true));
 

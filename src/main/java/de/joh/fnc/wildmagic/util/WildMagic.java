@@ -36,7 +36,7 @@ public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
         }
 
         @Override
-        public void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
+        protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
             FactionsAndCuriosities.LOGGER.error("performWildMagic of the Wild Magic phantom instance was called");
         }
     };
@@ -55,7 +55,7 @@ public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
      * @param source Source from which wild magic emanates
      * @param target Target of the spell that triggers the wild magic. Null if Wild Magic was not triggered by a spell
      */
-    public abstract void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target);
+    protected abstract void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target);
 
     /**
      * Condition under which this wild magic effect can be executed
