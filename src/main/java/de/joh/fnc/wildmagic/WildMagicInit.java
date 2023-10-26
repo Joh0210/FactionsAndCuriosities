@@ -40,6 +40,16 @@ public class WildMagicInit {
     public static WildMagic LIGHTNING_TARGET;
     public static WildMagic LIVING_BOMB_SELF;
     public static WildMagic LIVING_BOMB_TARGET;
+    public static WildMagic MAXIMIZED_SELF;
+    public static WildMagic MAXIMIZED_TARGET;
+    public static WildMagic MINIMIZED_SELF;
+    public static WildMagic MINIMIZED_TARGET;
+    public static WildMagic EMPOWERED_I_SELF;
+    public static WildMagic EMPOWERED_I_TARGET;
+    public static WildMagic EMPOWERED_II_SELF;
+    public static WildMagic EMPOWERED_II_TARGET;
+    public static WildMagic EMPOWERED_III_SELF;
+    public static WildMagic EMPOWERED_III_TARGET;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<WildMagic> event) {
@@ -68,6 +78,16 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.LIGHTNING_TARGET);
         event.getRegistry().register(WildMagicInit.LIVING_BOMB_SELF);
         event.getRegistry().register(WildMagicInit.LIVING_BOMB_TARGET);
+        event.getRegistry().register(WildMagicInit.MAXIMIZED_SELF);
+        event.getRegistry().register(WildMagicInit.MAXIMIZED_TARGET);
+        event.getRegistry().register(WildMagicInit.MINIMIZED_SELF);
+        event.getRegistry().register(WildMagicInit.MINIMIZED_TARGET);
+        event.getRegistry().register(WildMagicInit.EMPOWERED_I_SELF);
+        event.getRegistry().register(WildMagicInit.EMPOWERED_I_TARGET);
+        event.getRegistry().register(WildMagicInit.EMPOWERED_II_SELF);
+        event.getRegistry().register(WildMagicInit.EMPOWERED_II_TARGET);
+        event.getRegistry().register(WildMagicInit.EMPOWERED_III_SELF);
+        event.getRegistry().register(WildMagicInit.EMPOWERED_III_TARGET);
     }
 
     //todo: revise frequency
@@ -97,5 +117,15 @@ public class WildMagicInit {
         WildMagicInit.LIGHTNING_TARGET = new WildMagicLightning(RLoc.create("wildmagic/lightning_target"), 7, false);
         WildMagicInit.LIVING_BOMB_SELF = new WildMagicLivingBomb(RLoc.create("wildmagic/living_bomb_self"), 7, true, 1);
         WildMagicInit.LIVING_BOMB_TARGET = new WildMagicLivingBomb(RLoc.create("wildmagic/living_bomb_target"), 7, false, 1);
+        WildMagicInit.MAXIMIZED_SELF = new WildMagicMaximize(RLoc.create("wildmagic/maximize_self"), 7, true);
+        WildMagicInit.MAXIMIZED_TARGET = new WildMagicMaximize(RLoc.create("wildmagic/maximize_target"), 7, false);
+        WildMagicInit.MINIMIZED_SELF = new WildMagicMinimize(RLoc.create("wildmagic/minimize_self"), 7, true);
+        WildMagicInit.MINIMIZED_TARGET = new WildMagicMinimize(RLoc.create("wildmagic/minimize_target"), 7, false);
+        WildMagicInit.EMPOWERED_I_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_i_self"), 7, true, 1);
+        WildMagicInit.EMPOWERED_I_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_i_target"), 7, false, 1);
+        WildMagicInit.EMPOWERED_II_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_ii_self"), 7, true, 2);
+        WildMagicInit.EMPOWERED_II_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_ii_target"), 7, false, 2);
+        WildMagicInit.EMPOWERED_III_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_iii_self"), 7, true, 3);
+        WildMagicInit.EMPOWERED_III_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_iii_target"), 7, false, 3);
     }
 }
