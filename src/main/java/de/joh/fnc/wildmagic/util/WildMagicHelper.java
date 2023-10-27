@@ -5,12 +5,10 @@ import com.mna.api.ManaAndArtificeMod;
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.effect.EffectInit;
-import de.joh.fnc.effect.neutral.WildMagicCooldown;
 import de.joh.fnc.event.additional.PerformWildMagicEvent;
 import de.joh.fnc.factions.FactionInit;
 import de.joh.fnc.utils.AttributeInit;
 import de.joh.fnc.utils.Registries;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,12 +24,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author Joh0210
  */
 public class WildMagicHelper {
-    /**
-     * This number defines how many tries should be made, to finde a random wildMagic, which can be performed.
-     * <br> In case within the tries, no wild Magic can be found, none will occur.
-     */
-    private static final int TRIES = 10;
-
     /**
      * DO NOT CALL!
      * <br> Only use getAllWildMagic()!
@@ -50,25 +42,55 @@ public class WildMagicHelper {
     }
 
     /**
-     * @return Length of the weighted list in which each Wild Magic appears as often as its frequency corresponds
+     * IMPORTANT: Use only on Server Level!
+     * @param rolls                 how often should be rolled. (Minimum of 1)
+     * @param chooseHigherQuality   in case of multiple rolls, schuld the better Wild Magic be chosen?
+     * @param source                Source of the Wild Magic/Caster of the Spell
+     * @param target                Target of the Spell
+     * @param componentTag          What type of spell/event triggers the Wild Magic?
+     * @param wildMagicFilters      An additional Condition, the Wild Magic must fulfill, in order to be selected & performed.
+     * @return a Random Wild Magic
      */
-    private static int getWeightedListLength(){
-        return Arrays.stream(getAllWildMagic())
-                .mapToInt(wm -> wm.frequency)
-                .sum();
+    public static @Nullable WildMagic getRandomWildMagic(int rolls, boolean chooseHigherQuality, SpellPartTags componentTag, @NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull WildMagicHelper.WildMagicFilters wildMagicFilters){
+        Random random = new Random();
+        WildMagic[] wildMagics = Arrays.stream(getAllWildMagic()).filter(wm -> wm.canBePerformed(source, target) && wildMagicFilters.condition(wm, source, target, componentTag)).toArray(WildMagic[]::new);
+        int weightedListLength = Arrays.stream(wildMagics).mapToInt(wm -> wm.frequency).sum();
+
+        if(weightedListLength < 1){
+            return null;
+        }
+
+
+        WildMagic ret = null;
+        for(int i = 0; i < Math.max(rolls, 1); i++){
+            if(ret == null) {
+                ret = getWildMagicAt(random.nextInt(weightedListLength) + 1, wildMagics);
+            } else {
+                WildMagic alternative = getWildMagicAt(random.nextInt(weightedListLength) + 1, wildMagics);
+
+                if(alternative.getQuality(componentTag).ordinal() > ret.getQuality(componentTag).ordinal() == chooseHigherQuality){
+                    ret = alternative;
+                }
+            }
+        }
+
+        return ret;
     }
 
     /**
      * @param count: Starting at 1, position of Wild Magic weighted list in which each Wild Magic appears as often as its frequency corresponds
+     * @param wildMagics: List of the filtered Wild Magics to choose from (not weighted)
      * @throws IllegalIcuArgumentException when count lower than 1 or higher than the number of entries
      * @return Selected Wild Magic
      */
-    private static WildMagic getWildMagicAt(int count){
+    private static WildMagic getWildMagicAt(int count, WildMagic[] wildMagics){
+        //todo: wildMagics min size = 1!
+
         if(count < 1){
             throw new IllegalIcuArgumentException("input count was lower than 1");
         }
 
-        for(WildMagic wildMagic : getAllWildMagic()){
+        for(WildMagic wildMagic : wildMagics){
             count -= wildMagic.frequency;
             if(count <= 0){
                 return wildMagic;
@@ -77,31 +99,6 @@ public class WildMagicHelper {
 
         throw new IllegalIcuArgumentException("input count was higher than the number of entries");
         //return WildMagic.INSTANCE;
-    }
-
-    /**
-     * IMPORTANT: Use only on Server Level!
-     * @param rolls how often should be rolled. (Minimum of 1)
-     * @param chooseHigherQuality in case of multiple rolls, schuld the better Wild Magic be chosen?
-     * @return a Random Wild Magic
-     */
-    public static @NotNull WildMagic getRandomWildMagic(int rolls, boolean chooseHigherQuality, SpellPartTags componentTag){
-        Random random = new Random();
-        WildMagic ret = null;
-        for(int i = 0; i < Math.max(rolls, 1); i++){
-            if(ret == null) {
-                ret = getWildMagicAt(random.nextInt(getWeightedListLength()) + 1);
-            } else {
-                WildMagic alternative = getWildMagicAt(random.nextInt(getWeightedListLength()) + 1);
-
-                //todo: Check if this function works
-                if(alternative.getQuality(componentTag).ordinal() > ret.getQuality(componentTag).ordinal() == chooseHigherQuality){
-                    ret = alternative;
-                }
-            }
-        }
-
-        return ret;
     }
 
     /**
@@ -148,6 +145,11 @@ public class WildMagicHelper {
         return isWildMage.get();
     }
 
+    /**
+     * Performs the given Wild Magic, and posts the PerformWildMagicEvent on the Forge Event-Bus,
+     * which could be canceled, so the Wild Magic will not be performed
+     * @return false if canceled or if it could not be performed
+     */
     public static boolean performWildMagic(@NotNull WildMagic wildMagic, @NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag){
         if(wildMagic.canBePerformed(source, target)){
             PerformWildMagicEvent event = new PerformWildMagicEvent(source, target, wildMagic, componentTag);
@@ -161,30 +163,53 @@ public class WildMagicHelper {
         return false;
     }
 
-
-    public static void performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, @NotNull ExtendedCondition extendedCondition){
+    /**
+     * @param source            Source of the Wild Magic/Caster of the Spell
+     * @param target            Target of the Spell
+     * @param componentTag      What type of spell/event triggers the Wild Magic?
+     * @param wildMagicFilters  An additional Condition, the Wild Magic must fulfill, in order to be selected & performed.
+     * @return true if the Wild Magic was performed
+     */
+    public static boolean performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, @NotNull WildMagicFilters wildMagicFilters){
         if(!source.getLevel().isClientSide()){
-            source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
-            WildMagic wildMagic;
-            int tries = 0;
             int wildMagicLuck = getWildMagicLuck(source);
-            do{
-                wildMagic = getRandomWildMagic(
+            WildMagic wildMagic = getRandomWildMagic(
                         Math.abs(wildMagicLuck) + 1,
                         wildMagicLuck >= 0,
-                        componentTag);
-                tries++;
-            } while (!(wildMagic.canBePerformed(source, target) && extendedCondition.condition(wildMagic, source, target, componentTag)) && tries <= TRIES);
+                        componentTag,
+                        source,
+                        target,
+                    wildMagicFilters);
 
-            performWildMagic(wildMagic, source, target, componentTag);
+            if(wildMagic == null){
+                //todo: There is no performable wild magic that meets all the conditions. Write to Log?
+                return false;
+            }
+
+            return performWildMagic(wildMagic, source, target, componentTag);
         }
+
+        return false;
     }
 
-    public static void performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag){
-        performRandomWildMagic(source, target, componentTag, (wm, s, t, ct) -> true);
+    /**
+     * @param source        Source of the Wild Magic/Caster of the Spell
+     * @param target        Target of the Spell
+     * @param componentTag  What type of spell/event triggers the Wild Magic?
+     * @return true if the Wild Magic was performed
+     */
+    public static boolean performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag){
+        return performRandomWildMagic(source, target, componentTag, (wm, s, t, ct) -> true);
     }
 
-    public interface ExtendedCondition {
+    /**
+     * An additional Condition, the Wild Magic must fulfill, in order to be selected & performed by {@link WildMagicHelper#performRandomWildMagic(LivingEntity, SpellTarget, SpellPartTags, WildMagicFilters) performRandomWildMagic()}
+     * @author Joh0210
+     */
+    public interface WildMagicFilters {
+        /**
+         * @return true if the wildMagic should potentially be selected & performed by {@link WildMagicHelper#performRandomWildMagic(LivingEntity, SpellTarget, SpellPartTags, WildMagicFilters) performRandomWildMagic()}
+         */
         boolean condition(@NotNull WildMagic wildMagic, @NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag);
     }
 }
