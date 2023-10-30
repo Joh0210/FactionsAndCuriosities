@@ -65,7 +65,7 @@ public class WildMagicEmpowered extends WildMagicPotionEffect {
 
     @Override
     public @NotNull MobEffect getMobEffect() {
-        return EffectInit.MINIMIZED.get();
+        return EffectInit.EMPOWERED.get();
     }
 
 

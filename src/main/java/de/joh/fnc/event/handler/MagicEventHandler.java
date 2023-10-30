@@ -24,7 +24,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 /**
- * Handler for Forge-Events that take place on the Server and Client
+ * Handler for Forge-Events that revolve around magic
  * @author Joh0210
  */
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -86,7 +86,7 @@ public class MagicEventHandler {
         LivingEntity source = event.getSource().getPlayer();
         if(source != null && WildMagicHelper.shouldCauseWildMagic(source)){
             source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
-            WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag());
+            WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag(), (wm, s, t, ct) -> true);
         }
     }
 

@@ -36,7 +36,7 @@ public class MischiefArmor extends ArmorItem implements ISetItem, ITieredItem<Mi
     private static final ResourceLocation mischief_armor_set_bonus = RLoc.create("mischief_armor_set_bonus");
 
     public MischiefArmor(EquipmentSlot pSlot) {
-        super(ArmorMaterials.MISCHIEF, pSlot, new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC));
+        super(ArmorMaterials.MISCHIEF, pSlot, new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC).stacksTo(1));
     }
 
     @Override

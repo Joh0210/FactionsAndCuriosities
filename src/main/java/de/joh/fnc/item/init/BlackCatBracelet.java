@@ -2,7 +2,7 @@ package de.joh.fnc.item.init;
 
 import com.mna.api.items.ChargeableItem;
 import com.mna.items.artifice.curio.IPreEnchantedItem;
-import de.joh.fnc.event.handler.MagicEventHandler;
+import de.joh.fnc.event.handler.DamageEventHandler;
 import de.joh.fnc.factions.FactionInit;
 import de.joh.fnc.utils.CreativeModeTabInit;
 import net.minecraft.resources.ResourceLocation;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 /**
  * If the wearer of the bracelet hits someone with an unarmed punch, it will cause a Wild Magic Effect on the Target.
  * The Target can not gain anny good or very_good effects of it
- * @see MagicEventHandler
+ * @see DamageEventHandler
  * @author Joh0210
  */
 public class BlackCatBracelet extends ChargeableItem implements IPreEnchantedItem<BlackCatBracelet> {

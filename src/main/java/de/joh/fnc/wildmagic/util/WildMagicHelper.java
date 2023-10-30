@@ -139,7 +139,6 @@ public class WildMagicHelper {
             return true;
         }
 
-
         AtomicBoolean isWildMage = new AtomicBoolean(false);
         entity.getCapability(ManaAndArtificeMod.getProgressionCapability()).ifPresent((p)-> isWildMage.set(p.getAlliedFaction() == FactionInit.WILD));
         return isWildMage.get();
@@ -190,16 +189,6 @@ public class WildMagicHelper {
         }
 
         return false;
-    }
-
-    /**
-     * @param source        Source of the Wild Magic/Caster of the Spell
-     * @param target        Target of the Spell
-     * @param componentTag  What type of spell/event triggers the Wild Magic?
-     * @return true if the Wild Magic was performed
-     */
-    public static boolean performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag){
-        return performRandomWildMagic(source, target, componentTag, (wm, s, t, ct) -> true);
     }
 
     /**

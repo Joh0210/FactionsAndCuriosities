@@ -15,19 +15,30 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import de.joh.fnc.effect.beneficial.ExplosionResistance;
 
+/**
+ * Handler for Forge-Events that revolve around damage and attacks
+ * @author Joh0210
+ */
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class DamageEventHandler {
+    /**
+     * @see BlackCatBracelet
+     */
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent event) {
         if (event.getSource().getEntity() instanceof Player source && source != event.getEntity() && !source.getLevel().isClientSide()) {
             LivingEntity target = event.getEntityLiving();
-            if (source.isShiftKeyDown() && source.getMainHandItem().isEmpty() && ((BlackCatBracelet) ItemInit.MISCHIEF_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)) {
+            if (source.isShiftKeyDown() && source.getMainHandItem().isEmpty() && ((BlackCatBracelet) ItemInit.BLACK_CAT_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)) {
                WildMagicHelper.performRandomWildMagic(target, new SpellTarget(target), SpellPartTags.FRIENDLY,(wm, s, t, ct) -> wm.getQuality(SpellPartTags.FRIENDLY).ordinal() <= Quality.NEUTRAL.ordinal());
             }
         }
     }
 
+    /**
+     * @see ExplosionResistance
+     */
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
         DamageSource source = event.getSource();

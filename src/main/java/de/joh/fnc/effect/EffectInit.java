@@ -8,6 +8,7 @@ import de.joh.fnc.effect.beneficial.Maximized;
 import de.joh.fnc.effect.harmful.BadWildMagic;
 import de.joh.fnc.effect.harmful.LivingBomb;
 import de.joh.fnc.effect.harmful.Minimized;
+import de.joh.fnc.effect.neutral.RandomOreMiner;
 import de.joh.fnc.effect.neutral.WildMagic;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
 import net.minecraft.world.effect.MobEffect;
@@ -34,6 +35,7 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> MAXIMIZED = EFFECTS.register("maximized", Maximized::new);
     public static final RegistryObject<MobEffect> EMPOWERED = EFFECTS.register("empowered", Empowered::new);
     public static final RegistryObject<MobEffect> MINIMIZED = EFFECTS.register("minimized", Minimized::new);
+    public static final RegistryObject<MobEffect> RANDOM_ORE_MINER = EFFECTS.register("random_ore_miner", RandomOreMiner::new);
 
     public static void register(IEventBus eventBus){
         EFFECTS.register(eventBus);
