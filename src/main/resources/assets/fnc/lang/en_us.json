@@ -26,6 +26,8 @@
   "fnc:components/wild_damage.desc.magnitude": "Strength of wild magic that will affect the target.",
   "fnc:components/wild_damage.desc.duration": "The duration of the wild magic that will affect the target.",
   "fnc:components/wild_damage.desc.precision": "Makes the damage trend more towards average numbers.",
+  "fnc:components/cause_wild_magic": "Cause Wild Magic",
+  "fnc:components/cause_wild_magic.desc.precision": "0: Neutral - Very Good Effects\n1: All Effects\n2:Very Bad - Neutral Effects",
 
 
   "fnc:rituals/wild_energy": "Ritual of the Wild",

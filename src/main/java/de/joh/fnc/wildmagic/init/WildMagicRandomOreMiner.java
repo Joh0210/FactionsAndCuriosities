@@ -1,7 +1,9 @@
 package de.joh.fnc.wildmagic.init;
 
+import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.effect.EffectInit;
+import de.joh.fnc.wildmagic.util.Quality;
 import de.joh.fnc.wildmagic.util.WildMagicPotionEffect;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
@@ -21,6 +23,11 @@ public class WildMagicRandomOreMiner extends WildMagicPotionEffect {
      */
     public WildMagicRandomOreMiner(@NotNull ResourceLocation registryName, int frequency) {
         super(registryName, frequency, true, 3000, 1);
+    }
+
+    @Override
+    public @NotNull Quality getQuality(SpellPartTags componentTag) {
+        return Quality.NEUTRAL;
     }
 
     @Override

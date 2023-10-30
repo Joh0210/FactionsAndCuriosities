@@ -74,6 +74,48 @@
       }
     ]
   },
+  "Component: Cause Wild Magic": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Cause Wild Magic"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This spell will cause a Wild Magic Effect.\n\n"
+          },
+          {
+            "text": "Precision",
+            "bold": true
+          },
+          {
+            "text": " narrows down the selection of Wild Magic effects. Values below 1 ensure only positive effects. Values above 1 ensure only negative effects."
+          },
+          {
+            "text": "\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/cause_wild_magic"
+      }
+    ]
+  },
 
   "Dice": {
     "index": "1",

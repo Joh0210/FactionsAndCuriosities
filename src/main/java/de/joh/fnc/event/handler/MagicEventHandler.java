@@ -65,11 +65,11 @@ public class MagicEventHandler {
             int level = event.getCaster().getEffect(EffectInit.EMPOWERED.get()).getAmplifier() + 1;
 
 //            shape.getContainedAttributes().stream()
-//                    .filter(attribute -> attribute != Attribute.DELAY)
+//                    .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
 //                    .forEach(attribute -> shape.setValue(attribute, shape.getValue(attribute) + level * shape.getStep(attribute)));
 
             event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
-                    .filter(attribute -> attribute != Attribute.DELAY)
+                    .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute))));
         }
     }
