@@ -18,12 +18,14 @@ public class PerformWildMagicEvent extends LivingEvent {
     public final SpellTarget target;
 
     public final SpellPartTags componentTag;
+    private final boolean cancelable;
 
-    public PerformWildMagicEvent(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull WildMagic wildMagic, @NotNull SpellPartTags componentTag) {
+    public PerformWildMagicEvent(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull WildMagic wildMagic, @NotNull SpellPartTags componentTag, boolean cancelable) {
         super(source);
         this.wildMagic = wildMagic;
         this.target = target;
         this.componentTag = componentTag;
+        this.cancelable = cancelable;
     }
 
     public LivingEntity getSource() {
@@ -32,5 +34,10 @@ public class PerformWildMagicEvent extends LivingEvent {
 
     public Quality getQuality(){
         return wildMagic.getQuality(componentTag);
+    }
+
+    @Override
+    public boolean isCancelable() {
+        return cancelable;
     }
 }

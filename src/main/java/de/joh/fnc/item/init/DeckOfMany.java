@@ -28,7 +28,7 @@ public class DeckOfMany extends Item {
         InteractionResultHolder<ItemStack> ar = super.use(world, user, hand);
         if (!world.isClientSide()) {
             //todo: Might not be performed
-            WildMagicHelper.performRandomWildMagic(user, null, SpellPartTags.FRIENDLY, (wm, s, t, comp) -> wm.getQuality(comp) == Quality.VERY_BAD || wm.getQuality(comp) == Quality.VERY_GOOD);
+            WildMagicHelper.performRandomWildMagic(user, null, SpellPartTags.FRIENDLY, (wm, s, t, comp) -> wm.getQuality(comp) == Quality.VERY_BAD || wm.getQuality(comp) == Quality.VERY_GOOD, false);
         }
         user.getCooldowns().addCooldown(this, 1200);
         return ar;

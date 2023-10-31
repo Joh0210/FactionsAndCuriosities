@@ -103,6 +103,8 @@ public class MagicEventHandler {
         LivingEntity source = event.getSource();
         if(source.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmor mischiefArmor
                 && mischiefArmor.isSetEquipped(source)
+                && event.isCancelable()
+                && !event.isCanceled()
                 && (event.getQuality() == Quality.VERY_BAD /*|| event.getQuality() == Quality.BAD*/)
         ){
             event.setCanceled(true);

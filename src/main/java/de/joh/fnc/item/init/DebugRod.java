@@ -46,11 +46,11 @@ public class DebugRod extends Item {
      * @param target Of the Selection. Can be the target of the Wild Magic
      * @param stack Debug Rod used
      */
-    public void useWildMagic(Level world, Player source, SpellTarget target, ItemStack stack, SpellPartTags spellPartTag){
+    public void useWildMagic(Level world, Player source, SpellTarget target, ItemStack stack, SpellPartTags spellPartTag, boolean cancelable){
         if (!world.isClientSide()) {
             source.displayClientMessage(new TextComponent(new TranslatableComponent("fnc.feedback.selected.wildmagic").getString() + new TranslatableComponent(getSelectedWildMagic(stack).toString()).getString()), false);
             WildMagic wildMagic = getSelectedWildMagic(stack);
-            if(!WildMagicHelper.performWildMagic(wildMagic, source, target, spellPartTag)){
+            if(!WildMagicHelper.performWildMagic(wildMagic, source, target, spellPartTag, cancelable)){
                 source.displayClientMessage(new TranslatableComponent("fnc.feedback.selected.wildmagic.condition_false"), false);
             }
         }
@@ -122,7 +122,7 @@ public class DebugRod extends Item {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player user, @NotNull InteractionHand hand) {
         InteractionResultHolder<ItemStack> ar = super.use(world, user, hand);
-        useWildMagic(world, user, new SpellTarget(user), user.getItemInHand(hand), SpellPartTags.NEUTRAL);
+        useWildMagic(world, user, new SpellTarget(user), user.getItemInHand(hand), SpellPartTags.NEUTRAL, true);
         user.getCooldowns().addCooldown(this, 20);
         return ar;
     }
@@ -130,7 +130,7 @@ public class DebugRod extends Item {
     @Override
     public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
         if (attacker instanceof Player) {
-            useWildMagic(attacker.getLevel(), (Player) attacker, new SpellTarget(target), stack, SpellPartTags.HARMFUL);
+            useWildMagic(attacker.getLevel(), (Player) attacker, new SpellTarget(target), stack, SpellPartTags.HARMFUL, true);
         }
         return super.hurtEnemy(stack, target, attacker);
     }

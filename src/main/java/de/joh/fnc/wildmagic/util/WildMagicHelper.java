@@ -149,11 +149,11 @@ public class WildMagicHelper {
      * which could be canceled, so the Wild Magic will not be performed
      * @return false if canceled or if it could not be performed
      */
-    public static boolean performWildMagic(@NotNull WildMagic wildMagic, @NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag){
+    public static boolean performWildMagic(@NotNull WildMagic wildMagic, @NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, boolean cancelable){
         if(wildMagic.canBePerformed(source, target)){
-            PerformWildMagicEvent event = new PerformWildMagicEvent(source, target, wildMagic, componentTag);
+            PerformWildMagicEvent event = new PerformWildMagicEvent(source, target, wildMagic, componentTag, cancelable);
             MinecraftForge.EVENT_BUS.post(event);
-            if(event.isCanceled()) {
+            if(event.isCanceled() && cancelable) {
                 return false;
             }
             wildMagic.performWildMagic(source, target);
@@ -169,7 +169,7 @@ public class WildMagicHelper {
      * @param wildMagicFilters  An additional Condition, the Wild Magic must fulfill, in order to be selected & performed.
      * @return true if the Wild Magic was performed
      */
-    public static boolean performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, @NotNull WildMagicFilters wildMagicFilters){
+    public static boolean performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, @NotNull WildMagicFilters wildMagicFilters, boolean cancelable){
         if(!source.getLevel().isClientSide()){
             int wildMagicLuck = getWildMagicLuck(source);
             WildMagic wildMagic = getRandomWildMagic(
@@ -185,10 +185,14 @@ public class WildMagicHelper {
                 return false;
             }
 
-            return performWildMagic(wildMagic, source, target, componentTag);
+            return performWildMagic(wildMagic, source, target, componentTag, cancelable);
         }
 
         return false;
+    }
+
+    public static boolean performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, @NotNull WildMagicFilters wildMagicFilters){
+        return performRandomWildMagic(source, target, componentTag, wildMagicFilters, true);
     }
 
     /**

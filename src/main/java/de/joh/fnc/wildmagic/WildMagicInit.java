@@ -125,12 +125,12 @@ public class WildMagicInit {
         WildMagicInit.MAXIMIZED_TARGET = new WildMagicMaximize(RLoc.create("wildmagic/maximize_target"), 7, false);
         WildMagicInit.MINIMIZED_SELF = new WildMagicMinimize(RLoc.create("wildmagic/minimize_self"), 7, true);
         WildMagicInit.MINIMIZED_TARGET = new WildMagicMinimize(RLoc.create("wildmagic/minimize_target"), 7, false);
-        WildMagicInit.EMPOWERED_I_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_i_self"), 7, true, 1);
-        WildMagicInit.EMPOWERED_I_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_i_target"), 7, false, 1);
-        WildMagicInit.EMPOWERED_II_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_ii_self"), 7, true, 2);
-        WildMagicInit.EMPOWERED_II_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_ii_target"), 7, false, 2);
-        WildMagicInit.EMPOWERED_III_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_iii_self"), 7, true, 3);
-        WildMagicInit.EMPOWERED_III_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_iii_target"), 7, false, 3);
+        WildMagicInit.EMPOWERED_I_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/empowered_i_self"), 7, true, 1);
+        WildMagicInit.EMPOWERED_I_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/empowered_i_target"), 7, false, 1);
+        WildMagicInit.EMPOWERED_II_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/empowered_ii_self"), 7, true, 2);
+        WildMagicInit.EMPOWERED_II_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/empowered_ii_target"), 7, false, 2);
+        WildMagicInit.EMPOWERED_III_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/empowered_iii_self"), 7, true, 3);
+        WildMagicInit.EMPOWERED_III_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/empowered_iii_target"), 7, false, 3);
         WildMagicInit.RANDOM_ORE_MINER = new WildMagicRandomOreMiner(RLoc.create("wildmagic/random_ore_miner_self"), 7);
         WildMagicInit.SPELL_ADJUSTMENT = new WildMagicRandomSpellAdjustment(RLoc.create("wildmagic/random_spell_adjustment_self"), 7);
     }
