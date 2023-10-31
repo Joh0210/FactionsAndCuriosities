@@ -16,7 +16,8 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, FactionsAndCuriosities.MOD_ID);
 
-    public static final RegistryObject<Item> DEBUG_ROD = ITEMS.register("debug_rod", DebugRod::new);
+    public static final RegistryObject<Item> DEBUG_ROD = ITEMS.register("debug_orb_wild_magic", DebugOrbWildMagic::new);
+    public static final RegistryObject<Item> DEBUG_ROD_SPELL_ADJUSTMENT = ITEMS.register("debug_orb_spell_adjustment", DebugOrbSpellAdjustment::new);
     public static final RegistryObject<Item> DICE = ITEMS.register("dice_six", () -> new Dice(6));
 
     public static final RegistryObject<Item> MISCHIEF_HELMET = ITEMS.register("mischief_helmet", () -> new MischiefArmor(EquipmentSlot.HEAD));

@@ -46,7 +46,7 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
     }
 
     @Override
-    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
+    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         if(!targetsCaster && target == null){
             //todo: throw exception?
             FactionsAndCuriosities.LOGGER.error("tried performWildMagic on the Target with a null Target");

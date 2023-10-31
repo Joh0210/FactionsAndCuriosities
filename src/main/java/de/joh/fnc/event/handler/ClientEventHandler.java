@@ -1,8 +1,10 @@
 package de.joh.fnc.event.handler;
 
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.item.init.DebugRod;
+import de.joh.fnc.item.init.DebugOrbSpellAdjustment;
+import de.joh.fnc.item.init.DebugOrbWildMagic;
 import de.joh.fnc.networking.Messages;
+import de.joh.fnc.networking.packet.IncrementSelectedSpellAdjustmentC2SPacket;
 import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
@@ -23,16 +25,25 @@ public class ClientEventHandler {
 
     /**
      * Event to change the selected Wild Magic of the Debug Rod by Scrolling while Shifting.
-     * @see DebugRod
+     * @see DebugOrbWildMagic
      */
     @SubscribeEvent
     public static void onMouseScroll(InputEvent.MouseScrollEvent event){
         if (getPlayer() != null
-                && getPlayer().getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugRod debugRod
+                && getPlayer().getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbWildMagic debugRod
                 && getPlayer().isShiftKeyDown())
         {
             Messages.sendToServer(new IncrementSelectedWildMagicC2SPacket(event.getScrollDelta() < 0));
             debugRod.incrementWildMagicIterator(getPlayer().getItemBySlot(EquipmentSlot.MAINHAND), event.getScrollDelta() < 0, getPlayer());
+            event.setCanceled(true);
+        }
+
+        if (getPlayer() != null
+                && getPlayer().getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbSpellAdjustment debugRod
+                && getPlayer().isShiftKeyDown())
+        {
+            Messages.sendToServer(new IncrementSelectedSpellAdjustmentC2SPacket(event.getScrollDelta() < 0));
+            debugRod.incrementSpellAdjustmentIterator(getPlayer().getItemBySlot(EquipmentSlot.MAINHAND), event.getScrollDelta() < 0, getPlayer());
             event.setCanceled(true);
         }
     }

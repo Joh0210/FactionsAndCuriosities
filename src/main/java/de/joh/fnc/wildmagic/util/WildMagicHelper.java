@@ -156,7 +156,7 @@ public class WildMagicHelper {
             if(event.isCanceled() && cancelable) {
                 return false;
             }
-            wildMagic.performWildMagic(source, target);
+            wildMagic.performWildMagic(source, target, componentTag);
             return true;
         }
         return false;

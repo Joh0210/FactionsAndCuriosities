@@ -1,28 +1,27 @@
 package de.joh.fnc.networking.packet;
 
 import de.joh.fnc.event.handler.ClientEventHandler;
-import de.joh.fnc.item.init.DebugOrbWildMagic;
+import de.joh.fnc.item.init.DebugOrbSpellAdjustment;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
-
 /**
  * Package that sends the Mouse Scroll from the Client to the Sever to Select the spell on the Debug Rod
  * @see ClientEventHandler
- * @see DebugOrbWildMagic
+ * @see DebugOrbSpellAdjustment
  * @author Joh0210
  */
-public class IncrementSelectedWildMagicC2SPacket {
+public class IncrementSelectedSpellAdjustmentC2SPacket {
     private final boolean inverted;
 
-    public IncrementSelectedWildMagicC2SPacket(boolean inverted){
+    public IncrementSelectedSpellAdjustmentC2SPacket(boolean inverted){
         this.inverted = inverted;
     }
 
-    public IncrementSelectedWildMagicC2SPacket(FriendlyByteBuf buf){
+    public IncrementSelectedSpellAdjustmentC2SPacket(FriendlyByteBuf buf){
         this.inverted = buf.readBoolean();
     }
 
@@ -37,8 +36,8 @@ public class IncrementSelectedWildMagicC2SPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(()->{
             ServerPlayer player = context.getSender();
-            if(player != null && player.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbWildMagic debugRod){
-                debugRod.incrementWildMagicIterator(player.getItemBySlot(EquipmentSlot.MAINHAND), inverted, player);
+            if(player != null && player.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbSpellAdjustment debugRod){
+                debugRod.incrementSpellAdjustmentIterator(player.getItemBySlot(EquipmentSlot.MAINHAND), inverted, player);
             }
         });
         return true;

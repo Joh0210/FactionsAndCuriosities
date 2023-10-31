@@ -10,6 +10,7 @@ import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
 import de.joh.fnc.event.additional.PerformSpellAdjustmentEvent;
 import de.joh.fnc.event.additional.PerformWildMagicEvent;
+import de.joh.fnc.item.init.DebugOrbSpellAdjustment;
 import de.joh.fnc.item.init.MischiefArmor;
 import de.joh.fnc.spelladjustment.util.SpellAdjustmentHelper;
 import de.joh.fnc.wildmagic.util.Quality;
@@ -36,20 +37,26 @@ public class MagicEventHandler {
      */
     @SubscribeEvent
     public static void onSpellCast(SpellCastEvent event){
-        if(event.getCaster().hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
+        Player caster = event.getCaster();
+
+        if(caster.getItemBySlot(EquipmentSlot.OFFHAND).getItem() instanceof DebugOrbSpellAdjustment debugOrbSpellAdjustment){
+            debugOrbSpellAdjustment.useSpellAdjustment(caster.getLevel(), caster, caster.getItemBySlot(EquipmentSlot.OFFHAND), event);
+        }
+
+        if(caster.hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> true);
-            event.getCaster().removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
-            event.getCaster().addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
+            caster.removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
+            caster.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
         }
 
         IModifiedSpellPart<Shape> shape = event.getSpell().getShape();
 
         int maximizedLevel = 0;
-        if(event.getCaster().hasEffect(EffectInit.MAXIMIZED.get())){
-            maximizedLevel += event.getCaster().getEffect(EffectInit.MAXIMIZED.get()).getAmplifier() + 1;
+        if(caster.hasEffect(EffectInit.MAXIMIZED.get())){
+            maximizedLevel += caster.getEffect(EffectInit.MAXIMIZED.get()).getAmplifier() + 1;
         }
-        if(event.getCaster().hasEffect(EffectInit.MINIMIZED.get())){
-            maximizedLevel -= event.getCaster().getEffect(EffectInit.MINIMIZED.get()).getAmplifier() + 1;
+        if(caster.hasEffect(EffectInit.MINIMIZED.get())){
+            maximizedLevel -= caster.getEffect(EffectInit.MINIMIZED.get()).getAmplifier() + 1;
         }
         if(maximizedLevel > 0 && shape != null){
 //            shape.getContainedAttributes().stream()
@@ -69,8 +76,8 @@ public class MagicEventHandler {
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMinimumValue(attribute))));
         }
 
-        if(event.getCaster().hasEffect(EffectInit.EMPOWERED.get()) && shape != null){
-            int level = event.getCaster().getEffect(EffectInit.EMPOWERED.get()).getAmplifier() + 1;
+        if(caster.hasEffect(EffectInit.EMPOWERED.get()) && shape != null){
+            int level = caster.getEffect(EffectInit.EMPOWERED.get()).getAmplifier() + 1;
 
 //            shape.getContainedAttributes().stream()
 //                    .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
@@ -79,6 +86,10 @@ public class MagicEventHandler {
             event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
                     .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute))));
+
+            event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
+                    .filter(attribute -> attribute == Attribute.PRECISION)
+                    .forEach(attribute -> modifiedSpellPart.setValue(attribute, Math.min(modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute), modifiedSpellPart.getMaximumValue(attribute)))));
         }
     }
 

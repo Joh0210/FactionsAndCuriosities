@@ -71,7 +71,7 @@ public class WildMagicExplosion extends WildMagicCOT {
     }
 
     @Override
-    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
+    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         Vec3 coordinates;
 
         if(targetsCaster){

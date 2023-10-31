@@ -29,13 +29,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Magic wand that allows the player to switch back and forth between the different Wild Magics to test them.
  * <br> To select a Wild Magic: Scroll while Shifting
  * <br> How to use a Wild Magic:
- * <br> - {@link de.joh.fnc.item.init.DebugRod#use(Level, Player, InteractionHand) Use} -> Wilde magic on your Self
- * <br> - {@link de.joh.fnc.item.init.DebugRod#hurtEnemy(ItemStack, LivingEntity, LivingEntity) Hurt} -> Wild magic on the other Person
+ * <br> - {@link DebugOrbWildMagic#use(Level, Player, InteractionHand) Use} -> Wilde magic on your Self
+ * <br> - {@link DebugOrbWildMagic#hurtEnemy(ItemStack, LivingEntity, LivingEntity) Hurt} -> Wild magic on the other Person
  * <br> Only available in creative
  * @author Joh0210
  */
-public class DebugRod extends Item {
-    public DebugRod() {
+public class DebugOrbWildMagic extends Item {
+    public DebugOrbWildMagic() {
         super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
     }
 

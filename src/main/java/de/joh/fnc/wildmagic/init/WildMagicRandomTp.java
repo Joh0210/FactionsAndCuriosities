@@ -47,7 +47,7 @@ public class WildMagicRandomTp extends WildMagic {
     }
 
     @Override
-    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
+    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         //todo: Cast a Teleport Event
         if(!targetsCaster && target == null){
             //todo: throw exception?

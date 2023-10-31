@@ -35,7 +35,7 @@ public class WildMagicLightning extends WildMagicCOT {
     }
 
     @Override
-    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
+    protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         Vec3 pos;
         if(targetsCaster){
             pos = source.position();

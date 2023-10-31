@@ -1,7 +1,8 @@
 {
   "itemGroup.factions_and_curiosities": "Factions & Curiosities",
 
-  "item.fnc.debug_rod": "Wild Debug Orb",
+  "item.fnc.debug_orb_wild_magic": "Debug Orb: Wild Magic",
+  "item.fnc.debug_orb_spell_adjustment": "Debug Orb: Spell Adjustment",
   "item.fnc.dice_six": "Dice (D6)",
   "item.fnc.mischief_helmet": "Mischief Helmet",
   "item.fnc.mischief_chestplate": "Mischief Chestplate",
@@ -19,6 +20,8 @@
   "fnc.feedback.selected.wildmagic": "Selected Wild Magic: ",
   "fnc.feedback.selected.wildmagic.condition_false" : "The condition of the selected Wild Magic was not fulfilled!",
   "fnc.feedback.wildmagic.accident_protection" : "The disaster was averted!",
+  "fnc.feedback.selected.spelladjustment": "Selected Spell Adjustment: ",
+  "fnc.feedback.selected.spelladjustment.condition_false" : "The condition of the selected Spell Adjustment was not fulfilled!",
 
   "fnc:components/wild_damage": "Wild Damage",
   "fnc:components/wild_damage.desc.delay": "A delay in seconds before applying this component.",

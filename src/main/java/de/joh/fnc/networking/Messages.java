@@ -1,5 +1,6 @@
 package de.joh.fnc.networking;
 
+import de.joh.fnc.networking.packet.IncrementSelectedSpellAdjustmentC2SPacket;
 import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
 import de.joh.fnc.utils.RLoc;
 import net.minecraft.server.level.ServerPlayer;
@@ -34,6 +35,12 @@ public class Messages {
                 .decoder(IncrementSelectedWildMagicC2SPacket::new)
                 .encoder((IncrementSelectedWildMagicC2SPacket::toBytes))
                 .consumer(IncrementSelectedWildMagicC2SPacket::handle)
+                .add();
+
+        net.messageBuilder(IncrementSelectedSpellAdjustmentC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(IncrementSelectedSpellAdjustmentC2SPacket::new)
+                .encoder((IncrementSelectedSpellAdjustmentC2SPacket::toBytes))
+                .consumer(IncrementSelectedSpellAdjustmentC2SPacket::handle)
                 .add();
     }
 
