@@ -51,6 +51,7 @@ public class WildMagicInit {
     public static WildMagic EMPOWERED_III_SELF;
     public static WildMagic EMPOWERED_III_TARGET;
     public static WildMagic RANDOM_ORE_MINER;
+    public static WildMagic SPELL_ADJUSTMENT;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<WildMagic> event) {
@@ -90,6 +91,7 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.EMPOWERED_III_SELF);
         event.getRegistry().register(WildMagicInit.EMPOWERED_III_TARGET);
         event.getRegistry().register(WildMagicInit.RANDOM_ORE_MINER);
+        event.getRegistry().register(WildMagicInit.SPELL_ADJUSTMENT);
     }
 
     //todo: revise frequency
@@ -130,5 +132,6 @@ public class WildMagicInit {
         WildMagicInit.EMPOWERED_III_SELF = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_iii_self"), 7, true, 3);
         WildMagicInit.EMPOWERED_III_TARGET = new WildMagicEmpowered(RLoc.create("wildmagic/minimize_iii_target"), 7, false, 3);
         WildMagicInit.RANDOM_ORE_MINER = new WildMagicRandomOreMiner(RLoc.create("wildmagic/random_ore_miner_self"), 7);
+        WildMagicInit.SPELL_ADJUSTMENT = new WildMagicRandomSpellAdjustment(RLoc.create("wildmagic/random_spell_adjustment_self"), 7);
     }
 }

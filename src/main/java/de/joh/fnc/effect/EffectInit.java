@@ -9,6 +9,7 @@ import de.joh.fnc.effect.harmful.BadWildMagic;
 import de.joh.fnc.effect.harmful.LivingBomb;
 import de.joh.fnc.effect.harmful.Minimized;
 import de.joh.fnc.effect.neutral.RandomOreMiner;
+import de.joh.fnc.effect.neutral.RandomSpellAdjustment;
 import de.joh.fnc.effect.neutral.WildMagic;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
 import net.minecraft.world.effect.MobEffect;
@@ -29,6 +30,7 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> WILD_MAGIC_COOLDOWN = EFFECTS.register("wild_magic_cooldown", WildMagicCooldown::new);
     public static final RegistryObject<MobEffect> WILD_MAGIC = EFFECTS.register("wild_magic", WildMagic::new);
     public static final RegistryObject<MobEffect> BAD_WILD_MAGIC = EFFECTS.register("bad_wild_magic", BadWildMagic::new);
+    public static final RegistryObject<MobEffect> RANDOM_SPELL_ADJUSTMENT = EFFECTS.register("random_spell_adjustment", RandomSpellAdjustment::new);
     public static final RegistryObject<MobEffect> GOOD_WILD_MAGIC = EFFECTS.register("good_wild_magic", GoodWildMagic::new);
     public static final RegistryObject<MobEffect> EXPLOSION_RESISTANCE = EFFECTS.register("explosion_resistance", ExplosionResistance::new);
     public static final RegistryObject<MobEffect> LIVING_BOMB = EFFECTS.register("living_bomb", LivingBomb::new);

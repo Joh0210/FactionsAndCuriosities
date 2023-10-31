@@ -8,8 +8,10 @@ import com.mna.api.spells.parts.Shape;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
+import de.joh.fnc.event.additional.PerformSpellAdjustmentEvent;
 import de.joh.fnc.event.additional.PerformWildMagicEvent;
 import de.joh.fnc.item.init.MischiefArmor;
+import de.joh.fnc.spelladjustment.util.SpellAdjustmentHelper;
 import de.joh.fnc.wildmagic.util.Quality;
 import de.joh.fnc.wildmagic.util.WildMagic;
 import de.joh.fnc.wildmagic.util.WildMagicHelper;
@@ -34,6 +36,12 @@ public class MagicEventHandler {
      */
     @SubscribeEvent
     public static void onSpellCast(SpellCastEvent event){
+        if(event.getCaster().hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
+            SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> true);
+            event.getCaster().removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
+            event.getCaster().addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
+        }
+
         IModifiedSpellPart<Shape> shape = event.getSpell().getShape();
 
         int maximizedLevel = 0;
@@ -101,6 +109,19 @@ public class MagicEventHandler {
             if(source instanceof Player){
                 ((Player) source).displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);
             }
+            source.level.playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPerformSpellAdjustment(PerformSpellAdjustmentEvent event){
+        Player source = event.getSource();
+        if(source.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmor mischiefArmor
+                && mischiefArmor.isSetEquipped(source)
+                && (event.getQuality() == Quality.VERY_BAD /*|| event.getQuality() == Quality.BAD*/)
+        ){
+            event.setCanceled(true);
+            source.displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);
             source.level.playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
         }
     }

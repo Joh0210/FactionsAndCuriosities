@@ -46,11 +46,6 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
     }
 
     @Override
-    public boolean requiresSpellLivingTarget() {
-        return !targetsCaster;
-    }
-
-    @Override
     protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target) {
         if(!targetsCaster && target == null){
             //todo: throw exception?
@@ -66,13 +61,18 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
             return;
         }
 
-        if(!wildMagicTarget.hasEffect(getMobEffect()) || wildMagicTarget.getEffect(getMobEffect()).getAmplifier() < (level - 1)){
-            wildMagicTarget.addEffect(new MobEffectInstance(getMobEffect(), duration, level - 1));
+        wildMagicTarget.addEffect(new MobEffectInstance(getMobEffect(), duration, level - 1));
+    }
+
+    @Override
+    public boolean canBePerformed(@NotNull LivingEntity source, @Nullable SpellTarget target) {
+        if(!targetsCaster && (target == null || target.getLivingEntity() == null)){
+            return false;
         }
-        else{
-            //Update the duration of the effect.
-            wildMagicTarget.getEffect(getMobEffect()).update(new MobEffectInstance(getMobEffect(), duration, level - 1));
-        }
+
+        LivingEntity wildMagicTarget = targetsCaster ? source : target.getLivingEntity();
+
+        return !wildMagicTarget.hasEffect(getMobEffect()) || wildMagicTarget.getEffect(getMobEffect()).getAmplifier() < (level - 1);
     }
 
     @Override
@@ -85,5 +85,10 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
             return getMobEffect().getCategory() == MobEffectCategory.HARMFUL ? Quality.BAD : Quality.GOOD;
         }
         return getMobEffect().getCategory() == MobEffectCategory.HARMFUL ? Quality.GOOD : Quality.BAD;
+    }
+
+    @Override
+    public boolean requiresSpellLivingTarget() {
+        return !targetsCaster;
     }
 }

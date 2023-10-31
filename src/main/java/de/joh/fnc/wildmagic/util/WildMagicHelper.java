@@ -44,7 +44,7 @@ public class WildMagicHelper {
     /**
      * IMPORTANT: Use only on Server Level!
      * @param rolls                 how often should be rolled. (Minimum of 1)
-     * @param chooseHigherQuality   in case of multiple rolls, schuld the better Wild Magic be chosen?
+     * @param chooseHigherQuality   in case of multiple rolls, should the better Wild Magic be chosen?
      * @param source                Source of the Wild Magic/Caster of the Spell
      * @param target                Target of the Spell
      * @param componentTag          What type of spell/event triggers the Wild Magic?
