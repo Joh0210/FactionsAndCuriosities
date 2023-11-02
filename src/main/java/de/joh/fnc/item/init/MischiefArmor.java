@@ -6,6 +6,7 @@ import com.mna.items.armor.IBrokenArmorReplaceable;
 import com.mna.items.armor.ISetItem;
 import de.joh.fnc.event.handler.MagicEventHandler;
 import de.joh.fnc.factions.FactionInit;
+import de.joh.fnc.spelladjustment.util.SpellAdjustment;
 import de.joh.fnc.utils.AttributeInit;
 import de.joh.fnc.utils.CreativeModeTabInit;
 import de.joh.fnc.utils.RLoc;
@@ -26,7 +27,7 @@ import java.util.function.Consumer;
  * An Armor for the {@link FactionInit#WILD Wilde Courts Faction}
  * <br>Set Effekts (full armor must be worn):
  * <br> - +1 Wild Magic Luck
- * <br> - protects the wearer of VeryBad (and Bad?) Wild Magic Effects
+ * <br> - 50% chance that a random neutral or better {@link SpellAdjustment} will be executed when you cast a spell (todo: make adjustable via config)
  * @see MagicEventHandler
  * @author Joh0210
  */

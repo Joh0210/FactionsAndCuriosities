@@ -18,25 +18,21 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Applies the Spell also on the Caster
+ * Applies the Spell on the Caster instead of the target
  * @author Joh0210
  */
-public class SpellAdjustmentShare extends SpellAdjustment {
+public class SpellAdjustmentReversal extends SpellAdjustment {
     /**
      * @param registryName ID under which the upgrade can be recognized
      * @param frequency    How often does the entry appear in the random-selection-list?
      */
-    public SpellAdjustmentShare(@NotNull ResourceLocation registryName, int frequency) {
+    public SpellAdjustmentReversal(@NotNull ResourceLocation registryName, int frequency) {
         super(registryName, frequency);
     }
 
     @Override
     public @NotNull Quality getQuality(SpellPartTags componentTag) {
-        return switch (componentTag) {
-            case HARMFUL -> Quality.VERY_BAD;
-            case FRIENDLY -> Quality.GOOD;
-            default -> Quality.NEUTRAL;
-        };
+        return componentTag == SpellPartTags.HARMFUL ? Quality.VERY_BAD : Quality.BAD;
     }
 
     @Override
@@ -51,6 +47,8 @@ public class SpellAdjustmentShare extends SpellAdjustment {
                 comp.getPart().ApplyEffect(new SpellSource(caster, InteractionHand.MAIN_HAND), new SpellTarget(caster), comp, new SpellContext(caster.getLevel(), event.getSpell()));
             }
         });
+
+        event.setCanceled(true);
     }
 
     @Override

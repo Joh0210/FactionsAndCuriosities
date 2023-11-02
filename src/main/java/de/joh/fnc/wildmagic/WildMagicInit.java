@@ -53,6 +53,27 @@ public class WildMagicInit {
     public static WildMagic RANDOM_ORE_MINER;
     public static WildMagic SPELL_ADJUSTMENT;
     public static WildMagic DOUBLE_TROUBLE;
+    public static WildMagic REMOVE_EFFECTS_SELF;
+    public static WildMagic REMOVE_EFFECTS_TARGET;
+    public static WildMagic HUNGER_EMPTY_SELF;
+    public static WildMagic HUNGER_EMPTY_TARGET;
+    public static WildMagic HUNGER_REFILL_SELF;
+    public static WildMagic HUNGER_REFILL_TARGET;
+    public static WildMagic WEATHER_SUNSHINE;
+    public static WildMagic WEATHER_RAIN;
+    public static WildMagic WEATHER_STORM;
+    public static WildMagic TIME_DAY;
+    public static WildMagic TIME_NIGHT;
+    public static WildMagic HEAL_SELF;
+    public static WildMagic HEAL_TARGET;
+    public static WildMagic FIRE_5_SELF;
+    public static WildMagic FIRE_5_TARGET;
+    public static WildMagic FIRE_10_SELF;
+    public static WildMagic FIRE_10_TARGET;
+    public static WildMagic FIRE_15_SELF;
+    public static WildMagic FIRE_15_TARGET;
+    public static WildMagic FIRE_20_SELF;
+    public static WildMagic FIRE_20_TARGET;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<WildMagic> event) {
@@ -94,6 +115,27 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.RANDOM_ORE_MINER);
         event.getRegistry().register(WildMagicInit.SPELL_ADJUSTMENT);
         event.getRegistry().register(WildMagicInit.DOUBLE_TROUBLE);
+        event.getRegistry().register(WildMagicInit.REMOVE_EFFECTS_SELF);
+        event.getRegistry().register(WildMagicInit.REMOVE_EFFECTS_TARGET);
+        event.getRegistry().register(WildMagicInit.HUNGER_EMPTY_SELF);
+        event.getRegistry().register(WildMagicInit.HUNGER_EMPTY_TARGET);
+        event.getRegistry().register(WildMagicInit.HUNGER_REFILL_SELF);
+        event.getRegistry().register(WildMagicInit.HUNGER_REFILL_TARGET);
+        event.getRegistry().register(WildMagicInit.WEATHER_SUNSHINE);
+        event.getRegistry().register(WildMagicInit.WEATHER_RAIN);
+        event.getRegistry().register(WildMagicInit.WEATHER_STORM);
+        event.getRegistry().register(WildMagicInit.TIME_DAY);
+        event.getRegistry().register(WildMagicInit.TIME_NIGHT);
+        event.getRegistry().register(WildMagicInit.HEAL_SELF);
+        event.getRegistry().register(WildMagicInit.HEAL_TARGET);
+        event.getRegistry().register(WildMagicInit.FIRE_5_SELF);
+        event.getRegistry().register(WildMagicInit.FIRE_5_TARGET);
+        event.getRegistry().register(WildMagicInit.FIRE_10_SELF);
+        event.getRegistry().register(WildMagicInit.FIRE_10_TARGET);
+        event.getRegistry().register(WildMagicInit.FIRE_15_SELF);
+        event.getRegistry().register(WildMagicInit.FIRE_15_TARGET);
+        event.getRegistry().register(WildMagicInit.FIRE_20_SELF);
+        event.getRegistry().register(WildMagicInit.FIRE_20_TARGET);
     }
 
     //todo: revise frequency
@@ -136,5 +178,26 @@ public class WildMagicInit {
         WildMagicInit.RANDOM_ORE_MINER = new WildMagicRandomOreMiner(RLoc.create("wildmagic/random_ore_miner_self"), 7);
         WildMagicInit.SPELL_ADJUSTMENT = new WildMagicRandomSpellAdjustment(RLoc.create("wildmagic/random_spell_adjustment_self"), 7);
         WildMagicInit.DOUBLE_TROUBLE = new WildMagicDoubleTrouble(RLoc.create("wildmagic/double_truble"), 7);
+        WildMagicInit.REMOVE_EFFECTS_SELF = new WildMagicRemoveEffects(RLoc.create("wildmagic/remove_effects_self"), 7, true);
+        WildMagicInit.REMOVE_EFFECTS_TARGET = new WildMagicRemoveEffects(RLoc.create("wildmagic/remove_effects_target"), 7, false);
+        WildMagicInit.HUNGER_EMPTY_SELF = new WildMagicHunger(RLoc.create("wildmagic/hunger_empty_self"), 7, true, true);
+        WildMagicInit.HUNGER_EMPTY_TARGET = new WildMagicHunger(RLoc.create("wildmagic/hunger_empty_target"), 7, false, true);
+        WildMagicInit.HUNGER_REFILL_SELF = new WildMagicHunger(RLoc.create("wildmagic/hunger_refill_self"), 7, true, false);
+        WildMagicInit.HUNGER_REFILL_TARGET = new WildMagicHunger(RLoc.create("wildmagic/hunger_refill_target"), 7, false, false);
+        WildMagicInit.WEATHER_SUNSHINE = new WildMagicWeather(RLoc.create("wildmagic/weather_sunshine"), 7, false, false);
+        WildMagicInit.WEATHER_RAIN = new WildMagicWeather(RLoc.create("wildmagic/weather_rain"), 7, true, false);
+        WildMagicInit.WEATHER_STORM = new WildMagicWeather(RLoc.create("wildmagic/weather_storm"), 7, true, true);
+        WildMagicInit.TIME_DAY = new WildMagicTime(RLoc.create("wildmagic/time_day"), 7, true);
+        WildMagicInit.TIME_NIGHT = new WildMagicTime(RLoc.create("wildmagic/time_night"), 7, false);
+        WildMagicInit.HEAL_SELF = new WildMagicHeal(RLoc.create("wildmagic/heal_self"), 7, true);
+        WildMagicInit.HEAL_TARGET = new WildMagicHeal(RLoc.create("wildmagic/heal_target"), 7, false);
+        WildMagicInit.FIRE_5_SELF = new WildMagicFire(RLoc.create("wildmagic/fire_5_self"), 7, true, 5);
+        WildMagicInit.FIRE_5_TARGET = new WildMagicFire(RLoc.create("wildmagic/fire_5_target"), 7, false, 5);
+        WildMagicInit.FIRE_10_SELF = new WildMagicFire(RLoc.create("wildmagic/fire_10_self"), 7, true, 10);
+        WildMagicInit.FIRE_10_TARGET = new WildMagicFire(RLoc.create("wildmagic/fire_10_target"), 7, false, 10);
+        WildMagicInit.FIRE_15_SELF = new WildMagicFire(RLoc.create("wildmagic/fire_15_self"), 7, true, 15);
+        WildMagicInit.FIRE_15_TARGET = new WildMagicFire(RLoc.create("wildmagic/fire_15_target"), 7, false, 15);
+        WildMagicInit.FIRE_20_SELF = new WildMagicFire(RLoc.create("wildmagic/fire_20_self"), 7, true, 20);
+        WildMagicInit.FIRE_20_TARGET = new WildMagicFire(RLoc.create("wildmagic/fire_20_target"), 7, false, 20);
     }
 }

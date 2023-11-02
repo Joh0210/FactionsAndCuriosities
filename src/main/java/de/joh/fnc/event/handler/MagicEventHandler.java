@@ -10,7 +10,9 @@ import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
 import de.joh.fnc.event.additional.PerformSpellAdjustmentEvent;
 import de.joh.fnc.event.additional.PerformWildMagicEvent;
+import de.joh.fnc.item.ItemInit;
 import de.joh.fnc.item.init.DebugOrbSpellAdjustment;
+import de.joh.fnc.item.init.FourLeafCloverRing;
 import de.joh.fnc.item.init.MischiefArmor;
 import de.joh.fnc.spelladjustment.util.SpellAdjustmentHelper;
 import de.joh.fnc.wildmagic.util.Quality;
@@ -26,6 +28,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Random;
+
 /**
  * Handler for Forge-Events that revolve around magic
  * @author Joh0210
@@ -33,7 +37,10 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class MagicEventHandler {
     /**
-     * Handels {@link EffectInit#MAXIMIZED}, {@link EffectInit#MINIMIZED} and {@link EffectInit#EMPOWERED}
+     * Handels {@link EffectInit#MAXIMIZED}, {@link EffectInit#MINIMIZED}, {@link EffectInit#EMPOWERED} and {@link EffectInit#RANDOM_SPELL_ADJUSTMENT}
+     * also:
+     * @see DebugOrbSpellAdjustment
+     * @see MischiefArmor
      */
     @SubscribeEvent
     public static void onSpellCast(SpellCastEvent event){
@@ -47,6 +54,11 @@ public class MagicEventHandler {
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> true);
             caster.removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
             caster.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
+        } else if(caster.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmor mischiefArmor
+                && mischiefArmor.isSetEquipped(caster)
+                && new Random().nextBoolean()
+        ){
+            SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(s.getComponent(0).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
         }
 
         IModifiedSpellPart<Shape> shape = event.getSpell().getShape();
@@ -59,18 +71,10 @@ public class MagicEventHandler {
             maximizedLevel -= caster.getEffect(EffectInit.MINIMIZED.get()).getAmplifier() + 1;
         }
         if(maximizedLevel > 0 && shape != null){
-//            shape.getContainedAttributes().stream()
-//                    .filter(attribute -> attribute != Attribute.DELAY)
-//                    .forEach(attribute -> shape.setValue(attribute, shape.getMaximumValue(attribute)));
-
             event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
                     .filter(attribute -> attribute != Attribute.DELAY)
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMaximumValue(attribute))));
         } else if(maximizedLevel < 0 && shape != null){
-//            shape.getContainedAttributes().stream()
-//                    .filter(attribute -> attribute != Attribute.DELAY)
-//                    .forEach(attribute -> shape.setValue(attribute, shape.getMinimumValue(attribute)));
-
             event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
                     .filter(attribute -> attribute != Attribute.DELAY)
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMinimumValue(attribute))));
@@ -78,11 +82,6 @@ public class MagicEventHandler {
 
         if(caster.hasEffect(EffectInit.EMPOWERED.get()) && shape != null){
             int level = caster.getEffect(EffectInit.EMPOWERED.get()).getAmplifier() + 1;
-
-//            shape.getContainedAttributes().stream()
-//                    .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
-//                    .forEach(attribute -> shape.setValue(attribute, shape.getValue(attribute) + level * shape.getStep(attribute)));
-
             event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
                     .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute))));
@@ -104,19 +103,20 @@ public class MagicEventHandler {
     public static void onComponentApplying(ComponentApplyingEvent event){
         LivingEntity source = event.getSource().getPlayer();
         if(source != null && WildMagicHelper.shouldCauseWildMagic(source)){
-            source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
             WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag(), (wm, s, t, ct) -> true);
+            source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
         }
     }
 
+    /**
+     * Processing of {@link FourLeafCloverRing} protection
+     */
     @SubscribeEvent
     public static void onPerformWildMagic(PerformWildMagicEvent event){
         LivingEntity source = event.getSource();
-        if(source.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmor mischiefArmor
-                && mischiefArmor.isSetEquipped(source)
-                && event.isCancelable()
-                && !event.isCanceled()
-                && (event.getQuality() == Quality.VERY_BAD /*|| event.getQuality() == Quality.BAD*/)
+        if(event.isCancelable() && !event.isCanceled()
+                && (event.getQuality() == Quality.VERY_BAD)
+                && ((FourLeafCloverRing) ItemInit.FOUR_LEAF_CLOVER_RING.get()).isEquippedAndHasMana(source, 20.0F, true)
         ){
             event.setCanceled(true);
             if(source instanceof Player){
@@ -126,12 +126,15 @@ public class MagicEventHandler {
         }
     }
 
+    /**
+     * Processing of {@link FourLeafCloverRing} protection
+     */
     @SubscribeEvent
     public static void onPerformSpellAdjustment(PerformSpellAdjustmentEvent event){
         Player source = event.getSource();
-        if(source.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmor mischiefArmor
-                && mischiefArmor.isSetEquipped(source)
-                && (event.getQuality() == Quality.VERY_BAD /*|| event.getQuality() == Quality.BAD*/)
+        if(event.isCancelable() && !event.isCanceled()
+                && (event.getQuality() == Quality.VERY_BAD)
+                && ((FourLeafCloverRing) ItemInit.FOUR_LEAF_CLOVER_RING.get()).isEquippedAndHasMana(source, 20.0F, true)
         ){
             event.setCanceled(true);
             source.displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);

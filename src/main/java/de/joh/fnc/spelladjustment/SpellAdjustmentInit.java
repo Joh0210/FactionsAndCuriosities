@@ -25,6 +25,8 @@ public class SpellAdjustmentInit {
     public static SpellAdjustment MINIMIZE;
     public static SpellAdjustment MAXIMIZE;
     public static SpellAdjustment POWER;
+    public static SpellAdjustment REVERSAL;
+    public static SpellAdjustment PRECISE;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<SpellAdjustment> event) {
@@ -38,6 +40,8 @@ public class SpellAdjustmentInit {
         event.getRegistry().register(SpellAdjustmentInit.MINIMIZE);
         event.getRegistry().register(SpellAdjustmentInit.MAXIMIZE);
         event.getRegistry().register(SpellAdjustmentInit.POWER);
+        event.getRegistry().register(SpellAdjustmentInit.REVERSAL);
+        event.getRegistry().register(SpellAdjustmentInit.PRECISE);
     }
 
     //todo: revise frequency
@@ -47,10 +51,12 @@ public class SpellAdjustmentInit {
         SpellAdjustmentInit.EMPOWERED_II = new SpellAdjustmentEmpowered(RLoc.create("spelladjustment/empowered_ii"), 7, 2);
         SpellAdjustmentInit.EMPOWERED_III = new SpellAdjustmentEmpowered(RLoc.create("spelladjustment/empowered_iii"), 7, 3);
         SpellAdjustmentInit.SHARE = new SpellAdjustmentShare(RLoc.create("spelladjustment/share"), 7);
-        SpellAdjustmentInit.DOUBLE_TROUBLE = new SpellAdjustmentDoubleTrouble(RLoc.create("spelladjustment/double_truble"), 7);
+        SpellAdjustmentInit.DOUBLE_TROUBLE = new SpellAdjustmentDoubleTrouble(RLoc.create("spelladjustment/double_trouble"), 7);
         SpellAdjustmentInit.DELAY = new SpellAdjustmentDelay(RLoc.create("spelladjustment/delay"), 7);
         SpellAdjustmentInit.MINIMIZE = new SpellAdjustmentMinimize(RLoc.create("spelladjustment/minimize"), 7);
         SpellAdjustmentInit.MAXIMIZE = new SpellAdjustmentMaximize(RLoc.create("spelladjustment/maximize"), 7);
         SpellAdjustmentInit.POWER = new SpellAdjustmentPower(RLoc.create("spelladjustment/power"), 7);
+        SpellAdjustmentInit.REVERSAL = new SpellAdjustmentReversal(RLoc.create("spelladjustment/reversal"), 7);
+        SpellAdjustmentInit.PRECISE = new SpellAdjustmentPrecise(RLoc.create("spelladjustment/precise"), 7);
     }
 }
