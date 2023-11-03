@@ -1,9 +1,13 @@
 package de.joh.fnc.wildmagic;
 
+import com.mna.effects.EffectInit;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.utils.RLoc;
 import de.joh.fnc.wildmagic.init.*;
 import de.joh.fnc.wildmagic.util.WildMagic;
+import de.joh.fnc.wildmagic.util.WildMagicMCPotionEffect;
+import de.joh.fnc.wildmagic.util.WildMagicOtherPotionEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -74,6 +78,47 @@ public class WildMagicInit {
     public static WildMagic FIRE_15_TARGET;
     public static WildMagic FIRE_20_SELF;
     public static WildMagic FIRE_20_TARGET;
+    public static WildMagic QUARTER_LIVE_SELF;
+    public static WildMagic QUARTER_LIVE_TARGET;
+    public static WildMagic HALF_LIVE_SELF;
+    public static WildMagic HALF_LIVE_TARGET;
+    public static WildMagic ARMORED_GOLD_SELF;
+    public static WildMagic ARMORED_GOLD_TARGET;
+    public static WildMagic ARMORED_IRON_SELF;
+    public static WildMagic ARMORED_IRON_TARGET;
+    public static WildMagic ARMORED_DIAMOND_SELF;
+    public static WildMagic ARMORED_DIAMOND_TARGET;
+    public static WildMagic SLOWNESS_SELF;
+    public static WildMagic SLOWNESS_TARGET;
+    public static WildMagic WEAKNESS_I_TARGET;
+    public static WildMagic WEAKNESS_II_TARGET;
+    public static WildMagic BLINDNESS_SELF;
+    public static WildMagic BLINDNESS_TARGET;
+    public static WildMagic LEVITATION_SELF;
+    public static WildMagic LEVITATION_TARGET;
+    public static WildMagic BAD_OMEN_SELF;
+    public static WildMagic SPEED_TARGET;
+    public static WildMagic SPEED_SELF;
+    public static WildMagic STRENGTH_TARGET;
+    public static WildMagic REGENERATION_SELF;
+    public static WildMagic REGENERATION_TARGET;
+    public static WildMagic RESISTANCE_I_SELF;
+    public static WildMagic RESISTANCE_I_TARGET;
+    public static WildMagic RESISTANCE_II_SELF;
+    public static WildMagic RESISTANCE_II_TARGET;
+    public static WildMagic FIRE_RESISTANCE_SELF;
+    public static WildMagic WATER_BREATHING_SELF;
+    public static WildMagic ABSORPTION_V_SELF;
+    public static WildMagic ABSORPTION_V_TARGET;
+    public static WildMagic SLOW_FALLING_SELF;
+    public static WildMagic DOLPHINS_GRACE_SELF;
+    public static WildMagic ELDRIN_SIGHT_SELF;
+    public static WildMagic GRAVITY_WELL_SELF;
+    public static WildMagic GRAVITY_WELL_TARGET;
+    public static WildMagic ENTANGLE_SELF;
+    public static WildMagic ENTANGLE_TARGET;
+    public static WildMagic WATERY_GRAVE_SELF;
+    public static WildMagic WATERY_GRAVE_TARGET;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<WildMagic> event) {
@@ -136,6 +181,47 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.FIRE_15_TARGET);
         event.getRegistry().register(WildMagicInit.FIRE_20_SELF);
         event.getRegistry().register(WildMagicInit.FIRE_20_TARGET);
+        event.getRegistry().register(WildMagicInit.QUARTER_LIVE_SELF);
+        event.getRegistry().register(WildMagicInit.QUARTER_LIVE_TARGET);
+        event.getRegistry().register(WildMagicInit.HALF_LIVE_SELF);
+        event.getRegistry().register(WildMagicInit.HALF_LIVE_TARGET);
+        event.getRegistry().register(WildMagicInit.ARMORED_GOLD_SELF);
+        event.getRegistry().register(WildMagicInit.ARMORED_GOLD_TARGET);
+        event.getRegistry().register(WildMagicInit.ARMORED_IRON_SELF);
+        event.getRegistry().register(WildMagicInit.ARMORED_IRON_TARGET);
+        event.getRegistry().register(WildMagicInit.ARMORED_DIAMOND_SELF);
+        event.getRegistry().register(WildMagicInit.ARMORED_DIAMOND_TARGET);
+        event.getRegistry().register(WildMagicInit.SLOWNESS_SELF);
+        event.getRegistry().register(WildMagicInit.SLOWNESS_TARGET);
+        event.getRegistry().register(WildMagicInit.WEAKNESS_I_TARGET);
+        event.getRegistry().register(WildMagicInit.WEAKNESS_II_TARGET);
+        event.getRegistry().register(WildMagicInit.BLINDNESS_SELF);
+        event.getRegistry().register(WildMagicInit.BLINDNESS_TARGET);
+        event.getRegistry().register(WildMagicInit.LEVITATION_SELF);
+        event.getRegistry().register(WildMagicInit.LEVITATION_TARGET);
+        event.getRegistry().register(WildMagicInit.BAD_OMEN_SELF);
+        event.getRegistry().register(WildMagicInit.SPEED_SELF);
+        event.getRegistry().register(WildMagicInit.SPEED_TARGET);
+        event.getRegistry().register(WildMagicInit.STRENGTH_TARGET);
+        event.getRegistry().register(WildMagicInit.REGENERATION_SELF);
+        event.getRegistry().register(WildMagicInit.REGENERATION_TARGET);
+        event.getRegistry().register(WildMagicInit.RESISTANCE_I_SELF);
+        event.getRegistry().register(WildMagicInit.RESISTANCE_I_TARGET);
+        event.getRegistry().register(WildMagicInit.RESISTANCE_II_SELF);
+        event.getRegistry().register(WildMagicInit.RESISTANCE_II_TARGET);
+        event.getRegistry().register(WildMagicInit.FIRE_RESISTANCE_SELF);
+        event.getRegistry().register(WildMagicInit.WATER_BREATHING_SELF);
+        event.getRegistry().register(WildMagicInit.ABSORPTION_V_SELF);
+        event.getRegistry().register(WildMagicInit.ABSORPTION_V_TARGET);
+        event.getRegistry().register(WildMagicInit.SLOW_FALLING_SELF);
+        event.getRegistry().register(WildMagicInit.DOLPHINS_GRACE_SELF);
+        event.getRegistry().register(WildMagicInit.ELDRIN_SIGHT_SELF);
+        event.getRegistry().register(WildMagicInit.GRAVITY_WELL_SELF);
+        event.getRegistry().register(WildMagicInit.GRAVITY_WELL_TARGET);
+        event.getRegistry().register(WildMagicInit.ENTANGLE_SELF);
+        event.getRegistry().register(WildMagicInit.ENTANGLE_TARGET);
+        event.getRegistry().register(WildMagicInit.WATERY_GRAVE_SELF);
+        event.getRegistry().register(WildMagicInit.WATERY_GRAVE_TARGET);
     }
 
     //todo: revise frequency
@@ -199,5 +285,48 @@ public class WildMagicInit {
         WildMagicInit.FIRE_15_TARGET = new WildMagicFire(RLoc.create("wildmagic/fire_15_target"), 7, false, 15);
         WildMagicInit.FIRE_20_SELF = new WildMagicFire(RLoc.create("wildmagic/fire_20_self"), 7, true, 20);
         WildMagicInit.FIRE_20_TARGET = new WildMagicFire(RLoc.create("wildmagic/fire_20_target"), 7, false, 20);
+        WildMagicInit.QUARTER_LIVE_SELF = new WildMagicReduceHP(RLoc.create("wildmagic/quarter_live_self"), 7, true, 0.25f, 50);
+        WildMagicInit.QUARTER_LIVE_TARGET = new WildMagicReduceHP(RLoc.create("wildmagic/quarter_live_target"), 7, false, 0.25f, 50);
+        WildMagicInit.HALF_LIVE_SELF = new WildMagicReduceHP(RLoc.create("wildmagic/half_live_self"), 7, true, 0.5f, 50);
+        WildMagicInit.HALF_LIVE_TARGET = new WildMagicReduceHP(RLoc.create("wildmagic/half_live_target"), 7, false, 0.5f, 50);
+        WildMagicInit.ARMORED_GOLD_SELF = new WildMagicArmored(RLoc.create("wildmagic/armored_gold_self"), 7, true, WildMagicArmored.Type.GOLD);
+        WildMagicInit.ARMORED_GOLD_TARGET = new WildMagicArmored(RLoc.create("wildmagic/armored_gold_target"), 7, false, WildMagicArmored.Type.GOLD);
+        WildMagicInit.ARMORED_IRON_SELF = new WildMagicArmored(RLoc.create("wildmagic/armored_iron_self"), 7, true, WildMagicArmored.Type.IRON);
+        WildMagicInit.ARMORED_IRON_TARGET = new WildMagicArmored(RLoc.create("wildmagic/armored_iron_target"), 7, false, WildMagicArmored.Type.IRON);
+        WildMagicInit.ARMORED_DIAMOND_SELF = new WildMagicArmored(RLoc.create("wildmagic/armored_diamond_self"), 7, true, WildMagicArmored.Type.DIAMOND);
+        WildMagicInit.ARMORED_DIAMOND_TARGET = new WildMagicArmored(RLoc.create("wildmagic/armored_diamond_target"), 7, false, WildMagicArmored.Type.DIAMOND);
+        WildMagicInit.SLOWNESS_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/slowness_self"), 7, true, MobEffects.MOVEMENT_SLOWDOWN, 600, 2);
+        WildMagicInit.SLOWNESS_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/slowness_target"), 7, false, MobEffects.MOVEMENT_SLOWDOWN, 600, 2);
+        WildMagicInit.WEAKNESS_I_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/weakness_i_target"), 7, false, MobEffects.WEAKNESS, 600, 1);
+        WildMagicInit.WEAKNESS_II_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/weakness_ii_target"), 7, false, MobEffects.WEAKNESS, 600, 2);
+        WildMagicInit.BLINDNESS_SELF = new WildMagicBlindness(RLoc.create("wildmagic/blindness_self"), 7, true);
+        WildMagicInit.BLINDNESS_TARGET = new WildMagicBlindness(RLoc.create("wildmagic/blindness_target"), 7, false);
+        WildMagicInit.LEVITATION_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/levitation_self"), 7, true, MobEffects.LEVITATION, 400, 1);
+        WildMagicInit.LEVITATION_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/weakness_target"), 7, false, MobEffects.LEVITATION, 400, 1);
+        WildMagicInit.BAD_OMEN_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/bad_omen_self"), 7, true, MobEffects.BAD_OMEN, 12000, 1);
+        WildMagicInit.SPEED_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/speed_self"), 7, true, MobEffects.MOVEMENT_SPEED, 2400, 2);
+        WildMagicInit.SPEED_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/speed_target"), 7, false, MobEffects.MOVEMENT_SPEED, 2400, 2);
+        WildMagicInit.STRENGTH_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/strength_target"), 7, false, MobEffects.DAMAGE_BOOST, 1200, 2);
+        WildMagicInit.REGENERATION_SELF = new WildMagicRegeneration(RLoc.create("wildmagic/regeneration_self"), 7, false);
+        WildMagicInit.REGENERATION_TARGET = new WildMagicRegeneration(RLoc.create("wildmagic/regeneration_target"), 7, false);
+        WildMagicInit.RESISTANCE_I_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/resistance_i_self"), 7, true, MobEffects.DAMAGE_RESISTANCE, 2400, 1);
+        WildMagicInit.RESISTANCE_I_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/resistance_i_target"), 7, false, MobEffects.DAMAGE_RESISTANCE, 2400, 1);
+        WildMagicInit.RESISTANCE_II_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/resistance_ii_self"), 7, true, MobEffects.DAMAGE_RESISTANCE, 2400, 2, true, false);
+        WildMagicInit.RESISTANCE_II_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/resistance_ii_target"), 7, false, MobEffects.DAMAGE_RESISTANCE, 2400, 2, true, false);
+        WildMagicInit.FIRE_RESISTANCE_SELF = new WildMagicFireResistance(RLoc.create("wildmagic/fire_resistance_self"), 7, true);
+        WildMagicInit.WATER_BREATHING_SELF = new WildMagicWaterBreathing(RLoc.create("wildmagic/water_breathing_self"), 7, true);
+        WildMagicInit.ABSORPTION_V_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/absorption_v_self"), 7, true, MobEffects.ABSORPTION, 12000, 5);
+        WildMagicInit.ABSORPTION_V_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/absorption_v_target"), 7, false, MobEffects.ABSORPTION, 12000, 5);
+        WildMagicInit.SLOW_FALLING_SELF = new WildMagicMCPotionEffect(RLoc.create("wildmagic/slow_falling_self"), 7, true, MobEffects.SLOW_FALLING, 6000, 1);
+        WildMagicInit.DOLPHINS_GRACE_SELF = new WildMagicDolphinsGrace(RLoc.create("wildmagic/dolphins_grace_self"), 7);
+        WildMagicInit.ELDRIN_SIGHT_SELF = new WildMagicEldrinSight(RLoc.create("wildmagic/eldrin_sight_self"), 7);
+        WildMagicInit.GRAVITY_WELL_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/gravity_well_self"), 7, true, EffectInit.GRAVITY_WELL, 600, 1);
+        WildMagicInit.GRAVITY_WELL_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/gravity_well_target"), 7, false, EffectInit.GRAVITY_WELL, 600, 1);
+        WildMagicInit.ENTANGLE_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/entangle_self"), 7, true, EffectInit.ENTANGLE, 300, 1, true, true);
+        WildMagicInit.ENTANGLE_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/entangle_target"), 7, false, EffectInit.ENTANGLE, 300, 1, true, true);
+        WildMagicInit.WATERY_GRAVE_SELF = new WildMagicWateryGrave(RLoc.create("wildmagic/watery_grave_self"), 7, true);
+        WildMagicInit.WATERY_GRAVE_TARGET = new WildMagicWateryGrave(RLoc.create("wildmagic/watery_grave_target"), 7, false);
+
+
     }
 }

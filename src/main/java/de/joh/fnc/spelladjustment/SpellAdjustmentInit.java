@@ -27,6 +27,7 @@ public class SpellAdjustmentInit {
     public static SpellAdjustment POWER;
     public static SpellAdjustment REVERSAL;
     public static SpellAdjustment PRECISE;
+    public static SpellAdjustment RENEWAL;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<SpellAdjustment> event) {
@@ -42,6 +43,7 @@ public class SpellAdjustmentInit {
         event.getRegistry().register(SpellAdjustmentInit.POWER);
         event.getRegistry().register(SpellAdjustmentInit.REVERSAL);
         event.getRegistry().register(SpellAdjustmentInit.PRECISE);
+        event.getRegistry().register(SpellAdjustmentInit.RENEWAL);
     }
 
     //todo: revise frequency
@@ -58,5 +60,6 @@ public class SpellAdjustmentInit {
         SpellAdjustmentInit.POWER = new SpellAdjustmentPower(RLoc.create("spelladjustment/power"), 7);
         SpellAdjustmentInit.REVERSAL = new SpellAdjustmentReversal(RLoc.create("spelladjustment/reversal"), 7);
         SpellAdjustmentInit.PRECISE = new SpellAdjustmentPrecise(RLoc.create("spelladjustment/precise"), 7);
+        SpellAdjustmentInit.RENEWAL = new SpellAdjustmentRenewal(RLoc.create("spelladjustment/renewal"), 7);
     }
 }

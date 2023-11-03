@@ -26,6 +26,9 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
      * Which Level will the Effect have (staring at 1)
      */
     public final int level;
+    private final boolean extremismQuality;
+
+    private final boolean extremeOnlyNotHarmful;
 
     /**
      * @return the effect that will be Applied
@@ -38,11 +41,26 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
      * @param duration How long will the effect last. (in Ticks)
      * @param level Which Level will the Effect have (staring at 1)
      * @param targetsCaster Is the wild Magic source(true) or the spellTarget(false) targeted?
+     * @param extremismQuality true: Bad -> Very Bad; Good -> Very Good
+     * @param extremeOnlyNotHarmful true: Bad -> Very Bad; Good -> Very Good only on the friendly side
      */
-    public WildMagicPotionEffect(@NotNull ResourceLocation registryName, int frequency, boolean targetsCaster, int duration, int level) {
+    public WildMagicPotionEffect(@NotNull ResourceLocation registryName, int frequency, boolean targetsCaster, int duration, int level, boolean extremismQuality, boolean extremeOnlyNotHarmful) {
         super(registryName, frequency, targetsCaster);
         this.duration = duration;
         this.level = level;
+        this.extremismQuality = extremismQuality;
+        this.extremeOnlyNotHarmful = extremeOnlyNotHarmful && extremismQuality;
+    }
+
+    /**
+     * @param registryName ID under which the upgrade can be recognized
+     * @param frequency How often does the entry appear in the random-selection-list?
+     * @param duration How long will the effect last. (in Ticks)
+     * @param level Which Level will the Effect have (staring at 1)
+     * @param targetsCaster Is the wild Magic source(true) or the spellTarget(false) targeted?
+     */
+    public WildMagicPotionEffect(@NotNull ResourceLocation registryName, int frequency, boolean targetsCaster, int duration, int level) {
+        this(registryName, frequency, targetsCaster, duration, level, false, false);
     }
 
     @Override
@@ -81,10 +99,12 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
             return Quality.NEUTRAL;
         }
 
-        if(targetsCaster || componentTag != SpellPartTags.HARMFUL){
-            return getMobEffect().getCategory() == MobEffectCategory.HARMFUL ? Quality.BAD : Quality.GOOD;
+        if((targetsCaster || componentTag != SpellPartTags.HARMFUL)
+                == (getMobEffect().getCategory() == MobEffectCategory.HARMFUL)){
+            return extremismQuality ? Quality.VERY_BAD : Quality.BAD;
+        } else {
+            return extremismQuality && !extremeOnlyNotHarmful ? Quality.VERY_GOOD : Quality.GOOD;
         }
-        return getMobEffect().getCategory() == MobEffectCategory.HARMFUL ? Quality.GOOD : Quality.BAD;
     }
 
     @Override
