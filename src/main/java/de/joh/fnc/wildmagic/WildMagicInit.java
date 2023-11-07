@@ -119,6 +119,11 @@ public class WildMagicInit {
     public static WildMagic ENTANGLE_TARGET;
     public static WildMagic WATERY_GRAVE_SELF;
     public static WildMagic WATERY_GRAVE_TARGET;
+    public static WildMagic MANA_BOOST_I_SELF;
+    public static WildMagic MANA_BOOST_II_SELF;
+    public static WildMagic TRUE_INVISIBILITY_SELF;
+    public static WildMagic TRUE_INVISIBILITY_TARGET;
+    public static WildMagic SPIDER_CLIMBING_SELF;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<WildMagic> event) {
@@ -222,6 +227,11 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.ENTANGLE_TARGET);
         event.getRegistry().register(WildMagicInit.WATERY_GRAVE_SELF);
         event.getRegistry().register(WildMagicInit.WATERY_GRAVE_TARGET);
+        event.getRegistry().register(WildMagicInit.MANA_BOOST_I_SELF);
+        event.getRegistry().register(WildMagicInit.MANA_BOOST_II_SELF);
+        event.getRegistry().register(WildMagicInit.TRUE_INVISIBILITY_SELF);
+        event.getRegistry().register(WildMagicInit.TRUE_INVISIBILITY_TARGET);
+        event.getRegistry().register(WildMagicInit.SPIDER_CLIMBING_SELF);
     }
 
     //todo: revise frequency
@@ -326,7 +336,10 @@ public class WildMagicInit {
         WildMagicInit.ENTANGLE_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/entangle_target"), 7, false, EffectInit.ENTANGLE, 300, 1, true, true);
         WildMagicInit.WATERY_GRAVE_SELF = new WildMagicWateryGrave(RLoc.create("wildmagic/watery_grave_self"), 7, true);
         WildMagicInit.WATERY_GRAVE_TARGET = new WildMagicWateryGrave(RLoc.create("wildmagic/watery_grave_target"), 7, false);
-
-
+        WildMagicInit.MANA_BOOST_I_SELF = new WildMagicManaBoost(RLoc.create("wildmagic/mana_boost_i_self"), 7, 2);
+        WildMagicInit.MANA_BOOST_II_SELF = new WildMagicManaBoost(RLoc.create("wildmagic/mana_boost_ii_self"), 7, 5);
+        WildMagicInit.TRUE_INVISIBILITY_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/true_invisibility_self"), 7, true, EffectInit.TRUE_INVISIBILITY, 1200, 1, true, false);
+        WildMagicInit.TRUE_INVISIBILITY_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/true_invisibility_target"), 7, false, EffectInit.TRUE_INVISIBILITY, 1200, 1, true, false);
+        WildMagicInit.SPIDER_CLIMBING_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/spider_climbing_self"), 7, true, EffectInit.SPIDER_CLIMBING, 6000, 1);
     }
 }

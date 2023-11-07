@@ -27,4 +27,9 @@ public class WildPickaxe extends PickaxeItem {
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
         return super.damageItem(stack, 0, entity, onBroken);
     }
+
+    @Override
+    public boolean isRepairable(@NotNull ItemStack stack) {
+        return false;
+    }
 }

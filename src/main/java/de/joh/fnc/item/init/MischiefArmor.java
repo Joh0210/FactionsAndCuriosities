@@ -84,6 +84,6 @@ public class MischiefArmor extends ArmorItem implements ISetItem, ITieredItem<Mi
 
     @Override
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
-        return super.damageItem(stack, amount * 3, entity, onBroken);
+        return super.damageItem(stack, amount, entity, onBroken);
     }
 }

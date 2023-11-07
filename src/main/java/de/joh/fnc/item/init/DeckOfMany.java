@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Performs a random Extreme-Wild-Magic (either VERY_BAD or VERY_GOOD, nothing in beaten)
- * todo: Artefact?
  * @author Joh0210
  */
 public class DeckOfMany extends Item {

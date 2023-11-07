@@ -124,7 +124,7 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
 
     //DM&R
-    implementation fg.deobf("curse.maven:dragonmagicandrelics-785039:4790333")
+    implementation fg.deobf("curse.maven:dragonmagicandrelics-785039:${dmnr_curse_version_id}")
 
     // M&A and its API
     // compileOnly "com.mithion:mna:${mna_version}:api" //api, compilation only

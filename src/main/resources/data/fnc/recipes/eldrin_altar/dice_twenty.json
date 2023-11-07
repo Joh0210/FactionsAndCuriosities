@@ -1,0 +1,27 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "fnc:dice_twenty",
+  "tier": 4,
+  "requiredFaction": "fnc:wild",
+  "items": [
+    "fnc:dice_six",
+    "minecraft:obsidian",
+    "minecraft:obsidian",
+    "minecraft:obsidian",
+    "mna:greater_mote_air",
+    "mna:greater_mote_arcane",
+    "minecraft:gold_block",
+    "minecraft:gold_block",
+    "minecraft:gold_block"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "WIND",
+      "amount": 500
+    },
+    {
+      "affinity": "ARCANE",
+      "amount": 500
+    }
+  ]
+}

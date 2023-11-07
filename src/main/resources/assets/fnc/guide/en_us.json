@@ -140,10 +140,13 @@
       {
         "type": "manaweaving_altar",
         "location":"fnc:manaweaving/dice_six"
+      },
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/dice_twenty"
       }
     ]
   },
-
   "Black Cat Bracelet": {
     "index": "1",
     "category": "artifice",
@@ -190,6 +193,174 @@
       }
     ]
   },
+  "Ring of the Four Leaf Clover": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ring of the Four Leaf Clover"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This ring will protects me from very bad Wild Magic- and Spell Adjustment Effects\n\nIt only contains so much magic, and will eventually need to be recharged. It can make use of "
+          },
+          {
+            "text": "Mana Crystal Fragments",
+            "color": "blue"
+          },
+          {
+            "text": " \n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/four_leaf_clover_ring"
+      }
+    ]
+  },
+  "Wild Pickaxe": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wild Pickaxe"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This pickaxe will drops a random ore when I mine one.\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/wild_pickaxe"
+      }
+    ]
+  },
+
+  "Deck of Many": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Deck of Many"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This relict performs a "
+          },
+          {
+            "text": "extreme ",
+            "bold": true
+          },
+          {
+            "text": "Wild Magic! I don't know if it's good or bad, just extreme and there is no way to resist the heart of the cards!"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Do you dare to draw a card?",
+            "italic": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/deck_of_many"
+      }
+    ]
+  },
+
+  "Mischief Armor": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Mischief Armor"
+      },
+      {
+        "type": "text",
+        "value": "The wild magic has neither a form nor a place, but many associates of it appear with a stroke of the gods. And we, as wild magicians, take advantage of this call and make the armor in the image of the god of mischief.  The armor itself is as strong as a knight's plate armor, and while wearing it, it seems that Wild Magic favors me. Likewise, there is a 50% chance that casting a spell will change it in a positive way.",
+        "json": [
+          {
+            "text": "The wild magic has neither a form nor a place, but many associates of it appear with a stroke of the gods. And we, as wild magicians, take advantage of this call and make the armor in the image of the god of mischief.\n\nThe armor itself is as strong as a knight's plate armor, and while wearing it, it seems that Wild Magic favors me. \n\nLikewise, there is a 50% chance that casting a spell will change it in a positive way."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_helmet"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_chestplate"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_legging"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_boots"
+      }
+    ]
+  },
 
   "Ritual of the Wild": {
     "index": 0,
@@ -204,10 +375,84 @@
         "value": "",
         "json": [
           {
-            "text": "todo",
+            "text": "This ritual allows the Wild Magic to flow through you and makes you part of the ",
             "color": ""
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
           }
         ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/wild_energy"
+      }
+    ]
+  },
+
+  "Faction: Wild Courts": {
+    "index": 10,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Faction: Wild Courts"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "The "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": " use magic in its purest and most untamed form.\n\nTheir magic is as powerful as it is dangerous. Whenever they access it, there is a small chance that the wild magic will cause a random event."
+          },
+          {
+            "text": ".\n\nWild relics include items such as the "
+          },
+          {
+            "text": "Deck of Many",
+            "color": "gold"
+          },
+          {
+            "text": ", which takes wild magic to its extreme, and spell components such as "
+          },
+          {
+            "text": "Wild Damage",
+            "color": "gold"
+          },
+          {
+            "text": " and "
+          },
+          {
+            "text": "Cause Wild Magic",
+            "color": "gold"
+          },
+          {
+            "text": ".\n\nThey are allied with the "
+          },
+          {
+            "text": "Faerie Courts",
+            "color": "dark_green"
+          },
+          {
+            "text": ".\n\nWhen looking at the occulus, anything requiring the Wild faction will be marked with the following icon:"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "location": "fnc:textures/guide/faction_icon_wild.png",
+        "width": 16,
+        "height": 16
       }
     ],
     "related_recipes": [

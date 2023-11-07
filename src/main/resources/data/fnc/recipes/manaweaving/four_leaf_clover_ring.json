@@ -1,0 +1,22 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "fnc:four_leaf_clover_ring",
+  "requiredFaction": "fnc:wild",
+  "tier": 3,
+  "items": [
+    "fnc:dice_six",
+    "mna:mana_crystal_fragment",
+    "mna:mundane_ring",
+    "minecraft:leaves",
+    "minecraft:leaves",
+    "minecraft:leaves",
+    "minecraft:leaves",
+    "mna:ma_flowers",
+    "mna:ma_flowers"
+  ],
+  "patterns": [
+    "mna:circle",
+    "mna:circle",
+    "mna:circle"
+  ]
+}

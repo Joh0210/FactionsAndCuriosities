@@ -1,0 +1,25 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "fnc:wild_pickaxe",
+  "requiredFaction": "fnc:wild",
+  "tier": 4,
+  "items": [
+    "fnc:dice_six",
+    "minecraft:golden_pickaxe",
+    "minecraft:copper_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:coal",
+    "minecraft:lapis_lazuli",
+    "minecraft:diamond",
+    "minecraft:emerald"
+  ],
+  "patterns": [
+    "mna:split_triangle",
+    "mna:triangle",
+    "mna:circle",
+    "mna:inverted_triangle",
+    "mna:square",
+    "mna:diamond"
+  ]
+}

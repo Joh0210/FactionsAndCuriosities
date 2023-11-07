@@ -1,0 +1,24 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "fnc:mischief_boots",
+  "tier": 5,
+  "requiredFaction": "fnc:wild",
+  "items": [
+    "minecraft:golden_boots",
+    "fnc:dice_twenty",
+    "mna:rune_arcane",
+    "mna:rune_wind",
+    "mna:runic_silk",
+    "mna:infused_thread"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "ARCANE",
+      "amount": 750
+    },
+    {
+      "affinity": "WIND",
+      "amount": 200
+    }
+  ]
+}

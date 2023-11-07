@@ -19,7 +19,6 @@ import java.util.function.Supplier;
  */
 public enum ArmorMaterials implements ArmorMaterial {
     MISCHIEF("armor_of_mischief", 33, new int[]{2, 5, 6, 2}, 25, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, () -> Ingredient.of(ItemInit.RUNIC_SILK.get()));
-
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
     private final String name;
     private final int maxDamageFactor;

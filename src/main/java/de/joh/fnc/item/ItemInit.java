@@ -19,6 +19,7 @@ public class ItemInit {
     public static final RegistryObject<Item> DEBUG_ROD = ITEMS.register("debug_orb_wild_magic", DebugOrbWildMagic::new);
     public static final RegistryObject<Item> DEBUG_ROD_SPELL_ADJUSTMENT = ITEMS.register("debug_orb_spell_adjustment", DebugOrbSpellAdjustment::new);
     public static final RegistryObject<Item> DICE = ITEMS.register("dice_six", () -> new Dice(6));
+    public static final RegistryObject<Item> DICE_20 = ITEMS.register("dice_twenty", () -> new Dice(20));
 
     public static final RegistryObject<Item> MISCHIEF_HELMET = ITEMS.register("mischief_helmet", () -> new MischiefArmor(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> MISCHIEF_CHESTPLATE = ITEMS.register("mischief_chestplate", () -> new MischiefArmor(EquipmentSlot.CHEST));
