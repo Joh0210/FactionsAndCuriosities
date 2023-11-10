@@ -15,8 +15,8 @@
     "mna:ma_flowers"
   ],
   "patterns": [
-    "mna:circle",
-    "mna:circle",
-    "mna:circle"
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/circle"
   ]
 }

@@ -9,7 +9,7 @@ logoFile="factions_and_curiosities.png"
 credits="Thanks to Mithion for helping creating some code elements of this mod! Also thanks to Ceddi and Nico for helping with testing and balancing."
 authors="Joh0210"
 description='''
-todo
+A mod that expands the world of magic to include additional factions!
 '''
 
 
@@ -25,13 +25,6 @@ modId="mna"
 mandatory=true
 versionRange="[2,)"
 ordering="NONE"
-side="BOTH"
-
-[[dependencies.fnc]]
-modId="dragonmagicandrelics"
-mandatory=false
-versionRange="[1.18.2-2.1.25,)"
-ordering="AFTER"
 side="BOTH"
 
 [[dependencies.fnc]]

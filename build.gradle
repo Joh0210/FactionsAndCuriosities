@@ -100,12 +100,6 @@ repositories {
     maven { url 'https://maven.manaandartifice.com/releases/' }
     maven { url 'https://maven.theillusivec4.top/' }
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
-    maven {
-        url "https://cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
     mavenLocal()
 }
 
@@ -122,9 +116,6 @@ dependencies {
     compileOnly fg.deobf("top.theillusivec4.caelus:caelus-forge:${caelus_version}")
 
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
-
-    //DM&R
-    implementation fg.deobf("curse.maven:dragonmagicandrelics-785039:${dmnr_curse_version_id}")
 
     // M&A and its API
     // compileOnly "com.mithion:mna:${mna_version}:api" //api, compilation only

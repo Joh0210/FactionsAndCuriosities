@@ -2,7 +2,6 @@ package de.joh.fnc.wildmagic.util;
 
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
-import de.joh.fnc.FactionsAndCuriosities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -66,16 +65,12 @@ public abstract class WildMagicPotionEffect extends WildMagicCOT {
     @Override
     protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         if(!targetsCaster && target == null){
-            //todo: throw exception?
-            FactionsAndCuriosities.LOGGER.error("tried performWildMagic on the Target with a null Target");
             return;
         }
 
         LivingEntity wildMagicTarget = targetsCaster ? source : target.getLivingEntity();
 
         if(wildMagicTarget == null){
-            //todo: throw exception?
-            FactionsAndCuriosities.LOGGER.error("target.getLivingEntity() of performWildMagic is null but was used");
             return;
         }
 

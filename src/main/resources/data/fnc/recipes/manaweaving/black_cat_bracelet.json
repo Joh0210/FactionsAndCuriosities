@@ -11,11 +11,11 @@
     "minecraft:black_dye"
   ],
   "patterns": [
-    "mna:triangle",
-    "mna:circle",
-    "mna:split_triangle",
-    "mna:square",
-    "mna:diamond",
-    "mna:diamond"
+    "mna:manaweave_patterns/triangle",
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/split_triangle",
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/diamond",
+    "mna:manaweave_patterns/diamond"
   ]
 }

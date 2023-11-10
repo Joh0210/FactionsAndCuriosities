@@ -5,7 +5,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 
 public class RandomSpellAdjustment extends MobEffect {
     public RandomSpellAdjustment() {
-        //todo: adjust color
-        super(MobEffectCategory.NEUTRAL, -10496);
+        super(MobEffectCategory.NEUTRAL, 0xdaa520);
     }
 }

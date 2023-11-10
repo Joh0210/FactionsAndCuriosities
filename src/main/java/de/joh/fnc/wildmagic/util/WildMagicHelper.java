@@ -109,7 +109,6 @@ public class WildMagicHelper {
      */
     public static int getWildMagicLuck(LivingEntity entity){
         //todo: Use Event instead
-        //todo: build Uses more performant
         int wildMagicLuck = 0;
 
         AttributeInstance modifierAttribute = entity.getAttribute(AttributeInit.WILD_MAGIC_LUCK.get());
@@ -129,7 +128,7 @@ public class WildMagicHelper {
     }
 
     public static boolean shouldCauseWildMagic(LivingEntity entity){
-        //todo: Use Event instead
+        //todo: Use Event instead -> Event should roll to see if Wild Magic is caused
 
         if(entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())){
             return false;

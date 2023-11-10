@@ -26,6 +26,11 @@ public class CommonEventHandler {
         if(ModTags.isBlockIn(event.getState().getBlock(), ModTags.Blocks.ORES)
                 && !event.isCanceled() && ForgeHooks.isCorrectToolForDrops(event.getState(), event.getPlayer())
                 && (event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxe || event.getPlayer().hasEffect(EffectInit.RANDOM_ORE_MINER.get()))){
+
+            if(event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxe wp){
+                wp.usedByPlayer(event.getPlayer());
+            }
+
             Block block = ModTags.getRandomBlocks(ModTags.Blocks.ORES);
             if(block != null) {
                 event.setCanceled(true);

@@ -1,0 +1,21 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "fnc:glittering_potato",
+  "requiredFaction": "fnc:wild",
+  "tier": 3,
+  "quantity": 8,
+  "items": [
+    "mna:chimerite_gem",
+    "minecraft:poisonous_potato",
+    "minecraft:baked_potato",
+    "minecraft:baked_potato",
+    "minecraft:baked_potato",
+    "minecraft:baked_potato",
+    "minecraft:baked_potato",
+    "minecraft:baked_potato",
+    "minecraft:baked_potato"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/circle"
+  ]
+}

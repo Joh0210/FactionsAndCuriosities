@@ -15,11 +15,11 @@
     "minecraft:emerald"
   ],
   "patterns": [
-    "mna:split_triangle",
-    "mna:triangle",
-    "mna:circle",
-    "mna:inverted_triangle",
-    "mna:square",
-    "mna:diamond"
+    "mna:manaweave_patterns/split_triangle",
+    "mna:manaweave_patterns/triangle",
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/inverted_triangle",
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/diamond"
   ]
 }

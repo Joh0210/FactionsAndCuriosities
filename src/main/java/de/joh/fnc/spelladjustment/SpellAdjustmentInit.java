@@ -46,20 +46,19 @@ public class SpellAdjustmentInit {
         event.getRegistry().register(SpellAdjustmentInit.RENEWAL);
     }
 
-    //todo: revise frequency
     static {
-        SpellAdjustmentInit.CANCEL = new SpellAdjustmentCancel(RLoc.create("spelladjustment/cancel"), 7);
-        SpellAdjustmentInit.EMPOWERED_I = new SpellAdjustmentEmpowered(RLoc.create("spelladjustment/empowered_i"), 7, 1);
+        SpellAdjustmentInit.CANCEL = new SpellAdjustmentCancel(RLoc.create("spelladjustment/cancel"), 3);
+        SpellAdjustmentInit.EMPOWERED_I = new SpellAdjustmentEmpowered(RLoc.create("spelladjustment/empowered_i"), 7, 4);
         SpellAdjustmentInit.EMPOWERED_II = new SpellAdjustmentEmpowered(RLoc.create("spelladjustment/empowered_ii"), 7, 2);
-        SpellAdjustmentInit.EMPOWERED_III = new SpellAdjustmentEmpowered(RLoc.create("spelladjustment/empowered_iii"), 7, 3);
-        SpellAdjustmentInit.SHARE = new SpellAdjustmentShare(RLoc.create("spelladjustment/share"), 7);
-        SpellAdjustmentInit.DOUBLE_TROUBLE = new SpellAdjustmentDoubleTrouble(RLoc.create("spelladjustment/double_trouble"), 7);
-        SpellAdjustmentInit.DELAY = new SpellAdjustmentDelay(RLoc.create("spelladjustment/delay"), 7);
-        SpellAdjustmentInit.MINIMIZE = new SpellAdjustmentMinimize(RLoc.create("spelladjustment/minimize"), 7);
-        SpellAdjustmentInit.MAXIMIZE = new SpellAdjustmentMaximize(RLoc.create("spelladjustment/maximize"), 7);
-        SpellAdjustmentInit.POWER = new SpellAdjustmentPower(RLoc.create("spelladjustment/power"), 7);
-        SpellAdjustmentInit.REVERSAL = new SpellAdjustmentReversal(RLoc.create("spelladjustment/reversal"), 7);
-        SpellAdjustmentInit.PRECISE = new SpellAdjustmentPrecise(RLoc.create("spelladjustment/precise"), 7);
-        SpellAdjustmentInit.RENEWAL = new SpellAdjustmentRenewal(RLoc.create("spelladjustment/renewal"), 7);
+        SpellAdjustmentInit.EMPOWERED_III = new SpellAdjustmentEmpowered(RLoc.create("spelladjustment/empowered_iii"), 7, 1);
+        SpellAdjustmentInit.SHARE = new SpellAdjustmentShare(RLoc.create("spelladjustment/share"), 4);
+        SpellAdjustmentInit.DOUBLE_TROUBLE = new SpellAdjustmentDoubleTrouble(RLoc.create("spelladjustment/double_trouble"), 3);
+        SpellAdjustmentInit.DELAY = new SpellAdjustmentDelay(RLoc.create("spelladjustment/delay"), 4);
+        SpellAdjustmentInit.MINIMIZE = new SpellAdjustmentMinimize(RLoc.create("spelladjustment/minimize"), 2);
+        SpellAdjustmentInit.MAXIMIZE = new SpellAdjustmentMaximize(RLoc.create("spelladjustment/maximize"), 2);
+        SpellAdjustmentInit.POWER = new SpellAdjustmentPower(RLoc.create("spelladjustment/power"), 5);
+        SpellAdjustmentInit.REVERSAL = new SpellAdjustmentReversal(RLoc.create("spelladjustment/reversal"), 1);
+        SpellAdjustmentInit.PRECISE = new SpellAdjustmentPrecise(RLoc.create("spelladjustment/precise"), 5);
+        SpellAdjustmentInit.RENEWAL = new SpellAdjustmentRenewal(RLoc.create("spelladjustment/renewal"), 5);
     }
 }

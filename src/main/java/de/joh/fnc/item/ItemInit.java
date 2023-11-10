@@ -29,6 +29,7 @@ public class ItemInit {
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER_RING = ITEMS.register("four_leaf_clover_ring", FourLeafCloverRing::new);
     public static final RegistryObject<Item> DECK_OF_MANY = ITEMS.register("deck_of_many", DeckOfMany::new);
     public static final RegistryObject<Item> WILD_PICKAXE = ITEMS.register("wild_pickaxe", WildPickaxe::new);
+    public static final RegistryObject<Item> GLITTERING_POTATO = ITEMS.register("glittering_potato", GlitteringPotato::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
