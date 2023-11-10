@@ -14,7 +14,7 @@ import java.util.List;
 public class WildMagicCooldown extends MobEffect {
     /**
      * How many ticks should be waited, till Wild Magic can be applied again?
-     * <br>todo: make it adjustable
+     * <br>todo: make it adjustable (minimum of 100 ticks if deactivated)
      */
     public static final int WILD_MAGIC_COOLDOWN = 100;
 

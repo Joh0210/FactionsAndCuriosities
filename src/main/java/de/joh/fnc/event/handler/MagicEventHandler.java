@@ -10,6 +10,7 @@ import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.effect.neutral.WildMagicCooldown;
 import de.joh.fnc.event.additional.PerformSpellAdjustmentEvent;
 import de.joh.fnc.event.additional.PerformWildMagicEvent;
+import de.joh.fnc.event.additional.ShouldCauseWildMagicEvent;
 import de.joh.fnc.item.ItemInit;
 import de.joh.fnc.item.init.DebugOrbSpellAdjustment;
 import de.joh.fnc.item.init.FourLeafCloverRing;
@@ -25,6 +26,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -102,7 +104,10 @@ public class MagicEventHandler {
     @SubscribeEvent
     public static void onComponentApplying(ComponentApplyingEvent event){
         LivingEntity source = event.getSource().getPlayer();
-        if(source != null && WildMagicHelper.shouldCauseWildMagic(source)){
+
+        ShouldCauseWildMagicEvent shouldCauseWildMagicEvent = new ShouldCauseWildMagicEvent(source);
+        MinecraftForge.EVENT_BUS.post(event);
+        if(source != null && shouldCauseWildMagicEvent.shouldCauseWildMagic()) {
             WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag(), (wm, s, t, ct) -> true);
             source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
         }
