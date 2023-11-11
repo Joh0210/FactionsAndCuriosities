@@ -2,6 +2,7 @@ package de.joh.fnc;
 
 import com.mna.api.guidebook.RegisterGuidebooksEvent;
 import com.mojang.logging.LogUtils;
+import de.joh.fnc.compat.AddonCompatibleManager;
 import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.item.ItemInit;
 import de.joh.fnc.networking.Messages;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.Bindings;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -30,12 +32,15 @@ public class FactionsAndCuriosities {
     public FactionsAndCuriosities() {
         instance = this;
 
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ItemInit.register(eventBus);
-        EffectInit.register(eventBus);
-        AttributeInit.register(eventBus);
+        IEventBus forgeEventBus = Bindings.getForgeBus().get();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ItemInit.register(modEventBus);
+        EffectInit.register(modEventBus);
+        AttributeInit.register(modEventBus);
 
-        eventBus.addListener(this::setup);
+        modEventBus.addListener(this::setup);
+
+        AddonCompatibleManager.visit();
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -54,6 +59,10 @@ public class FactionsAndCuriosities {
      */
     @SubscribeEvent
     public void onRegisterGuidebooks(final RegisterGuidebooksEvent event) {
-        event.getRegistry().addGuidebookPath(RLoc.create("guide"));
+        event.getRegistry().addGuidebookPath(RLoc.create("guide/base"));
+
+        if(AddonCompatibleManager.DMNR.isLoaded()){
+            event.getRegistry().addGuidebookPath(RLoc.create("guide/dmnr"));
+        }
     }
 }

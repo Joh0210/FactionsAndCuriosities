@@ -47,5 +47,17 @@
 
   "fnc:rituals/wild_energy": "Ritual of the Wild",
 
-  "event.fnc.faction_ally_wild": "You feel the unpredictability of the magic around you, uniting with you.  You have allied yourself with the Wilde Courts!"
+  "event.fnc.faction_ally_wild": "You feel the unpredictability of the magic around you, uniting with you.  You have allied yourself with the Wilde Courts!",
+
+  "item.fnc.mischief_dragon_mage_boots": "Mischief Dragon Mage Boots",
+  "item.fnc.mischief_dragon_mage_chestplate": "Mischief Dragon Mage Chestplate",
+  "item.fnc.mischief_dragon_mage_helmet": "Mischief Dragon Mage Helmet",
+  "item.fnc.mischief_dragon_mage_legging": "Mischief Dragon Mage Legging",
+
+  "item.fnc.upgrade_seal_wild_magic_luck": "Upgrade Glyph Wild Magic Luck",
+  "item.fnc.upgrade_seal_random_spell_adjustment": "Upgrade Glyph Random Spell Adjustment",
+  "fnc:armorupgrade/wild_magic_luck": "§6Wild Magic Luck§r",
+  "fnc:armorupgrade/wild_magic_luck.description": "Increases your luck with Wild Magic.",
+  "fnc:armorupgrade/random_spell_adjustment": "§6Random Spell Adjustment§r",
+  "fnc:armorupgrade/random_spell_adjustment.description": "25% * level chance for a positive random SpellAdjustment."
 }

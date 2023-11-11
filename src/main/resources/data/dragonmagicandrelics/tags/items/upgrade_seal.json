@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "fnc:upgrade_seal_wild_magic_luck",
+    "fnc:upgrade_seal_random_spell_adjustment"
+  ]
+}

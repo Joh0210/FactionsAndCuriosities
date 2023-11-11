@@ -1,0 +1,152 @@
+{
+  "Upgrade Glyph Wild Magic Luck": {
+    "index": "1",
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Upgrade Glyph Wild Magic Luck"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "If Wild Magic tests my luck, I'm much more likely to get lucky",
+            "color": ""
+          },
+          {
+            "text": "\n\n"
+          },
+          {
+            "text": "And my opponents are lucky if I spare them",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Dragon Magic Points per level: 7",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_wild_magic_luck"
+      }
+    ]
+  },
+  "Upgrade Glyph Random Spell Adjustment": {
+    "index": "1",
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Upgrade Glyph Random Spell Adjustment"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "I don't know how it will behave, but per level with this upgrade, there is a 25% chance that my spells will change in my favor.",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Dragon Magic Points per level: 4",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_random_spell_adjustment"
+      }
+    ]
+  },
+
+  "Upgrade Glyph Random Spell Adjustment": {
+    "index": "1",
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Upgrade Glyph Random Spell Adjustment"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "I don't know how it will behave, but per level with this upgrade, there is a 25% chance that my spells will change in my favor.",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Dragon Magic Points per level: 4",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_random_spell_adjustment"
+      }
+    ]
+  },
+
+  "Dragon Mage Armor: Mischief": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Dragon Mage Armor: Mischief"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Dragon Mage Armor is obtained by using the Wild Faction's Mischief Armor for the Dragon Mage Ritual.",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/mischief_dragon_mage_chestplate"
+      },
+      {
+        "type": "ritual",
+        "location":"dragonmagicandrelics:rituals/dragon_mage_ritual"
+      }
+    ]
+  },
+
+
+  "version": "1.0.0a"
+}

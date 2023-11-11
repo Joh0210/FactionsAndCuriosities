@@ -1,0 +1,30 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "fnc:upgrade_seal_random_spell_adjustment",
+  "tier": 5,
+  "items": [
+    "mna:stone_rune_yellow",
+    "fnc:deck_of_many",
+    "minecraft:nether_star",
+    "mna:rune_air",
+    "minecraft:nether_star",
+    "mna:rune_arcane",
+    "minecraft:nether_star",
+    "mna:rune_ender",
+    "minecraft:nether_star"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "WIND",
+      "amount": 700
+    },
+    {
+      "affinity": "ARCANE",
+      "amount": 700
+    },
+    {
+      "affinity": "ENDER",
+      "amount": 700
+    }
+  ]
+}

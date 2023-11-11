@@ -28,6 +28,13 @@ ordering="NONE"
 side="BOTH"
 
 [[dependencies.fnc]]
+modId="dragonmagicandrelics"
+mandatory=false
+versionRange="[1.18.2-2.1.25,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.fnc]]
 modId="minecraft"
 mandatory=true
 versionRange="[1.18.2]"

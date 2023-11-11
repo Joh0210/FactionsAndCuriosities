@@ -1,0 +1,30 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "fnc:upgrade_seal_wild_magic_luck",
+  "tier": 5,
+  "items": [
+    "mna:stone_rune_yellow",
+    "fnc:dice_twenty",
+    "dragonmagicandrelics:dragon_core",
+    "fnc:dice_twenty",
+    "minecraft:nether_star",
+    "fnc:dice_twenty",
+    "dragonmagicandrelics:dragon_core",
+    "fnc:dice_twenty",
+    "minecraft:nether_star"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "WIND",
+      "amount": 700
+    },
+    {
+      "affinity": "ARCANE",
+      "amount": 700
+    },
+    {
+      "affinity": "ENDER",
+      "amount": 700
+    }
+  ]
+}

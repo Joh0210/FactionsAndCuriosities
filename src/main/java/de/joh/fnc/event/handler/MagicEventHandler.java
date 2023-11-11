@@ -52,6 +52,7 @@ public class MagicEventHandler {
             debugOrbSpellAdjustment.useSpellAdjustment(caster.getLevel(), caster, caster.getItemBySlot(EquipmentSlot.OFFHAND), event);
         }
 
+        //todo: outsource as Event
         if(caster.hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> true);
             caster.removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
