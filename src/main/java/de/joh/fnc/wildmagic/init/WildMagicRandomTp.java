@@ -50,8 +50,6 @@ public class WildMagicRandomTp extends WildMagic {
     protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         //todo: Cast a Teleport Event
         if(!targetsCaster && target == null){
-            //todo: throw exception?
-            FactionsAndCuriosities.LOGGER.error("tried performWildMagic on the Target with a null Target");
             return;
         }
 
@@ -59,8 +57,6 @@ public class WildMagicRandomTp extends WildMagic {
         int tries = TRIES;
 
         if(wildMagicTarget == null){
-            //todo: throw exception?
-            FactionsAndCuriosities.LOGGER.error("target.getLivingEntity() of performWildMagic is null but was used");
             return;
         }
 

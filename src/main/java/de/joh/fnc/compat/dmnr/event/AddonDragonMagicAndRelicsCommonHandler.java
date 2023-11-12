@@ -69,7 +69,9 @@ public class AddonDragonMagicAndRelicsCommonHandler {
     public static void onSpellCast(SpellCastEvent event){
         Player caster = event.getCaster();
         //todo: outsource as Event!
-        if(ArmorUpgradeHelper.getUpgradeLevel(caster, AddonDragonMagicAndRelicsArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT) >= 1 && new Random().nextBoolean()){
+        Random random = new Random();
+        int level = ArmorUpgradeHelper.getUpgradeLevel(caster, AddonDragonMagicAndRelicsArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT);
+        if(level >= 1 && random.nextInt(100) < 25 * level){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(s.getComponent(0).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
         }
     }

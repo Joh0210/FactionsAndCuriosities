@@ -7,6 +7,7 @@ import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.item.ItemInit;
 import de.joh.fnc.networking.Messages;
 import de.joh.fnc.utils.AttributeInit;
+import de.joh.fnc.utils.CommonConfig;
 import de.joh.fnc.utils.RLoc;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
@@ -14,7 +15,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.Bindings;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -41,6 +44,8 @@ public class FactionsAndCuriosities {
         modEventBus.addListener(this::setup);
 
         AddonCompatibleManager.visit();
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MOD_ID+"-common.toml");
 
         MinecraftForge.EVENT_BUS.register(this);
     }

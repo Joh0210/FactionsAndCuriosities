@@ -38,13 +38,11 @@ public class WildMagicChronoAnchor extends WildMagicPotionEffect {
 
     @Override
     public @NotNull Quality getQuality(SpellPartTags componentTag) {
-        //todo: adjust!
         return Quality.NEUTRAL;
     }
 
     @Override
     public @NotNull MobEffect getMobEffect() {
-        //todo: adjust!
         return EffectInit.CHRONO_ANCHOR.get();
     }
 }

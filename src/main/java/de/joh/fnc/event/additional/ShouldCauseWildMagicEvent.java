@@ -3,6 +3,7 @@ package de.joh.fnc.event.additional;
 import com.mna.api.ManaAndArtificeMod;
 import de.joh.fnc.effect.EffectInit;
 import de.joh.fnc.factions.FactionInit;
+import de.joh.fnc.utils.CommonConfig;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
@@ -24,7 +25,7 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
 
         if(entity.hasEffect(EffectInit.WILD_MAGIC.get()) || entity.hasEffect(EffectInit.BAD_WILD_MAGIC.get()) || entity.hasEffect(EffectInit.GOOD_WILD_MAGIC.get())){
             this.autoFail = false;
-            this.chance = 50; //todo: Config
+            this.chance = CommonConfig.FORCED_WILD_MAGIC_CHANCE.get();
             return;
         }
 
@@ -32,7 +33,7 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
         entity.getCapability(ManaAndArtificeMod.getProgressionCapability()).ifPresent((p)-> isWildMage.set(p.getAlliedFaction() == FactionInit.WILD));
         if(isWildMage.get()){
             this.autoFail = false;
-            this.chance = 10; //todo: Config
+            this.chance = CommonConfig.WILD_MAGIC_CHANCE.get();
             return;
         }
 

@@ -3,6 +3,7 @@ package de.joh.fnc.item.init;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import de.joh.fnc.factions.FactionInit;
+import de.joh.fnc.utils.CommonConfig;
 import de.joh.fnc.utils.CreativeModeTabInit;
 import de.joh.fnc.wildmagic.util.WildMagicHelper;
 import net.minecraft.resources.ResourceLocation;
@@ -29,10 +30,6 @@ public class GlitteringPotato extends Item implements ITieredItem<GlitteringPota
     private int _tier = -1;
 
     //todo: not traceable by broker
-
-    //todo: adjustable via Config
-    private static final int AMOUNT = 4;
-    private static final int HURT_CHANCE = 20;
     private static final boolean BREAKS_BLOCKS = false;
 
     public GlitteringPotato() {
@@ -52,7 +49,7 @@ public class GlitteringPotato extends Item implements ITieredItem<GlitteringPota
 
         if(!entity.getLevel().isClientSide){
             for(int j = 0; j < (Math.abs(WildMagicHelper.getWildMagicLuck(entity)) + 1); j++) {
-                heal = (random.nextInt(100) + 1) > HURT_CHANCE;
+                heal = (random.nextInt(100) + 1) > CommonConfig.GLITTERING_POTATO_HURT_CHANCE.get();
 
                 if(chooseHigher == heal){
                     break;
@@ -60,7 +57,7 @@ public class GlitteringPotato extends Item implements ITieredItem<GlitteringPota
             }
 
             if(heal){
-                entity.heal(AMOUNT);
+                entity.heal(CommonConfig.GLITTERING_POTATO_HEAL_AMOUNT.get());
             } else {
                 Vec3 coordinates = entity.position();
                 entity.getLevel().explode(null, null, null, coordinates.x, coordinates.y, coordinates.z, 2, false, (((ServerLevel)entity.getLevel()).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && BREAKS_BLOCKS) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);

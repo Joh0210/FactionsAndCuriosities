@@ -16,6 +16,7 @@ import de.joh.fnc.item.init.DebugOrbSpellAdjustment;
 import de.joh.fnc.item.init.FourLeafCloverRing;
 import de.joh.fnc.item.init.MischiefArmor;
 import de.joh.fnc.spelladjustment.util.SpellAdjustmentHelper;
+import de.joh.fnc.utils.CommonConfig;
 import de.joh.fnc.wildmagic.util.Quality;
 import de.joh.fnc.wildmagic.util.WildMagic;
 import de.joh.fnc.wildmagic.util.WildMagicHelper;
@@ -56,7 +57,7 @@ public class MagicEventHandler {
         if(caster.hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> true);
             caster.removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
-            caster.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
+            caster.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.getWildMagicCooldown(), 0));
         } else if(caster.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmor mischiefArmor
                 && mischiefArmor.isSetEquipped(caster)
                 && new Random().nextBoolean()
@@ -110,7 +111,7 @@ public class MagicEventHandler {
         MinecraftForge.EVENT_BUS.post(event);
         if(source != null && shouldCauseWildMagicEvent.shouldCauseWildMagic()) {
             WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag(), (wm, s, t, ct) -> true);
-            source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), WildMagicCooldown.WILD_MAGIC_COOLDOWN, 0));
+            source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.getWildMagicCooldown(), 0));
         }
     }
 
