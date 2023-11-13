@@ -1,7 +1,7 @@
 package de.joh.fnc.networking.packet;
 
-import de.joh.fnc.event.handler.ClientEventHandler;
-import de.joh.fnc.item.init.DebugOrbWildMagic;
+import de.joh.fnc.client.event.ClientEventHandler;
+import de.joh.fnc.common.item.DebugOrbWildMagicItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 /**
  * Package that sends the Mouse Scroll from the Client to the Sever to Select the spell on the Debug Rod
  * @see ClientEventHandler
- * @see DebugOrbWildMagic
+ * @see DebugOrbWildMagicItem
  * @author Joh0210
  */
 public class IncrementSelectedWildMagicC2SPacket {
@@ -37,7 +37,7 @@ public class IncrementSelectedWildMagicC2SPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(()->{
             ServerPlayer player = context.getSender();
-            if(player != null && player.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbWildMagic debugRod){
+            if(player != null && player.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbWildMagicItem debugRod){
                 debugRod.incrementWildMagicIterator(player.getItemBySlot(EquipmentSlot.MAINHAND), inverted, player);
             }
         });

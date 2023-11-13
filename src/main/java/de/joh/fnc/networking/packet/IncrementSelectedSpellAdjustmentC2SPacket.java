@@ -1,7 +1,7 @@
 package de.joh.fnc.networking.packet;
 
-import de.joh.fnc.event.handler.ClientEventHandler;
-import de.joh.fnc.item.init.DebugOrbSpellAdjustment;
+import de.joh.fnc.client.event.ClientEventHandler;
+import de.joh.fnc.common.item.DebugOrbSpellAdjustmentItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 /**
  * Package that sends the Mouse Scroll from the Client to the Sever to Select the spell on the Debug Rod
  * @see ClientEventHandler
- * @see DebugOrbSpellAdjustment
+ * @see DebugOrbSpellAdjustmentItem
  * @author Joh0210
  */
 public class IncrementSelectedSpellAdjustmentC2SPacket {
@@ -36,7 +36,7 @@ public class IncrementSelectedSpellAdjustmentC2SPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(()->{
             ServerPlayer player = context.getSender();
-            if(player != null && player.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbSpellAdjustment debugRod){
+            if(player != null && player.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbSpellAdjustmentItem debugRod){
                 debugRod.incrementSpellAdjustmentIterator(player.getItemBySlot(EquipmentSlot.MAINHAND), inverted, player);
             }
         });

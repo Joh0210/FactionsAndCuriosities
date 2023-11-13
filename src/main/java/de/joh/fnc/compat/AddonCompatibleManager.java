@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import de.joh.fnc.compat.dmnr.AddonDragonMagicAndRelics;
+import de.joh.fnc.compat.dmnr.AddonDmnr;
 
 /**
  * Manges the Compatibility with other Mods
@@ -17,12 +17,12 @@ public class AddonCompatibleManager
     /**
      * <a href="https://github.com/Joh0210/DragonMagicAndRelics">Dragon Magic and Relics</a>
      */
-    public static final AddonDragonMagicAndRelics DMNR;
+    public static final AddonDmnr DMNR;
 
     static
     {
         List<AddonCompatibleMod> mods = new ArrayList<>();
-        mods.add(DMNR = new AddonDragonMagicAndRelics());
+        mods.add(DMNR = new AddonDmnr());
 
         for (AddonCompatibleMod mod : mods)
         {
