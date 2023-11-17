@@ -108,7 +108,7 @@ public class MagicEventHandler {
         LivingEntity source = event.getSource().getPlayer();
 
         ShouldCauseWildMagicEvent shouldCauseWildMagicEvent = new ShouldCauseWildMagicEvent(source);
-        MinecraftForge.EVENT_BUS.post(event);
+        MinecraftForge.EVENT_BUS.post(shouldCauseWildMagicEvent);
         if(source != null && shouldCauseWildMagicEvent.shouldCauseWildMagic()) {
             WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag(), (wm, s, t, ct) -> true);
             source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.getWildMagicCooldown(), 0));

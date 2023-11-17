@@ -35,9 +35,9 @@ import java.util.Random;
  * @see WildMagicHelper
  * @author Joh0210
  */
-public class WildDamageSpellEffect extends SpellEffect implements IDamageComponent {
+public class WildDamageComponent extends SpellEffect implements IDamageComponent {
 
-    public WildDamageSpellEffect(ResourceLocation registryName, ResourceLocation icon) {
+    public WildDamageComponent(ResourceLocation registryName, ResourceLocation icon) {
         super(registryName, icon, new AttributeValuePair(Attribute.DAMAGE, 10.0F, 2.0F, 40.0F, 1F, 3.0F), new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 0.0F, 3.0F, 1.0F, 15.0F), new AttributeValuePair(Attribute.DURATION, 30.0F, 15.0F, 300.0F, 15.0F, 3.0F), new AttributeValuePair(Attribute.PRECISION, 1.0F, 1.0F, 4.0F, 1.0F, 5.0F));
     }
 

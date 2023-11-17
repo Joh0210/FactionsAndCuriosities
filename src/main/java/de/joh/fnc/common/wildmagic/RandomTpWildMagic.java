@@ -2,15 +2,11 @@ package de.joh.fnc.common.wildmagic;
 
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
+import com.mna.tools.TeleportHelper;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagic;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,45 +43,17 @@ public class RandomTpWildMagic extends WildMagic {
 
     @Override
     protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
-        //todo: Cast a Teleport Event
         if(!targetsCaster && target == null){
             return;
         }
 
         LivingEntity wildMagicTarget = targetsCaster ? source : target.getLivingEntity();
-        int tries = TRIES;
 
         if(wildMagicTarget == null){
             return;
         }
 
-        do {
-            double rX = wildMagicTarget.getRandomX(this.maxDistance);
-            double rY = wildMagicTarget.getY(this.maxDistance);
-            double rZ = wildMagicTarget.getRandomZ(this.maxDistance);
-            BlockPos.MutableBlockPos targetPos = new BlockPos.MutableBlockPos(rX, rY, rZ);
-
-            while (targetPos.getY() > 0 && !wildMagicTarget.level.getBlockState(targetPos).getMaterial().blocksMotion()) {
-                targetPos.move(Direction.DOWN);
-            }
-
-            BlockState blockstate = wildMagicTarget.level.getBlockState(targetPos);
-            boolean blocksMotion = blockstate.getMaterial().blocksMotion();
-            boolean isLava = blockstate.getFluidState().is(FluidTags.LAVA);
-            if (blocksMotion && !isLava) {
-                boolean teleported = wildMagicTarget.randomTeleport(rX, rY, rZ, true);
-                if (teleported) {
-                    if (!wildMagicTarget.isSilent()) {
-                        wildMagicTarget.level.playSound(null, wildMagicTarget.xo, wildMagicTarget.yo, wildMagicTarget.zo, SoundEvents.ENDERMAN_TELEPORT, wildMagicTarget.getSoundSource(), 1.0F, 1.0F);
-                        wildMagicTarget.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
-                    }
-
-                    return;
-                }
-            }
-            --tries;
-
-        } while (tries >= 0);
+        TeleportHelper.randomTeleport(wildMagicTarget, this.maxDistance, TRIES);
     }
 
     @Override

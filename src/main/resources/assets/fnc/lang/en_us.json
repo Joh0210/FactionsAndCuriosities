@@ -44,6 +44,9 @@
   "fnc:components/wild_damage.desc.duration": "The duration of the wild magic that will affect the target.",
   "fnc:components/wild_damage.desc.magnitude": "Strength of wild magic that will affect the target.",
   "fnc:components/wild_damage.desc.precision": "Makes the damage trend more towards average numbers.",
+  "fnc:components/random_tp": "Random Teleport",
+  "fnc:components/random_tp.desc.delay": "A delay in seconds before applying this component.",
+  "fnc:components/random_tp.desc.range": "The maximum distance that can be teleported to. Each point raises the cap by 20 blocks.",
 
   "fnc:rituals/wild_energy": "Ritual of the Wild",
 

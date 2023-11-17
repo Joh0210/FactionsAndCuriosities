@@ -26,8 +26,8 @@ import net.minecraft.world.entity.LivingEntity;
  * @see WildMagicHelper
  * @author Joh0210
  */
-public class CauseWildMagicSpellEffect extends SpellEffect {
-    public CauseWildMagicSpellEffect(ResourceLocation registryName, ResourceLocation icon) {
+public class CauseWildMagicComponent extends SpellEffect {
+    public CauseWildMagicComponent(ResourceLocation registryName, ResourceLocation icon) {
         super(registryName, icon, new AttributeValuePair(Attribute.PRECISION, 1.0F, 0.0F, 2.0F, 1.0F, 25.0F));
     }
 
@@ -89,6 +89,11 @@ public class CauseWildMagicSpellEffect extends SpellEffect {
     @Override
     public boolean targetsEntities() {
         return true;
+    }
+
+    @Override
+    public boolean canBeChanneled() {
+        return false;
     }
 }
 

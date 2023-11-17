@@ -1,4 +1,50 @@
 {
+  "Component: Random Teleport": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Random Teleport"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "I can use wild magic to make my target disappear.",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This spell teleports the target to a random location within the specified radius.",
+            "color": ""
+          },
+          {
+            "text": ". \n\nIt can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/random_tp"
+      }
+    ]
+  },
   "Component: Wild Damage": {
     "index": "2",
     "category": "sorcery",
