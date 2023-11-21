@@ -14,7 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
  */
 public class AddonDmnrArmorUpgradeInit {
     public static ArmorUpgrade WILD_MAGIC_LUCK;
-    public static ArmorUpgrade RANDOM_SPELL_ADJUSTMENT; //RandomSpellAdjustment
+    public static ArmorUpgrade RANDOM_SPELL_ADJUSTMENT;
 
     @SubscribeEvent
     public static void registerArmorUpgrades(final RegistryEvent.Register<ArmorUpgrade> event) {

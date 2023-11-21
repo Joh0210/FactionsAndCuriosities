@@ -7,6 +7,7 @@ import de.joh.fnc.compat.dmnr.common.event.AddonDmnrClientModEvents;
 import de.joh.fnc.compat.dmnr.client.gui.AddonDmnrContainerInit;
 import de.joh.fnc.compat.dmnr.client.gui.AddonDmnrGuiInit;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
+import de.joh.fnc.compat.dmnr.common.init.AddonDmnrWildMagicInit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,6 +38,7 @@ public class AddonDmnr extends AddonCompatibleMod {
         modBus.register(AddonDmnrContainerInit.class);
         modBus.register(AddonDmnrGuiInit.class);
         modBus.register(AddonDmnrArmorUpgradeInit.class);
+        modBus.register(AddonDmnrWildMagicInit.class);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modBus.register(AddonDmnrClientModEvents.class));
 
         IEventBus forge_bus = MinecraftForge.EVENT_BUS;
