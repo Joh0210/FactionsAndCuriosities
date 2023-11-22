@@ -1,6 +1,6 @@
-package de.joh.fnc.common.factions;
+package de.joh.fnc.common.faction;
 
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import net.minecraft.resources.ResourceLocation;
 
 public class ResourceIDs {

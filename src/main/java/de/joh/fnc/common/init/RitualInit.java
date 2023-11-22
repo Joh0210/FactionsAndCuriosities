@@ -3,7 +3,7 @@ package de.joh.fnc.common.init;
 import com.mna.api.rituals.RitualEffect;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.common.ritual.WildEnergyRitual;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

@@ -2,7 +2,7 @@ package de.joh.fnc.compat.dmnr.common.init;
 
 import de.joh.dragonmagicandrelics.armorupgrades.types.ArmorUpgrade;
 import de.joh.dragonmagicandrelics.item.items.dragonmagearmor.DragonMageArmor;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.compat.dmnr.common.armorupgrades.ArmorUpgradeWildMagicLuck;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

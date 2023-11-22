@@ -1,4 +1,4 @@
-package de.joh.fnc.common.factions.castingresource;
+package de.joh.fnc.common.faction.castingresource;
 
 import com.mna.api.capabilities.resource.ICastingResourceGuiProvider;
 import com.mna.gui.GuiTextures;

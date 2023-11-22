@@ -1,4 +1,4 @@
-package de.joh.fnc.common.utils;
+package de.joh.fnc.common.util;
 
 import de.joh.fnc.FactionsAndCuriosities;
 import net.minecraft.resources.ResourceLocation;

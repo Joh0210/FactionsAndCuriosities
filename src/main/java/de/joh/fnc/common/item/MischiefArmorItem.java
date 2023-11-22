@@ -10,7 +10,7 @@ import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.api.spelladjustment.SpellAdjustment;
 import de.joh.fnc.api.util.AttributeInit;
 import de.joh.fnc.api.util.CreativeModeTabInit;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;

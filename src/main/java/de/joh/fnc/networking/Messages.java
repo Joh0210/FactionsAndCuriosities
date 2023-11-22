@@ -2,7 +2,7 @@ package de.joh.fnc.networking;
 
 import de.joh.fnc.networking.packet.IncrementSelectedSpellAdjustmentC2SPacket;
 import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;

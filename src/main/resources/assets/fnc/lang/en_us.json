@@ -29,6 +29,9 @@
   "effect.fnc.wild_magic": "Wild Magic",
   "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
 
+  "death.attack.fnc-smite": "%s was smited to death",
+  "death.attack.fnc-smite.player": "%s was smited to death by %s",
+
   "fnc.dice.roll.output.text": "Your roll: ",
   "fnc.feedback.selected.spelladjustment": "Selected Spell Adjustment: ",
   "fnc.feedback.selected.spelladjustment.condition_false" : "The condition of the selected Spell Adjustment was not fulfilled!",
@@ -47,6 +50,7 @@
   "fnc:components/random_tp": "Random Teleport",
   "fnc:components/random_tp.desc.delay": "A delay in seconds before applying this component.",
   "fnc:components/random_tp.desc.range": "The maximum distance that can be teleported to. Each point raises the cap by 20 blocks.",
+  "fnc.component.smite.no_player.error" : "The spell can only target players",
 
   "fnc:rituals/wild_energy": "Ritual of the Wild",
 

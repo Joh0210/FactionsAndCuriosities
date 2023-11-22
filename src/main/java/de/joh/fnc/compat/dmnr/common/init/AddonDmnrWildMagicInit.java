@@ -3,7 +3,7 @@ package de.joh.fnc.compat.dmnr.common.init;
 import de.joh.dragonmagicandrelics.effects.EffectInit;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicOtherPotionEffect;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.compat.dmnr.common.wildmagic.PeaceWildMagic;
 import de.joh.fnc.compat.dmnr.common.wildmagic.UltimateArmorWildMagic;
 import de.joh.fnc.compat.dmnr.common.wildmagic.WarWildMagic;

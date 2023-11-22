@@ -16,7 +16,7 @@ import de.joh.fnc.common.item.DebugOrbSpellAdjustmentItem;
 import de.joh.fnc.common.item.FourLeafCloverRingItem;
 import de.joh.fnc.common.item.MischiefArmorItem;
 import de.joh.fnc.api.spelladjustment.SpellAdjustmentHelper;
-import de.joh.fnc.common.utils.CommonConfig;
+import de.joh.fnc.common.util.CommonConfig;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;

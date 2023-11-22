@@ -1,6 +1,6 @@
 package de.joh.fnc.common.effect.harmful;
 
-import de.joh.fnc.common.utils.CommonConfig;
+import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

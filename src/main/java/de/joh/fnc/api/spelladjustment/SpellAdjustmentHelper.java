@@ -5,7 +5,7 @@ import com.mna.api.events.SpellCastEvent;
 import com.mna.api.spells.base.ISpellDefinition;
 import de.joh.fnc.api.event.PerformSpellAdjustmentEvent;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
-import de.joh.fnc.common.utils.Registries;
+import de.joh.fnc.common.util.Registries;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.jetbrains.annotations.NotNull;

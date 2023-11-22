@@ -6,7 +6,7 @@ import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.api.util.AttributeInit;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.api.event.PerformWildMagicEvent;
-import de.joh.fnc.common.utils.Registries;
+import de.joh.fnc.common.util.Registries;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraftforge.common.MinecraftForge;

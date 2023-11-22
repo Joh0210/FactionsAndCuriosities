@@ -3,7 +3,7 @@ package de.joh.fnc.common.item;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import de.joh.fnc.common.init.FactionInit;
-import de.joh.fnc.common.utils.CommonConfig;
+import de.joh.fnc.common.util.CommonConfig;
 import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import net.minecraft.resources.ResourceLocation;

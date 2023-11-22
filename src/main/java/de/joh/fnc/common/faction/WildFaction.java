@@ -1,4 +1,4 @@
-package de.joh.fnc.common.factions;
+package de.joh.fnc.common.faction;
 
 import com.mna.api.ManaAndArtificeMod;
 import com.mna.api.faction.BaseFaction;

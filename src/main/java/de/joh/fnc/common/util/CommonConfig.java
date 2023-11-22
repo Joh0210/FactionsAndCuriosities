@@ -1,4 +1,4 @@
-package de.joh.fnc.common.utils;
+package de.joh.fnc.common.util;
 
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.api.event.ShouldCauseWildMagicEvent;
@@ -41,6 +41,9 @@ public class CommonConfig {
      */
     public static final ForgeConfigSpec.ConfigValue<Integer> GLITTERING_POTATO_HURT_CHANCE;
 
+    public static final ForgeConfigSpec.ConfigValue<Integer> MAX_SMITE_DAMAGE;
+    public static final ForgeConfigSpec.ConfigValue<Integer>  SMITE_DURATION;
+
     static {
         BUILDER.push("General Configs");
 
@@ -59,6 +62,10 @@ public class CommonConfig {
         GLITTERING_POTATO_HURT_CHANCE = BUILDER.defineInRange("How likely is it for the Glittering Potato to explode?", 20, 0, 99);
         BUILDER.pop();
 
+        BUILDER.push("Smite");
+        MAX_SMITE_DAMAGE = BUILDER.defineInRange("What is the maximum amount of Damage Smites can do in total (Smite Stacking included)", 20, 1, 100);
+        SMITE_DURATION = BUILDER.defineInRange("Duration of Smite Effects (in s)", 30, 5, 300);
+        BUILDER.pop();
 
         BUILDER.pop();
 

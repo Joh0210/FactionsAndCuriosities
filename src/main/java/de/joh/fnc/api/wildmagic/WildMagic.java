@@ -3,7 +3,7 @@ package de.joh.fnc.api.wildmagic;
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.api.util.Quality;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;

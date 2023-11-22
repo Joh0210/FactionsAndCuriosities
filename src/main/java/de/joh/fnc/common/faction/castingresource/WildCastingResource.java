@@ -1,8 +1,8 @@
-package de.joh.fnc.common.factions.castingresource;
+package de.joh.fnc.common.faction.castingresource;
 
 import com.mna.api.capabilities.resource.SimpleCastingResource;
 import com.mna.config.GeneralModConfig;
-import de.joh.fnc.common.factions.ResourceIDs;
+import de.joh.fnc.common.faction.ResourceIDs;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 

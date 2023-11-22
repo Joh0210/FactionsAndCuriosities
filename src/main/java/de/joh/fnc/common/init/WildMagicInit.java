@@ -3,7 +3,7 @@ package de.joh.fnc.common.init;
 import com.mna.effects.EffectInit;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.common.wildmagic.*;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicMCPotionEffect;
 import de.joh.fnc.api.wildmagic.WildMagicOtherPotionEffect;

@@ -3,7 +3,7 @@ package de.joh.fnc.compat.dmnr.common.item;
 import de.joh.dragonmagicandrelics.item.items.dragonmagearmor.DragonMageArmor;
 import de.joh.fnc.compat.dmnr.client.gui.NamedMischiefDragonMageArmor;
 import de.joh.fnc.api.util.CreativeModeTabInit;
-import de.joh.fnc.common.utils.RLoc;
+import de.joh.fnc.common.util.RLoc;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.EquipmentSlot;
