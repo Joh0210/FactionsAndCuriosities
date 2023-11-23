@@ -2,18 +2,10 @@ package de.joh.fnc.common.init;
 
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.smite.SmiteMobEffect;
-import de.joh.fnc.common.effect.beneficial.EmpoweredMobEffect;
-import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
-import de.joh.fnc.common.effect.beneficial.GoodWildMagicMobEffect;
-import de.joh.fnc.common.effect.beneficial.MaximizedMobEffect;
-import de.joh.fnc.common.effect.harmful.BadWildMagicMobEffect;
-import de.joh.fnc.common.effect.harmful.LivingBombMobEffect;
-import de.joh.fnc.common.effect.harmful.MinimizedMobEffect;
-import de.joh.fnc.common.effect.neutral.RandomOreMinerMobEffect;
-import de.joh.fnc.common.effect.neutral.RandomSpellAdjustmentMobEffect;
-import de.joh.fnc.common.effect.neutral.WildMagicCooldownMobEffect;
-import de.joh.fnc.common.effect.neutral.WildMagicMobEffect;
-import de.joh.fnc.common.effect.smite.BurningSmite;
+import de.joh.fnc.common.effect.beneficial.*;
+import de.joh.fnc.common.effect.harmful.*;
+import de.joh.fnc.common.effect.neutral.*;
+import de.joh.fnc.common.effect.smite.*;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -44,8 +36,11 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> MINIMIZED = EFFECTS.register("minimized", MinimizedMobEffect::new);
     public static final RegistryObject<MobEffect> BAD_WILD_MAGIC = EFFECTS.register("bad_wild_magic", BadWildMagicMobEffect::new);
 
-    //smite
+    // smite
     public static final RegistryObject<SmiteMobEffect> BURNING_SMITE = EFFECTS.register("burning_smite", BurningSmite::new);
+    public static final RegistryObject<SmiteMobEffect> CRIPPLING_SMITE = EFFECTS.register("crippling_smite", CripplingSmite::new);
+    public static final RegistryObject<SmiteMobEffect> DISPELLING_SMITE = EFFECTS.register("dispelling_smite", DispellingSmite::new);
+
 
     public static void register(IEventBus eventBus){
         EFFECTS.register(eventBus);

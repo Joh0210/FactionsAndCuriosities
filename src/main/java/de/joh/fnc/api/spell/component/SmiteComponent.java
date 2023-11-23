@@ -19,6 +19,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -34,10 +36,18 @@ public class SmiteComponent extends SpellEffect {
     private final RegistryObject<SmiteMobEffect> smite;
 
     public SmiteComponent(ResourceLocation registryName, ResourceLocation guiIcon, int initialComplexity, Affinity affinity, RegistryObject<SmiteMobEffect> smite, AttributeValuePair... attributeValuePairs) {
-        super(registryName, guiIcon, attributeValuePairs);
+        super(registryName, guiIcon, adjustAttributes(attributeValuePairs));
         this.initialComplexity = initialComplexity;
         this.affinity = affinity;
         this.smite = smite;
+    }
+
+    public static AttributeValuePair[] adjustAttributes(AttributeValuePair... attributeValuePairs){
+        ArrayList<AttributeValuePair> list = new ArrayList<>(Arrays.asList(attributeValuePairs));
+        if (list.stream().noneMatch((m) -> m.getAttribute() == Attribute.DELAY)) {
+            list.add(new AttributeValuePair(Attribute.DAMAGE, 1.0F, 1.0F, 5.0F, 1F, 20F));
+        }
+        return list.toArray(new AttributeValuePair[0]);
     }
 
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {

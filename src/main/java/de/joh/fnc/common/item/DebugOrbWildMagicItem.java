@@ -121,10 +121,10 @@ public class DebugOrbWildMagicItem extends Item {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player user, @NotNull InteractionHand hand) {
-        InteractionResultHolder<ItemStack> ar = super.use(world, user, hand);
+        InteractionResultHolder<ItemStack> ret = super.use(world, user, hand);
         useWildMagic(world, user, new SpellTarget(user), user.getItemInHand(hand), SpellPartTags.NEUTRAL, true);
         user.getCooldowns().addCooldown(this, 20);
-        return ar;
+        return ret;
     }
 
     @Override

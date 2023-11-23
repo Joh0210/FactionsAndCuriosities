@@ -27,14 +27,14 @@ public class DeckOfManyItem extends Item implements IFactionSpecific {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player user, @NotNull InteractionHand hand) {
-        InteractionResultHolder<ItemStack> ar = super.use(world, user, hand);
+        InteractionResultHolder<ItemStack> ret = super.use(world, user, hand);
         this.usedByPlayer(user);
         if (!world.isClientSide()) {
             //todo: Might not be performed
             WildMagicHelper.performRandomWildMagic(user, null, SpellPartTags.FRIENDLY, (wm, s, t, comp) -> wm.getQuality(comp) == Quality.VERY_BAD || wm.getQuality(comp) == Quality.VERY_GOOD, false);
         }
         user.getCooldowns().addCooldown(this, 1200);
-        return ar;
+        return ret;
     }
 
     public ResourceLocation getFaction() {
