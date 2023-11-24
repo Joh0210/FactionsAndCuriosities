@@ -7,6 +7,7 @@ import de.joh.fnc.api.smite.SmiteHelper;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
+import de.joh.fnc.common.effect.harmful.HexMobEffect;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
@@ -15,6 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -24,6 +26,18 @@ import net.minecraftforge.fml.common.Mod;
  */
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class DamageEventHandler {
+    /**
+     * @see HexMobEffect
+     */
+    @SubscribeEvent
+    public static void onLivingHurt(LivingHurtEvent event){
+        LivingEntity targetEntity = event.getEntityLiving();
+
+        if (targetEntity != null && targetEntity.hasEffect(EffectInit.HEX.get()) && event.getAmount() >= 1){
+            event.setAmount(Math.max(event.getAmount() * (1 + 0.25f * (targetEntity.getEffect(EffectInit.HEX.get()).getAmplifier() + 1)), 1));
+        }
+    }
+
     /**
      * @see BlackCatBraceletItem
      */

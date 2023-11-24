@@ -26,6 +26,8 @@ public class SpellInit {
     public static SpellEffect BURNING_SMITE;
     public static SpellEffect CRIPPLING_SMITE;
     public static SpellEffect DISPELLING_SMITE;
+    public static SpellEffect SILENCING_SMITE;
+    public static SpellEffect HEXING_SMITE;
 
     @SubscribeEvent
     public static void registerComponents(final RegistryEvent.Register<SpellEffect> event) {
@@ -35,6 +37,8 @@ public class SpellInit {
         event.getRegistry().register(SpellInit.BURNING_SMITE);
         event.getRegistry().register(SpellInit.CRIPPLING_SMITE);
         event.getRegistry().register(SpellInit.DISPELLING_SMITE);
+        event.getRegistry().register(SpellInit.SILENCING_SMITE);
+        event.getRegistry().register(SpellInit.HEXING_SMITE);
     }
 
     static {
@@ -49,7 +53,14 @@ public class SpellInit {
                 new AttributeValuePair(Attribute.DURATION, 5.0F, 5.0F, 20.0F, 5.0F, 3F),
                 new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 3.0F, 1.0F, 5F));
         SpellInit.DISPELLING_SMITE = new SmiteComponent(RLoc.create("components/dispelling_smite"), RLoc.create("textures/spell/component/dispelling_smite.png"),
-                10, Affinity.ARCANE, EffectInit.DISPELLING_SMITE,
+                15, Affinity.ARCANE, EffectInit.DISPELLING_SMITE,
                 new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 3.0F, 1.0F, 10F));
+        SpellInit.SILENCING_SMITE = new SmiteComponent(RLoc.create("components/silencing_smite"), RLoc.create("textures/spell/component/silencing_smite.png"),
+                20, Affinity.ARCANE, EffectInit.SILENCING_SMITE,
+                new AttributeValuePair(Attribute.DURATION, 5.0F, 5.0F, 15.0F, 1.0F, 10.0F));
+        SpellInit.HEXING_SMITE = new SmiteComponent(RLoc.create("components/hexing_smite"), RLoc.create("textures/spell/component/hexing_smite.png"),
+                10, Affinity.ENDER, EffectInit.HEXING_SMITE,
+                new AttributeValuePair(Attribute.DURATION, 5.0F, 5.0F, 20.0F, 1.0F, 5.0F),
+                new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 4.0F, 1.0F, 10F));
     }
 }

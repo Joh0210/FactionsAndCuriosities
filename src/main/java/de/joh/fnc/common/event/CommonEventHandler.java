@@ -1,11 +1,14 @@
 package de.joh.fnc.common.event;
 
 import de.joh.fnc.FactionsAndCuriosities;
+import de.joh.fnc.common.effect.harmful.HexMobEffect;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.item.WildPickaxeItem;
 import de.joh.fnc.api.util.ModTags;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +19,16 @@ import net.minecraftforge.fml.common.Mod;
  */
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEventHandler {
+    /**
+     * @see HexMobEffect
+     */
+    public static void onLivingHeal(final LivingHealEvent event){
+        LivingEntity entity = event.getEntityLiving();
+
+        if (entity.hasEffect(EffectInit.HEX.get())){
+            event.setCanceled(true);
+        }
+    }
 
     /**
      * Handles the random block of the WildPickaxe

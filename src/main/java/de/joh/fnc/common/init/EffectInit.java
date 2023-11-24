@@ -35,11 +35,15 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> LIVING_BOMB = EFFECTS.register("living_bomb", LivingBombMobEffect::new);
     public static final RegistryObject<MobEffect> MINIMIZED = EFFECTS.register("minimized", MinimizedMobEffect::new);
     public static final RegistryObject<MobEffect> BAD_WILD_MAGIC = EFFECTS.register("bad_wild_magic", BadWildMagicMobEffect::new);
+    public static final RegistryObject<MobEffect> HEX = EFFECTS.register("hex", HexMobEffect::new);
+
 
     // smite
     public static final RegistryObject<SmiteMobEffect> BURNING_SMITE = EFFECTS.register("burning_smite", BurningSmite::new);
     public static final RegistryObject<SmiteMobEffect> CRIPPLING_SMITE = EFFECTS.register("crippling_smite", CripplingSmite::new);
     public static final RegistryObject<SmiteMobEffect> DISPELLING_SMITE = EFFECTS.register("dispelling_smite", DispellingSmite::new);
+    public static final RegistryObject<SmiteMobEffect> SILENCING_SMITE = EFFECTS.register("silencing_smite", SilencingSmite::new);
+    public static final RegistryObject<SmiteMobEffect> HEXING_SMITE = EFFECTS.register("hexing_smite", HexingSmite::new);
 
 
     public static void register(IEventBus eventBus){
