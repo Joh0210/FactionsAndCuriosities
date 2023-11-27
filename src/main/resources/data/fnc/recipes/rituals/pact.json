@@ -1,0 +1,64 @@
+{
+  "type": "mna:ritual",
+  "tier": 2,
+  "pattern":
+  [
+    [ 0, 0, 0, 5, 0, 0, 0 ],
+    [ 0, 0,16, 4,17, 0, 0 ],
+    [ 0, 2, 1, 0, 7, 8, 0 ],
+    [ 0, 0,15,10,18, 0, 0 ],
+    [ 0, 0, 0,11, 0, 0, 0 ],
+    [ 0, 0, 0,12, 0, 0, 0 ],
+    [ 0, 0, 0,13, 0, 0, 0 ]
+  ],
+  "displayPattern":
+  [
+    [ 0, 0, 0, 5, 0, 0, 0 ],
+    [ 0, 0,16, 4,17, 0, 0 ],
+    [ 0, 2, 1, 0, 7, 8, 0 ],
+    [ 0, 0,15,10,18, 0, 0 ],
+    [ 0, 0, 0,11, 0, 0, 0 ],
+    [ 0, 0, 0,12, 0, 0, 0 ],
+    [ 0, 0, 0,13, 0, 0, 0 ]
+  ],
+  "reagents":
+  [
+    "   G   ",
+    "  GGG  ",
+    " GG GG ",
+    "  GIG  ",
+    "   I   ",
+    "   I   ",
+    "   I   "
+  ],
+  "keys":
+  {
+    "G":
+    {
+      "item": "minecraft:gold_ingot",
+      "optional": false,
+      "consume": true
+    },
+    "I":
+    {
+      "item": "minecraft:iron_ingot",
+      "optional": false,
+      "consume": true
+    }
+  },
+  "manaweave":
+  [
+    "mna:manaweave_patterns/triangle",
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/inverted_triangle"
+  ],
+  "parameters":
+  {
+    "innerColor": "0xc0c0c0",
+    "outerColor": "0x808080",
+    "displayIndexes": false,
+    "connectBeam": false
+  }
+}

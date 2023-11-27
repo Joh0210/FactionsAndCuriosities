@@ -1,0 +1,15 @@
+{
+  "type": "mna:component",
+  "tier": 4,
+  "output": "fnc:components/hexing_smite",
+  "items": [
+    "minecraft:diamond_sword",
+    "minecraft:wither_rose",
+    "mna:vinteum_dust",
+    "minecraft:rotten_flesh"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/inverted_triangle",
+    "mna:manaweave_patterns/hourglass"
+  ]
+}

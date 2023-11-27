@@ -14,14 +14,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import java.util.Random;
-
 /**
  * Ritual for joining/leveling the wild courts.
  * @author Joh0210
  */
-public class WildEnergyRitual extends RitualEffect {
-    public WildEnergyRitual(ResourceLocation ritualName) {
+public class PactRitual extends RitualEffect {
+    public PactRitual(ResourceLocation ritualName) {
         super(ritualName);
     }
 
@@ -35,7 +33,7 @@ public class WildEnergyRitual extends RitualEffect {
                 return new TranslatableComponent("ritual.mna.progression.not_ready");
             }
 
-            if (progression != null && progression.hasAlliedFaction() && progression.getAlliedFaction() != FactionInit.WILD) {
+            if (progression != null && progression.hasAlliedFaction() && progression.getAlliedFaction() != FactionInit.PALADIN) {
                 return new TranslatableComponent("event.mna.faction_ritual_failed");
             }
 
@@ -49,11 +47,11 @@ public class WildEnergyRitual extends RitualEffect {
             IPlayerProgression progression = context.getCaster().getCapability(PlayerProgressionProvider.PROGRESSION).orElse(null);
             if (progression != null && progression.getTier() < 5) {
                 if (progression.getAlliedFaction() == null) {
-                    progression.setAlliedFaction(FactionInit.WILD, context.getCaster());
-                    context.getCaster().sendMessage(new TranslatableComponent("event.fnc.faction_ally_wild"), Util.NIL_UUID);
+                    progression.setAlliedFaction(FactionInit.PALADIN, context.getCaster());
+                    context.getCaster().sendMessage(new TranslatableComponent("event.fnc.faction_ally_paladin"), Util.NIL_UUID);
                 }
 
-                if (progression.getAlliedFaction() == FactionInit.WILD) {
+                if (progression.getAlliedFaction() == FactionInit.PALADIN) {
                     progression.setTier(progression.getTier() + 1, context.getCaster());
                     context.getCaster().sendMessage(new TranslatableComponent("mna:progresscondition.advanced", progression.getTier()), Util.NIL_UUID);
                     return true;
@@ -71,14 +69,12 @@ public class WildEnergyRitual extends RitualEffect {
     @Override
     @OnlyIn(Dist.CLIENT)
     public boolean spawnRitualParticles(IRitualContext context) {
-        Random random = new Random();
-
         for(int i = 0; i < 360; i += 3) {
-            if(random.nextDouble() < 0.05f){
-                context.getWorld().addParticle(ParticleTypes.ELECTRIC_SPARK,
-                        context.getCenter().getX() + Math.cos(i) * 2 + 0.5,
+            if(i % 10 == 0){
+                context.getWorld().addParticle(ParticleTypes.ENCHANT,
+                        context.getCenter().getX() + 0.5,
                         context.getCenter().getY() + 2.1,
-                        context.getCenter().getZ() + Math.sin(i) * 2 + 0.5,
+                        context.getCenter().getZ() + 0.5,
                         Math.cos(i) * 3d,
                         0.15d,
                         Math.sin(i) * 3d);

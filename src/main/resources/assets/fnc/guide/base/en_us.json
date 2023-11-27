@@ -1,4 +1,386 @@
 {
+  "Component: Burning Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Burning Smite"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Smite ignites the target for the defined duration."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smites"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smites are short effects that increase the player's "
+          },
+          {
+            "text": "melee attack damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": "and influence the melee target in an additional way.\n\nMultiple Smites can be active at the same time, but the "
+          },
+          {
+            "text": "maximum damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that can be achieved through Smite stacking is "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": " (can be set via the config)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/burning_smite"
+      }
+    ]
+  },
+  "Component: Crippling Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Crippling Smite"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Smite maims the target with blindness, weakness and slowness for a short time."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smites"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smites are short effects that increase the player's "
+          },
+          {
+            "text": "melee attack damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": "and influence the melee target in an additional way.\n\nMultiple Smites can be active at the same time, but the "
+          },
+          {
+            "text": "maximum damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that can be achieved through Smite stacking is "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": " (can be set via the config)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/crippling_smite"
+      }
+    ]
+  },
+  "Component: Dispelling Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Dispelling Smite"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Smite removes positive potion effects from the target.\n\nHowever, the effect is not omnipotent. Stronger or longer effects may not be able to be removed. To increase the Smite's power, the magnitude can be turned up."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smites"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smites are short effects that increase the player's "
+          },
+          {
+            "text": "melee attack damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": "and influence the melee target in an additional way.\n\nMultiple Smites can be active at the same time, but the "
+          },
+          {
+            "text": "maximum damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that can be achieved through Smite stacking is "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": " (can be set via the config)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/dispelling_smite"
+      }
+    ]
+  },
+  "Component: Hexing Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Hexing Smite"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Smite applies the "
+          },{
+            "text": "Hex Effect",
+            "color": "dark_purple"
+          },
+          {
+            "text": " to a target, which stops the target form healing and the damage the target takes will be increased by 25% per level."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smites"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smites are short effects that increase the player's "
+          },
+          {
+            "text": "melee attack damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": "and influence the melee target in an additional way.\n\nMultiple Smites can be active at the same time, but the "
+          },
+          {
+            "text": "maximum damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that can be achieved through Smite stacking is "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": " (can be set via the config)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/hexing_smite"
+      }
+    ]
+  },
+  "Component: Silencing Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Silencing Smite"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Smite prevents the target from casting spells for a short duration."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smites"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smites are short effects that increase the player's "
+          },
+          {
+            "text": "melee attack damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": "and influence the melee target in an additional way.\n\nMultiple Smites can be active at the same time, but the "
+          },
+          {
+            "text": "maximum damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that can be achieved through Smite stacking is "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": " (can be set via the config)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/silencing_smite"
+      }
+    ]
+  },
+
   "Component: Random Teleport": {
     "index": "2",
     "category": "sorcery",
@@ -344,8 +726,8 @@
   },
 
   "Deck of Many": {
-    "index": "1",
-    "category": "artifice",
+    "index": 0,
+    "category": "eldrin_altar",
     "sections": [
       {
         "type": "title",
@@ -401,7 +783,6 @@
       }
     ]
   },
-
   "Mischief Armor": {
     "index": 0,
     "category": "eldrin_altar",
@@ -440,6 +821,36 @@
     ]
   },
 
+  "Ritual of the Pact": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ritual of the Pact"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "With this pact I swear to protect those who cannot protect themselves, to destroy those who harm others and to become part of the great ",
+            "color": ""
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/pact"
+      }
+    ]
+  },
   "Ritual of the Wild": {
     "index": 0,
     "category": "rituals",
@@ -494,7 +905,7 @@
             "text": " use magic in its purest and most untamed form.\n\nTheir magic is as powerful as it is dangerous. Whenever they access it, there is a small chance that the wild magic will cause a random event."
           },
           {
-            "text": ".\n\nWild relics include items such as the "
+            "text": ".\n\nWild artifacts include items such as the "
           },
           {
             "text": "Deck of Many",
@@ -537,6 +948,92 @@
       {
         "type": "ritual",
         "location":"fnc:rituals/wild_energy"
+      }
+    ]
+  },
+  "Faction: Paladin": {
+    "index": 10,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Faction: Paladin"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "The "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": " use magic in combination with martial techniques. This makes them very good guards, fighters and enforcers."
+          },
+          {
+            "text": ".\n\nPaladin artefacts includes versatile armor and powerful weapons such as the "
+          },
+          {
+            "text": "Armor of the Witch Hunter",
+            "color": "gray"
+          },
+          {
+            "text": ", which massively reduces damage caused by magic. The spell components of Paladins consists of powerful "
+          },
+          {
+            "text": "Smites",
+            "color": "gray"
+          },
+          {
+            "text": ".\n\nSmites are short effects that increase the player's "
+          },
+          {
+            "text": "melee attack damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": "and influence the melee target in an additional way.Multiple Smites can be active at the same time, but the "
+          },
+          {
+            "text": "maximum damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that can be achieved through Smite stacking is "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": " (can be set via the config)"
+          },
+          {
+            "text": ".\n\nThe Paladins are allied with the "
+          },
+          {
+            "text": "Council of Wizards",
+            "color": "blue"
+          },
+          {
+            "text": ".\n\nWhen looking at the occulus, anything requiring the Paladin faction will be marked with the following icon:"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "location": "fnc:textures/guide/faction_icon_paladin.png",
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/pact"
       }
     ]
   },

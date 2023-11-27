@@ -21,8 +21,8 @@ public class CripplingSmite extends SmiteMobEffect {
      */
     private static final Map<MobEffect, Integer> EFFECTS = Map.of(
             MobEffects.BLINDNESS, 1,
-            MobEffects.WEAKNESS, 1,
-            MobEffects.MOVEMENT_SLOWDOWN, 3
+            MobEffects.WEAKNESS, 3,
+            MobEffects.MOVEMENT_SLOWDOWN, 2
     );
 
     public CripplingSmite() {

@@ -2,6 +2,7 @@ package de.joh.fnc.common.init;
 
 import com.mna.api.rituals.RitualEffect;
 import de.joh.fnc.FactionsAndCuriosities;
+import de.joh.fnc.common.ritual.PactRitual;
 import de.joh.fnc.common.ritual.WildEnergyRitual;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,7 +18,8 @@ public class RitualInit {
     @SubscribeEvent
     public static void registerRitualEffects(RegistryEvent.Register<RitualEffect> event) {
         event.getRegistry().registerAll(
-                new WildEnergyRitual(RLoc.create("rituals/wild_energy")).setRegistryName(RLoc.create("ritual-wild_energy"))
+                new WildEnergyRitual(RLoc.create("rituals/wild_energy")).setRegistryName(RLoc.create("ritual-wild_energy")),
+                new PactRitual(RLoc.create("rituals/pact")).setRegistryName(RLoc.create("ritual-pact"))
         );
     }
 }

@@ -18,59 +18,59 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * A new Faction with a Wild Magic theme
+ * A new Faction with a default-Fighting-Focused and Smiting Theme
  * @author Joh0210
  */
-public class WildFaction extends BaseFaction {
-    public WildFaction() {
-        super(ResourceIDs.FACTION_WILD_ID, ResourceIDs.WILD_MANA);
+public class PaladinFaction extends BaseFaction {
+    public PaladinFaction() {
+        super(ResourceIDs.FACTION_PALADIN_ID, ResourceIDs.PALADIN_MANA);
     }
 
     @Override
     public List<IFaction> getEnemyFactions() {
-        return ManaAndArtificeMod.getFactionHelper().getFactionsExcept(this.getRegistryName(), FactionIDs.FEY);
+        return ManaAndArtificeMod.getFactionHelper().getFactionsExcept(this.getRegistryName(), FactionIDs.COUNCIL);
     }
 
     @Override
     public ItemStack getFactionGrimoire() {
         //todo getFactionGrimoire
-        return new ItemStack(ItemInit.GRIMOIRE_FEY.get());
+        return new ItemStack(ItemInit.GRIMOIRE_COUNCIL.get());
     }
 
     @Override
     public Item getTokenItem() {
         //todo getTokenItem
-        return ItemInit.MARK_OF_THE_FEY.get();
+        return ItemInit.MARK_OF_THE_COUNCIL.get();
     }
 
     @Override
     public SoundEvent getRaidSound() {
-        return SFX.Event.Faction.FACTION_RAID_FEY;
+        return SFX.Event.Faction.FACTION_RAID_COUNCIL;
     }
 
     @Nullable
     @Override
     public SoundEvent getHornSound() {
-        return SFX.Event.Faction.FACTION_HORN_FEY;
+        return SFX.Event.Faction.FACTION_HORN_COUNCIL;
     }
 
     @Override
     public Component getOcculusTaskPrompt(int i) {
-        return new TranslatableComponent("fnc:rituals/wild_energy");
+        return new TranslatableComponent("fnc:rituals/pact");
     }
 
     @Override
     public ResourceLocation getFactionIcon() {
-        return ResourceIDs.FACTION_WILD_ICON;
+        return ResourceIDs.FACTION_PALADIN_ICON;
     }
 
     @Override
     public int[] getManaweaveRGB() {
-        return new int[]{218, 165, 32};
+        return new int[]{192, 192, 192};
     }
 
     @Override
     public ChatFormatting getTornJournalPageFactionColor() {
-        return ChatFormatting.GOLD;
+        return ChatFormatting.GRAY;
     }
 }

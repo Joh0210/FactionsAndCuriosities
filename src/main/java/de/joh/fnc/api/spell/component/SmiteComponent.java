@@ -1,6 +1,7 @@
 package de.joh.fnc.api.spell.component;
 
 import com.mna.api.affinity.Affinity;
+import com.mna.api.faction.IFaction;
 import com.mna.api.spells.ComponentApplicationResult;
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.attributes.Attribute;
@@ -12,6 +13,7 @@ import com.mna.api.spells.targeting.SpellSource;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.api.smite.SmiteHelper;
 import de.joh.fnc.api.smite.SmiteMobEffect;
+import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.Util;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -75,11 +77,10 @@ public class SmiteComponent extends SpellEffect {
         return false;
     }
 
-    //todo: Faction
-//    @Override
-//    public IFaction getFactionRequirement() {
-//        return FactionInit.PALADIN;
-//    }
+    @Override
+    public IFaction getFactionRequirement() {
+        return FactionInit.PALADIN;
+    }
 
     @Override
     public Affinity getAffinity() {
