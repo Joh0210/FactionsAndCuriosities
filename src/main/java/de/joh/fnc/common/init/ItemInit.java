@@ -27,6 +27,7 @@ public class ItemInit {
     public static final RegistryObject<Item> MISCHIEF_LEGGING = ITEMS.register("mischief_legging", () -> new MischiefArmorItem(EquipmentSlot.LEGS));
     public static final RegistryObject<Item> MISCHIEF_BOOTS = ITEMS.register("mischief_boots", () -> new MischiefArmorItem(EquipmentSlot.FEET));
     public static final RegistryObject<Item> BLACK_CAT_BRACELET = ITEMS.register("black_cat_bracelet", BlackCatBraceletItem::new);
+    public static final RegistryObject<Item> BLOOD_LUST_BRACELET = ITEMS.register("blood_lust_bracelet", BloodLustBraceletItem::new);
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER_RING = ITEMS.register("four_leaf_clover_ring", FourLeafCloverRingItem::new);
     public static final RegistryObject<Item> DECK_OF_MANY = ITEMS.register("deck_of_many", DeckOfManyItem::new);
     public static final RegistryObject<Item> WILD_PICKAXE = ITEMS.register("wild_pickaxe", WildPickaxeItem::new);

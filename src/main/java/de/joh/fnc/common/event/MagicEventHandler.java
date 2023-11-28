@@ -6,24 +6,27 @@ import com.mna.api.spells.attributes.Attribute;
 import com.mna.api.spells.base.IModifiedSpellPart;
 import com.mna.api.spells.parts.Shape;
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.common.init.EffectInit;
-import de.joh.fnc.common.effect.neutral.WildMagicCooldownMobEffect;
+import de.joh.fnc.api.event.PerformSmiteEvent;
 import de.joh.fnc.api.event.PerformSpellAdjustmentEvent;
 import de.joh.fnc.api.event.PerformWildMagicEvent;
 import de.joh.fnc.api.event.ShouldCauseWildMagicEvent;
-import de.joh.fnc.common.init.ItemInit;
-import de.joh.fnc.common.item.DebugOrbSpellAdjustmentItem;
-import de.joh.fnc.common.item.FourLeafCloverRingItem;
-import de.joh.fnc.common.item.MischiefArmorItem;
 import de.joh.fnc.api.spelladjustment.SpellAdjustmentHelper;
-import de.joh.fnc.common.util.CommonConfig;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
+import de.joh.fnc.common.effect.neutral.WildMagicCooldownMobEffect;
+import de.joh.fnc.common.init.EffectInit;
+import de.joh.fnc.common.init.ItemInit;
+import de.joh.fnc.common.item.BloodLustBraceletItem;
+import de.joh.fnc.common.item.DebugOrbSpellAdjustmentItem;
+import de.joh.fnc.common.item.FourLeafCloverRingItem;
+import de.joh.fnc.common.item.MischiefArmorItem;
+import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -146,6 +149,18 @@ public class MagicEventHandler {
             event.setCanceled(true);
             source.displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);
             source.level.playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
+        }
+    }
+
+    /**
+     * Processing of {@link BloodLustBraceletItem} protection
+     */
+    @SubscribeEvent
+    public static void onPerformSmite(PerformSmiteEvent event){
+        Player source = event.getSource();
+        if(!event.isCanceled() && ((BloodLustBraceletItem) ItemInit.BLOOD_LUST_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)
+        ){
+            source.addEffect(new MobEffectInstance(MobEffects.REGENERATION, CommonConfig.BLOOD_LUST_BRACELET_DURATION.get() * 20));
         }
     }
 }

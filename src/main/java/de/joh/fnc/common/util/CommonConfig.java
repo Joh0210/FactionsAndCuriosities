@@ -43,6 +43,11 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> GLITTERING_POTATO_HURT_CHANCE;
 
     /**
+     * How likely is it for the Glittering Potato to explode?
+     */
+    public static final ForgeConfigSpec.ConfigValue<Integer> BLOOD_LUST_BRACELET_DURATION;
+
+    /**
      * What is the maximum amount of Damage Smites can do in total (Smite Stacking included)
      */
     public static final ForgeConfigSpec.ConfigValue<Integer> MAX_SMITE_DAMAGE;
@@ -76,6 +81,10 @@ public class CommonConfig {
         BUILDER.push("Glittering Potato");
         GLITTERING_POTATO_HEAL_AMOUNT = BUILDER.defineInRange("How many HP should be healed with the Glittering Potato?", 4, 1, 20);
         GLITTERING_POTATO_HURT_CHANCE = BUILDER.defineInRange("How likely is it for the Glittering Potato to explode?", 20, 0, 99);
+        BUILDER.pop();
+
+        BUILDER.push("BloodLustBracelet");
+        BLOOD_LUST_BRACELET_DURATION = BUILDER.defineInRange("How long is the regeneration effect of the Blood Lust Bracelet? ", 10, 1, 100);
         BUILDER.pop();
 
         BUILDER.push("Smite");

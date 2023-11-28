@@ -575,6 +575,45 @@
       }
     ]
   },
+  "Blood Lust Bracelet": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Blood Lust Bracelet"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "I feel so alive when I take if from other\nThis bracelet gives me a short regeneration effect when I use my Smites.\n\nIt only contains so much magic, and will eventually need to be recharged. It can make use of "
+          },
+          {
+            "text": "Mana Crystal Fragments",
+            "color": "blue"
+          },
+          {
+            "text": " \n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/blood_lust_bracelet"
+      }
+    ]
+  },
   "Black Cat Bracelet": {
     "index": "1",
     "category": "artifice",
