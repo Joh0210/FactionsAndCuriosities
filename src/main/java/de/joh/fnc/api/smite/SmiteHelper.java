@@ -1,10 +1,12 @@
 package de.joh.fnc.api.smite;
 
+import com.mna.api.spells.base.ISpellDefinition;
 import de.joh.fnc.api.event.PerformSmiteEvent;
 import de.joh.fnc.api.spell.component.SmiteComponent;
 import de.joh.fnc.common.capability.SmiteEntry;
 import de.joh.fnc.common.capability.SmitePlayerCapability;
 import de.joh.fnc.common.capability.PlayerCapabilityProvider;
+import de.joh.fnc.common.effect.beneficial.PaladinSmiteMobEffect;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.world.damagesource.EntityDamageSource;
@@ -33,12 +35,13 @@ public class SmiteHelper {
     public static void addSmite(Player player, SmiteMobEffect smiteEffect, int damage, int range, int magnitude, int duration, int precision) {
         player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smiteCapability.addSmite(smiteEffect, damage, range, magnitude, duration, precision));
 
-        if(!player.hasEffect(smiteEffect)){
+        MobEffectInstance instance = player.getEffect(smiteEffect);
+        if(instance == null){
             player.addEffect(new MobEffectInstance(smiteEffect, CommonConfig.SMITE_DURATION.get() * 20, 0));
         }
-        else{
+        else {
             //Update the duration of the effect
-            player.getEffect(smiteEffect).update(new MobEffectInstance(smiteEffect, CommonConfig.SMITE_DURATION.get() * 20, 0));
+            instance.update(new MobEffectInstance(smiteEffect, CommonConfig.SMITE_DURATION.get() * 20, 0));
         }
     }
 
@@ -52,29 +55,39 @@ public class SmiteHelper {
         player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smiteCapability.removeSmite(smiteEffect));
     }
 
+    public static void removeSmiteFromShape(Player player){
+        player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(SmitePlayerCapability::removeSmiteFromShape);
+    }
+
     /**
      * Applies the Smite Effect on the Target.
      * <br>Called when the source makes a direct melee attack against the target.
      * <br><br>In addition to the actual {@link SmiteMobEffect#performSmite(Player, LivingEntity, int, int, int, int) Smite-Effects}, a certain amount of damage is also added.
-     * The base value cannot exceed the amount defined by the {@link CommonConfig}, but the {@link PerformSmiteEvent#damageMod} is not effected by this rule.
+     * The base value cannot exceed the amount defined by the {@link CommonConfig}, but the {@link PerformSmiteEvent#getDamageMod() damageMod} is not effected by this rule.
      * @see DamageEventHandler
      */
     public static void applySmite(Player source, LivingEntity target){
         AtomicReference<ArrayList<SmiteEntry>> smites = new AtomicReference<>(new ArrayList<>());
-        source.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smites.set(smiteCapability.getSmites()));
+        AtomicReference<ISpellDefinition> smiteFromShape = new AtomicReference<>();
+        source.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> {
+            smites.set(smiteCapability.getSmites());
+            smiteFromShape.set(smiteCapability.getSmiteFromShape());
+        });
 
-        if(smites.get().isEmpty()){
+        if(smites.get().isEmpty() && smiteFromShape.get() == null){
             return;
         }
 
-        PerformSmiteEvent event = new PerformSmiteEvent(source, target, smites.get());
+        PerformSmiteEvent event = new PerformSmiteEvent(source, target, smites.get(), smiteFromShape.get());
         MinecraftForge.EVENT_BUS.post(event);
         if(!event.isCanceled()) {
+            target.hurt(new EntityDamageSource("fnc-smite", source).bypassArmor().bypassMagic().setMagic(), event.getDamage(false));
+            if(event.getSmiteFromShape() != null){
+                PaladinSmiteMobEffect.performSmite(source, target, event.getSmiteFromShape());
+            }
             for(SmiteEntry entry : event.getSmites()){
                 entry.getSmite().performSmite(source, target, entry.getRange(), entry.getMagnitude(), entry.getDuration(), entry.getPrecision());
             }
-
-            target.hurt(new EntityDamageSource("fnc-smite", source).bypassArmor().bypassMagic().setMagic(), event.getDamage());
         }
     }
 }

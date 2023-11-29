@@ -24,6 +24,7 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> GOOD_WILD_MAGIC = EFFECTS.register("good_wild_magic", GoodWildMagicMobEffect::new);
     public static final RegistryObject<MobEffect> EXPLOSION_RESISTANCE = EFFECTS.register("explosion_resistance", ExplosionResistanceMobEffect::new);
     public static final RegistryObject<MobEffect> EMPOWERED = EFFECTS.register("empowered", EmpoweredMobEffect::new);
+    public static final RegistryObject<MobEffect> PALADIN_SMITE = EFFECTS.register("paladin_smite", PaladinSmiteMobEffect::new);
 
     // neutral
     public static final RegistryObject<MobEffect> WILD_MAGIC_COOLDOWN = EFFECTS.register("wild_magic_cooldown", WildMagicCooldownMobEffect::new);

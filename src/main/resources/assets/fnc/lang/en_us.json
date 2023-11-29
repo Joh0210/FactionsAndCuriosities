@@ -37,6 +37,7 @@
   "effect.fnc.silencing_smite": "Silencing Smite",
   "effect.fnc.wild_magic": "Wild Magic",
   "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
+  "effect.fnc.paladin_smite": "Paladin Smite",
 
   "death.attack.fnc-smite": "%s was smited to death",
   "death.attack.fnc-smite.player": "%s was smited to death by %s",
@@ -47,6 +48,9 @@
   "fnc.feedback.selected.wildmagic": "Selected Wild Magic: ",
   "fnc.feedback.selected.wildmagic.condition_false" : "The condition of the selected Wild Magic was not fulfilled!",
   "fnc.feedback.wildmagic.accident_protection" : "The disaster was averted!",
+
+  "fnc:shapes/paladin_smite": "Paladin Smite",
+  "fnc:shapes/paladin_smite.desc.damage": "The damage increase caused by the Smite.",
 
   "fnc.component.smite.no_player.error" : "The spell can only target players",
   "fnc:components/burning_smite": "Burning Smite",

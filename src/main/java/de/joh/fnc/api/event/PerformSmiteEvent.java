@@ -1,8 +1,11 @@
 package de.joh.fnc.api.event;
 
-import de.joh.fnc.api.smite.SmiteMobEffect;
+import com.mna.api.spells.attributes.Attribute;
+import com.mna.api.spells.base.ISpellDefinition;
 import de.joh.fnc.api.smite.SmiteHelper;
+import de.joh.fnc.api.smite.SmiteMobEffect;
 import de.joh.fnc.common.capability.SmiteEntry;
+import de.joh.fnc.common.spell.shape.PaladinSmiteShape;
 import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -34,18 +37,33 @@ public class PerformSmiteEvent extends PlayerEvent {
     /**
      * Damage Boosts that can stack beyond the Max Smite Damage
      */
-    public int damageMod = 0;
+    private int damageMod = 0;
 
     /**
      * Increases the maximum Damage Smites can deal by this mod
      * <br>Can be negative.
      */
-    public int maxDamageMod = 0;
+    private int maxDamageMod = 0;
 
-    public PerformSmiteEvent(@NotNull Player source, @NotNull LivingEntity target, @NotNull ArrayList<SmiteEntry> smites) {
+    /**
+     * A Smite, which effects is defined by the attached Spell Effects
+     * @see PaladinSmiteShape
+     */
+    private @Nullable ISpellDefinition smiteFromShape;
+
+    public PerformSmiteEvent(@NotNull Player source, @NotNull LivingEntity target, @NotNull ArrayList<SmiteEntry> smites, @Nullable ISpellDefinition smiteFromShape) {
         super(source);
         this.target = target;
         this.smites = smites;
+        this.smiteFromShape = smiteFromShape;
+    }
+
+    public void removeSmiteFromShape(){
+        this.smiteFromShape = null;
+    }
+
+    public @Nullable ISpellDefinition getSmiteFromShape() {
+        return smiteFromShape;
     }
 
     public Player getSource() {
@@ -99,8 +117,15 @@ public class PerformSmiteEvent extends PlayerEvent {
      * The base value cannot exceed the amount defined by the {@link CommonConfig}. The {@link PerformSmiteEvent#damageMod damageMod} is not effected by this rule
      * @return Total amount of damage caused by the Smites.
      */
-    public int getDamage(){
-        return Math.max(0, Math.min(smites.stream().mapToInt(SmiteEntry::getDamage).sum(), CommonConfig.MAX_SMITE_DAMAGE.get() + maxDamageMod) + damageMod);
+    public int getDamage(boolean ignoreCap){
+        int dmgFromShape = 0;
+        if(smiteFromShape != null && smiteFromShape.getShape() != null){
+            dmgFromShape = Math.round(smiteFromShape.getShape().getValue(Attribute.DAMAGE));
+        }
+
+        int sum = smites.stream().mapToInt(SmiteEntry::getDamage).sum() + dmgFromShape;
+
+        return Math.max(0, (ignoreCap ? sum : Math.min(sum, CommonConfig.MAX_SMITE_DAMAGE.get() + maxDamageMod)) + damageMod);
     }
 
     public ArrayList<SmiteEntry> getSmites() {

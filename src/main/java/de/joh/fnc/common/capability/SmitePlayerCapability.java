@@ -1,9 +1,11 @@
 package de.joh.fnc.common.capability;
 
+import com.mna.api.spells.base.ISpellDefinition;
+import com.mna.spells.crafting.SpellRecipe;
 import de.joh.fnc.api.smite.SmiteMobEffect;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.player.Player;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -16,8 +18,11 @@ import java.util.Optional;
 public class SmitePlayerCapability {
     private ArrayList<SmiteEntry> smites = new ArrayList<>();
 
+    private @Nullable CompoundTag smiteRecipe = null;
+
     public void copyFrom(SmitePlayerCapability source) {
         this.smites = source.smites;
+        this.smiteRecipe = source.smiteRecipe;
     }
 
     public void saveNBT(CompoundTag compound) {
@@ -36,12 +41,16 @@ public class SmitePlayerCapability {
         }
         nbt.putInt("smite_size", smiteSize);
 
+        if(smiteRecipe != null){
+            nbt.put("smite_shape", smiteRecipe);
+        }
+
         compound.put("fnc_smite_data", nbt);
     }
 
     public void loadNBT(CompoundTag compound) {
         if (compound.contains("fnc_smite_data")) {
-            CompoundTag nbt = compound.getCompound("dragon_magic_data");
+            CompoundTag nbt = compound.getCompound("fnc_smite_data");
 
             smites = new ArrayList<>();
             for(int i = 0; i< nbt.getInt("smite_size"); i++){
@@ -52,7 +61,23 @@ public class SmitePlayerCapability {
                     //todo: log
                 }
             }
+
+            if(nbt.contains("smite_shape")){
+                smiteRecipe = nbt.getCompound("smite_shape");
+            } else {
+                smiteRecipe = null;
+            }
         }
+    }
+
+    public void addSmiteFromShape(ISpellDefinition smite){
+        CompoundTag smiteShape = new CompoundTag();
+        smite.writeToNBT(smiteShape);
+        this.smiteRecipe = smiteShape;
+    }
+
+    public void removeSmiteFromShape(){
+        this.smiteRecipe = null;
     }
 
     public void addSmite(SmiteMobEffect smiteEffect, int damage, int range, int magnitude, int duration, int precision){
@@ -80,5 +105,10 @@ public class SmitePlayerCapability {
         }
 
         return deepCopy;
+    }
+
+    @Nullable
+    public ISpellDefinition getSmiteFromShape(){
+        return smiteRecipe == null ? null : SpellRecipe.fromNBT(smiteRecipe);
     }
 }

@@ -3,12 +3,14 @@ package de.joh.fnc.common.init;
 import com.mna.api.affinity.Affinity;
 import com.mna.api.spells.attributes.Attribute;
 import com.mna.api.spells.attributes.AttributeValuePair;
+import com.mna.api.spells.parts.Shape;
 import com.mna.api.spells.parts.SpellEffect;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.common.spell.component.CauseWildMagicComponent;
 import de.joh.fnc.common.spell.component.RandomTpComponent;
 import de.joh.fnc.api.spell.component.SmiteComponent;
 import de.joh.fnc.common.spell.component.WildDamageComponent;
+import de.joh.fnc.common.spell.shape.PaladinSmiteShape;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +22,8 @@ import net.minecraftforge.fml.common.Mod;
  */
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SpellInit {
+    public static Shape SMITE;
+
     public static SpellEffect WILD_DAMAGE;
     public static SpellEffect CAUSE_WILD_MAGIC;
     public static SpellEffect RANDOM_TP;
@@ -28,6 +32,11 @@ public class SpellInit {
     public static SpellEffect DISPELLING_SMITE;
     public static SpellEffect SILENCING_SMITE;
     public static SpellEffect HEXING_SMITE;
+
+    @SubscribeEvent
+    public static void registerShapes(final RegistryEvent.Register<Shape> event) {
+        event.getRegistry().register(SpellInit.SMITE);
+    }
 
     @SubscribeEvent
     public static void registerComponents(final RegistryEvent.Register<SpellEffect> event) {
@@ -42,6 +51,8 @@ public class SpellInit {
     }
 
     static {
+        SpellInit.SMITE = new PaladinSmiteShape(RLoc.create("shapes/paladin_smite"), RLoc.create("textures/spell/shape/paladin_smite.png"));
+
         SpellInit.WILD_DAMAGE = new WildDamageComponent(RLoc.create("components/wild_damage"), RLoc.create("textures/spell/component/wild_damage.png"));
         SpellInit.CAUSE_WILD_MAGIC = new CauseWildMagicComponent(RLoc.create("components/cause_wild_magic"), RLoc.create("textures/spell/component/cause_wild_magic.png"));
         SpellInit.RANDOM_TP = new RandomTpComponent(RLoc.create("components/random_tp"), RLoc.create("textures/spell/component/random_tp.png"));
