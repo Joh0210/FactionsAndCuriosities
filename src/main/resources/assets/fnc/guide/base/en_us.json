@@ -803,6 +803,54 @@
     ]
   },
 
+  "Brimstone Sword": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Brimstone Sword"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "TMy allegiance is to the living, but when I combine my weapons with the forces of Hell, I can protect the living even better.\n\nWhen I Smite with this sword, I get "
+          },
+          {
+            "text": "half of the Smite damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " back as HP."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/brimstone_sword"
+      }
+    ]
+  },
   "Deck of Many": {
     "index": 0,
     "category": "eldrin_altar",

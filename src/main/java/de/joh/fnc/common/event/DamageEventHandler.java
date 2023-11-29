@@ -12,6 +12,7 @@ import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -32,9 +33,10 @@ public class DamageEventHandler {
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
         LivingEntity targetEntity = event.getEntityLiving();
+        MobEffectInstance instance = targetEntity.getEffect(EffectInit.HEX.get());
 
-        if (targetEntity != null && targetEntity.hasEffect(EffectInit.HEX.get()) && event.getAmount() >= 1){
-            event.setAmount(Math.max(event.getAmount() * (1 + 0.25f * (targetEntity.getEffect(EffectInit.HEX.get()).getAmplifier() + 1)), 1));
+        if (instance != null && event.getAmount() >= 1){
+            event.setAmount(Math.max(event.getAmount() * (1 + 0.25f * (instance.getAmplifier() + 1)), 1));
         }
     }
 
@@ -43,6 +45,14 @@ public class DamageEventHandler {
      */
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent event) {
+        if(event.getSource().getEntity() instanceof LivingEntity source
+                && !source.getLevel().isClientSide()
+                && event.getSource().msgId.equals("fnc-smite")
+                && source.getMainHandItem().getItem() == ItemInit.BRIMSTONE_SWORD.get())
+        {
+            source.heal(event.getAmount()/2);
+        }
+
         if (event.getSource().getEntity() instanceof Player source && source != event.getEntity() && !source.getLevel().isClientSide()) {
             LivingEntity target = event.getEntityLiving();
             if (source.isShiftKeyDown() && source.getMainHandItem().isEmpty() && ((BlackCatBraceletItem) ItemInit.BLACK_CAT_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)) {
