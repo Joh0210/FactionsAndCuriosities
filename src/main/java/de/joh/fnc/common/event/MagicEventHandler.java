@@ -14,13 +14,11 @@ import de.joh.fnc.api.spelladjustment.SpellAdjustmentHelper;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
+import de.joh.fnc.common.capability.SmiteEntry;
 import de.joh.fnc.common.effect.neutral.WildMagicCooldownMobEffect;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
-import de.joh.fnc.common.item.BloodLustBraceletItem;
-import de.joh.fnc.common.item.DebugOrbSpellAdjustmentItem;
-import de.joh.fnc.common.item.FourLeafCloverRingItem;
-import de.joh.fnc.common.item.MischiefArmorItem;
+import de.joh.fnc.common.item.*;
 import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
@@ -30,6 +28,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -153,14 +152,21 @@ public class MagicEventHandler {
     }
 
     /**
-     * Processing of {@link BloodLustBraceletItem} protection
+     * Processing of {@link BloodLustBraceletItem} and {@link SmitingRingItem} protection
      */
     @SubscribeEvent
     public static void onPerformSmite(PerformSmiteEvent event){
         Player source = event.getSource();
-        if(!event.isCanceled() && ((BloodLustBraceletItem) ItemInit.BLOOD_LUST_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)
+        if(!event.isCanceled() && !source.hasEffect(MobEffects.REGENERATION) && ((BloodLustBraceletItem) ItemInit.BLOOD_LUST_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)
         ){
             source.addEffect(new MobEffectInstance(MobEffects.REGENERATION, CommonConfig.BLOOD_LUST_BRACELET_DURATION.get() * 20));
+        }
+
+        if(!event.isCanceled()
+                && event.getSmites().stream().mapToInt(SmiteEntry::getDamage).sum() > CommonConfig.MAX_SMITE_DAMAGE.get() + event.getMaxDamageMod()
+                && ((SmitingRingItem) ItemInit.SMITING_RING.get()).isEquippedAndHasMana(source, 10.0F, true)
+        ){
+            event.addMaxDamageMod(5);
         }
     }
 }

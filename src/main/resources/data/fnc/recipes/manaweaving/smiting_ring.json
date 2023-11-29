@@ -1,0 +1,24 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "tier": 5,
+  "output": "fnc:smiting_ring",
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "items": [
+    "mna:mundane_ring",
+    "minecraft:nether_star",
+    "minecraft:wooden_sword",
+    "minecraft:stone_sword",
+    "minecraft:iron_sword",
+    "minecraft:golden_sword",
+    "minecraft:diamond_sword",
+    "minecraft:netherite_sword"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/infinity",
+    "mna:manaweave_patterns/split_triangle",
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/inverted_split_triangle",
+    "mna:manaweave_patterns/infinity"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "type": "mna:manaweaving-recipe",
   "tier": 3,
-  "requiredFaction": "fnc:paladins",
+  "requiredFaction": "fnc:paladin",
   "output": "fnc:blood_lust_bracelet",
   "items": [
     "minecraft:ghast_tear",

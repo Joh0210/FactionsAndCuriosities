@@ -36,6 +36,12 @@ public class PerformSmiteEvent extends PlayerEvent {
      */
     public int damageMod = 0;
 
+    /**
+     * Increases the maximum Damage Smites can deal by this mod
+     * <br>Can be negative.
+     */
+    public int maxDamageMod = 0;
+
     public PerformSmiteEvent(@NotNull Player source, @NotNull LivingEntity target, @NotNull ArrayList<SmiteEntry> smites) {
         super(source);
         this.target = target;
@@ -56,6 +62,18 @@ public class PerformSmiteEvent extends PlayerEvent {
 
     public void addDamageMod(int mod){
         damageMod += mod;
+    }
+
+    public void setMaxDamageMod(int maxDamageMod) {
+        this.maxDamageMod = maxDamageMod;
+    }
+
+    public int getMaxDamageMod() {
+        return maxDamageMod;
+    }
+
+    public void addMaxDamageMod(int maxDamageMod) {
+        this.maxDamageMod += maxDamageMod;
     }
 
     public void addSmite(SmiteMobEffect smiteEffect, int damage, int range, int magnitude, int duration, int precision){
@@ -82,7 +100,7 @@ public class PerformSmiteEvent extends PlayerEvent {
      * @return Total amount of damage caused by the Smites.
      */
     public int getDamage(){
-        return Math.min(smites.stream().mapToInt(SmiteEntry::getDamage).sum(), CommonConfig.MAX_SMITE_DAMAGE.get()) + damageMod;
+        return Math.max(0, Math.min(smites.stream().mapToInt(SmiteEntry::getDamage).sum(), CommonConfig.MAX_SMITE_DAMAGE.get() + maxDamageMod) + damageMod);
     }
 
     public ArrayList<SmiteEntry> getSmites() {

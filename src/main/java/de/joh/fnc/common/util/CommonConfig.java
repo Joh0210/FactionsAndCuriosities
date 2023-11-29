@@ -88,7 +88,7 @@ public class CommonConfig {
         BUILDER.pop();
 
         BUILDER.push("Smite");
-        MAX_SMITE_DAMAGE = BUILDER.defineInRange("What is the maximum amount of Damage Smites can do in total (Smite Stacking included)", 20, 1, 100);
+        MAX_SMITE_DAMAGE = BUILDER.defineInRange("What is the maximum amount of Damage Smites can do in total (Smite Stacking included)", 10, 1, 100);
         SMITE_DURATION = BUILDER.defineInRange("Duration of Smite Effects (in s)", 30, 5, 300);
         DISPELLING_SMITE_MAGNITUDE_MOD = BUILDER.comment("Determines the factor by which Dispelling Smite's magnitude is increased when determining whether a mob effect can be removed.").comment("Duration (in s) * Amplifier <= Spell-Magnitude * this Factor").comment("If the equation is true, the effect can be removed").defineInRange("Dispelling Smite Mod", 30, 5, 300);
         BUILDER.pop();
