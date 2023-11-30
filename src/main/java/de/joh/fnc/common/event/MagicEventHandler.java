@@ -31,6 +31,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -62,17 +63,20 @@ public class MagicEventHandler {
                 && mischiefArmorItem.isSetEquipped(caster)
                 && new Random().nextBoolean()
         ){
-            SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(s.getComponent(0).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
+            SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(Objects.requireNonNull(s.getComponent(0)).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
         }
 
         IModifiedSpellPart<Shape> shape = event.getSpell().getShape();
 
         int maximizedLevel = 0;
-        if(caster.hasEffect(EffectInit.MAXIMIZED.get())){
-            maximizedLevel += caster.getEffect(EffectInit.MAXIMIZED.get()).getAmplifier() + 1;
+        MobEffectInstance instance = caster.getEffect(EffectInit.MAXIMIZED.get());
+        if(instance != null){
+            maximizedLevel += instance.getAmplifier() + 1;
         }
-        if(caster.hasEffect(EffectInit.MINIMIZED.get())){
-            maximizedLevel -= caster.getEffect(EffectInit.MINIMIZED.get()).getAmplifier() + 1;
+
+        instance = caster.getEffect(EffectInit.MINIMIZED.get());
+        if(instance != null){
+            maximizedLevel -= instance.getAmplifier() + 1;
         }
         if(maximizedLevel > 0 && shape != null){
             event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
@@ -84,8 +88,9 @@ public class MagicEventHandler {
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMinimumValue(attribute))));
         }
 
-        if(caster.hasEffect(EffectInit.EMPOWERED.get()) && shape != null){
-            int level = caster.getEffect(EffectInit.EMPOWERED.get()).getAmplifier() + 1;
+        instance = caster.getEffect(EffectInit.EMPOWERED.get());
+        if(instance != null && shape != null){
+            int level = instance.getAmplifier() + 1;
             event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
                     .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
                     .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute))));

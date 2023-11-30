@@ -21,7 +21,6 @@ public class ItemInit {
     public static final RegistryObject<Item> DEBUG_ROD_SMITE = ITEMS.register("debug_orb_smite", DebugOrbSmiteItem::new);
     public static final RegistryObject<Item> DICE = ITEMS.register("dice_six", () -> new DiceItem(6));
     public static final RegistryObject<Item> DICE_20 = ITEMS.register("dice_twenty", () -> new DiceItem(20));
-
     public static final RegistryObject<Item> MISCHIEF_HELMET = ITEMS.register("mischief_helmet", () -> new MischiefArmorItem(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> MISCHIEF_CHESTPLATE = ITEMS.register("mischief_chestplate", () -> new MischiefArmorItem(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> MISCHIEF_LEGGING = ITEMS.register("mischief_legging", () -> new MischiefArmorItem(EquipmentSlot.LEGS));
@@ -34,6 +33,11 @@ public class ItemInit {
     public static final RegistryObject<Item> WILD_PICKAXE = ITEMS.register("wild_pickaxe", WildPickaxeItem::new);
     public static final RegistryObject<Item> GLITTERING_POTATO = ITEMS.register("glittering_potato", GlitteringPotatoItem::new);
     public static final RegistryObject<Item> BRIMSTONE_SWORD = ITEMS.register("brimstone_sword", BrimstoneSwordItem::new);
+
+    public static final RegistryObject<Item> DIVINE_HELMET = ITEMS.register("divine_helmet", () -> new DivineArmorItem(EquipmentSlot.HEAD));
+    public static final RegistryObject<Item> DIVINE_CHESTPLATE = ITEMS.register("divine_chestplate", () -> new DivineArmorItem(EquipmentSlot.CHEST));
+    public static final RegistryObject<Item> DIVINE_LEGGING = ITEMS.register("divine_legging", () -> new DivineArmorItem(EquipmentSlot.LEGS));
+    public static final RegistryObject<Item> DIVINE_BOOTS = ITEMS.register("divine_boots", () -> new DivineArmorItem(EquipmentSlot.FEET));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

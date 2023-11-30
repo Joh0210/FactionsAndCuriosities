@@ -1,0 +1,24 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "fnc:divine_chestplate",
+  "tier": 5,
+  "requiredFaction": "fnc:paladin",
+  "items": [
+    "minecraft:netherite_chestplate",
+    "mna:greater_mote_earth",
+    "mna:greater_mote_arcane",
+    "mna:rune_pattern_defense",
+    "mna:rune_pattern_defense",
+    "minecraft:diamond_block",
+    "minecraft:gold_block",
+    "minecraft:gold_block",
+    "minecraft:gold_block"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "ARCANE",
+      "amount": 1500
+    }
+
+  ]
+}

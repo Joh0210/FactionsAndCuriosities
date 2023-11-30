@@ -989,6 +989,43 @@
       }
     ]
   },
+  "Divine Armor": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Divine Armor"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "I stand like a rock to protect the realms of the living from the darkness.\n\nThis armor already offers very good protection, but it also reduces magical damage by 50%. Furthermore, the duration of my Smites is increased by 50%."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_helmet"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_chestplate"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_legging"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_boots"
+      }
+    ]
+  },
   "Mischief Armor": {
     "index": 0,
     "category": "eldrin_altar",

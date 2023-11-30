@@ -6,6 +6,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -18,7 +19,8 @@ import java.util.function.Supplier;
  * @author Joh0210
  */
 public enum ArmorMaterials implements ArmorMaterial {
-    MISCHIEF("armor_of_mischief", 33, new int[]{2, 5, 6, 2}, 25, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, () -> Ingredient.of(ItemInit.RUNIC_SILK.get()));
+    MISCHIEF("armor_of_mischief", 33, new int[]{2, 5, 6, 2}, 25, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, () -> Ingredient.of(ItemInit.RUNIC_SILK.get())),
+    DIVINE("divine_armor", 37, new int[]{3, 6, 8, 3}, 22, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.3F, () -> Ingredient.of(Items.NETHERITE_INGOT));
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
     private final String name;
     private final int maxDamageFactor;

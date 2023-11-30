@@ -1,6 +1,7 @@
 package de.joh.fnc.common.item;
 
 import com.mna.api.items.IFactionSpecific;
+import com.mna.api.items.ITieredItem;
 import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.init.FactionInit;
@@ -8,7 +9,10 @@ import de.joh.fnc.common.item.material.ToolMaterials;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SwordItem;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -17,7 +21,9 @@ import org.jetbrains.annotations.NotNull;
  * @see DamageEventHandler
  * @author Joh0210
  */
-public class BrimstoneSwordItem extends SwordItem implements IFactionSpecific {
+public class BrimstoneSwordItem extends SwordItem implements IFactionSpecific, ITieredItem<BrimstoneSwordItem> {
+    private int tier = -1;
+
     public BrimstoneSwordItem() {
         super(ToolMaterials.LIVE_RIP, 2, -2.4F, new Item.Properties().stacksTo(1).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC).fireResistant());
     }
@@ -34,5 +40,15 @@ public class BrimstoneSwordItem extends SwordItem implements IFactionSpecific {
     @Override
     public ResourceLocation getFaction() {
         return FactionInit.PALADIN.getRegistryName();
+    }
+
+    @Override
+    public void setCachedTier(int tier) {
+        this.tier = tier;
+    }
+
+    @Override
+    public int getCachedtier() {
+        return this.tier;
     }
 }

@@ -11,9 +11,11 @@ import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.common.capability.PlayerCapabilityProvider;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.FactionInit;
+import de.joh.fnc.common.item.DivineArmorItem;
 import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.level.Level;
 
 import java.util.Collections;
@@ -30,13 +32,20 @@ public class PaladinSmiteShape extends Shape {
         } else {
             source.getPlayer().getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smiteCapability.addSmiteFromShape(recipe));
 
+            float mod = 1.0f;
+
+            if(source.getPlayer().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivineArmorItem divineArmor && divineArmor.isSetEquipped(source.getPlayer())){
+                mod += 0.5f;
+                divineArmor.usedByPlayer(source.getPlayer());
+            }
+
             MobEffectInstance instance = source.getPlayer().getEffect(EffectInit.PALADIN_SMITE.get());
             if(instance == null){
-                source.getPlayer().addEffect(new MobEffectInstance(EffectInit.PALADIN_SMITE.get(), CommonConfig.SMITE_DURATION.get() * 20, 0));
+                source.getPlayer().addEffect(new MobEffectInstance(EffectInit.PALADIN_SMITE.get(), (int)(CommonConfig.SMITE_DURATION.get() * 20 * mod), 0));
             }
             else {
                 //Update the duration of the effect
-                instance.update(new MobEffectInstance(EffectInit.PALADIN_SMITE.get(), CommonConfig.SMITE_DURATION.get() * 20, 0));
+                instance.update(new MobEffectInstance(EffectInit.PALADIN_SMITE.get(), (int)(CommonConfig.SMITE_DURATION.get() * 20 * mod), 0));
             }
 
             return List.of(new SpellTarget(source.getCaster()));

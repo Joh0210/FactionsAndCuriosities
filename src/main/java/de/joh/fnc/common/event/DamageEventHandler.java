@@ -11,8 +11,10 @@ import de.joh.fnc.common.effect.harmful.HexMobEffect;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
+import de.joh.fnc.common.item.DivineArmorItem;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -34,10 +36,17 @@ public class DamageEventHandler {
     public static void onLivingHurt(LivingHurtEvent event){
         LivingEntity targetEntity = event.getEntityLiving();
         MobEffectInstance instance = targetEntity.getEffect(EffectInit.HEX.get());
-
         if (instance != null && event.getAmount() >= 1){
             event.setAmount(Math.max(event.getAmount() * (1 + 0.25f * (instance.getAmplifier() + 1)), 1));
         }
+
+        if(event.getSource().isMagic() && targetEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivineArmorItem divineArmor && divineArmor.isSetEquipped(targetEntity)){
+            event.setAmount(event.getAmount() * (1.0f - 0.5f));
+            if(targetEntity instanceof Player){
+                divineArmor.usedByPlayer((Player) targetEntity);
+            }
+        }
+
     }
 
     /**
