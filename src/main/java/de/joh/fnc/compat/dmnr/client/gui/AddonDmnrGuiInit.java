@@ -12,6 +12,7 @@ public class AddonDmnrGuiInit {
     @OnlyIn(Dist.CLIENT)
     public static void onClientSetupEvent(FMLClientSetupEvent event) {
         MenuScreens.register(AddonDmnrContainerInit.MISCHIEF_DRAGON_MAGE_CHESTPLATE, GuiDragonMageArmor<ContainerMischiefDragonMageArmor>::new);
+        MenuScreens.register(AddonDmnrContainerInit.DIVINE_DRAGON_MAGE_CHESTPLATE, GuiDragonMageArmor<ContainerDivineDragonMageArmor>::new);
         //HUDOverlayRenderer.instance = new HUDOverlayRenderer();
     }
 }

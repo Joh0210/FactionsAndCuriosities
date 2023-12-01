@@ -9,6 +9,7 @@ import de.joh.dragonmagicandrelics.armorupgrades.types.ArmorUpgrade;
 import de.joh.dragonmagicandrelics.capabilities.dragonmagic.ArmorUpgradeHelper;
 import de.joh.dragonmagicandrelics.events.additional.DragonUpgradeEvent;
 import de.joh.dragonmagicandrelics.events.additional.HasMaxFactionEvent;
+import de.joh.fnc.common.item.DivineArmorItem;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
 import de.joh.fnc.common.item.MischiefArmorItem;
@@ -21,6 +22,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -37,7 +39,8 @@ public class AddonDmnrCommonHandler {
     public static void hasMaxFaction(HasMaxFactionEvent event){
         if(!event.hasMaxFactionArmor()){
             ItemStack chest = event.getPlayer().getItemBySlot(EquipmentSlot.CHEST);
-            if (chest.getItem() instanceof MischiefArmorItem && ((ISetItem)chest.getItem()).isSetEquipped(event.getPlayer()) && chest.getItem() instanceof IFactionSpecific) {
+            if ((chest.getItem() instanceof MischiefArmorItem || chest.getItem() instanceof DivineArmorItem)
+                    && ((ISetItem)chest.getItem()).isSetEquipped(event.getPlayer()) && chest.getItem() instanceof IFactionSpecific) {
                 event.setValues(true, Registries.Factions.get().getValue(((IFactionSpecific)chest.getItem()).getFaction()));
             }
         }
@@ -62,6 +65,20 @@ public class AddonDmnrCommonHandler {
                                 AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT, 2
                         ));
             }
+
+            if (chest.getItem() instanceof DivineArmorItem && ((ISetItem)chest.getItem()).isSetEquipped(event.getPlayer()) && chest.getItem() instanceof IFactionSpecific) {
+                event.setAlternativeArmorValues(
+                        new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_HELMET.get()),
+                        new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_CHESTPLATE.get()),
+                        new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_LEGGING.get()),
+                        new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_BOOTS.get()),
+                        new HashMap<>());
+                        //todo
+//                        (HashMap <ArmorUpgrade, Integer>) Map.of(
+//                                AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK, 1,
+//                                AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT, 2
+//                        ));
+            }
         }
     }
 
@@ -72,7 +89,7 @@ public class AddonDmnrCommonHandler {
         Random random = new Random();
         int level = ArmorUpgradeHelper.getUpgradeLevel(caster, AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT);
         if(level >= 1 && random.nextInt(100) < 25 * level){
-            SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(s.getComponent(0).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
+            SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(Objects.requireNonNull(s.getComponent(0)).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
         }
     }
 }
