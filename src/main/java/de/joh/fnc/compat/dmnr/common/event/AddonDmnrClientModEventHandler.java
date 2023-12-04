@@ -7,7 +7,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
-public class AddonDmnrClientModEvents {
+public class AddonDmnrClientModEventHandler {
     @SubscribeEvent
     public static void registerArmorRenderers(final EntityRenderersEvent.AddLayers event) {
         GeoArmorRenderer.registerArmorRenderer(MischiefDragonMageArmorItem.class, DragonMageArmorRenderer::new);

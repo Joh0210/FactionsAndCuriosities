@@ -1,18 +1,17 @@
 package de.joh.fnc.api.smite;
 
 import com.mna.api.spells.base.ISpellDefinition;
+import de.joh.fnc.api.event.AddSmiteEvent;
 import de.joh.fnc.api.event.PerformSmiteEvent;
 import de.joh.fnc.api.spell.component.SmiteComponent;
+import de.joh.fnc.common.capability.PlayerCapabilityProvider;
 import de.joh.fnc.common.capability.SmiteEntry;
 import de.joh.fnc.common.capability.SmitePlayerCapability;
-import de.joh.fnc.common.capability.PlayerCapabilityProvider;
 import de.joh.fnc.common.effect.beneficial.PaladinSmiteMobEffect;
 import de.joh.fnc.common.event.DamageEventHandler;
-import de.joh.fnc.common.item.DivineArmorItem;
 import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.player.Player;
@@ -35,22 +34,19 @@ public class SmiteHelper {
      * @see SmitePlayerCapability
      */
     public static void addSmite(Player player, SmiteMobEffect smiteEffect, int damage, int range, int magnitude, int duration, int precision) {
-        player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smiteCapability.addSmite(smiteEffect, damage, range, magnitude, duration, precision));
+        AddSmiteEvent event = new AddSmiteEvent(player);
+        MinecraftForge.EVENT_BUS.post(event);
+        if(!event.isCanceled()) {
+            player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smiteCapability.addSmite(smiteEffect, damage, range, magnitude, duration, precision));
 
-        float mod = 1.0f;
-
-        if(player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivineArmorItem divineArmor && divineArmor.isSetEquipped(player)){
-            mod += 0.5f;
-            divineArmor.usedByPlayer(player);
-        }
-
-        MobEffectInstance instance = player.getEffect(smiteEffect);
-        if(instance == null){
-            player.addEffect(new MobEffectInstance(smiteEffect, (int)(CommonConfig.SMITE_DURATION.get() * 20 * mod), 0));
-        }
-        else {
-            //Update the duration of the effect
-            instance.update(new MobEffectInstance(smiteEffect, (int)(CommonConfig.SMITE_DURATION.get() * 20 * mod), 0));
+            MobEffectInstance instance = player.getEffect(smiteEffect);
+            if(instance == null){
+                player.addEffect(new MobEffectInstance(smiteEffect, event.getDuration(), 0));
+            }
+            else {
+                //Update the duration of the effect
+                instance.update(new MobEffectInstance(smiteEffect, event.getDuration(), 0));
+            }
         }
     }
 

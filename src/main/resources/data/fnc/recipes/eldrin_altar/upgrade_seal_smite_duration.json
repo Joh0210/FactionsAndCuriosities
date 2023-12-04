@@ -1,0 +1,23 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "fnc:upgrade_seal_smite_duration",
+  "tier": 5,
+  "items": [
+    "mna:stone_rune_white",
+    "minecraft:stone_sword",
+    "minecraft:iron_sword",
+    "minecraft:diamond_sword",
+    "minecraft:netherite_sword",
+    "fnc:brimstone_sword"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "ARCANE",
+      "amount": 300
+    },
+    {
+      "affinity": "EARTH",
+      "amount": 300
+    }
+  ]
+}

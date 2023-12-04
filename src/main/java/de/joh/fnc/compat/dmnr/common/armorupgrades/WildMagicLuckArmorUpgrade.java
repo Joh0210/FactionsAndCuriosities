@@ -12,11 +12,11 @@ import org.jetbrains.annotations.NotNull;
  * Increases the wild magic luck of the user
  * @author Joh0210
  */
-public class ArmorUpgradeWildMagicLuck extends ArmorUpgradeOnEquipped {
+public class WildMagicLuckArmorUpgrade extends ArmorUpgradeOnEquipped {
     private static final AttributeModifier luck1 = new AttributeModifier("dmnr_luck_boost_1", 1, AttributeModifier.Operation.ADDITION);
     private static final AttributeModifier luck2 = new AttributeModifier("dmnr_luck_boost_2", 1, AttributeModifier.Operation.ADDITION);
 
-    public ArmorUpgradeWildMagicLuck(@NotNull ResourceLocation registryName, int upgradeCost) {
+    public WildMagicLuckArmorUpgrade(@NotNull ResourceLocation registryName, int upgradeCost) {
         super(registryName, 1, false, true, upgradeCost);
     }
 

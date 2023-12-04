@@ -12,6 +12,8 @@ The Codex has all the necessary information about the added elements. (But the c
 ## New Factions
 ### Wild Courts 
 The Wild Courts use magic in its purest and most untamed form. <br>Their magic is as powerful as it is dangerous. Whenever they access it, there is a small chance that the wild magic will cause a random event.
+### Paladins
+Paladins  use magic in combination with martial techniques. This makes them very good guards, fighters and enforcers. The spell components of Paladins consists of powerful Smites!
 
 ## New Items
 - Black Cat Bracelet (Wild only)
@@ -21,13 +23,37 @@ The Wild Courts use magic in its purest and most untamed form. <br>Their magic i
 - Mischief Armor (Wild only) 
 - Ring of the Four Leaf Clover (Wild only)
 - Wild Pickaxe (Wild only)
+- Blood Lust Bracelet (Paladin only)
+- Smiting Ring (Paladin only)
+- Brimstone Sword (Paladin only)
+- Divine Armor (Paladin only)
 
-### New Rituals
+## New Rituals
 - Ritual of the Wild
+- Ritual of the Pact
 
-### New Spells
+## New Spells
 - Cause Wild Magic (Wild only)
 - Wild Damage (Wild only)
+- Burning Smite (Paladin only)
+- Crippling Smite (Paladin only)
+- Dispelling Smite (Paladin only)
+- Silencing Smite (Paladin only)
+- Hexing Smite (Paladin only)
+- Paladin Smite (Shae; Paladin only)
+
+## Dragon Magic And Relics
+This mod has optional compatibility with Dragon Magic And Relics:
+
+### New DM&R Items
+- Mischief Dragon Armor (Wild only)
+- Divine Dragon Armor (Paladin only)
+
+### New DM&R Armor Upgrades
+- Smite Duration 
+- Magic Resistance
+- Random Spell Adjustment
+- Wild Magic Luck
 
 ## Feedback
 I appreciate any kind of constructive feedback. If you find errors in the mod, it is of course good to let me know. But you can also tell me about recipe adjustments or new elements that should be added. ^^

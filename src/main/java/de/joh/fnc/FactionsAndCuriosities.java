@@ -2,15 +2,13 @@ package de.joh.fnc;
 
 import com.mna.api.guidebook.RegisterGuidebooksEvent;
 import com.mojang.logging.LogUtils;
-import de.joh.fnc.compat.AddonCompatibleManager;
+import de.joh.fnc.api.util.AttributeInit;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
-import de.joh.fnc.networking.Messages;
-import de.joh.fnc.api.util.AttributeInit;
 import de.joh.fnc.common.util.CommonConfig;
 import de.joh.fnc.common.util.RLoc;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.entity.player.Player;
+import de.joh.fnc.compat.AddonCompatibleManager;
+import de.joh.fnc.networking.Messages;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -48,10 +46,6 @@ public class FactionsAndCuriosities {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MOD_ID+"-common.toml");
 
         MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    public final Player getClientPlayer() {
-        return Minecraft.getInstance().player;
     }
 
     private void setup(final FMLCommonSetupEvent event){

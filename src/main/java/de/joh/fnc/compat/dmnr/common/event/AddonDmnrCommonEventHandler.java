@@ -9,6 +9,7 @@ import de.joh.dragonmagicandrelics.armorupgrades.types.ArmorUpgrade;
 import de.joh.dragonmagicandrelics.capabilities.dragonmagic.ArmorUpgradeHelper;
 import de.joh.dragonmagicandrelics.events.additional.DragonUpgradeEvent;
 import de.joh.dragonmagicandrelics.events.additional.HasMaxFactionEvent;
+import de.joh.fnc.api.event.AddSmiteEvent;
 import de.joh.fnc.common.item.DivineArmorItem;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
@@ -29,7 +30,7 @@ import java.util.Random;
  * Handler for Forge-Events of the {@link DragonMagicAndRelics Dragon Magic And Relics} mod
  * @author Joh0210
  */
-public class AddonDmnrCommonHandler {
+public class AddonDmnrCommonEventHandler {
 
     /**
      * Does the Player wear a full Max Faction Armor of F&C
@@ -72,12 +73,10 @@ public class AddonDmnrCommonHandler {
                         new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_CHESTPLATE.get()),
                         new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_LEGGING.get()),
                         new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_BOOTS.get()),
-                        new HashMap<>());
-                        //todo
-//                        (HashMap <ArmorUpgrade, Integer>) Map.of(
-//                                AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK, 1,
-//                                AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT, 2
-//                        ));
+                        (HashMap <ArmorUpgrade, Integer>) Map.of(
+                                AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE, 2,
+                                AddonDmnrArmorUpgradeInit.SMITE_DURATION, 1
+                        ));
             }
         }
     }
@@ -90,6 +89,15 @@ public class AddonDmnrCommonHandler {
         int level = ArmorUpgradeHelper.getUpgradeLevel(caster, AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT);
         if(level >= 1 && random.nextInt(100) < 25 * level){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(Objects.requireNonNull(s.getComponent(0)).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
+        }
+    }
+
+    @SubscribeEvent
+    public static void onAddSmite(AddSmiteEvent event){
+        Player player = event.getPlayer();
+        int level = ArmorUpgradeHelper.getUpgradeLevel(player, AddonDmnrArmorUpgradeInit.SMITE_DURATION);
+        if(level > 0){
+            event.addDuration((int)(event.getDuration() * 0.5f * level));
         }
     }
 }

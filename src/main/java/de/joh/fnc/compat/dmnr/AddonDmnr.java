@@ -2,8 +2,8 @@ package de.joh.fnc.compat.dmnr;
 
 import de.joh.fnc.compat.AddonCompatibleMod;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
-import de.joh.fnc.compat.dmnr.common.event.AddonDmnrCommonHandler;
-import de.joh.fnc.compat.dmnr.common.event.AddonDmnrClientModEvents;
+import de.joh.fnc.compat.dmnr.common.event.AddonDmnrCommonEventHandler;
+import de.joh.fnc.compat.dmnr.common.event.AddonDmnrClientModEventHandler;
 import de.joh.fnc.compat.dmnr.client.gui.AddonDmnrContainerInit;
 import de.joh.fnc.compat.dmnr.client.gui.AddonDmnrGuiInit;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
@@ -39,10 +39,10 @@ public class AddonDmnr extends AddonCompatibleMod {
         modBus.register(AddonDmnrGuiInit.class);
         modBus.register(AddonDmnrArmorUpgradeInit.class);
         modBus.register(AddonDmnrWildMagicInit.class);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modBus.register(AddonDmnrClientModEvents.class));
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modBus.register(AddonDmnrClientModEventHandler.class));
 
         IEventBus forge_bus = MinecraftForge.EVENT_BUS;
-        forge_bus.register(AddonDmnrCommonHandler.class);
+        forge_bus.register(AddonDmnrCommonEventHandler.class);
     }
 
 }

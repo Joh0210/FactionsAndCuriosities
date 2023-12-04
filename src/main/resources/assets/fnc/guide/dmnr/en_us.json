@@ -79,20 +79,20 @@
     ]
   },
 
-  "Upgrade Glyph Random Spell Adjustment": {
+  "Upgrade Glyph Magic Resistance": {
     "index": "1",
     "category": "eldrin_altar",
     "sections": [
       {
         "type": "title",
-        "value": "Upgrade Glyph Random Spell Adjustment"
+        "value": "Upgrade Glyph Magic Resistance"
       },
       {
         "type": "text",
         "value": "",
         "json": [
           {
-            "text": "I don't know how it will behave, but per level with this upgrade, there is a 25% chance that my spells will change in my favor.",
+            "text": "Magic can be very annoying. Especially when it is used against me. So I created an upgrade that reduces the damage from magic against me by 25%.",
             "color": ""
           }
         ]
@@ -111,7 +111,43 @@
     "related_recipes": [
       {
         "type": "eldrin_altar",
-        "location": "fnc:eldrin_altar/upgrade_seal_random_spell_adjustment"
+        "location": "fnc:eldrin_altar/upgrade_seal_magic_resistance"
+      }
+    ]
+  },
+  "Upgrade Glyph Smite Duration": {
+    "index": "1",
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Upgrade Glyph Smite Duration"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "I want to hit more with my Smites! 30 seconds isn't enough for me! How about +50%?",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Dragon Magic Points per level: 3",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_smite_duration"
       }
     ]
   },
@@ -139,6 +175,36 @@
       {
         "type": "manaweaving_altar",
         "location":"fnc:manaweaving/mischief_dragon_mage_chestplate"
+      },
+      {
+        "type": "ritual",
+        "location":"dragonmagicandrelics:rituals/dragon_mage_ritual"
+      }
+    ]
+  },
+  "Dragon Mage Armor: Divine": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Dragon Mage Armor: Divine"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Dragon Mage Armor is obtained by using the Paladins Faction's Divine Armor for the Dragon Mage Ritual.",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/divine_dragon_mage_chestplate"
       },
       {
         "type": "ritual",

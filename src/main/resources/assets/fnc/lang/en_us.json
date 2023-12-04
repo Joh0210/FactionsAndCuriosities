@@ -107,10 +107,18 @@
   "item.fnc.divine_dragon_mage_helmet": "Divine Dragon Mage Helmet",
   "item.fnc.divine_dragon_mage_leggings": "Divine Dragon Mage Legging",
 
-  "item.fnc.upgrade_seal_wild_magic_luck": "Upgrade Glyph Wild Magic Luck",
+
+  "item.fnc.upgrade_seal_smite_duration": "Upgrade Glyph Smite Duration",
+  "item.fnc.upgrade_seal_magic_resistance": "Upgrade Glyph Magic Resistance",
   "item.fnc.upgrade_seal_random_spell_adjustment": "Upgrade Glyph Random Spell Adjustment",
-  "fnc:armorupgrade/wild_magic_luck": "§6Wild Magic Luck§r",
-  "fnc:armorupgrade/wild_magic_luck.description": "Increases your luck with Wild Magic.",
+  "item.fnc.upgrade_seal_wild_magic_luck": "Upgrade Glyph Wild Magic Luck",
+
+  "fnc:armorupgrade/smite_duration": "§fSmite Duration§r",
+  "fnc:armorupgrade/smite_duration.description": "+50% Smite Duration.",
+  "fnc:armorupgrade/magic_resistance": "§5Magic Resistance§r",
+  "fnc:armorupgrade/magic_resistance.description": "-25% Magic Damage.",
   "fnc:armorupgrade/random_spell_adjustment": "§6Random Spell Adjustment§r",
-  "fnc:armorupgrade/random_spell_adjustment.description": "25% * level chance for a positive random SpellAdjustment."
+  "fnc:armorupgrade/random_spell_adjustment.description": "25% * level chance for a positive random SpellAdjustment.",
+  "fnc:armorupgrade/wild_magic_luck": "§6Wild Magic Luck§r",
+  "fnc:armorupgrade/wild_magic_luck.description": "Increases your luck with Wild Magic."
 }

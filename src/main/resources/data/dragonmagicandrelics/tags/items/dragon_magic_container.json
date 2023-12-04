@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "fnc:mischief_dragon_mage_chestplate"
+    "fnc:mischief_dragon_mage_chestplate",
+    "fnc:divine_dragon_mage_chestplate"
   ]
 }

@@ -6,10 +6,7 @@ import com.mna.api.spells.attributes.Attribute;
 import com.mna.api.spells.base.IModifiedSpellPart;
 import com.mna.api.spells.parts.Shape;
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.api.event.PerformSmiteEvent;
-import de.joh.fnc.api.event.PerformSpellAdjustmentEvent;
-import de.joh.fnc.api.event.PerformWildMagicEvent;
-import de.joh.fnc.api.event.ShouldCauseWildMagicEvent;
+import de.joh.fnc.api.event.*;
 import de.joh.fnc.api.spelladjustment.SpellAdjustmentHelper;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagic;
@@ -151,6 +148,18 @@ public class MagicEventHandler {
             event.setCanceled(true);
             source.displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);
             source.level.playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
+        }
+    }
+
+    /**
+     * Processing of {@link DivineArmorItem} Smite Increase
+     */
+    @SubscribeEvent
+    public static void onAddSmite(AddSmiteEvent event){
+        Player player = event.getPlayer();
+        if(player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivineArmorItem divineArmor && divineArmor.isSetEquipped(player)){
+            event.addDuration((int)(event.getDuration() * 0.5f));
+            divineArmor.usedByPlayer(player);
         }
     }
 
