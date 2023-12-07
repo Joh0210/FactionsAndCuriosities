@@ -2,13 +2,12 @@ package de.joh.fnc.common.faction;
 
 import com.mna.api.ManaAndArtificeMod;
 import com.mna.api.faction.BaseFaction;
-import com.mna.api.faction.FactionIDs;
 import com.mna.api.faction.IFaction;
 import com.mna.api.sound.SFX;
+import com.mna.factions.Factions;
 import com.mna.items.ItemInit;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
@@ -28,7 +27,7 @@ public class WildFaction extends BaseFaction {
 
     @Override
     public List<IFaction> getEnemyFactions() {
-        return ManaAndArtificeMod.getFactionHelper().getFactionsExcept(this.getRegistryName(), FactionIDs.FEY);
+        return ManaAndArtificeMod.getFactionHelper().getFactionsExcept(this, Factions.FEY);
     }
 
     @Override
@@ -56,7 +55,7 @@ public class WildFaction extends BaseFaction {
 
     @Override
     public Component getOcculusTaskPrompt(int i) {
-        return new TranslatableComponent("fnc:rituals/wild_energy");
+        return Component.translatable("fnc:rituals/wild_energy");
     }
 
     @Override

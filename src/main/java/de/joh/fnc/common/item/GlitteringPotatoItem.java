@@ -1,12 +1,12 @@
 package de.joh.fnc.common.item;
 
+import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
-import de.joh.fnc.common.init.FactionInit;
-import de.joh.fnc.common.util.CommonConfig;
 import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
-import net.minecraft.resources.ResourceLocation;
+import de.joh.fnc.common.init.FactionInit;
+import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -77,7 +77,8 @@ public class GlitteringPotatoItem extends Item implements ITieredItem<Glittering
         return this._tier;
     }
 
-    public ResourceLocation getFaction() {
-        return FactionInit.WILD.getRegistryName();
+    @Override
+    public IFaction getFaction() {
+        return FactionInit.WILD;
     }
 }

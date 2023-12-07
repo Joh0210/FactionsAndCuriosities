@@ -1,6 +1,6 @@
 package de.joh.fnc.compat.dmnr.common.event;
 
-import de.joh.dragonmagicandrelics.capabilities.dragonmagic.ArmorUpgradeHelper;
+import de.joh.dmnr.capabilities.dragonmagic.ArmorUpgradeHelper;
 import de.joh.fnc.compat.dmnr.common.armorupgrades.MagicResistanceArmorUpgrade;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,7 +20,7 @@ public class AddonDmnrDamageEventHandler {
      */
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
-        LivingEntity targetEntity = event.getEntityLiving();
+        LivingEntity targetEntity = event.getEntity();
         if(targetEntity instanceof Player) {
             int level = ArmorUpgradeHelper.getUpgradeLevel((Player) targetEntity, AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE);
             if (event.getSource().isMagic() && level > 0) {
@@ -36,7 +36,7 @@ public class AddonDmnrDamageEventHandler {
      */
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
-        LivingEntity targetEntity = event.getEntityLiving();
+        LivingEntity targetEntity = event.getEntity();
         if(targetEntity instanceof Player) {
             int level = ArmorUpgradeHelper.getUpgradeLevel((Player) targetEntity, AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE);
             if (event.getSource().isMagic() && level > 0) {

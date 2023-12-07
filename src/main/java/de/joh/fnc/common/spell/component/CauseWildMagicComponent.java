@@ -27,8 +27,8 @@ import net.minecraft.world.entity.LivingEntity;
  * @author Joh0210
  */
 public class CauseWildMagicComponent extends SpellEffect {
-    public CauseWildMagicComponent(ResourceLocation registryName, ResourceLocation icon) {
-        super(registryName, icon, new AttributeValuePair(Attribute.PRECISION, 1.0F, 0.0F, 2.0F, 1.0F, 25.0F));
+    public CauseWildMagicComponent(ResourceLocation icon) {
+        super(icon, new AttributeValuePair(Attribute.PRECISION, 1.0F, 0.0F, 2.0F, 1.0F, 25.0F));
     }
 
     @Override

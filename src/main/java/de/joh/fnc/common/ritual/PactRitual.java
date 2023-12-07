@@ -5,11 +5,8 @@ import com.mna.api.rituals.IRitualContext;
 import com.mna.api.rituals.RitualEffect;
 import com.mna.capabilities.playerdata.progression.PlayerProgressionProvider;
 import de.joh.fnc.common.init.FactionInit;
-import net.minecraft.Util;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -27,14 +24,14 @@ public class PactRitual extends RitualEffect {
     public Component canRitualStart(IRitualContext context) {
         IPlayerProgression progression = context.getCaster().getCapability(PlayerProgressionProvider.PROGRESSION).orElse(null);
         if (progression == null) {
-            return new TextComponent("Progression could not be found...this is a problem.");
+            return Component.literal("Progression could not be found...this is a problem.");
         } else {
             if (progression.getTierProgress(context.getWorld()) < 1.0F) {
-                return new TranslatableComponent("ritual.mna.progression.not_ready");
+                return Component.translatable("ritual.mna.progression.not_ready");
             }
 
             if (progression != null && progression.hasAlliedFaction() && progression.getAlliedFaction() != FactionInit.PALADIN) {
-                return new TranslatableComponent("event.mna.faction_ritual_failed");
+                return Component.translatable("event.mna.faction_ritual_failed");
             }
 
             return null;
@@ -48,12 +45,12 @@ public class PactRitual extends RitualEffect {
             if (progression != null && progression.getTier() < 5) {
                 if (progression.getAlliedFaction() == null) {
                     progression.setAlliedFaction(FactionInit.PALADIN, context.getCaster());
-                    context.getCaster().sendMessage(new TranslatableComponent("event.fnc.faction_ally_paladin"), Util.NIL_UUID);
+                    context.getCaster().displayClientMessage(Component.translatable("event.fnc.faction_ally_paladin"), false);
                 }
 
                 if (progression.getAlliedFaction() == FactionInit.PALADIN) {
                     progression.setTier(progression.getTier() + 1, context.getCaster());
-                    context.getCaster().sendMessage(new TranslatableComponent("mna:progresscondition.advanced", progression.getTier()), Util.NIL_UUID);
+                    context.getCaster().displayClientMessage(Component.translatable("mna:progresscondition.advanced", progression.getTier()), false);
                     return true;
                 }
             }

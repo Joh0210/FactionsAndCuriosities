@@ -25,8 +25,8 @@ import java.util.List;
  * @author Joh0210
  */
 public class PaladinSmiteShape extends Shape {
-    public PaladinSmiteShape(ResourceLocation registryName, ResourceLocation guiIcon) {
-        super(registryName, guiIcon, new AttributeValuePair(Attribute.DAMAGE, 1.0F, 1.0F, 5.0F, 1F, 20F));
+    public PaladinSmiteShape(ResourceLocation guiIcon) {
+        super(guiIcon, new AttributeValuePair(Attribute.DAMAGE, 1.0F, 1.0F, 5.0F, 1F, 20F));
     }
 
     public List<SpellTarget> Target(SpellSource source, Level world, IModifiedSpellPart<Shape> modificationData, ISpellDefinition recipe) {

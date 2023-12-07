@@ -44,11 +44,12 @@ public class SmiteEntry {
     public CompoundTag saveNBT() throws IllegalArgumentException {
         CompoundTag nbt = new CompoundTag();
 
-        if(smite.getRegistryName() == null){
+        ResourceLocation rLoc = ForgeRegistries.MOB_EFFECTS.getKey(smite);
+        if(rLoc == null){
             throw new IllegalArgumentException("The SmiteEffect does not have a registryName");
         }
 
-        nbt.putString("smite", smite.getRegistryName().toString());
+        nbt.putString("smite", rLoc.toString());
         nbt.putInt("damage", damage);
         nbt.putInt("range", range);
         nbt.putInt("magnitude", magnitude);

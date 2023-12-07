@@ -51,7 +51,7 @@ public class PerformWildMagicEvent extends LivingEvent {
     }
 
     public LivingEntity getSource() {
-        return super.getEntityLiving();
+        return super.getEntity();
     }
 
     public Quality getQuality(){

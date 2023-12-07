@@ -1,6 +1,7 @@
 package de.joh.fnc.compat.dmnr.client.gui;
 
-import de.joh.dragonmagicandrelics.gui.GuiDragonMageArmor;
+
+import de.joh.dmnr.client.gui.GuiDragonMageArmor;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

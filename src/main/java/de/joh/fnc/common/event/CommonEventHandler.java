@@ -9,7 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
-import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -24,7 +24,7 @@ public class CommonEventHandler {
      */
     @SubscribeEvent
     public static void onLivingHeal(final LivingHealEvent event){
-        LivingEntity entity = event.getEntityLiving();
+        LivingEntity entity = event.getEntity();
 
         if (entity.hasEffect(EffectInit.HEX.get())){
             event.setCanceled(true);
@@ -54,8 +54,8 @@ public class CommonEventHandler {
                 event.setCanceled(true);
 
                 //break effect:
-                event.getWorld().setBlock(event.getPos(), block.defaultBlockState(), 3);
-                event.getWorld().destroyBlock(event.getPos(), false, null);
+                event.getLevel().setBlock(event.getPos(), block.defaultBlockState(), 3);
+                event.getLevel().destroyBlock(event.getPos(), false, null);
 
                 //random drop:
                 Block.dropResources(block.defaultBlockState(), event.getPlayer().level, event.getPos(), null, event.getPlayer(), event.getPlayer().getMainHandItem());

@@ -1,7 +1,7 @@
 # Factions And Curiosities
 ![download counter](https://cf.way2muchnoise.eu/full_947536_downloads.svg)
 ![availability](https://cf.way2muchnoise.eu/versions/947536.svg)
-<br>Download on [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/factions-and-curiosities) or [Modrinth](https://modrinth.com/mod/factions-and-curiosities).
+<br>Download on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/factions-and-curiosities) or [Modrinth](https://modrinth.com/mod/factions-and-curiosities).
 
 A Minecraft mod that expands the world of magic to include additional factions!
 <br>This mod is an extension for the magic mod [Mana and Artifice](https://www.curseforge.com/minecraft/mc-mods/mana-and-artifice). Thanks to Fhyx for creating some of the textures. The full credits can be viewed [here](https://github.com/Joh0210/FactionsAndCuriosities/blob/master/CREDITS.md).

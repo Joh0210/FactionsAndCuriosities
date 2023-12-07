@@ -1,6 +1,6 @@
 package de.joh.fnc.compat.dmnr.common.event;
 
-import de.joh.dragonmagicandrelics.item.client.armor.DragonMageArmorRenderer;
+import de.joh.dmnr.client.item.armor.DragonMageArmorRenderer;
 import de.joh.fnc.compat.dmnr.common.item.DivineDragonMageArmorItem;
 import de.joh.fnc.compat.dmnr.common.item.MischiefDragonMageArmorItem;
 import net.minecraftforge.client.event.EntityRenderersEvent;

@@ -100,7 +100,7 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven { url 'https://maven.manaandartifice.com/releases/' }
+    maven { url 'https://maven.manaandartifice.com/releases/1.19.2/' }
     maven { url 'https://maven.theillusivec4.top/' }
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
     maven {
@@ -124,11 +124,11 @@ dependencies {
     runtimeOnly fg.deobf("top.theillusivec4.caelus:caelus-forge:${caelus_version}")
     compileOnly fg.deobf("top.theillusivec4.caelus:caelus-forge:${caelus_version}")
 
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
 
     // M&A and its API
     // compileOnly "com.mithion:mna:${mna_version}:api" //api, compilation only
-    implementation fg.deobf("com.mithion:mna:${mna_version}") //mod itself, deobf for runtime
+    implementation fg.deobf("com.mithion:mna-forge-1.19.2:${mna_version}:all") //mod itself, deobf for runtime
 
     //DM&R
     implementation fg.deobf("curse.maven:dragonmagicandrelics-785039:${dmnr_curse_version_id}")

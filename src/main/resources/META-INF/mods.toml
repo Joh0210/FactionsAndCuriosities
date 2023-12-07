@@ -12,31 +12,44 @@ description='''
 A mod that expands the world of magic to include additional factions!
 '''
 
-
 [[dependencies.fnc]]
 modId="forge"
 mandatory=true
-versionRange="[40.1.20,)"
+versionRange="[43.2.23,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.fnc]]
 modId="mna"
 mandatory=true
-versionRange="[2.0.0.33,)"
+versionRange="[2.1.0.3,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.fnc]]
-modId="dragonmagicandrelics"
+modId="curios"
+mandatory=true
+versionRange="[1.19.2,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.fnc]]
+modId="geckolib3"
+mandatory=true
+versionRange="[forge-3.1.40,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.fnc]]
+modId="dmnr"
 mandatory=false
-versionRange="[1.18.2-2.1.37,)"
+versionRange="[1.19.2-3.0.4,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.fnc]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.18.2]"
+versionRange="[1.19.2]"
 ordering="NONE"
 side="BOTH"

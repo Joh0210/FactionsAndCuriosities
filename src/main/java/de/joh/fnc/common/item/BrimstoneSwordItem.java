@@ -1,12 +1,12 @@
 package de.joh.fnc.common.item;
 
+import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.item.material.ToolMaterials;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -38,8 +38,8 @@ public class BrimstoneSwordItem extends SwordItem implements IFactionSpecific, I
     }
 
     @Override
-    public ResourceLocation getFaction() {
-        return FactionInit.PALADIN.getRegistryName();
+    public IFaction getFaction() {
+        return FactionInit.PALADIN;
     }
 
     @Override

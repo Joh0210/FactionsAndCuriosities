@@ -34,7 +34,7 @@ public class PerformSpellAdjustmentEvent extends PlayerEvent {
     }
 
     public Player getSource() {
-        return super.getPlayer();
+        return super.getEntity();
     }
 
     public Quality getQuality(){

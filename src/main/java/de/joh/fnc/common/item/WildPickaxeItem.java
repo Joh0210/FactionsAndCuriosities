@@ -1,11 +1,11 @@
 package de.joh.fnc.common.item;
 
+import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
-import de.joh.fnc.common.item.material.ToolMaterials;
+import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.CommonEventHandler;
 import de.joh.fnc.common.init.FactionInit;
-import de.joh.fnc.api.util.CreativeModeTabInit;
-import net.minecraft.resources.ResourceLocation;
+import de.joh.fnc.common.item.material.ToolMaterials;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -37,7 +37,8 @@ public class WildPickaxeItem extends PickaxeItem implements IFactionSpecific {
         return false;
     }
 
-    public ResourceLocation getFaction() {
-        return FactionInit.WILD.getRegistryName();
+    @Override
+    public IFaction getFaction() {
+        return FactionInit.WILD;
     }
 }

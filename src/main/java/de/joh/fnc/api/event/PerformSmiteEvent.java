@@ -67,7 +67,7 @@ public class PerformSmiteEvent extends PlayerEvent {
     }
 
     public Player getSource() {
-        return super.getPlayer();
+        return super.getEntity();
     }
 
     public int getDamageMod() {

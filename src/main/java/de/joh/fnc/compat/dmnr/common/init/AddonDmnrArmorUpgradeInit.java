@@ -1,16 +1,17 @@
 package de.joh.fnc.compat.dmnr.common.init;
 
-import de.joh.dragonmagicandrelics.armorupgrades.types.ArmorUpgrade;
-import de.joh.dragonmagicandrelics.item.items.dragonmagearmor.DragonMageArmor;
+import de.joh.dmnr.api.armorupgrade.ArmorUpgrade;
+import de.joh.dmnr.api.item.DragonMageArmorItem;
+import de.joh.dmnr.common.util.Registries;
 import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.compat.dmnr.common.armorupgrades.MagicResistanceArmorUpgrade;
 import de.joh.fnc.compat.dmnr.common.armorupgrades.WildMagicLuckArmorUpgrade;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.registries.RegisterEvent;
 
 /**
  * An initialization of the F&C upgrades for the Dragon Mage Armor.
- * @see DragonMageArmor
+ * @see DragonMageArmorItem
  * @author Joh0210
  */
 public class AddonDmnrArmorUpgradeInit {
@@ -23,11 +24,13 @@ public class AddonDmnrArmorUpgradeInit {
     public static ArmorUpgrade SMITE_DURATION;
 
     @SubscribeEvent
-    public static void registerArmorUpgrades(final RegistryEvent.Register<ArmorUpgrade> event) {
-        event.getRegistry().register(AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK);
-        event.getRegistry().register(AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT);
-        event.getRegistry().register(AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE);
-        event.getRegistry().register(AddonDmnrArmorUpgradeInit.SMITE_DURATION);
+    public static void register(RegisterEvent event) {
+        event.register(Registries.ARMOR_UPGRADE.get().getRegistryKey(), (helper) -> {
+            helper.register(AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK.getRegistryName(), AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK);
+            helper.register(AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT.getRegistryName(), AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT);
+            helper.register(AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE.getRegistryName(), AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE);
+            helper.register(AddonDmnrArmorUpgradeInit.SMITE_DURATION.getRegistryName(), AddonDmnrArmorUpgradeInit.SMITE_DURATION);
+        });
     }
 
     static {

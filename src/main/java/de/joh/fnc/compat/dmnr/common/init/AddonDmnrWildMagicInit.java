@@ -1,14 +1,15 @@
 package de.joh.fnc.compat.dmnr.common.init;
 
-import de.joh.dragonmagicandrelics.effects.EffectInit;
+import de.joh.dmnr.common.init.EffectInit;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicOtherPotionEffect;
 import de.joh.fnc.common.util.RLoc;
+import de.joh.fnc.common.util.Registries;
 import de.joh.fnc.compat.dmnr.common.wildmagic.PeaceWildMagic;
 import de.joh.fnc.compat.dmnr.common.wildmagic.UltimateArmorWildMagic;
 import de.joh.fnc.compat.dmnr.common.wildmagic.WarWildMagic;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.registries.RegisterEvent;
 
 /**
  * An initialization of all Wild Magics.
@@ -22,11 +23,13 @@ public class AddonDmnrWildMagicInit {
     public static WildMagic WAR_SELF;
 
     @SubscribeEvent
-    public static void registerArmorUpgrades(final RegistryEvent.Register<WildMagic> event) {
-        event.getRegistry().register(AddonDmnrWildMagicInit.FLY_III_SELF);
-        event.getRegistry().register(AddonDmnrWildMagicInit.PEACE_SELF);
-        event.getRegistry().register(AddonDmnrWildMagicInit.ULTIMATE_ARMOR_SELF);
-        event.getRegistry().register(AddonDmnrWildMagicInit.WAR_SELF);
+    public static void register(RegisterEvent event) {
+        event.register(Registries.WILD_MAGIC.get().getRegistryKey(), (helper) -> {
+            helper.register(AddonDmnrWildMagicInit.FLY_III_SELF.getRegistryName(), AddonDmnrWildMagicInit.FLY_III_SELF);
+            helper.register(AddonDmnrWildMagicInit.PEACE_SELF.getRegistryName(), AddonDmnrWildMagicInit.PEACE_SELF);
+            helper.register(AddonDmnrWildMagicInit.ULTIMATE_ARMOR_SELF.getRegistryName(), AddonDmnrWildMagicInit.ULTIMATE_ARMOR_SELF);
+            helper.register(AddonDmnrWildMagicInit.WAR_SELF.getRegistryName(), AddonDmnrWildMagicInit.WAR_SELF);
+        });
     }
 
     static {

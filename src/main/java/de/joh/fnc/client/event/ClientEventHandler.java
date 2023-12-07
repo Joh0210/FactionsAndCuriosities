@@ -24,7 +24,7 @@ public class ClientEventHandler {
      * @see DebugOrbWildMagicItem
      */
     @SubscribeEvent
-    public static void onMouseScroll(InputEvent.MouseScrollEvent event){
+    public static void onMouseScroll(InputEvent.MouseScrollingEvent event){
         if (Minecraft.getInstance().player != null
                 && Minecraft.getInstance().player.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof DebugOrbWildMagicItem debugRod
                 && Minecraft.getInstance().player.isShiftKeyDown())

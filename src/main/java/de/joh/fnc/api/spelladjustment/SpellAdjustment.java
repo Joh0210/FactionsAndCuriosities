@@ -6,15 +6,15 @@ import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.api.util.Quality;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class SpellAdjustment extends ForgeRegistryEntry<SpellAdjustment> {
+public abstract class SpellAdjustment {
     /**
      * How often does the entry appear in the random-selection-list?
      * todo Can be set via Config. If set to 0, it will not appear in the random-selection-list
      */
     public final int frequency;
+    private final ResourceLocation registryName;
 
     /**
      * How good is the effect for the source entity?
@@ -43,7 +43,7 @@ public abstract class SpellAdjustment extends ForgeRegistryEntry<SpellAdjustment
      */
     public SpellAdjustment(@NotNull ResourceLocation registryName, int frequency){
         this.frequency = frequency;
-        this.setRegistryName(registryName);
+        this.registryName = registryName;
     }
 
     protected abstract void performSpellAdjustment(@NotNull SpellCastEvent spellCastEvent);
@@ -55,5 +55,9 @@ public abstract class SpellAdjustment extends ForgeRegistryEntry<SpellAdjustment
     @Override
     public String toString() {
         return this.getRegistryName().toString();
+    }
+
+    public ResourceLocation getRegistryName() {
+        return this.registryName;
     }
 }

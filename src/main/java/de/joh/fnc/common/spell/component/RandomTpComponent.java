@@ -26,8 +26,8 @@ public class RandomTpComponent extends SpellEffect {
      */
     public static final int TRIES = 10;
 
-    public RandomTpComponent(ResourceLocation registryName, ResourceLocation icon) {
-        super(registryName, icon, new AttributeValuePair(Attribute.RANGE, 2.0F, 1.0F, 5.0F, 1.0F, 5.0F));
+    public RandomTpComponent(ResourceLocation icon) {
+        super(icon, new AttributeValuePair(Attribute.RANGE, 2.0F, 1.0F, 5.0F, 1.0F, 5.0F));
     }
 
     @Override

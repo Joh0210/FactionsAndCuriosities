@@ -1,5 +1,6 @@
 package de.joh.fnc.common.item;
 
+import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import com.mna.items.armor.IBrokenArmorReplaceable;
@@ -60,8 +61,8 @@ public class DivineArmorItem extends ArmorItem implements ISetItem, ITieredItem<
     }
 
     @Override
-    public ResourceLocation getFaction() {
-        return FactionInit.PALADIN.getRegistryName();
+    public IFaction getFaction() {
+        return FactionInit.PALADIN;
     }
 
     @Override

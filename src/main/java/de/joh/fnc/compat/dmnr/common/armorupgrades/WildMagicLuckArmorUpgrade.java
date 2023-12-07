@@ -1,6 +1,6 @@
 package de.joh.fnc.compat.dmnr.common.armorupgrades;
 
-import de.joh.dragonmagicandrelics.armorupgrades.types.ArmorUpgradeOnEquipped;
+import de.joh.dmnr.api.armorupgrade.OnEquippedArmorUpgrade;
 import de.joh.fnc.api.util.AttributeInit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * Increases the wild magic luck of the user
  * @author Joh0210
  */
-public class WildMagicLuckArmorUpgrade extends ArmorUpgradeOnEquipped {
+public class WildMagicLuckArmorUpgrade extends OnEquippedArmorUpgrade {
     private static final AttributeModifier luck1 = new AttributeModifier("dmnr_luck_boost_1", 1, AttributeModifier.Operation.ADDITION);
     private static final AttributeModifier luck2 = new AttributeModifier("dmnr_luck_boost_2", 1, AttributeModifier.Operation.ADDITION);
 

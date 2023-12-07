@@ -34,7 +34,7 @@ public class DamageEventHandler {
      */
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
-        LivingEntity targetEntity = event.getEntityLiving();
+        LivingEntity targetEntity = event.getEntity();
         MobEffectInstance instance = targetEntity.getEffect(EffectInit.HEX.get());
         if (instance != null && event.getAmount() >= 1){
             event.setAmount(Math.max(event.getAmount() * (1 + 0.25f * (instance.getAmplifier() + 1)), 1));
@@ -63,7 +63,7 @@ public class DamageEventHandler {
         }
 
         if (event.getSource().getEntity() instanceof Player source && source != event.getEntity() && !source.getLevel().isClientSide()) {
-            LivingEntity target = event.getEntityLiving();
+            LivingEntity target = event.getEntity();
             if (source.getMainHandItem().isEmpty() && ((BlackCatBraceletItem) ItemInit.BLACK_CAT_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)) {
                WildMagicHelper.performRandomWildMagic(target, new SpellTarget(target), SpellPartTags.FRIENDLY,(wm, s, t, ct) -> wm.getQuality(SpellPartTags.FRIENDLY).ordinal() <= Quality.NEUTRAL.ordinal());
             }
@@ -77,9 +77,9 @@ public class DamageEventHandler {
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
         DamageSource source = event.getSource();
-        if (!event.getEntityLiving().level.isClientSide) {
+        if (!event.getEntity().level.isClientSide) {
             //protection against explosions
-            if (source.isExplosion() && event.getEntityLiving().hasEffect(EffectInit.EXPLOSION_RESISTANCE.get())) {
+            if (source.isExplosion() && event.getEntity().hasEffect(EffectInit.EXPLOSION_RESISTANCE.get())) {
                 event.setCanceled(true);
                 return;
             }
@@ -87,7 +87,7 @@ public class DamageEventHandler {
             //Smites
             //todo: only with special weapons?
             if(source.getDirectEntity() instanceof Player && source.msgId.equals("player")){
-                SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntityLiving());
+                SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntity());
             }
         }
     }

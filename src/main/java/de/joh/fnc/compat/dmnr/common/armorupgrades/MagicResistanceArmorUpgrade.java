@@ -1,7 +1,7 @@
 package de.joh.fnc.compat.dmnr.common.armorupgrades;
 
-import de.joh.dragonmagicandrelics.armorupgrades.ArmorUpgradeInit;
-import de.joh.dragonmagicandrelics.armorupgrades.types.ArmorUpgrade;
+import de.joh.dmnr.api.armorupgrade.ArmorUpgrade;
+import de.joh.dmnr.common.init.ArmorUpgradeInit;
 import de.joh.fnc.compat.dmnr.common.event.AddonDmnrDamageEventHandler;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;

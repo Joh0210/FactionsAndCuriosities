@@ -16,7 +16,7 @@ import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.*;
 import de.joh.fnc.common.util.CommonConfig;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -129,7 +129,7 @@ public class MagicEventHandler {
         ){
             event.setCanceled(true);
             if(source instanceof Player){
-                ((Player) source).displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);
+                ((Player) source).displayClientMessage(Component.translatable("fnc.feedback.wildmagic.accident_protection"), true);
             }
             source.level.playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
         }
@@ -146,7 +146,7 @@ public class MagicEventHandler {
                 && ((FourLeafCloverRingItem) ItemInit.FOUR_LEAF_CLOVER_RING.get()).isEquippedAndHasMana(source, 20.0F, true)
         ){
             event.setCanceled(true);
-            source.displayClientMessage(new TranslatableComponent("fnc.feedback.wildmagic.accident_protection"), true);
+            source.displayClientMessage(Component.translatable("fnc.feedback.wildmagic.accident_protection"), true);
             source.level.playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
         }
     }
@@ -156,7 +156,7 @@ public class MagicEventHandler {
      */
     @SubscribeEvent
     public static void onAddSmite(AddSmiteEvent event){
-        Player player = event.getPlayer();
+        Player player = event.getEntity();
         if(player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivineArmorItem divineArmor && divineArmor.isSetEquipped(player)){
             event.addDuration((int)(event.getDuration() * 0.5f));
             divineArmor.usedByPlayer(player);

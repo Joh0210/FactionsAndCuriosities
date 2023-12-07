@@ -1,6 +1,6 @@
 package de.joh.fnc.compat.dmnr.common.item;
 
-import de.joh.dragonmagicandrelics.item.items.dragonmagearmor.DragonMageArmor;
+import de.joh.dmnr.api.item.DragonMageArmorItem;
 import de.joh.fnc.compat.dmnr.client.gui.NamedMischiefDragonMageArmor;
 import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.util.RLoc;
@@ -9,7 +9,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 
-public class MischiefDragonMageArmorItem extends DragonMageArmor {
+public class MischiefDragonMageArmorItem extends DragonMageArmorItem {
     public MischiefDragonMageArmorItem(EquipmentSlot slot) {
         super(slot, RLoc.create("fnc_mischief_armor_set_bonus"), CreativeModeTabInit.FACTIONS_AND_CURIOSITIES);
     }

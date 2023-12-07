@@ -2,7 +2,7 @@ package de.joh.fnc.compat.dmnr.common.wildmagic;
 
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
-import de.joh.dragonmagicandrelics.effects.EffectInit;
+import de.joh.dmnr.common.init.EffectInit;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicOtherPotionEffect;
 import net.minecraft.resources.ResourceLocation;

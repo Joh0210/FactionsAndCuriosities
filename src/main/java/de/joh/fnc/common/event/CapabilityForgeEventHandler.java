@@ -30,7 +30,7 @@ public class CapabilityForgeEventHandler {
 
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event) {
-        Player player = event.getPlayer();
+        Player player = event.getEntity();
         Player original = event.getOriginal();
         original.reviveCaps();
         player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(

@@ -2,8 +2,8 @@ package de.joh.fnc.compat.dmnr.common.wildmagic;
 
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
-import de.joh.dragonmagicandrelics.effects.EffectInit;
-import de.joh.dragonmagicandrelics.item.items.dragonmagearmor.DragonMageArmor;
+import de.joh.dmnr.api.item.DragonMageArmorItem;
+import de.joh.dmnr.common.init.EffectInit;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicOtherPotionEffect;
 import net.minecraft.resources.ResourceLocation;
@@ -28,7 +28,7 @@ public class UltimateArmorWildMagic extends WildMagicOtherPotionEffect {
 
     @Override
     public boolean canBePerformed(@NotNull LivingEntity source, @Nullable SpellTarget target) {
-        if(source.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DragonMageArmor dmArmor && dmArmor.isSetEquipped(source)) {
+        if(source.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DragonMageArmorItem dmArmor && dmArmor.isSetEquipped(source)) {
             return super.canBePerformed(source, target);
         }
         return false;

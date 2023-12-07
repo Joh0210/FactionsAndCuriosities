@@ -1,12 +1,12 @@
 package de.joh.fnc.common.item;
 
+import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.spells.SpellPartTags;
-import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
-import net.minecraft.resources.ResourceLocation;
+import de.joh.fnc.common.init.FactionInit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -37,7 +37,8 @@ public class DeckOfManyItem extends Item implements IFactionSpecific {
         return ret;
     }
 
-    public ResourceLocation getFaction() {
-        return FactionInit.WILD.getRegistryName();
+    @Override
+    public IFaction getFaction() {
+        return FactionInit.WILD;
     }
 }

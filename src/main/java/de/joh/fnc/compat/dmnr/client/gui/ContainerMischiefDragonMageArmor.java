@@ -1,7 +1,7 @@
 package de.joh.fnc.compat.dmnr.client.gui;
 
 import com.mna.inventory.ItemInventoryBase;
-import de.joh.dragonmagicandrelics.gui.ContainerDragonMageArmor;
+import de.joh.dmnr.client.gui.ContainerDragonMageArmor;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;

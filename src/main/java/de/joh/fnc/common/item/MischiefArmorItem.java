@@ -1,5 +1,6 @@
 package de.joh.fnc.common.item;
 
+import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import com.mna.items.armor.IBrokenArmorReplaceable;
@@ -79,8 +80,8 @@ public class MischiefArmorItem extends ArmorItem implements ISetItem, ITieredIte
     }
 
     @Override
-    public ResourceLocation getFaction() {
-        return FactionInit.WILD.getRegistryName();
+    public IFaction getFaction() {
+        return FactionInit.WILD;
     }
 
     @Override

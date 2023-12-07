@@ -2,14 +2,13 @@ package de.joh.fnc.common.item;
 
 import com.mna.api.events.SpellCastEvent;
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.client.event.ClientEventHandler;
-import de.joh.fnc.networking.packet.IncrementSelectedSpellAdjustmentC2SPacket;
 import de.joh.fnc.api.spelladjustment.SpellAdjustment;
 import de.joh.fnc.api.spelladjustment.SpellAdjustmentHelper;
 import de.joh.fnc.api.util.CreativeModeTabInit;
+import de.joh.fnc.client.event.ClientEventHandler;
+import de.joh.fnc.networking.packet.IncrementSelectedSpellAdjustmentC2SPacket;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -44,17 +43,17 @@ public class DebugOrbSpellAdjustmentItem extends Item {
      */
     public void useSpellAdjustment(Level world, Player source, ItemStack stack, SpellCastEvent spellCastEvent){
         if (!world.isClientSide()) {
-            source.displayClientMessage(new TextComponent(new TranslatableComponent("fnc.feedback.selected.spelladjustment").getString() + new TranslatableComponent(getSelectedSpellAdjustment(stack).toString()).getString()), false);
+            source.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.spelladjustment").getString() + Component.translatable(getSelectedSpellAdjustment(stack).toString()).getString()), false);
             SpellAdjustment spellAdjustment = getSelectedSpellAdjustment(stack);
             if(!SpellAdjustmentHelper.performSpellAdjustment(spellAdjustment, spellCastEvent)){
-                source.displayClientMessage(new TranslatableComponent("fnc.feedback.selected.spelladjustment.condition_false"), false);
+                source.displayClientMessage(Component.translatable("fnc.feedback.selected.spelladjustment.condition_false"), false);
             }
         }
     }
 
     /**
      * Selects a new Wild Magic for the used DebugRod
-     * <br>Called by the {@link ClientEventHandler#onMouseScroll(InputEvent.MouseScrollEvent) ClientEventHandler.onMouseScroll()}
+     * <br>Called by the {@link ClientEventHandler#onMouseScroll(InputEvent.MouseScrollingEvent) ClientEventHandler.onMouseScroll()}
      * @param stack used DebugRod
      * @param inverted count down instead of up
      * @param player Player who uses the Rod
@@ -80,7 +79,7 @@ public class DebugOrbSpellAdjustmentItem extends Item {
                 stack.getTag().merge(nbtData);
             }
 
-            player.displayClientMessage(new TextComponent(new TranslatableComponent("fnc.feedback.selected.spelladjustment").getString() + new TranslatableComponent(getSelectedSpellAdjustment(stack).toString()).getString()), false);
+            player.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.spelladjustment").getString() + Component.translatable(getSelectedSpellAdjustment(stack).toString()).getString()), false);
         }
     }
 

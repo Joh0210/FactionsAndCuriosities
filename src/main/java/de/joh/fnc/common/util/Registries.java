@@ -30,11 +30,11 @@ public class Registries {
     @SubscribeEvent
     public static void RegisterRegistries(NewRegistryEvent event) {
         RegistryBuilder<SpellAdjustment> spellAdjustment = new RegistryBuilder<>();
-        spellAdjustment.setName(RLoc.create("spelladjustment")).setType(SpellAdjustment.class).set(key -> SpellAdjustment.INSTANCE).set((key, isNetwork) -> SpellAdjustment.INSTANCE).disableSaving().allowModification();
+        spellAdjustment.setName(RLoc.create("spelladjustment")).set((key, isNetwork) -> SpellAdjustment.INSTANCE).disableSaving().allowModification();
         SPELL_ADJUSTMENTS = event.create(spellAdjustment);
 
         RegistryBuilder<WildMagic> wildMagic = new RegistryBuilder<>();
-        wildMagic.setName(RLoc.create("wildmagic")).setType(WildMagic.class).set(key -> WildMagic.INSTANCE).set((key, isNetwork) -> WildMagic.INSTANCE).disableSaving().allowModification();
+        wildMagic.setName(RLoc.create("wildmagic")).set((key, isNetwork) -> WildMagic.INSTANCE).disableSaving().allowModification();
         WILD_MAGIC = event.create(wildMagic);
     }
 }

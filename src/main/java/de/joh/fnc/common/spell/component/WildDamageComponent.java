@@ -37,8 +37,8 @@ import java.util.Random;
  */
 public class WildDamageComponent extends SpellEffect implements IDamageComponent {
 
-    public WildDamageComponent(ResourceLocation registryName, ResourceLocation icon) {
-        super(registryName, icon, new AttributeValuePair(Attribute.DAMAGE, 10.0F, 2.0F, 40.0F, 1F, 3.0F), new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 0.0F, 3.0F, 1.0F, 15.0F), new AttributeValuePair(Attribute.DURATION, 30.0F, 15.0F, 300.0F, 15.0F, 3.0F), new AttributeValuePair(Attribute.PRECISION, 1.0F, 1.0F, 4.0F, 1.0F, 5.0F));
+    public WildDamageComponent(ResourceLocation icon) {
+        super(icon, new AttributeValuePair(Attribute.DAMAGE, 10.0F, 2.0F, 40.0F, 1F, 3.0F), new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 0.0F, 3.0F, 1.0F, 15.0F), new AttributeValuePair(Attribute.DURATION, 30.0F, 15.0F, 300.0F, 15.0F, 3.0F), new AttributeValuePair(Attribute.PRECISION, 1.0F, 1.0F, 4.0F, 1.0F, 5.0F));
     }
 
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {

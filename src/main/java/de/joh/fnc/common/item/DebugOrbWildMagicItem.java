@@ -9,8 +9,7 @@ import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -48,17 +47,17 @@ public class DebugOrbWildMagicItem extends Item {
      */
     public void useWildMagic(Level world, Player source, SpellTarget target, ItemStack stack, SpellPartTags spellPartTag, boolean cancelable){
         if (!world.isClientSide()) {
-            source.displayClientMessage(new TextComponent(new TranslatableComponent("fnc.feedback.selected.wildmagic").getString() + new TranslatableComponent(getSelectedWildMagic(stack).toString()).getString()), false);
+            source.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.wildmagic").getString() + Component.translatable(getSelectedWildMagic(stack).toString()).getString()), false);
             WildMagic wildMagic = getSelectedWildMagic(stack);
             if(!WildMagicHelper.performWildMagic(wildMagic, source, target, spellPartTag, cancelable)){
-                source.displayClientMessage(new TranslatableComponent("fnc.feedback.selected.wildmagic.condition_false"), false);
+                source.displayClientMessage(Component.translatable("fnc.feedback.selected.wildmagic.condition_false"), false);
             }
         }
     }
 
     /**
      * Selects a new Wild Magic for the used DebugRod
-     * <br>Called by the {@link ClientEventHandler#onMouseScroll(InputEvent.MouseScrollEvent) ClientEventHandler.onMouseScroll()}
+     * <br>Called by the {@link ClientEventHandler#onMouseScroll(InputEvent.MouseScrollingEvent) ClientEventHandler.onMouseScroll()}
      * @param stack used DebugRod
      * @param inverted count down instead of up
      * @param player Player who uses the Rod
@@ -84,7 +83,7 @@ public class DebugOrbWildMagicItem extends Item {
                 stack.getTag().merge(nbtData);
             }
 
-            player.displayClientMessage(new TextComponent(new TranslatableComponent("fnc.feedback.selected.wildmagic").getString() + new TranslatableComponent(getSelectedWildMagic(stack).toString()).getString()), false);
+            player.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.wildmagic").getString() + Component.translatable(getSelectedWildMagic(stack).toString()).getString()), false);
         }
     }
 

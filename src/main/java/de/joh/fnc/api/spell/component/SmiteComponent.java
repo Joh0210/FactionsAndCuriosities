@@ -15,8 +15,7 @@ import de.joh.fnc.api.smite.SmiteHelper;
 import de.joh.fnc.api.smite.SmiteMobEffect;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.util.CommonConfig;
-import net.minecraft.Util;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.registries.RegistryObject;
@@ -37,8 +36,8 @@ public class SmiteComponent extends SpellEffect {
     private final Affinity affinity;
     private final RegistryObject<SmiteMobEffect> smite;
 
-    public SmiteComponent(ResourceLocation registryName, ResourceLocation guiIcon, int initialComplexity, Affinity affinity, RegistryObject<SmiteMobEffect> smite, AttributeValuePair... attributeValuePairs) {
-        super(registryName, guiIcon, adjustAttributes(attributeValuePairs));
+    public SmiteComponent(ResourceLocation guiIcon, int initialComplexity, Affinity affinity, RegistryObject<SmiteMobEffect> smite, AttributeValuePair... attributeValuePairs) {
+        super(guiIcon, adjustAttributes(attributeValuePairs));
         this.initialComplexity = initialComplexity;
         this.affinity = affinity;
         this.smite = smite;
@@ -66,7 +65,7 @@ public class SmiteComponent extends SpellEffect {
             return ComponentApplicationResult.SUCCESS;
         } else {
             if(source.getPlayer() != null && !source.getPlayer().getLevel().isClientSide){
-                source.getPlayer().sendMessage(new TranslatableComponent("fnc.component.smite.no_player.error"), Util.NIL_UUID);
+                source.getPlayer().displayClientMessage(Component.translatable("fnc.component.smite.no_player.error"), true);
             }
             return ComponentApplicationResult.FAIL;
         }

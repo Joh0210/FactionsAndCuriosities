@@ -1,12 +1,13 @@
 package de.joh.fnc.common.init;
 
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.common.spelladjustment.*;
 import de.joh.fnc.api.spelladjustment.SpellAdjustment;
+import de.joh.fnc.common.spelladjustment.*;
 import de.joh.fnc.common.util.RLoc;
-import net.minecraftforge.event.RegistryEvent;
+import de.joh.fnc.common.util.Registries;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.RegisterEvent;
 
 /**
  * An initialization of all Wild Magics.
@@ -30,20 +31,22 @@ public class SpellAdjustmentInit {
     public static SpellAdjustment RENEWAL;
 
     @SubscribeEvent
-    public static void registerArmorUpgrades(final RegistryEvent.Register<SpellAdjustment> event) {
-        event.getRegistry().register(SpellAdjustmentInit.CANCEL);
-        event.getRegistry().register(SpellAdjustmentInit.EMPOWERED_I);
-        event.getRegistry().register(SpellAdjustmentInit.EMPOWERED_II);
-        event.getRegistry().register(SpellAdjustmentInit.EMPOWERED_III);
-        event.getRegistry().register(SpellAdjustmentInit.SHARE);
-        event.getRegistry().register(SpellAdjustmentInit.DOUBLE_TROUBLE);
-        event.getRegistry().register(SpellAdjustmentInit.DELAY);
-        event.getRegistry().register(SpellAdjustmentInit.MINIMIZE);
-        event.getRegistry().register(SpellAdjustmentInit.MAXIMIZE);
-        event.getRegistry().register(SpellAdjustmentInit.POWER);
-        event.getRegistry().register(SpellAdjustmentInit.REVERSAL);
-        event.getRegistry().register(SpellAdjustmentInit.PRECISE);
-        event.getRegistry().register(SpellAdjustmentInit.RENEWAL);
+    public static void register(RegisterEvent event) {
+        event.register(Registries.SPELL_ADJUSTMENTS.get().getRegistryKey(), (helper) -> {
+            helper.register(SpellAdjustmentInit.CANCEL.getRegistryName(), SpellAdjustmentInit.CANCEL);
+            helper.register(SpellAdjustmentInit.EMPOWERED_I.getRegistryName(), SpellAdjustmentInit.EMPOWERED_I);
+            helper.register(SpellAdjustmentInit.EMPOWERED_II.getRegistryName(), SpellAdjustmentInit.EMPOWERED_II);
+            helper.register(SpellAdjustmentInit.EMPOWERED_III.getRegistryName(), SpellAdjustmentInit.EMPOWERED_III);
+            helper.register(SpellAdjustmentInit.SHARE.getRegistryName(), SpellAdjustmentInit.SHARE);
+            helper.register(SpellAdjustmentInit.DOUBLE_TROUBLE.getRegistryName(), SpellAdjustmentInit.DOUBLE_TROUBLE);
+            helper.register(SpellAdjustmentInit.DELAY.getRegistryName(), SpellAdjustmentInit.DELAY);
+            helper.register(SpellAdjustmentInit.MINIMIZE.getRegistryName(), SpellAdjustmentInit.MINIMIZE);
+            helper.register(SpellAdjustmentInit.MAXIMIZE.getRegistryName(), SpellAdjustmentInit.MAXIMIZE);
+            helper.register(SpellAdjustmentInit.POWER.getRegistryName(), SpellAdjustmentInit.POWER);
+            helper.register(SpellAdjustmentInit.REVERSAL.getRegistryName(), SpellAdjustmentInit.REVERSAL);
+            helper.register(SpellAdjustmentInit.PRECISE.getRegistryName(), SpellAdjustmentInit.PRECISE);
+            helper.register(SpellAdjustmentInit.RENEWAL.getRegistryName(), SpellAdjustmentInit.RENEWAL);
+        });
     }
 
     static {

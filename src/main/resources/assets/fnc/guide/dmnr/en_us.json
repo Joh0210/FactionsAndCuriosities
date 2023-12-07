@@ -178,7 +178,7 @@
       },
       {
         "type": "ritual",
-        "location":"dragonmagicandrelics:rituals/dragon_mage_ritual"
+        "location":"dmnr:rituals/dragon_mage_ritual"
       }
     ]
   },
@@ -208,7 +208,7 @@
       },
       {
         "type": "ritual",
-        "location":"dragonmagicandrelics:rituals/dragon_mage_ritual"
+        "location":"dmnr:rituals/dragon_mage_ritual"
       }
     ]
   },

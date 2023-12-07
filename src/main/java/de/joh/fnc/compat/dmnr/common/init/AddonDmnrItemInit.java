@@ -1,6 +1,6 @@
 package de.joh.fnc.compat.dmnr.common.init;
 
-import de.joh.dragonmagicandrelics.item.items.UpgradeSeal;
+import de.joh.dmnr.common.item.UpgradeSealItem;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.compat.dmnr.common.item.DivineDragonMageArmorItem;
@@ -24,8 +24,8 @@ public class AddonDmnrItemInit
         public static final RegistryObject<Item> DIVINE_DRAGON_MAGE_LEGGING = ITEMS.register("divine_dragon_mage_leggings", () -> new DivineDragonMageArmorItem(EquipmentSlot.LEGS));
         public static final RegistryObject<Item> DIVINE_DRAGON_MAGE_BOOTS = ITEMS.register("divine_dragon_mage_boots", () -> new DivineDragonMageArmorItem(EquipmentSlot.FEET));
 
-        public static final RegistryObject<Item> UPGRADE_SEAL_WILD_MAGIC_LUCK = ITEMS.register("upgrade_seal_wild_magic_luck", () -> new UpgradeSeal(RLoc.create("armorupgrade/wild_magic_luck")));
-        public static final RegistryObject<Item> UPGRADE_SEAL_RANDOM_SPELL_ADJUSTMENT = ITEMS.register("upgrade_seal_random_spell_adjustment", () -> new UpgradeSeal(RLoc.create("armorupgrade/random_spell_adjustment")));
-        public static final RegistryObject<Item> UPGRADE_SEAL_MAGIC_RESISTANCE = ITEMS.register("upgrade_seal_magic_resistance", () -> new UpgradeSeal(RLoc.create("armorupgrade/magic_resistance")));
-        public static final RegistryObject<Item> UPGRADE_SEAL_SMITE_DURATION = ITEMS.register("upgrade_seal_smite_duration", () -> new UpgradeSeal(RLoc.create("armorupgrade/smite_duration")));
+        public static final RegistryObject<Item> UPGRADE_SEAL_WILD_MAGIC_LUCK = ITEMS.register("upgrade_seal_wild_magic_luck", () -> new UpgradeSealItem(RLoc.create("armorupgrade/wild_magic_luck")));
+        public static final RegistryObject<Item> UPGRADE_SEAL_RANDOM_SPELL_ADJUSTMENT = ITEMS.register("upgrade_seal_random_spell_adjustment", () -> new UpgradeSealItem(RLoc.create("armorupgrade/random_spell_adjustment")));
+        public static final RegistryObject<Item> UPGRADE_SEAL_MAGIC_RESISTANCE = ITEMS.register("upgrade_seal_magic_resistance", () -> new UpgradeSealItem(RLoc.create("armorupgrade/magic_resistance")));
+        public static final RegistryObject<Item> UPGRADE_SEAL_SMITE_DURATION = ITEMS.register("upgrade_seal_smite_duration", () -> new UpgradeSealItem(RLoc.create("armorupgrade/smite_duration")));
     }

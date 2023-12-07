@@ -7,7 +7,6 @@ import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.api.util.Quality;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -15,12 +14,13 @@ import org.jetbrains.annotations.Nullable;
  * Wild magic effect that can be performed by on an entity.
  * @author Joh0210
  */
-public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
+public abstract class WildMagic {
     /**
      * How often does the entry appear in the random-selection-list?
      * todo Can be set via Config. If set to 0, it will not appear in the random-selection-list
      */
     public final int frequency;
+    private final ResourceLocation registryName;
 
     /**
      * How good is the effect for the source entity?
@@ -48,7 +48,7 @@ public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
      */
     public WildMagic(@NotNull ResourceLocation registryName, int frequency){
         this.frequency = frequency;
-        this.setRegistryName(registryName);
+        this.registryName = registryName;
     }
 
     /**
@@ -95,5 +95,9 @@ public abstract class WildMagic extends ForgeRegistryEntry<WildMagic> {
     @Override
     public String toString() {
         return this.getRegistryName().toString();
+    }
+
+    public ResourceLocation getRegistryName() {
+        return this.registryName;
     }
 }

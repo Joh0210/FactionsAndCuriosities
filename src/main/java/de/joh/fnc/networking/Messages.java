@@ -34,13 +34,13 @@ public class Messages {
         net.messageBuilder(IncrementSelectedWildMagicC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(IncrementSelectedWildMagicC2SPacket::new)
                 .encoder((IncrementSelectedWildMagicC2SPacket::toBytes))
-                .consumer(IncrementSelectedWildMagicC2SPacket::handle)
+                .consumerMainThread(IncrementSelectedWildMagicC2SPacket::handle)
                 .add();
 
         net.messageBuilder(IncrementSelectedSpellAdjustmentC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(IncrementSelectedSpellAdjustmentC2SPacket::new)
                 .encoder((IncrementSelectedSpellAdjustmentC2SPacket::toBytes))
-                .consumer(IncrementSelectedSpellAdjustmentC2SPacket::handle)
+                .consumerMainThread(IncrementSelectedSpellAdjustmentC2SPacket::handle)
                 .add();
     }
 
