@@ -10,19 +10,18 @@ import de.joh.dragonmagicandrelics.capabilities.dragonmagic.ArmorUpgradeHelper;
 import de.joh.dragonmagicandrelics.events.additional.DragonUpgradeEvent;
 import de.joh.dragonmagicandrelics.events.additional.HasMaxFactionEvent;
 import de.joh.fnc.api.event.AddSmiteEvent;
-import de.joh.fnc.common.item.DivineArmorItem;
-import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
-import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
-import de.joh.fnc.common.item.MischiefArmorItem;
 import de.joh.fnc.api.spelladjustment.SpellAdjustmentHelper;
 import de.joh.fnc.api.util.Quality;
+import de.joh.fnc.common.item.DivineArmorItem;
+import de.joh.fnc.common.item.MischiefArmorItem;
+import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
+import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
@@ -56,27 +55,27 @@ public class AddonDmnrCommonEventHandler {
         if(!event.canBeUpgraded()){
             ItemStack chest = event.getPlayer().getItemBySlot(EquipmentSlot.CHEST);
             if (chest.getItem() instanceof MischiefArmorItem && ((ISetItem)chest.getItem()).isSetEquipped(event.getPlayer()) && chest.getItem() instanceof IFactionSpecific) {
+                HashMap<ArmorUpgrade, Integer> upgrades = new HashMap<>();
+                upgrades.put(AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK, 1);
+                upgrades.put(AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT, 2);
                 event.setAlternativeArmorValues(
                         new ItemStack(AddonDmnrItemInit.MISCHIEF_DRAGON_MAGE_HELMET.get()),
                         new ItemStack(AddonDmnrItemInit.MISCHIEF_DRAGON_MAGE_CHESTPLATE.get()),
                         new ItemStack(AddonDmnrItemInit.MISCHIEF_DRAGON_MAGE_LEGGING.get()),
                         new ItemStack(AddonDmnrItemInit.MISCHIEF_DRAGON_MAGE_BOOTS.get()),
-                        (HashMap <ArmorUpgrade, Integer>) Map.of(
-                                AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK, 1,
-                                AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT, 2
-                        ));
+                        upgrades);
             }
 
             if (chest.getItem() instanceof DivineArmorItem && ((ISetItem)chest.getItem()).isSetEquipped(event.getPlayer()) && chest.getItem() instanceof IFactionSpecific) {
+                HashMap<ArmorUpgrade, Integer> upgrades = new HashMap<>();
+                upgrades.put(AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE, 2);
+                upgrades.put(AddonDmnrArmorUpgradeInit.SMITE_DURATION, 1);
                 event.setAlternativeArmorValues(
                         new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_HELMET.get()),
                         new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_CHESTPLATE.get()),
                         new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_LEGGING.get()),
                         new ItemStack(AddonDmnrItemInit.DIVINE_DRAGON_MAGE_BOOTS.get()),
-                        (HashMap <ArmorUpgrade, Integer>) Map.of(
-                                AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE, 2,
-                                AddonDmnrArmorUpgradeInit.SMITE_DURATION, 1
-                        ));
+                        upgrades);
             }
         }
     }
