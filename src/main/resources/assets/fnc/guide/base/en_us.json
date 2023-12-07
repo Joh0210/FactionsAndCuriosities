@@ -167,7 +167,7 @@
         "value": "",
         "json": [
           {
-            "text": "This Smite maims the target with blindness, weakness and slowness for a short time."
+            "text": "This Smite maims the target with weakness and slowness for a short time."
           }
         ]
       },
@@ -831,7 +831,7 @@
         "value": "",
         "json": [
           {
-            "text": "This pickaxe will drops a random ore when I mine one.\n\nThis can only be crafted by those aligned with the "
+            "text": "This pickaxe will drops a random ore when I mine one.\n\nThe effect also occurs when I hold the pickaxe in my hand and use the Break Spell or another pickaxe.\n\nThis can only be crafted by those aligned with the "
           },
           {
             "text": "Wild Courts",
@@ -896,7 +896,7 @@
         "value": "",
         "json": [
           {
-            "text": "TMy allegiance is to the living, but when I combine my weapons with the forces of Hell, I can protect the living even better.\n\nWhen I Smite with this sword, I get "
+            "text": "My allegiance is to the living, but when I combine my weapons with the forces of Hell, I can protect the living even better.\n\nWhen I Smite with this sword, I get "
           },
           {
             "text": "half of the Smite damage",

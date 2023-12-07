@@ -8,7 +8,7 @@ import net.minecraftforge.common.ForgeTier;
 
 public class ToolMaterials {
     public static final ForgeTier WILD = new ForgeTier(
-            4, 2031, 9.0F, 4.0F, 17,
+            4, 2031, 9.0F, 1.0F, 17,
             BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Items.NETHERITE_INGOT));
 
     public static final ForgeTier LIVE_RIP = new ForgeTier(

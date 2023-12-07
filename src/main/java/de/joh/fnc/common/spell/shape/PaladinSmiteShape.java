@@ -34,15 +34,8 @@ public class PaladinSmiteShape extends Shape {
             AddSmiteEvent event = new AddSmiteEvent(source.getPlayer());
             MinecraftForge.EVENT_BUS.post(event);
             if (!event.isCanceled()) {
+                source.getPlayer().addEffect(new MobEffectInstance(EffectInit.PALADIN_SMITE.get(), event.getDuration(), 0));
                 source.getPlayer().getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smiteCapability.addSmiteFromShape(recipe));
-
-                MobEffectInstance instance = source.getPlayer().getEffect(EffectInit.PALADIN_SMITE.get());
-                if (instance == null) {
-                    source.getPlayer().addEffect(new MobEffectInstance(EffectInit.PALADIN_SMITE.get(), event.getDuration(), 0));
-                } else {
-                    //Update the duration of the effect
-                    instance.update(new MobEffectInstance(EffectInit.PALADIN_SMITE.get(), event.getDuration(), 0));
-                }
 
                 return List.of(new SpellTarget(source.getCaster()));
             }

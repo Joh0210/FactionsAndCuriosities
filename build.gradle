@@ -62,10 +62,13 @@ minecraft {
         server {
             workingDirectory project.file('server')
             property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            args '--debug', '--stacktrace', '--scan'
-            property 'forge.logging.markers', "${forge_logging_markers}"
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
             property 'forge.logging.console.level', "${forge_logging_console_level}"
+
+            property 'forge.enabledGameTestNamespaces', 'fnc'
 
             mods {
                 examplemod {

@@ -21,7 +21,7 @@ import java.util.function.Consumer;
  */
 public class WildPickaxeItem extends PickaxeItem implements IFactionSpecific {
     public WildPickaxeItem() {
-        super(ToolMaterials.WILD, 1, 1f, new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
+        super(ToolMaterials.WILD, 1, -2.9F, new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
     }
 
     /**

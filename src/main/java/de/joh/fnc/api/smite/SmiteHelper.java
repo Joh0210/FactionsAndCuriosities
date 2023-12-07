@@ -37,16 +37,8 @@ public class SmiteHelper {
         AddSmiteEvent event = new AddSmiteEvent(player);
         MinecraftForge.EVENT_BUS.post(event);
         if(!event.isCanceled()) {
+            player.addEffect(new MobEffectInstance(smiteEffect, event.getDuration(), 0));
             player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> smiteCapability.addSmite(smiteEffect, damage, range, magnitude, duration, precision));
-
-            MobEffectInstance instance = player.getEffect(smiteEffect);
-            if(instance == null){
-                player.addEffect(new MobEffectInstance(smiteEffect, event.getDuration(), 0));
-            }
-            else {
-                //Update the duration of the effect
-                instance.update(new MobEffectInstance(smiteEffect, event.getDuration(), 0));
-            }
         }
     }
 

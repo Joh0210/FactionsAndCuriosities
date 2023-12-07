@@ -7,7 +7,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * Smite, hat cripples the Target for a defined duration (max 20s).
@@ -19,10 +19,9 @@ public class CripplingSmite extends SmiteMobEffect {
      * Defines the Effects, and their max level that the target will get, when it will be effected by the Smite
      * <br>todo: Adjust
      */
-    private static final Map<MobEffect, Integer> EFFECTS = Map.of(
-            MobEffects.BLINDNESS, 1,
-            MobEffects.WEAKNESS, 3,
-            MobEffects.MOVEMENT_SLOWDOWN, 2
+    private static final List<MobEffect> EFFECTS = List.of(
+            MobEffects.WEAKNESS,
+            MobEffects.MOVEMENT_SLOWDOWN
     );
 
     public CripplingSmite() {
@@ -31,12 +30,8 @@ public class CripplingSmite extends SmiteMobEffect {
 
     @Override
     public void performSmite(Player source, LivingEntity target, int range, int magnitude, int duration, int precision) {
-        for(Map.Entry<MobEffect, Integer> entry : EFFECTS.entrySet()){
-            if (target.hasEffect(entry.getKey()) && target.getEffect(entry.getKey()).getAmplifier() >= Math.min(magnitude, entry.getValue()) - 1) {
-                target.getEffect(entry.getKey()).update(new MobEffectInstance(entry.getKey(), duration * 20, Math.min(magnitude, entry.getValue()) - 1, false, false, false));
-            } else {
-                target.addEffect(new MobEffectInstance(entry.getKey(), duration * 20, Math.min(magnitude, entry.getValue()) - 1, false, false, false));
-            }
+        for(MobEffect effect : EFFECTS){
+            target.addEffect(new MobEffectInstance(effect, duration * 20, magnitude - 1, false, false, false));
         }
     }
 }

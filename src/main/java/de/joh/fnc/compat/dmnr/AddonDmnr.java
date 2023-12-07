@@ -1,6 +1,7 @@
 package de.joh.fnc.compat.dmnr;
 
 import de.joh.fnc.compat.AddonCompatibleMod;
+import de.joh.fnc.compat.dmnr.common.event.AddonDmnrDamageEventHandler;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
 import de.joh.fnc.compat.dmnr.common.event.AddonDmnrCommonEventHandler;
 import de.joh.fnc.compat.dmnr.common.event.AddonDmnrClientModEventHandler;
@@ -43,6 +44,7 @@ public class AddonDmnr extends AddonCompatibleMod {
 
         IEventBus forge_bus = MinecraftForge.EVENT_BUS;
         forge_bus.register(AddonDmnrCommonEventHandler.class);
+        forge_bus.register(AddonDmnrDamageEventHandler.class);
     }
 
 }

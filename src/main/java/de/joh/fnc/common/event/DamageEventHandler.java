@@ -64,7 +64,7 @@ public class DamageEventHandler {
 
         if (event.getSource().getEntity() instanceof Player source && source != event.getEntity() && !source.getLevel().isClientSide()) {
             LivingEntity target = event.getEntityLiving();
-            if (source.isShiftKeyDown() && source.getMainHandItem().isEmpty() && ((BlackCatBraceletItem) ItemInit.BLACK_CAT_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)) {
+            if (source.getMainHandItem().isEmpty() && ((BlackCatBraceletItem) ItemInit.BLACK_CAT_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)) {
                WildMagicHelper.performRandomWildMagic(target, new SpellTarget(target), SpellPartTags.FRIENDLY,(wm, s, t, ct) -> wm.getQuality(SpellPartTags.FRIENDLY).ordinal() <= Quality.NEUTRAL.ordinal());
             }
         }

@@ -22,6 +22,7 @@ public class CommonEventHandler {
     /**
      * @see HexMobEffect
      */
+    @SubscribeEvent
     public static void onLivingHeal(final LivingHealEvent event){
         LivingEntity entity = event.getEntityLiving();
 
@@ -38,9 +39,13 @@ public class CommonEventHandler {
     public static void onBreak(final BlockEvent.BreakEvent event){
         if(ModTags.isBlockIn(event.getState().getBlock(), ModTags.Blocks.ORES)
                 && !event.isCanceled() && ForgeHooks.isCorrectToolForDrops(event.getState(), event.getPlayer())
-                && (event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxeItem || event.getPlayer().hasEffect(EffectInit.RANDOM_ORE_MINER.get()))){
+                && (event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxeItem || event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem || event.getPlayer().hasEffect(EffectInit.RANDOM_ORE_MINER.get()))){
 
             if(event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxeItem wp){
+                wp.usedByPlayer(event.getPlayer());
+            }
+
+            if(event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem wp){
                 wp.usedByPlayer(event.getPlayer());
             }
 

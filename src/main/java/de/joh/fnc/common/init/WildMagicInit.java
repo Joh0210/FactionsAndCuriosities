@@ -64,6 +64,8 @@ public class WildMagicInit {
     public static WildMagic HALF_LIVE_TARGET;
     public static WildMagic HEAL_SELF;
     public static WildMagic HEAL_TARGET;
+    public static WildMagic HEX_SELF;
+    public static WildMagic HEX_TARGET;
     public static WildMagic HUNGER_EMPTY_SELF;
     public static WildMagic HUNGER_EMPTY_TARGET;
     public static WildMagic HUNGER_REFILL_SELF;
@@ -172,6 +174,8 @@ public class WildMagicInit {
         event.getRegistry().register(WildMagicInit.HALF_LIVE_TARGET);
         event.getRegistry().register(WildMagicInit.HEAL_SELF);
         event.getRegistry().register(WildMagicInit.HEAL_TARGET);
+        event.getRegistry().register(WildMagicInit.HEX_SELF);
+        event.getRegistry().register(WildMagicInit.HEX_TARGET);
         event.getRegistry().register(WildMagicInit.HUNGER_EMPTY_SELF);
         event.getRegistry().register(WildMagicInit.HUNGER_EMPTY_TARGET);
         event.getRegistry().register(WildMagicInit.HUNGER_REFILL_SELF);
@@ -280,6 +284,8 @@ public class WildMagicInit {
         WildMagicInit.HALF_LIVE_TARGET = new ReduceHPWildMagic(RLoc.create("wildmagic/half_live_target"), 1, false, 0.5f, 50);
         WildMagicInit.HEAL_SELF = new HealWildMagic(RLoc.create("wildmagic/heal_self"), 4, true);
         WildMagicInit.HEAL_TARGET = new HealWildMagic(RLoc.create("wildmagic/heal_target"), 3, false);
+        WildMagicInit.HEX_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/hex_self"), 4, true, de.joh.fnc.common.init.EffectInit.HEX, 600, 2);
+        WildMagicInit.HEX_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/hex_target"), 3, false, de.joh.fnc.common.init.EffectInit.HEX, 600, 2);
         WildMagicInit.HUNGER_EMPTY_SELF = new HungerWildMagic(RLoc.create("wildmagic/hunger_empty_self"), 5, true, true);
         WildMagicInit.HUNGER_EMPTY_TARGET = new HungerWildMagic(RLoc.create("wildmagic/hunger_empty_target"), 5, false, true);
         WildMagicInit.HUNGER_REFILL_SELF = new HungerWildMagic(RLoc.create("wildmagic/hunger_refill_self"), 5, true, false);

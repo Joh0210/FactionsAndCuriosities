@@ -1,10 +1,10 @@
 # Factions And Curiosities
-todo: ![download counter](https://cf.way2muchnoise.eu/full_<>_downloads.svg)
-![availability](https://cf.way2muchnoise.eu/versions/<>.svg)
-<br>Download on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/<>) or [Modrinth](https://modrinth.com/mod/<>).
+![download counter](https://cf.way2muchnoise.eu/full_947536_downloads.svg)
+![availability](https://cf.way2muchnoise.eu/versions/947536.svg)
+<br>Download on [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/factions-and-curiosities) or [Modrinth](https://modrinth.com/mod/factions-and-curiosities).
 
 A Minecraft mod that expands the world of magic to include additional factions!
-<br>This mod is an extension for the magic mod [Mana and Artifice](https://www.curseforge.com/minecraft/mc-mods/mana-and-artifice). The credits can be viewed [here](https://github.com/Joh0210/FactionsAndCuriosities/blob/master/CREDITS.md).
+<br>This mod is an extension for the magic mod [Mana and Artifice](https://www.curseforge.com/minecraft/mc-mods/mana-and-artifice). Thanks to Fhyx for creating some of the textures. The full credits can be viewed [here](https://github.com/Joh0210/FactionsAndCuriosities/blob/master/CREDITS.md).
 
 The Codex has all the necessary information about the added elements. (But the content is only displayed when playing in American English (en_us))
 <br>The mod can be added to modpacks. No need to ask.
@@ -17,16 +17,17 @@ Paladins  use magic in combination with martial techniques. This makes them very
 
 ## New Items
 - Black Cat Bracelet (Wild only)
+- Blood Lust Bracelet (Paladin only)
+- Brimstone Sword (Paladin only)
 - Deck of Many (Wild only)
-- Dice D6 (Wild only)
+- Dice D6 
 - Dice D20 (Wild only)
+- Divine Armor (Paladin only)
+- Glittering Potato (Wild only)
 - Mischief Armor (Wild only) 
 - Ring of the Four Leaf Clover (Wild only)
-- Wild Pickaxe (Wild only)
-- Blood Lust Bracelet (Paladin only)
 - Smiting Ring (Paladin only)
-- Brimstone Sword (Paladin only)
-- Divine Armor (Paladin only)
+- Wild Pickaxe (Wild only)
 
 ## New Rituals
 - Ritual of the Wild

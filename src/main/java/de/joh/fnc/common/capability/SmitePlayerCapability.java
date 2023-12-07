@@ -7,7 +7,6 @@ import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
-import java.util.Optional;
 
 /**
  * A Player only capability for managing Smites
@@ -20,9 +19,14 @@ public class SmitePlayerCapability {
 
     private @Nullable CompoundTag smiteRecipe = null;
 
-    public void copyFrom(SmitePlayerCapability source) {
-        this.smites = source.smites;
-        this.smiteRecipe = source.smiteRecipe;
+    public void copyFrom(SmitePlayerCapability source, boolean wasDeath) {
+        if(wasDeath){
+            this.smites = new ArrayList<>();
+            this.smiteRecipe = null;
+        } else {
+            this.smites = source.smites;
+            this.smiteRecipe = source.smiteRecipe;
+        }
     }
 
     public void saveNBT(CompoundTag compound) {
@@ -81,13 +85,8 @@ public class SmitePlayerCapability {
     }
 
     public void addSmite(SmiteMobEffect smiteEffect, int damage, int range, int magnitude, int duration, int precision){
-        Optional<SmiteEntry> optionalEntry = smites.stream().filter(s -> s.getSmite() == smiteEffect).findFirst();
-
-        if(optionalEntry.isEmpty()){
-            smites.add(new SmiteEntry(smiteEffect, damage, range, magnitude, duration, precision));
-        } else {
-            optionalEntry.get().overwrite(damage, range, magnitude, duration, precision);
-        }
+        smites.removeIf(entry -> entry.getSmite() == smiteEffect);
+        smites.add(new SmiteEntry(smiteEffect, damage, range, magnitude, duration, precision));
     }
 
     public void removeSmite(SmiteMobEffect smiteEffect){

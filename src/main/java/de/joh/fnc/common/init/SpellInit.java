@@ -62,12 +62,12 @@ public class SpellInit {
         SpellInit.CRIPPLING_SMITE = new SmiteComponent(RLoc.create("components/crippling_smite"), RLoc.create("textures/spell/component/crippling_smite.png"),
                 15, Affinity.ENDER, EffectInit.CRIPPLING_SMITE,
                 new AttributeValuePair(Attribute.DURATION, 5.0F, 5.0F, 20.0F, 5.0F, 3F),
-                new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 3.0F, 1.0F, 5F));
+                new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 2.0F, 1.0F, 10F));
         SpellInit.DISPELLING_SMITE = new SmiteComponent(RLoc.create("components/dispelling_smite"), RLoc.create("textures/spell/component/dispelling_smite.png"),
                 15, Affinity.ARCANE, EffectInit.DISPELLING_SMITE,
                 new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 3.0F, 1.0F, 10F));
         SpellInit.SILENCING_SMITE = new SmiteComponent(RLoc.create("components/silencing_smite"), RLoc.create("textures/spell/component/silencing_smite.png"),
-                20, Affinity.ARCANE, EffectInit.SILENCING_SMITE,
+                20, Affinity.WIND, EffectInit.SILENCING_SMITE,
                 new AttributeValuePair(Attribute.DURATION, 5.0F, 5.0F, 15.0F, 1.0F, 10.0F));
         SpellInit.HEXING_SMITE = new SmiteComponent(RLoc.create("components/hexing_smite"), RLoc.create("textures/spell/component/hexing_smite.png"),
                 10, Affinity.ENDER, EffectInit.HEXING_SMITE,

@@ -120,3 +120,4 @@ run/
 # Avoid ignoring the necessary libs
 # !libs/*
 /.idea/
+/server/

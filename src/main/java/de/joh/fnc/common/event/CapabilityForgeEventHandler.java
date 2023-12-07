@@ -35,7 +35,7 @@ public class CapabilityForgeEventHandler {
         original.reviveCaps();
         player.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(
                 (newSmite) -> original.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(
-                        originalSmite -> newSmite.copyFrom(originalSmite)
+                        originalSmite -> newSmite.copyFrom(originalSmite, event.isWasDeath())
                 ));
         event.getOriginal().invalidateCaps();
     }

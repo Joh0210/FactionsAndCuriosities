@@ -33,7 +33,7 @@ public class DeckOfManyItem extends Item implements IFactionSpecific {
             //todo: Might not be performed
             WildMagicHelper.performRandomWildMagic(user, null, SpellPartTags.FRIENDLY, (wm, s, t, comp) -> wm.getQuality(comp) == Quality.VERY_BAD || wm.getQuality(comp) == Quality.VERY_GOOD, false);
         }
-        user.getCooldowns().addCooldown(this, 1200);
+        user.getCooldowns().addCooldown(this, 800);
         return ret;
     }
 
