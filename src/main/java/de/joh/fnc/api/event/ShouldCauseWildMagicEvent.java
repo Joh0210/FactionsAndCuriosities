@@ -41,7 +41,7 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
     public ShouldCauseWildMagicEvent(LivingEntity entity) {
         super(entity);
 
-        if(entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())){
+        if(entity == null || entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())){
             this.autoFail = true;
             this.chance = 0;
             return;
