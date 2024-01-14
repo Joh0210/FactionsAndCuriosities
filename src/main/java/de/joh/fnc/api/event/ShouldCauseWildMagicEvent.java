@@ -8,6 +8,7 @@ import de.joh.fnc.common.util.CommonConfig;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -38,7 +39,7 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
      */
     private int chance;
 
-    public ShouldCauseWildMagicEvent(LivingEntity entity) {
+    public ShouldCauseWildMagicEvent(@NotNull LivingEntity entity) {
         super(entity);
 
         if(entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())){

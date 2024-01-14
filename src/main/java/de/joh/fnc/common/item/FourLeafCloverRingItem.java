@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
  * @see MagicEventHandler
  * @author Joh0210
  */
-public class FourLeafCloverRingItem extends ChargeableItem implements IPreEnchantedItem<BlackCatBraceletItem> {
+public class FourLeafCloverRingItem extends ChargeableItem implements IPreEnchantedItem<FourLeafCloverRingItem> {
     public FourLeafCloverRingItem() {
         super((new Item.Properties()).setNoRepair().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.UNCOMMON), 1000.0F);
     }
