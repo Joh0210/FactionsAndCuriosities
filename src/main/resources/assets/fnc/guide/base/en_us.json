@@ -883,6 +883,61 @@
     ]
   },
 
+  "Blessed Bow": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Blessed Bow"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It's time to live up to my oath! With this bow I will put an end to the fiends of hell!.\n\nThe arrows of this bow carry the power of my !"
+          },
+          {
+            "text": "Smites",
+            "color": "dark_purple"
+          },
+          {
+            "text": " into the "
+          },
+          {
+            "text": "distance",
+            "color": "dark_purple"
+          },
+          {
+            "text": "!\n(Yes... we paladins are too cool for ranged spells)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/blessed_bow"
+      }
+    ]
+  },
   "Brimstone Sword": {
     "index": 0,
     "category": "eldrin_altar",

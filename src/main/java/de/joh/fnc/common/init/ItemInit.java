@@ -1,9 +1,12 @@
 package de.joh.fnc.common.init;
 
 import de.joh.fnc.FactionsAndCuriosities;
+import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.item.*;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,6 +41,9 @@ public class ItemInit {
     public static final RegistryObject<Item> DIVINE_CHESTPLATE = ITEMS.register("divine_chestplate", () -> new DivineArmorItem(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> DIVINE_LEGGING = ITEMS.register("divine_legging", () -> new DivineArmorItem(EquipmentSlot.LEGS));
     public static final RegistryObject<Item> DIVINE_BOOTS = ITEMS.register("divine_boots", () -> new DivineArmorItem(EquipmentSlot.FEET));
+
+
+    public static final RegistryObject<Item> BLESSED_BOW = ITEMS.register("blessed_bow", BlessedBowItem::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -6,6 +6,7 @@ import de.joh.fnc.api.util.AttributeInit;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.util.CommonConfig;
+import de.joh.fnc.common.util.ModItemProperties;
 import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.compat.AddonCompatibleManager;
 import de.joh.fnc.networking.Messages;
@@ -16,6 +17,7 @@ import net.minecraftforge.fml.Bindings;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -40,6 +42,7 @@ public class FactionsAndCuriosities {
         AttributeInit.register(modEventBus);
 
         modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::clientSetup);
 
         AddonCompatibleManager.visit();
 
@@ -53,6 +56,11 @@ public class FactionsAndCuriosities {
 
         LOGGER.info(MOD_ID + ": init");
     }
+
+    private void clientSetup(final FMLClientSetupEvent event) {
+        ModItemProperties.addCustomItemProperties();
+    }
+
     /**
      * Registration of the ingame guide.
      */

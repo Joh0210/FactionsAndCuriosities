@@ -1,0 +1,6 @@
+{
+    "parent": "fnc:item/blessed_bow",
+    "textures": {
+        "layer0": "fnc:item/blessed_bow_pulling_2"
+    }
+}

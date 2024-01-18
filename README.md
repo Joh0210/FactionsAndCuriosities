@@ -17,6 +17,7 @@ Paladins  use magic in combination with martial techniques. This makes them very
 
 ## New Items
 - Black Cat Bracelet (Wild only)
+- Blessed Bow (Paladin only)
 - Blood Lust Bracelet (Paladin only)
 - Brimstone Sword (Paladin only)
 - Deck of Many (Wild only)

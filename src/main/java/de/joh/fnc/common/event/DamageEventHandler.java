@@ -17,6 +17,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -85,9 +86,14 @@ public class DamageEventHandler {
             }
 
             //Smites
-            //todo: only with special weapons?
             if(source.getDirectEntity() instanceof Player && source.msgId.equals("player")){
                 SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntity());
+            }
+            else if (source.getDirectEntity() instanceof AbstractArrow
+                    && source.getDirectEntity().getPersistentData().getBoolean("fnc_smite_arrow")
+                    && source.getEntity() instanceof Player
+            ) {
+                SmiteHelper.applySmite((Player) source.getEntity(), event.getEntity());
             }
         }
     }
