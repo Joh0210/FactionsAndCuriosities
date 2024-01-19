@@ -3,7 +3,6 @@ package de.joh.fnc.common.item;
 import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.spells.SpellPartTags;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.init.FactionInit;
@@ -22,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class DeckOfManyItem extends Item implements IFactionSpecific {
     public DeckOfManyItem() {
-        super(new Properties().stacksTo(1).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC).fireResistant());
+        super(new Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant());
     }
 
     @Override

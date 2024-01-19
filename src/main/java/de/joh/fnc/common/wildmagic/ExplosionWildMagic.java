@@ -7,8 +7,8 @@ import de.joh.fnc.api.wildmagic.WildMagicCOT;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -82,8 +82,8 @@ public class ExplosionWildMagic extends WildMagicCOT {
             return;
         }
 
-        if (!source.level.isClientSide) {
-            source.level.explode(spareSource ? source : null, null, null, coordinates.x, coordinates.y, coordinates.z, strength, false, (((ServerLevel)source.level).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && breaksBlocks) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
+        if (!source.level().isClientSide) {
+            source.level().explode(spareSource ? source : null, null, null, coordinates.x, coordinates.y, coordinates.z, strength, false, (((ServerLevel)source.level()).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && breaksBlocks) ? Level.ExplosionInteraction.MOB : Level.ExplosionInteraction.NONE);
             //MAExplosion.make(source, (ServerLevel)source.level, coordinates.x, coordinates.y, coordinates.z, radius, damage, false, (((ServerLevel)source.level).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && breaksBlocks) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
         }
     }

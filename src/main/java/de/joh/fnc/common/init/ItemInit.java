@@ -1,12 +1,10 @@
 package de.joh.fnc.common.init;
 
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.item.*;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.BowItem;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,10 +22,10 @@ public class ItemInit {
     public static final RegistryObject<Item> DEBUG_ROD_SMITE = ITEMS.register("debug_orb_smite", DebugOrbSmiteItem::new);
     public static final RegistryObject<Item> DICE = ITEMS.register("dice_six", () -> new DiceItem(6));
     public static final RegistryObject<Item> DICE_20 = ITEMS.register("dice_twenty", () -> new DiceItem(20));
-    public static final RegistryObject<Item> MISCHIEF_HELMET = ITEMS.register("mischief_helmet", () -> new MischiefArmorItem(EquipmentSlot.HEAD));
-    public static final RegistryObject<Item> MISCHIEF_CHESTPLATE = ITEMS.register("mischief_chestplate", () -> new MischiefArmorItem(EquipmentSlot.CHEST));
-    public static final RegistryObject<Item> MISCHIEF_LEGGING = ITEMS.register("mischief_legging", () -> new MischiefArmorItem(EquipmentSlot.LEGS));
-    public static final RegistryObject<Item> MISCHIEF_BOOTS = ITEMS.register("mischief_boots", () -> new MischiefArmorItem(EquipmentSlot.FEET));
+    public static final RegistryObject<Item> MISCHIEF_HELMET = ITEMS.register("mischief_helmet", () -> new MischiefArmorItem(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> MISCHIEF_CHESTPLATE = ITEMS.register("mischief_chestplate", () -> new MischiefArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> MISCHIEF_LEGGING = ITEMS.register("mischief_legging", () -> new MischiefArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> MISCHIEF_BOOTS = ITEMS.register("mischief_boots", () -> new MischiefArmorItem(ArmorItem.Type.BOOTS));
     public static final RegistryObject<Item> BLACK_CAT_BRACELET = ITEMS.register("black_cat_bracelet", BlackCatBraceletItem::new);
     public static final RegistryObject<Item> BLOOD_LUST_BRACELET = ITEMS.register("blood_lust_bracelet", BloodLustBraceletItem::new);
     public static final RegistryObject<Item> SMITING_RING = ITEMS.register("smiting_ring", SmitingRingItem::new);
@@ -37,10 +35,10 @@ public class ItemInit {
     public static final RegistryObject<Item> GLITTERING_POTATO = ITEMS.register("glittering_potato", GlitteringPotatoItem::new);
     public static final RegistryObject<Item> BRIMSTONE_SWORD = ITEMS.register("brimstone_sword", BrimstoneSwordItem::new);
 
-    public static final RegistryObject<Item> DIVINE_HELMET = ITEMS.register("divine_helmet", () -> new DivineArmorItem(EquipmentSlot.HEAD));
-    public static final RegistryObject<Item> DIVINE_CHESTPLATE = ITEMS.register("divine_chestplate", () -> new DivineArmorItem(EquipmentSlot.CHEST));
-    public static final RegistryObject<Item> DIVINE_LEGGING = ITEMS.register("divine_legging", () -> new DivineArmorItem(EquipmentSlot.LEGS));
-    public static final RegistryObject<Item> DIVINE_BOOTS = ITEMS.register("divine_boots", () -> new DivineArmorItem(EquipmentSlot.FEET));
+    public static final RegistryObject<Item> DIVINE_HELMET = ITEMS.register("divine_helmet", () -> new DivineArmorItem(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> DIVINE_CHESTPLATE = ITEMS.register("divine_chestplate", () -> new DivineArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> DIVINE_LEGGING = ITEMS.register("divine_legging", () -> new DivineArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> DIVINE_BOOTS = ITEMS.register("divine_boots", () -> new DivineArmorItem(ArmorItem.Type.BOOTS));
 
 
     public static final RegistryObject<Item> BLESSED_BOW = ITEMS.register("blessed_bow", BlessedBowItem::new);

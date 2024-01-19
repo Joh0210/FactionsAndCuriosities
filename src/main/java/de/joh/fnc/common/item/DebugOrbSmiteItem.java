@@ -1,7 +1,6 @@
 package de.joh.fnc.common.item;
 
 import de.joh.fnc.api.smite.SmiteHelper;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class DebugOrbSmiteItem extends Item {
     public DebugOrbSmiteItem() {
-        super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
+        super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package de.joh.fnc.compat.dmnr.common.event;
 
 import de.joh.dmnr.capabilities.dragonmagic.ArmorUpgradeHelper;
+import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.compat.dmnr.common.armorupgrades.MagicResistanceArmorUpgrade;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,7 +24,7 @@ public class AddonDmnrDamageEventHandler {
         LivingEntity targetEntity = event.getEntity();
         if(targetEntity instanceof Player) {
             int level = ArmorUpgradeHelper.getUpgradeLevel((Player) targetEntity, AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE);
-            if (event.getSource().isMagic() && level > 0) {
+            if (DamageEventHandler.isMagic(event.getSource()) && level > 0) {
                 if(!(0 < event.getAmount() * (1.0f - 0.25f * level))){
                     event.setCanceled(true);
                 }
@@ -39,7 +40,7 @@ public class AddonDmnrDamageEventHandler {
         LivingEntity targetEntity = event.getEntity();
         if(targetEntity instanceof Player) {
             int level = ArmorUpgradeHelper.getUpgradeLevel((Player) targetEntity, AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE);
-            if (event.getSource().isMagic() && level > 0) {
+            if (DamageEventHandler.isMagic(event.getSource()) && level > 0) {
                 if(0 < event.getAmount() * (1.0f - 0.25f * level)){
                     event.setAmount(event.getAmount() * (1.0f - 0.25f * level));
                 } else {

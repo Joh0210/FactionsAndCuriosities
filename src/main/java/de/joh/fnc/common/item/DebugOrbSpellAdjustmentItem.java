@@ -4,7 +4,6 @@ import com.mna.api.events.SpellCastEvent;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.spelladjustment.SpellAdjustment;
 import de.joh.fnc.api.spelladjustment.SpellAdjustmentHelper;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.client.event.ClientEventHandler;
 import de.joh.fnc.networking.packet.IncrementSelectedSpellAdjustmentC2SPacket;
 import net.minecraft.nbt.CompoundTag;
@@ -32,7 +31,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class DebugOrbSpellAdjustmentItem extends Item {
     public DebugOrbSpellAdjustmentItem() {
-        super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
+        super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
 
     /**
@@ -61,7 +60,7 @@ public class DebugOrbSpellAdjustmentItem extends Item {
      * @see IncrementSelectedSpellAdjustmentC2SPacket
      */
     public void incrementSpellAdjustmentIterator(ItemStack stack, boolean inverted, Player player){
-        if(!player.level.isClientSide()){
+        if(!player.level().isClientSide()){
             AtomicInteger spellAdjustmentIterator = new AtomicInteger(0);
             AtomicBoolean isInverted = new AtomicBoolean(inverted);
             if(stack.getTag() != null && stack.getTag().contains(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator")){

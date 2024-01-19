@@ -26,7 +26,7 @@ public class PactRitual extends RitualEffect {
         if (progression == null) {
             return Component.literal("Progression could not be found...this is a problem.");
         } else {
-            if (progression.getTierProgress(context.getWorld()) < 1.0F) {
+            if (progression.getTierProgress(context.getLevel()) < 1.0F) {
                 return Component.translatable("ritual.mna.progression.not_ready");
             }
 
@@ -68,7 +68,7 @@ public class PactRitual extends RitualEffect {
     public boolean spawnRitualParticles(IRitualContext context) {
         for(int i = 0; i < 360; i += 3) {
             if(i % 10 == 0){
-                context.getWorld().addParticle(ParticleTypes.ENCHANT,
+                context.getLevel().addParticle(ParticleTypes.ENCHANT,
                         context.getCenter().getX() + 0.5,
                         context.getCenter().getY() + 2.1,
                         context.getCenter().getZ() + 0.5,

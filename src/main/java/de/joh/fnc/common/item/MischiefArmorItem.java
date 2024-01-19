@@ -5,12 +5,11 @@ import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import com.mna.items.armor.IBrokenArmorReplaceable;
 import com.mna.items.armor.ISetItem;
-import de.joh.fnc.common.item.material.ArmorMaterials;
-import de.joh.fnc.common.event.MagicEventHandler;
-import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.api.spelladjustment.SpellAdjustment;
 import de.joh.fnc.api.util.AttributeInit;
-import de.joh.fnc.api.util.CreativeModeTabInit;
+import de.joh.fnc.common.event.MagicEventHandler;
+import de.joh.fnc.common.init.FactionInit;
+import de.joh.fnc.common.item.material.ArmorMaterials;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -38,8 +37,8 @@ public class MischiefArmorItem extends ArmorItem implements ISetItem, ITieredIte
     private int tier = -1;
     private static final ResourceLocation mischief_armor_set_bonus = RLoc.create("mischief_armor_set_bonus");
 
-    public MischiefArmorItem(EquipmentSlot pSlot) {
-        super(ArmorMaterials.MISCHIEF, pSlot, new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC).stacksTo(1));
+    public MischiefArmorItem(ArmorItem.Type type) {
+        super(ArmorMaterials.MISCHIEF, type, new Item.Properties().rarity(Rarity.EPIC).stacksTo(1));
     }
 
     @Override

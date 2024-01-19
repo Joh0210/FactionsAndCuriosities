@@ -1,9 +1,10 @@
-modLoader = "javafml"
-loaderVersion = "[34,)"
+modLoader="javafml"
+loaderVersion="[47,)"
 license = "MIT"
+
 [[mods]]
 modId="fnc"
-version="${file.jarVersion}"
+version="1.2.0"
 displayName="Factions And Curiosities"
 logoFile="factions_and_curiosities.png"
 credits="Thanks to Fhyx for creating some of the textures! Also thanks to Ceddi and Nico for helping with testing and balancing."
@@ -15,41 +16,41 @@ A mod that expands the world of magic to include additional factions!
 [[dependencies.fnc]]
 modId="forge"
 mandatory=true
-versionRange="[43.2.23,)"
+versionRange="[47.1,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.fnc]]
 modId="mna"
 mandatory=true
-versionRange="[2.1.0.3,)"
+versionRange="[3.0.0.4,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.fnc]]
 modId="curios"
 mandatory=true
-versionRange="[1.19.2,)"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.fnc]]
-modId="geckolib3"
-mandatory=true
-versionRange="[forge-3.1.40,)"
+versionRange="[5.4.7,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.fnc]]
 modId="dmnr"
 mandatory=false
-versionRange="[1.19.2-3.0.4,)"
+versionRange="[1,)"
 ordering="AFTER"
+side="BOTH"
+
+[[dependencies.fnc]]
+modId="geckolib"
+mandatory=true
+versionRange="[4.2.2,)"
+ordering="NONE"
 side="BOTH"
 
 [[dependencies.fnc]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.19.2]"
+versionRange="[1.20.1]"
 ordering="NONE"
 side="BOTH"

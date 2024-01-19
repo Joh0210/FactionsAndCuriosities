@@ -64,7 +64,7 @@ public class SmiteComponent extends SpellEffect {
 
             return ComponentApplicationResult.SUCCESS;
         } else {
-            if(source.getPlayer() != null && !source.getPlayer().getLevel().isClientSide){
+            if(source.getPlayer() != null && !source.getPlayer().level().isClientSide){
                 source.getPlayer().displayClientMessage(Component.translatable("fnc.component.smite.no_player.error"), true);
             }
             return ComponentApplicationResult.FAIL;

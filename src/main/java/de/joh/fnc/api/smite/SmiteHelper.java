@@ -10,7 +10,11 @@ import de.joh.fnc.common.capability.SmitePlayerCapability;
 import de.joh.fnc.common.effect.beneficial.PaladinSmiteMobEffect;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.util.CommonConfig;
-import net.minecraft.world.damagesource.EntityDamageSource;
+import de.joh.fnc.common.util.RLoc;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
@@ -78,7 +82,10 @@ public class SmiteHelper {
         PerformSmiteEvent event = new PerformSmiteEvent(source, target, smites.get(), smiteFromShape.get());
         MinecraftForge.EVENT_BUS.post(event);
         if(!event.isCanceled()) {
-            target.hurt(new EntityDamageSource("fnc-smite", source).bypassArmor().bypassMagic().setMagic(), event.getDamage(false));
+            target.hurt(new DamageSource(
+                    source.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(getSmiteDamage()),
+                    source,
+                    source), event.getDamage(false));
             if(event.getSmiteFromShape() != null){
                 PaladinSmiteMobEffect.performSmite(source, target, event.getSmiteFromShape());
             }
@@ -86,5 +93,9 @@ public class SmiteHelper {
                 entry.getSmite().performSmite(source, target, entry.getRange(), entry.getMagnitude(), entry.getDuration(), entry.getPrecision());
             }
         }
+    }
+
+    public static ResourceKey<DamageType> getSmiteDamage(){
+        return ResourceKey.create(Registries.DAMAGE_TYPE, RLoc.create("spell_smite"));
     }
 }

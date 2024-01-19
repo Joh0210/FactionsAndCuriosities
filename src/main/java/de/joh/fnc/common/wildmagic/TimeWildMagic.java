@@ -6,6 +6,7 @@ import com.mna.entities.EntityInit;
 import com.mna.entities.rituals.TimeChangeBall;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagic;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -38,7 +39,7 @@ public class TimeWildMagic extends WildMagic {
 
     @Override
     protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
-        Entity auroraBall = EntityInit.STARBALL_ENTITY.get().spawn((ServerLevel)source.getLevel(), null, null, source.blockPosition().above(2), MobSpawnType.TRIGGERED, true, false);
+        Entity auroraBall = EntityInit.STARBALL_ENTITY.get().spawn((ServerLevel)source.level(), (CompoundTag) null, null, source.blockPosition().above(2), MobSpawnType.TRIGGERED, true, false);
         if (auroraBall instanceof TimeChangeBall) {
             ((TimeChangeBall) auroraBall).setTimeChangeType(this.day ? TimeChangeBall.TIME_CHANGE_DAY : TimeChangeBall.TIME_CHANGE_NIGHT);
         }
@@ -46,10 +47,10 @@ public class TimeWildMagic extends WildMagic {
 
     @Override
     public boolean canBePerformed(@NotNull LivingEntity source, @Nullable SpellTarget target) {
-        if(source.getLevel().dimensionType().hasFixedTime()){
+        if(source.level().dimensionType().hasFixedTime()){
             return false;
         }
 
-        return this.day != source.getLevel().isDay();
+        return this.day != source.level().isDay();
     }
 }

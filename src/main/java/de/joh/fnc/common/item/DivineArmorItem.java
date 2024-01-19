@@ -5,7 +5,6 @@ import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import com.mna.items.armor.IBrokenArmorReplaceable;
 import com.mna.items.armor.ISetItem;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.event.MagicEventHandler;
 import de.joh.fnc.common.init.FactionInit;
@@ -35,8 +34,8 @@ public class DivineArmorItem extends ArmorItem implements ISetItem, ITieredItem<
     private int tier = -1;
     private static final ResourceLocation divine_armor_set_bonus = RLoc.create("divine_armor_set_bonus");
 
-    public DivineArmorItem(EquipmentSlot pSlot) {
-        super(ArmorMaterials.DIVINE, pSlot, new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC).stacksTo(1));
+    public DivineArmorItem(ArmorItem.Type type) {
+        super(ArmorMaterials.DIVINE, type, new Item.Properties().rarity(Rarity.EPIC).stacksTo(1));
     }
 
     @Override

@@ -39,18 +39,18 @@ public class WeatherWildMagic extends WildMagic {
     @Override
     protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         if(this.rain){
-            ((ServerLevel)source.getLevel()).setWeatherParameters(0, 6000, true, this.storm);
+            ((ServerLevel)source.level()).setWeatherParameters(0, 6000, true, this.storm);
         } else {
-            ((ServerLevel)source.getLevel()).setWeatherParameters(30000, 0, false, false);
+            ((ServerLevel)source.level()).setWeatherParameters(30000, 0, false, false);
         }
     }
 
     @Override
     public boolean canBePerformed(@NotNull LivingEntity source, @Nullable SpellTarget target) {
-        if(source.getLevel().getBiome(source.blockPosition()).value().getPrecipitation() == Biome.Precipitation.NONE){
+        if(source.level().getBiome(source.blockPosition()).value().getPrecipitationAt(source.blockPosition()) == Biome.Precipitation.NONE){
             return false;
         }
 
-        return this.rain != source.getLevel().isRaining();
+        return this.rain != source.level().isRaining();
     }
 }

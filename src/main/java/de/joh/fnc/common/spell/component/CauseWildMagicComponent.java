@@ -33,7 +33,7 @@ public class CauseWildMagicComponent extends SpellEffect {
 
     @Override
     public ComponentApplicationResult ApplyEffect(SpellSource spellSource, SpellTarget spellTarget, IModifiedSpellPart<SpellEffect> modificationData, SpellContext spellContext) {
-        if(spellContext.getWorld().isClientSide){
+        if(spellContext.getLevel().isClientSide){
             return  ComponentApplicationResult.SUCCESS;
         }
 

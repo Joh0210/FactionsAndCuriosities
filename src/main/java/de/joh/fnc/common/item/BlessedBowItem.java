@@ -5,7 +5,6 @@ import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
 import de.joh.fnc.api.smite.SmiteHelper;
 import de.joh.fnc.api.spell.component.SmiteComponent;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.init.FactionInit;
 import net.minecraft.sounds.SoundEvents;
@@ -15,7 +14,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +30,7 @@ public class BlessedBowItem extends BowItem implements IFactionSpecific, ITiered
     private int tier = -1;
 
     public BlessedBowItem() {
-        super(new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC).stacksTo(1).durability(100));
+        super(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(100));
     }
 
     @Override

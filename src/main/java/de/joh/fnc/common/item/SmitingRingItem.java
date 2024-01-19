@@ -3,7 +3,6 @@ package de.joh.fnc.common.item;
 import com.mna.api.faction.IFaction;
 import com.mna.api.items.ChargeableItem;
 import com.mna.items.artifice.curio.IPreEnchantedItem;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.MagicEventHandler;
 import de.joh.fnc.common.init.FactionInit;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +17,7 @@ import net.minecraft.world.level.Level;
  */
 public class SmitingRingItem extends ChargeableItem implements IPreEnchantedItem<BlackCatBraceletItem> {
         public SmitingRingItem() {
-                super((new Properties()).setNoRepair().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.RARE), 1000.0F);
+                super((new Properties()).setNoRepair().rarity(Rarity.RARE), 1000.0F);
         }
 
         protected boolean tickEffect(ItemStack stack, Player player, Level world, int slot, float mana, boolean selected) {

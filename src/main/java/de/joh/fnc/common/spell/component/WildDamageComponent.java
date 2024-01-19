@@ -1,6 +1,7 @@
 package de.joh.fnc.common.spell.component;
 
 import com.mna.api.affinity.Affinity;
+import com.mna.api.entities.DamageHelper;
 import com.mna.api.faction.IFaction;
 import com.mna.api.sound.SFX;
 import com.mna.api.spells.ComponentApplicationResult;
@@ -14,13 +15,12 @@ import com.mna.api.spells.targeting.SpellContext;
 import com.mna.api.spells.targeting.SpellSource;
 import com.mna.api.spells.targeting.SpellTarget;
 import com.mna.config.GeneralModConfig;
+import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.FactionInit;
-import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.EntityDamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 
@@ -42,7 +42,7 @@ public class WildDamageComponent extends SpellEffect implements IDamageComponent
     }
 
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {
-        if(context.getWorld().isClientSide()){
+        if(context.getLevel().isClientSide()){
             return ComponentApplicationResult.SUCCESS;
         }
 
@@ -66,7 +66,7 @@ public class WildDamageComponent extends SpellEffect implements IDamageComponent
                 }
             }
 
-            entity.hurt(createSourcedDamageType(source.getCaster()), damage * GeneralModConfig.getDamageMultiplier());
+            entity.hurt(DamageHelper.createSourcedType(DamageTypes.MAGIC, context.getLevel().registryAccess(), source.getCaster()), damage * GeneralModConfig.getDamageMultiplier());
 
             if((int)modificationData.getValue(Attribute.MAGNITUDE) >= 1) {
                 entity.addEffect(new MobEffectInstance(
@@ -118,14 +118,5 @@ public class WildDamageComponent extends SpellEffect implements IDamageComponent
     @Override
     public List<Affinity> getValidTinkerAffinities() {
         return List.of(Affinity.ARCANE);
-    }
-
-    private static DamageSource createSourcedDamageType(LivingEntity source) {
-        EntityDamageSource copy_source = new EntityDamageSource(DamageSource.MAGIC.getMsgId(), source);
-
-        copy_source.bypassArmor();
-        copy_source.bypassMagic();
-
-        return copy_source;
     }
 }

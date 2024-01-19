@@ -3,6 +3,7 @@ package de.joh.fnc;
 import com.mna.api.guidebook.RegisterGuidebooksEvent;
 import com.mojang.logging.LogUtils;
 import de.joh.fnc.api.util.AttributeInit;
+import de.joh.fnc.common.init.CreativeModeTabInit;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.util.CommonConfig;
@@ -13,7 +14,6 @@ import de.joh.fnc.networking.Messages;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.Bindings;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -35,8 +35,9 @@ public class FactionsAndCuriosities {
     public FactionsAndCuriosities() {
         instance = this;
 
-        IEventBus forgeEventBus = Bindings.getForgeBus().get();
+        //IEventBus forgeEventBus = Bindings.getForgeBus().get();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        CreativeModeTabInit.register(modEventBus);
         ItemInit.register(modEventBus);
         EffectInit.register(modEventBus);
         AttributeInit.register(modEventBus);

@@ -1,21 +1,20 @@
 package de.joh.fnc.compat.dmnr.common.item;
 
 import de.joh.dmnr.api.item.DragonMageArmorItem;
-import de.joh.fnc.compat.dmnr.client.gui.NamedMischiefDragonMageArmor;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.util.RLoc;
+import de.joh.fnc.compat.dmnr.client.gui.NamedMischiefDragonMageArmor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 
 public class MischiefDragonMageArmorItem extends DragonMageArmorItem {
-    public MischiefDragonMageArmorItem(EquipmentSlot slot) {
-        super(slot, RLoc.create("fnc_mischief_armor_set_bonus"), CreativeModeTabInit.FACTIONS_AND_CURIOSITIES);
+    public MischiefDragonMageArmorItem(ArmorItem.Type type) {
+        super(type, RLoc.create("fnc_mischief_armor_set_bonus"));
     }
 
     public MenuProvider getProvider(ItemStack itemStack) {
-        return this.slot == EquipmentSlot.CHEST ? new NamedMischiefDragonMageArmor(itemStack) : null;
+        return this.getType() == Type.CHESTPLATE ? new NamedMischiefDragonMageArmor(itemStack) : null;
     }
 
     public ResourceLocation getWingTextureLocation() {

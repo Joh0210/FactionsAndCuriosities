@@ -28,7 +28,7 @@ public class WildEnergyRitual extends RitualEffect {
         if (progression == null) {
             return Component.literal("Progression could not be found...this is a problem.");
         } else {
-            if (progression.getTierProgress(context.getWorld()) < 1.0F) {
+            if (progression.getTierProgress(context.getLevel()) < 1.0F) {
                 return Component.translatable("ritual.mna.progression.not_ready");
             }
 
@@ -72,7 +72,7 @@ public class WildEnergyRitual extends RitualEffect {
 
         for(int i = 0; i < 360; i += 3) {
             if(random.nextDouble() < 0.05f){
-                context.getWorld().addParticle(ParticleTypes.ELECTRIC_SPARK,
+                context.getLevel().addParticle(ParticleTypes.ELECTRIC_SPARK,
                         context.getCenter().getX() + Math.cos(i) * 2 + 0.5,
                         context.getCenter().getY() + 2.1,
                         context.getCenter().getZ() + Math.sin(i) * 2 + 0.5,

@@ -61,8 +61,8 @@ public class FireWildMagic extends WildMagicCOT {
             if (targetsCaster || target.getLivingEntity() != null) {
                 (targetsCaster ? source : target.getLivingEntity()).setSecondsOnFire(duration);
 
-            } else if (target.getBlock() != null && !source.getLevel().isEmptyBlock(target.getBlock())) {
-                if (source.getLevel().getBlockEntity(target.getBlock()) instanceof AbstractFurnaceBlockEntity furnace) {
+            } else if (target.getBlock() != null && !source.level().isEmptyBlock(target.getBlock())) {
+                if (source.level().getBlockEntity(target.getBlock()) instanceof AbstractFurnaceBlockEntity furnace) {
                     int burnTime = (int)((float) 1050 * Math.max(duration, 1.0F));
 
                     Field f = ObfuscationReflectionHelper.findField(AbstractFurnaceBlockEntity.class, "litTime");
@@ -72,16 +72,16 @@ public class FireWildMagic extends WildMagicCOT {
                         if (f.getInt(furnace) < burnTime) {
                             f.set(furnace, burnTime);
                             f2.set(furnace, burnTime);
-                            BlockState state = source.getLevel().getBlockState(target.getBlock());
+                            BlockState state = source.level().getBlockState(target.getBlock());
                             if (state.hasProperty(AbstractFurnaceBlock.LIT)) {
-                                source.getLevel().setBlock(target.getBlock(), state.setValue(AbstractFurnaceBlock.LIT, true), 3);
+                                source.level().setBlock(target.getBlock(), state.setValue(AbstractFurnaceBlock.LIT, true), 3);
                             }
                         }
                     } catch (Throwable var11) {
                     }
-                } else if (source.getLevel().isEmptyBlock(target.getBlock().above())) {
-                    BlockState fireState = BaseFireBlock.getState(source.getLevel(), target.getBlock().above());
-                    BlockUtils.placeBlock((ServerLevel) source.getLevel(), target.getBlock().above(), Direction.UP, fireState, null);
+                } else if (source.level().isEmptyBlock(target.getBlock().above())) {
+                    BlockState fireState = BaseFireBlock.getState(source.level(), target.getBlock().above());
+                    BlockUtils.placeBlock((ServerLevel) source.level(), target.getBlock().above(), Direction.UP, fireState, null);
                 }
             }
         }

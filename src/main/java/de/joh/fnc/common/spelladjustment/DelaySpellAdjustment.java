@@ -31,7 +31,7 @@ public class DelaySpellAdjustment extends SpellAdjustment {
     @Override
     protected void performSpellAdjustment(@NotNull SpellCastEvent spellCastEvent) {
         Player caster = spellCastEvent.getCaster();
-        caster.level.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
+        caster.level().playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
         spellCastEvent.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
                 .filter(attribute -> attribute == Attribute.DELAY)
                 .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMaximumValue(attribute))));

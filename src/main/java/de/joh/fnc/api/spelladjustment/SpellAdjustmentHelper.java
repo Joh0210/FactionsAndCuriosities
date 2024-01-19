@@ -119,7 +119,7 @@ public class SpellAdjustmentHelper {
      * @return true if the Wild Magic was performed
      */
     public static boolean performRandomSpellAdjustment(@NotNull SpellCastEvent spellCastEvent, @NotNull SpellAdjustmentFilters spellAdjustmentFilter){
-        if(!spellCastEvent.getCaster().getLevel().isClientSide()){
+        if(!spellCastEvent.getCaster().level().isClientSide()){
             int wildMagicLuck = WildMagicHelper.getWildMagicLuck(spellCastEvent.getCaster());
             SpellAdjustment spellAdjustment = getRandomSpellAdjustment(
                     Math.abs(wildMagicLuck) + 1,

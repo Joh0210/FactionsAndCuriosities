@@ -1,6 +1,5 @@
 package de.joh.fnc.common.item;
 
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -22,7 +21,7 @@ public class DiceItem extends Item {
      * @param size Size of the Dice (e.g. 6 -> random numbers between 1-6)
      */
     public DiceItem(int size) {
-        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.UNCOMMON).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
+        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.UNCOMMON));
         this.size = size;
     }
 

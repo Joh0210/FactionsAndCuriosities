@@ -3,11 +3,10 @@ package de.joh.fnc.common.item;
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.FactionsAndCuriosities;
-import de.joh.fnc.client.event.ClientEventHandler;
-import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
+import de.joh.fnc.client.event.ClientEventHandler;
+import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -35,7 +34,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class DebugOrbWildMagicItem extends Item {
     public DebugOrbWildMagicItem() {
-        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
+        super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
 
     /**
@@ -65,7 +64,7 @@ public class DebugOrbWildMagicItem extends Item {
      * @see IncrementSelectedWildMagicC2SPacket
      */
     public void incrementWildMagicIterator(ItemStack stack, boolean inverted, Player player){
-        if(!player.level.isClientSide()){
+        if(!player.level().isClientSide()){
             AtomicInteger wildMagicIterator = new AtomicInteger(0);
             AtomicBoolean isInverted = new AtomicBoolean(inverted);
             if(stack.getTag() != null && stack.getTag().contains(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator")){
@@ -129,7 +128,7 @@ public class DebugOrbWildMagicItem extends Item {
     @Override
     public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
         if (attacker instanceof Player) {
-            useWildMagic(attacker.getLevel(), (Player) attacker, new SpellTarget(target), stack, SpellPartTags.HARMFUL, true);
+            useWildMagic(attacker.level(), (Player) attacker, new SpellTarget(target), stack, SpellPartTags.HARMFUL, true);
         }
         return super.hurtEnemy(stack, target, attacker);
     }

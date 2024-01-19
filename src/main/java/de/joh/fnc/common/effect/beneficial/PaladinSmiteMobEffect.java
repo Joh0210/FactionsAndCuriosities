@@ -36,7 +36,7 @@ public class PaladinSmiteMobEffect extends MobEffect {
     }
 
     public static void performSmite(Player source, LivingEntity target, ISpellDefinition smite) {
-        if (smite.isValid() && !source.level.isClientSide) {
+        if (smite.isValid() && !source.level().isClientSide) {
             SpellSource spellSource = new SpellSource(source, InteractionHand.MAIN_HAND);
             HashMap<SpellEffect, ComponentApplicationResult> results = new HashMap<>();
 
@@ -44,7 +44,7 @@ public class PaladinSmiteMobEffect extends MobEffect {
                 return;
             }
 
-            SpellContext context = new SpellContext(source.level, smite);
+            SpellContext context = new SpellContext(source.level(), smite);
 
             if (smite.getComponents().stream().anyMatch((c) -> c.getPart().targetsEntities())) {
                 HashMap<SpellEffect, ComponentApplicationResult> loopRes = SpellCaster.ApplyComponents(smite, spellSource, new SpellTarget(target), context);
@@ -56,7 +56,7 @@ public class PaladinSmiteMobEffect extends MobEffect {
                         .map(e -> e.getValue() == ComponentApplicationResult.SUCCESS ? e.getKey() : null)
                         .filter(Objects::nonNull)
                         .collect(Collectors.toList());
-                SpellCaster.spawnClientFX(source.level, target.position(), source.getLookAngle(), spellSource, appliedEffects);
+                SpellCaster.spawnClientFX(source.level(), target.position(), source.getLookAngle(), spellSource, appliedEffects);
             }
         }
     }

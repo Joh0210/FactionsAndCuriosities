@@ -2,7 +2,6 @@ package de.joh.fnc.common.item;
 
 import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.CommonEventHandler;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.item.material.ToolMaterials;
@@ -21,7 +20,7 @@ import java.util.function.Consumer;
  */
 public class WildPickaxeItem extends PickaxeItem implements IFactionSpecific {
     public WildPickaxeItem() {
-        super(ToolMaterials.WILD, 1, -2.9F, new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES));
+        super(ToolMaterials.WILD, 1, -2.9F, new Item.Properties());
     }
 
     /**

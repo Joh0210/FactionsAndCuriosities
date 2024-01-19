@@ -3,7 +3,6 @@ package de.joh.fnc.common.item;
 import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.item.material.ToolMaterials;
@@ -25,7 +24,7 @@ public class BrimstoneSwordItem extends SwordItem implements IFactionSpecific, I
     private int tier = -1;
 
     public BrimstoneSwordItem() {
-        super(ToolMaterials.LIVE_RIP, 2, -2.4F, new Item.Properties().stacksTo(1).tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.EPIC).fireResistant());
+        super(ToolMaterials.LIVE_RIP, 2, -2.4F, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant());
     }
 
     @Override

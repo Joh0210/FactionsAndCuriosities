@@ -3,7 +3,6 @@ package de.joh.fnc.common.item;
 import com.mna.api.faction.IFaction;
 import com.mna.api.items.IFactionSpecific;
 import com.mna.api.items.ITieredItem;
-import de.joh.fnc.api.util.CreativeModeTabInit;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.util.CommonConfig;
@@ -33,7 +32,7 @@ public class GlitteringPotatoItem extends Item implements ITieredItem<Glittering
     private static final boolean BREAKS_BLOCKS = false;
 
     public GlitteringPotatoItem() {
-        super(new Item.Properties().tab(CreativeModeTabInit.FACTIONS_AND_CURIOSITIES).rarity(Rarity.COMMON)
+        super(new Item.Properties().rarity(Rarity.COMMON)
                 .food((new FoodProperties.Builder()).nutrition(5).saturationMod(0.6F).alwaysEat().build()));
     }
 
@@ -47,7 +46,7 @@ public class GlitteringPotatoItem extends Item implements ITieredItem<Glittering
             this.usedByPlayer((Player) entity);
         }
 
-        if(!entity.getLevel().isClientSide){
+        if(!entity.level().isClientSide){
             for(int j = 0; j < (Math.abs(WildMagicHelper.getWildMagicLuck(entity)) + 1); j++) {
                 heal = (random.nextInt(100) + 1) > CommonConfig.GLITTERING_POTATO_HURT_CHANCE.get();
 
@@ -60,7 +59,7 @@ public class GlitteringPotatoItem extends Item implements ITieredItem<Glittering
                 entity.heal(CommonConfig.GLITTERING_POTATO_HEAL_AMOUNT.get());
             } else {
                 Vec3 coordinates = entity.position();
-                entity.getLevel().explode(null, null, null, coordinates.x, coordinates.y, coordinates.z, 2, false, (((ServerLevel)entity.getLevel()).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && BREAKS_BLOCKS) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
+                entity.level().explode(null, null, null, coordinates.x, coordinates.y, coordinates.z, 2, false, (((ServerLevel)entity.level()).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && BREAKS_BLOCKS) ? Level.ExplosionInteraction.MOB : Level.ExplosionInteraction.NONE);
             }
         }
 

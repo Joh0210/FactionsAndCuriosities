@@ -32,7 +32,7 @@ public class RandomTpComponent extends SpellEffect {
 
     @Override
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget spellTarget, IModifiedSpellPart<SpellEffect> modificationData, SpellContext spellContext) {
-        if(spellContext.getWorld().isClientSide){
+        if(spellContext.getLevel().isClientSide){
             return  ComponentApplicationResult.SUCCESS;
         }
 

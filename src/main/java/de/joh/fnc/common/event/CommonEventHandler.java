@@ -1,6 +1,5 @@
 package de.joh.fnc.common.event;
 
-import com.mna.Registries;
 import com.mna.api.ManaAndArtificeMod;
 import com.mna.capabilities.playerdata.progression.PlayerProgression;
 import com.mna.factions.Factions;
@@ -64,7 +63,7 @@ public class CommonEventHandler {
                 event.getLevel().destroyBlock(event.getPos(), false, null);
 
                 //random drop:
-                Block.dropResources(block.defaultBlockState(), event.getPlayer().level, event.getPos(), null, event.getPlayer(), event.getPlayer().getMainHandItem());
+                Block.dropResources(block.defaultBlockState(), event.getPlayer().level(), event.getPos(), null, event.getPlayer(), event.getPlayer().getMainHandItem());
             }
         }
     }

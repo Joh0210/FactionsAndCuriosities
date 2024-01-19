@@ -150,7 +150,7 @@ public class WildMagicHelper {
      * @return true if the Wild Magic was performed
      */
     public static boolean performRandomWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags componentTag, @NotNull WildMagicFilters wildMagicFilters, boolean cancelable){
-        if(!source.getLevel().isClientSide()){
+        if(!source.level().isClientSide()){
             int wildMagicLuck = getWildMagicLuck(source);
             WildMagic wildMagic = getRandomWildMagic(
                         Math.abs(wildMagicLuck) + 1,

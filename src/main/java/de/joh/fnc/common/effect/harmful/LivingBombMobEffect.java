@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -22,8 +23,8 @@ public class LivingBombMobEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(@NotNull LivingEntity livingEntity, int amplifier) {
-        if(!livingEntity.level.isClientSide) {
-            livingEntity.level.explode(null, null, null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 2 * amplifier + 1, false, (((ServerLevel) livingEntity.level).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && CommonConfig.LIVING_BOMB_BREAK_BLOCKS.get()) ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
+        if(!livingEntity.level().isClientSide) {
+            livingEntity.level().explode(null, null, null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 2 * amplifier + 1, false, (((ServerLevel) livingEntity.level()).getServer().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && CommonConfig.LIVING_BOMB_BREAK_BLOCKS.get()) ? Level.ExplosionInteraction.MOB : Level.ExplosionInteraction.NONE);
         }
     }
 

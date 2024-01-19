@@ -1,11 +1,13 @@
 package de.joh.fnc.common.wildmagic;
 
+import com.mna.api.entities.DamageHelper;
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicCOT;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -43,7 +45,7 @@ public class ReduceHPWildMagic extends WildMagicCOT {
     protected void performWildMagic(@NotNull LivingEntity source, @Nullable SpellTarget target, @NotNull SpellPartTags spellPartTag) {
         if(targetsCaster || (target != null && target.getLivingEntity() != null)) {
             LivingEntity entity = targetsCaster ? source : target.getLivingEntity();
-            entity.hurt(DamageSource.MAGIC, Math.min(maxDamage, entity.getMaxHealth() * percentage));
+            entity.hurt(DamageHelper.createSourcedType(DamageTypes.MAGIC, source.level().registryAccess(), source), Math.min(maxDamage, entity.getMaxHealth() * percentage));
         }
     }
 

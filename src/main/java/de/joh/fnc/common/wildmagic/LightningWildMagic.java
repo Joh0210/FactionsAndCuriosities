@@ -46,9 +46,9 @@ public class LightningWildMagic extends WildMagicCOT {
             return;
         }
 
-        LightningBolt lightningbolt = EntityType.LIGHTNING_BOLT.create(source.level);
+        LightningBolt lightningbolt = EntityType.LIGHTNING_BOLT.create(source.level());
         if(lightningbolt == null) return;
         lightningbolt.setPos(pos);
-        source.level.addFreshEntity(lightningbolt);
+        source.level().addFreshEntity(lightningbolt);
     }
 }

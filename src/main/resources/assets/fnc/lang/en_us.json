@@ -46,8 +46,8 @@
   "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
   "effect.fnc.paladin_smite": "Paladin Smite",
 
-  "death.attack.fnc-smite": "%s was smited to death",
-  "death.attack.fnc-smite.player": "%s was smited to death by %s",
+  "death.attack.fnc_smite": "%s was smited to death",
+  "death.attack.fnc_smite.player": "%s was smited to death by %s",
 
   "fnc.dice.roll.output.text": "Your roll: ",
   "fnc.feedback.selected.spelladjustment": "Selected Spell Adjustment: ",

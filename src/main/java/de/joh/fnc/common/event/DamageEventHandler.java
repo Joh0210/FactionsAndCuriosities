@@ -12,7 +12,9 @@ import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
 import de.joh.fnc.common.item.DivineArmorItem;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -41,7 +43,7 @@ public class DamageEventHandler {
             event.setAmount(Math.max(event.getAmount() * (1 + 0.25f * (instance.getAmplifier() + 1)), 1));
         }
 
-        if(event.getSource().isMagic() && targetEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivineArmorItem divineArmor && divineArmor.isSetEquipped(targetEntity)){
+        if(isMagic(event.getSource()) && targetEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivineArmorItem divineArmor && divineArmor.isSetEquipped(targetEntity)){
             event.setAmount(event.getAmount() * (1.0f - 0.5f));
             if(targetEntity instanceof Player){
                 divineArmor.usedByPlayer((Player) targetEntity);
@@ -56,14 +58,14 @@ public class DamageEventHandler {
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent event) {
         if(event.getSource().getEntity() instanceof LivingEntity source
-                && !source.getLevel().isClientSide()
-                && event.getSource().msgId.equals("fnc-smite")
+                && !source.level().isClientSide()
+                && event.getSource().is(SmiteHelper.getSmiteDamage())
                 && source.getMainHandItem().getItem() == ItemInit.BRIMSTONE_SWORD.get())
         {
             source.heal(event.getAmount()/2);
         }
 
-        if (event.getSource().getEntity() instanceof Player source && source != event.getEntity() && !source.getLevel().isClientSide()) {
+        if (event.getSource().getEntity() instanceof Player source && source != event.getEntity() && !source.level().isClientSide()) {
             LivingEntity target = event.getEntity();
             if (source.getMainHandItem().isEmpty() && ((BlackCatBraceletItem) ItemInit.BLACK_CAT_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)) {
                WildMagicHelper.performRandomWildMagic(target, new SpellTarget(target), SpellPartTags.FRIENDLY,(wm, s, t, ct) -> wm.getQuality(SpellPartTags.FRIENDLY).ordinal() <= Quality.NEUTRAL.ordinal());
@@ -78,15 +80,15 @@ public class DamageEventHandler {
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
         DamageSource source = event.getSource();
-        if (!event.getEntity().level.isClientSide) {
+        if (!event.getEntity().level().isClientSide) {
             //protection against explosions
-            if (source.isExplosion() && event.getEntity().hasEffect(EffectInit.EXPLOSION_RESISTANCE.get())) {
+            if (source.is(DamageTypeTags.IS_EXPLOSION) && event.getEntity().hasEffect(EffectInit.EXPLOSION_RESISTANCE.get())) {
                 event.setCanceled(true);
                 return;
             }
 
             //Smites
-            if(source.getDirectEntity() instanceof Player && source.msgId.equals("player")){
+            if(source.getDirectEntity() instanceof Player && source.is(DamageTypes.PLAYER_ATTACK)){
                 SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntity());
             }
             else if (source.getDirectEntity() instanceof AbstractArrow
@@ -96,5 +98,10 @@ public class DamageEventHandler {
                 SmiteHelper.applySmite((Player) source.getEntity(), event.getEntity());
             }
         }
+    }
+
+    //TODO: use normal damageSource.isMagic() when it's re added
+    public static boolean isMagic(DamageSource damageSource){
+        return damageSource.is(DamageTypeTags.BYPASSES_ARMOR);
     }
 }
