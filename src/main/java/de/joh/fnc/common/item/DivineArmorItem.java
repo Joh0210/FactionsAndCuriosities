@@ -50,7 +50,7 @@ public class DivineArmorItem extends ArmorItem implements ISetItem, ITieredItem<
     }
 
     @Override
-    public int getCachedtier() {
+    public int getCachedTier() {
         return this.tier;
     }
 

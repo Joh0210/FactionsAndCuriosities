@@ -47,7 +47,7 @@ public class BrimstoneSwordItem extends SwordItem implements IFactionSpecific, I
     }
 
     @Override
-    public int getCachedtier() {
+    public int getCachedTier() {
         return this.tier;
     }
 }

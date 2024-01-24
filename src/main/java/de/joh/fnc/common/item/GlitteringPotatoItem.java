@@ -72,7 +72,7 @@ public class GlitteringPotatoItem extends Item implements ITieredItem<Glittering
     }
 
     @Override
-    public int getCachedtier() {
+    public int getCachedTier() {
         return this._tier;
     }
 

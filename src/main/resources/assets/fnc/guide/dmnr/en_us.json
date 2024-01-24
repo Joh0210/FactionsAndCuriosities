@@ -1,7 +1,7 @@
 {
   "Upgrade Glyph Wild Magic Luck": {
     "index": "1",
-    "category": "eldrin_altar",
+    "category": "dmnr_armorupgrades",
     "sections": [
       {
         "type": "title",
@@ -44,7 +44,7 @@
   },
   "Upgrade Glyph Random Spell Adjustment": {
     "index": "1",
-    "category": "eldrin_altar",
+    "category": "dmnr_armorupgrades",
     "sections": [
       {
         "type": "title",
@@ -81,7 +81,7 @@
 
   "Upgrade Glyph Magic Resistance": {
     "index": "1",
-    "category": "eldrin_altar",
+    "category": "dmnr_armorupgrades",
     "sections": [
       {
         "type": "title",
@@ -117,7 +117,7 @@
   },
   "Upgrade Glyph Smite Duration": {
     "index": "1",
-    "category": "eldrin_altar",
+    "category": "dmnr_armorupgrades",
     "sections": [
       {
         "type": "title",

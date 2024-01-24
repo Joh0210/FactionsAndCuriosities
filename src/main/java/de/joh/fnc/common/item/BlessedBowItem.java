@@ -52,7 +52,7 @@ public class BlessedBowItem extends BowItem implements IFactionSpecific, ITiered
     }
 
     @Override
-    public int getCachedtier() {
+    public int getCachedTier() {
         return this.tier;
     }
 

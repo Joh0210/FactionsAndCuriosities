@@ -69,7 +69,7 @@ public class MischiefArmorItem extends ArmorItem implements ISetItem, ITieredIte
     }
 
     @Override
-    public int getCachedtier() {
+    public int getCachedTier() {
         return this.tier;
     }
 
