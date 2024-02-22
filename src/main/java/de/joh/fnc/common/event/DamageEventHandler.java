@@ -9,6 +9,7 @@ import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
 import de.joh.fnc.common.init.EffectInit;
+import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
 import de.joh.fnc.common.item.DivineArmorItem;
@@ -89,7 +90,7 @@ public class DamageEventHandler {
 
             //Smites
             if(source.getDirectEntity() instanceof Player && source.is(DamageTypes.PLAYER_ATTACK)){
-                SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntity(), ((Player) source.getDirectEntity()).getItemBySlot(EquipmentSlot.MAINHAND).getItem() == ItemInit.BLESSED_SWORD.get());
+                SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntity(), ((Player) source.getDirectEntity()).getItemBySlot(EquipmentSlot.MAINHAND).getEnchantmentLevel(EnchantmentInit.HOLY_SMITE.get()) >= 1);
             }
             else if (source.getDirectEntity() instanceof AbstractArrow
                     && source.getDirectEntity().getPersistentData().getBoolean("fnc_smite_arrow")

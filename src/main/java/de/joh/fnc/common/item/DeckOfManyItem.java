@@ -30,7 +30,11 @@ public class DeckOfManyItem extends Item implements IFactionSpecific {
         this.usedByPlayer(user);
         if (!world.isClientSide()) {
             //todo: Might not be performed
-            WildMagicHelper.performRandomWildMagic(user, null, SpellPartTags.FRIENDLY, (wm, s, t, comp) -> wm.getQuality(comp) == Quality.VERY_BAD || wm.getQuality(comp) == Quality.VERY_GOOD, false);
+            WildMagicHelper.performRandomWildMagic(user,
+                    null,
+                    SpellPartTags.FRIENDLY,
+                    (wm, s, t, comp) -> wm.getQuality(comp) == Quality.VERY_BAD || wm.getQuality(comp) == Quality.VERY_GOOD,
+                    false);
         }
         user.getCooldowns().addCooldown(this, 800);
         return ret;

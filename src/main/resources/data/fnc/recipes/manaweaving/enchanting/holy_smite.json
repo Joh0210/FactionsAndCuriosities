@@ -1,0 +1,23 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "tier": 4,
+  "output": "mna:rune_water",
+  "enchant": "fnc:holy_smite",
+  "magnitude": 1,
+  "requiredFaction": "fnc:paladin",
+  "items": [
+    "mna:rune_arcane",
+    "minecraft:diamond_sword",
+    "minecraft:totem_of_undying",
+    "minecraft:nether_star",
+    "mna:warding_candle",
+    "minecraft:diamond_sword",
+    "mna:greater_mote_ender",
+    "mna:greater_mote_arcane"
+  ],
+  "patterns": [
+    "mna:circle",
+    "mna:manaweave_patterns/diamond",
+    "mna:knot2"
+  ]
+}

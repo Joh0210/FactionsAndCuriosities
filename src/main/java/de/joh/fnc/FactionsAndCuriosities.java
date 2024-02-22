@@ -5,6 +5,7 @@ import com.mojang.logging.LogUtils;
 import de.joh.fnc.api.util.AttributeInit;
 import de.joh.fnc.common.init.CreativeModeTabInit;
 import de.joh.fnc.common.init.EffectInit;
+import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.util.CommonConfig;
 import de.joh.fnc.common.util.ModItemProperties;
@@ -39,6 +40,7 @@ public class FactionsAndCuriosities {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         CreativeModeTabInit.register(modEventBus);
         ItemInit.register(modEventBus);
+        EnchantmentInit.register(modEventBus);
         EffectInit.register(modEventBus);
         AttributeInit.register(modEventBus);
 
