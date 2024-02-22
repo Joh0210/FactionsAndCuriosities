@@ -39,6 +39,7 @@ public class CreativeModeTabInit {
                         pOutput.accept(ItemInit.DIVINE_LEGGING.get());
                         pOutput.accept(ItemInit.DIVINE_BOOTS.get());
                         pOutput.accept(ItemInit.BRIMSTONE_SWORD.get());
+                        pOutput.accept(ItemInit.BLESSED_SWORD.get());
                         pOutput.accept(ItemInit.BLESSED_BOW.get());
                         pOutput.accept(ItemInit.SMITING_RING.get());
                         pOutput.accept(ItemInit.BLOOD_LUST_BRACELET.get());

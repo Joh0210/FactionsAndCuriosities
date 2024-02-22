@@ -8,10 +8,7 @@ import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.item.material.ToolMaterials;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -20,11 +17,11 @@ import org.jetbrains.annotations.NotNull;
  * @see DamageEventHandler
  * @author Joh0210
  */
-public class BrimstoneSwordItem extends SwordItem implements IFactionSpecific, ITieredItem<BrimstoneSwordItem> {
+public class PaladinSwordItem extends SwordItem implements IFactionSpecific, ITieredItem<PaladinSwordItem> {
     private int tier = -1;
 
-    public BrimstoneSwordItem() {
-        super(ToolMaterials.LIVE_RIP, 2, -2.4F, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant());
+    public PaladinSwordItem(Tier tier, int p1, float p2, Item.Properties properties) {
+        super(tier, p1, p2, properties);
     }
 
     @Override

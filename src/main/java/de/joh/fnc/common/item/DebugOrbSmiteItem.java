@@ -23,7 +23,7 @@ public class DebugOrbSmiteItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player user, @NotNull InteractionHand hand) {
         InteractionResultHolder<ItemStack> ret = super.use(world, user, hand);
 
-        SmiteHelper.applySmite(user, user);
+        SmiteHelper.applySmite(user, user, user.isShiftKeyDown());
 
         user.getCooldowns().addCooldown(this, 20);
         return ret;

@@ -67,7 +67,7 @@ public class SmiteHelper {
      * The base value cannot exceed the amount defined by the {@link CommonConfig}, but the {@link PerformSmiteEvent#getDamageMod() damageMod} is not effected by this rule.
      * @see DamageEventHandler
      */
-    public static void applySmite(Player source, LivingEntity target){
+    public static void applySmite(Player source, LivingEntity target, boolean isMagic){
         AtomicReference<ArrayList<SmiteEntry>> smites = new AtomicReference<>(new ArrayList<>());
         AtomicReference<ISpellDefinition> smiteFromShape = new AtomicReference<>();
         source.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(smiteCapability -> {
@@ -83,7 +83,7 @@ public class SmiteHelper {
         MinecraftForge.EVENT_BUS.post(event);
         if(!event.isCanceled()) {
             target.hurt(new DamageSource(
-                    source.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(getSmiteDamage()),
+                    source.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(isMagic ? getMagicSmiteDamage() : getSmiteDamage()),
                     source,
                     source), event.getDamage(false));
             if(event.getSmiteFromShape() != null){
@@ -97,5 +97,9 @@ public class SmiteHelper {
 
     public static ResourceKey<DamageType> getSmiteDamage(){
         return ResourceKey.create(Registries.DAMAGE_TYPE, RLoc.create("spell_smite"));
+    }
+
+    public static ResourceKey<DamageType> getMagicSmiteDamage(){
+        return ResourceKey.create(Registries.DAMAGE_TYPE, RLoc.create("spell_magic_smite"));
     }
 }

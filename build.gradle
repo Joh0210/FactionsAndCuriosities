@@ -101,7 +101,10 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven { url "https://maven.manaandartifice.com/releases/${minecraft_version}/" }
+    flatDir {
+        dirs 'libs'
+    }
+    //maven { url "https://maven.manaandartifice.com/releases/${minecraft_version}/" }
     maven { url 'https://maven.theillusivec4.top/' }
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
     maven {

@@ -938,6 +938,54 @@
       }
     ]
   },
+  "Blessed Sword": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Blessed Sword"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "With the righteousness in my heart, I pierce even the strongest armor of the demons!\n\nEach Smite with this sword causes "
+          },
+          {
+            "text": "magical damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that passes through armor!"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/blessed_sword"
+      }
+    ]
+  },
   "Brimstone Sword": {
     "index": 0,
     "category": "eldrin_altar",

@@ -59,7 +59,7 @@ public class DamageEventHandler {
     public static void onLivingDamage(LivingDamageEvent event) {
         if(event.getSource().getEntity() instanceof LivingEntity source
                 && !source.level().isClientSide()
-                && event.getSource().is(SmiteHelper.getSmiteDamage())
+                && (event.getSource().is(SmiteHelper.getSmiteDamage()) || event.getSource().is(SmiteHelper.getMagicSmiteDamage()))
                 && source.getMainHandItem().getItem() == ItemInit.BRIMSTONE_SWORD.get())
         {
             source.heal(event.getAmount()/2);
@@ -89,13 +89,13 @@ public class DamageEventHandler {
 
             //Smites
             if(source.getDirectEntity() instanceof Player && source.is(DamageTypes.PLAYER_ATTACK)){
-                SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntity());
+                SmiteHelper.applySmite((Player) source.getDirectEntity(), event.getEntity(), ((Player) source.getDirectEntity()).getItemBySlot(EquipmentSlot.MAINHAND).getItem() == ItemInit.BLESSED_SWORD.get());
             }
             else if (source.getDirectEntity() instanceof AbstractArrow
                     && source.getDirectEntity().getPersistentData().getBoolean("fnc_smite_arrow")
                     && source.getEntity() instanceof Player
             ) {
-                SmiteHelper.applySmite((Player) source.getEntity(), event.getEntity());
+                SmiteHelper.applySmite((Player) source.getEntity(), event.getEntity(), false);
             }
         }
     }
