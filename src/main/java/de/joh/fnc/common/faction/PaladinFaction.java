@@ -4,6 +4,7 @@ import com.mna.api.ManaAndArtificeMod;
 import com.mna.api.faction.BaseFaction;
 import com.mna.api.faction.IFaction;
 import com.mna.api.sound.SFX;
+import com.mna.api.tools.RLoc;
 import com.mna.factions.Factions;
 import com.mna.items.ItemInit;
 import net.minecraft.ChatFormatting;
@@ -71,5 +72,9 @@ public class PaladinFaction extends BaseFaction {
     @Override
     public ChatFormatting getTornJournalPageFactionColor() {
         return ChatFormatting.GRAY;
+    }
+
+    public ResourceLocation getSanctumStructure() {
+        return RLoc.create("multiblock/council_circle");
     }
 }
