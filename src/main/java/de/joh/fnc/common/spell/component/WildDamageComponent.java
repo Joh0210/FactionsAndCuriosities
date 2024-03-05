@@ -1,6 +1,7 @@
 package de.joh.fnc.common.spell.component;
 
 import com.mna.api.affinity.Affinity;
+import com.mna.api.config.GeneralConfigValues;
 import com.mna.api.entities.DamageHelper;
 import com.mna.api.faction.IFaction;
 import com.mna.api.sound.SFX;
@@ -14,7 +15,6 @@ import com.mna.api.spells.parts.SpellEffect;
 import com.mna.api.spells.targeting.SpellContext;
 import com.mna.api.spells.targeting.SpellSource;
 import com.mna.api.spells.targeting.SpellTarget;
-import com.mna.config.GeneralConfig;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.FactionInit;
@@ -66,7 +66,7 @@ public class WildDamageComponent extends SpellEffect implements IDamageComponent
                 }
             }
 
-            entity.hurt(DamageHelper.createSourcedType(DamageTypes.MAGIC, context.getLevel().registryAccess(), source.getCaster()), damage * GeneralConfig.getDamageMultiplier());
+            entity.hurt(DamageHelper.createSourcedType(DamageTypes.MAGIC, context.getLevel().registryAccess(), source.getCaster()), damage * Math.max((float) GeneralConfigValues.GlobalDamageScale, 0.1f));
 
             if((int)modificationData.getValue(Attribute.MAGNITUDE) >= 1) {
                 entity.addEffect(new MobEffectInstance(

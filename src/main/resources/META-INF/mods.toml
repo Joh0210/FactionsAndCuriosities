@@ -4,7 +4,7 @@ license = "MIT"
 
 [[mods]]
 modId="fnc"
-version="1.2.4"
+version="1.2.5"
 displayName="Factions And Curiosities"
 logoFile="factions_and_curiosities.png"
 credits="Thanks to Fhyx for creating some of the textures! Also thanks to Ceddi and Nico for helping with testing and balancing."
@@ -23,7 +23,7 @@ side="BOTH"
 [[dependencies.fnc]]
 modId="mna"
 mandatory=true
-versionRange="[3.0.0.9,)"
+versionRange="[3.0.0.10,)"
 ordering="NONE"
 side="BOTH"
 
