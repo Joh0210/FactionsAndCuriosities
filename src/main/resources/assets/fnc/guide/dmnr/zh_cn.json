@@ -1,0 +1,197 @@
+{
+  "Upgrade Glyph Wild Magic Luck": {
+    "index": "1",
+    "category": "dmnr_armorupgrades",
+    "sections": [
+      {
+        "type": "title",
+        "value": "升级雕符：荒野魔法好运"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "如果狂野魔法考验我的运气，我更有可能会幸运。\n\n如果我放过对手，他们是幸运的。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "每级所需龙之魔法点数：7"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_wild_magic_luck"
+      }
+    ]
+  },
+  "Upgrade Glyph Random Spell Adjustment": {
+    "index": "1",
+    "category": "dmnr_armorupgrades",
+    "sections": [
+      {
+        "type": "title",
+        "value": "升级雕符：随机法术调整"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "我不知道它会表现出什么样的行为，但每级使用这个升级，我的法术有25%的几率会变得对我有利。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "每级所需龙之魔法点数：4"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_random_spell_adjustment"
+      }
+    ]
+  },
+  "Upgrade Glyph Magic Resistance": {
+    "index": "1",
+    "category": "dmnr_armorupgrades",
+    "sections": [
+      {
+        "type": "title",
+        "value": "升级雕符：魔法抗性"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "魔法可能会非常让人讨厌，尤其是当它被用来对付我时。因此，我创建了一个升级雕符，可以减少对我造成的魔法伤害，减少25%。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "每级所需龙之魔法点数：4"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_magic_resistance"
+      }
+    ]
+  },
+  "Upgrade Glyph Smite Duration": {
+    "index": "1",
+    "category": "dmnr_armorupgrades",
+    "sections": [
+      {
+        "type": "title",
+        "value": "升级雕符：打击持续时间"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "我想要我的打击持续更久！30秒对我来说不够！增加50%怎么样？"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "每级所需龙之魔法点数：3"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/upgrade_seal_smite_duration"
+      }
+    ]
+  },
+  "Dragon Mage Armor: Mischief": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "神龙巫师盔甲：诡计"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这套神龙巫师盔甲是通过使用荒野派系的诡计盔甲进行神龙巫师盔甲仪式获得的。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/mischief_dragon_mage_chestplate"
+      },
+      {
+        "type": "ritual",
+        "location": "dmnr:rituals/dragon_mage_ritual"
+      }
+    ]
+  },
+  "Dragon Mage Armor: Divine": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "神龙巫师盔甲：神圣"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这套神龙巫师盔甲是通过使用圣骑士派系的神圣盔甲进行神龙巫师盔甲仪式获得的。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/divine_dragon_mage_chestplate"
+      },
+      {
+        "type": "ritual",
+        "location": "dmnr:rituals/dragon_mage_ritual"
+      }
+    ]
+  },
+  "version": "1.2.5"
+}

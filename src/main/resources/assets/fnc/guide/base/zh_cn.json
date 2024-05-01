@@ -1,0 +1,1335 @@
+{
+  "Holy Smite": {
+    "category": "enchantments",
+    "sections": [
+      {
+        "type": "title",
+        "value": "神圣打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "通过这个附魔，打击被视为魔法伤害，并且可以"
+          },
+          {
+            "text": "穿透护甲",
+            "color": "dark_purple"
+          },
+          {
+            "text": "！"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/enchanting/holy_smite"
+      }
+    ]
+  },
+  "Shape: Paladin Smite": {
+    "index": "1",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "形状：圣骑打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "我的打击变得强大了，比以往任何时候都更强大。但是，现在是时候了，是时候掌握最神圣的打击形式了："
+          },
+          {
+            "text": "锻造我自己的打击",
+            "color": "dark_purple"
+          },
+          {
+            "text": "！\n\n这个形态的行为类似于我对自己施放的其他打击法术效果。然而，打击触发的效果由我决定！\n\n每次只能激活一种此类型的打击。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "打击是一种短期效果，它增加玩家的"
+          },
+          {
+            "text": "近战攻击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "，并以额外的方式影响近战目标。\n\n多种打击效果可以同时生效，但通过叠加打击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:shapes/paladin_smite"
+      }
+    ]
+  },
+  "Component: Burning Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "燃烧打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这一打击会点燃目标，持续一段定义好的时间。"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "打击是一种短期效果，它增加玩家的"
+          },
+          {
+            "text": "近战攻击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "，并以额外的方式影响近战目标。\n\n多种打击效果可以同时生效，但通过叠加打击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/burning_smite"
+      }
+    ]
+  },
+  "Component: Crippling Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "致残打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这一打击会使目标在短时间内陷入虚弱和缓慢状态。"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "打击是一种短期效果，它增加玩家的"
+          },
+          {
+            "text": "近战攻击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "，并以额外的方式影响近战目标。\n\n多种打击效果可以同时生效，但通过叠加打击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/crippling_smite"
+      }
+    ]
+  },
+  "Component: Dispelling Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "驱散打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个打击会移除目标身上的正面药水效果。\n\n然而，这个效果并非无所不能。更强或更长效果可能无法被移除。为了增强打击的威力，可以增加它的强度。"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smites"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "打击是一种短期效果，它增加玩家的"
+          },
+          {
+            "text": "近战攻击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "，并以额外的方式影响近战目标。\n\n多种打击效果可以同时生效，但通过叠加打击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/dispelling_smite"
+      }
+    ]
+  },
+  "Component: Hexing Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "诅咒打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个打击会对目标施加"
+          },
+          {
+            "text": "诅咒",
+            "color": "dark_purple"
+          },
+          {
+            "text": "效果，阻止目标恢复生命，并且目标受到的伤害每级增加 25%。"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "打击是一种短期效果，它增加玩家的"
+          },
+          {
+            "text": "近战攻击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "，并以额外的方式影响近战目标。\n\n多种打击效果可以同时生效，但通过叠加打击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/hexing_smite"
+      }
+    ]
+  },
+  "Component: Silencing Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "沉默打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个打击会在短时间内阻止目标施放法术。"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "打击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "打击是一种短期效果，它增加玩家的"
+          },
+          {
+            "text": "近战攻击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "，并以额外的方式影响近战目标。\n\n多种打击效果可以同时生效，但通过叠加打击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/silencing_smite"
+      }
+    ]
+  },
+  "Component: Random Teleport": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "随机传送"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "我可以施展荒野魔法来使目标消失。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个法术会将目标传送到指定半径内的随机位置。\n\n只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/random_tp"
+      }
+    ]
+  },
+  "Component: Wild Damage": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "荒野伤害"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "与其他伤害法术不同，这个法术是不可预测的！它可能造成最大伤害，但同样可能只造成1点伤害……"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "为了使平均值更可能出现，我可以增加"
+          },
+          {
+            "text": "精确",
+            "bold": true
+          },
+          {
+            "text": "。这样做会使极小的数值变得不太可能，但也会使极高的数值变得不太可能。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "法术的目标将受到由"
+          },
+          {
+            "text": "持续时间",
+            "bold": true
+          },
+          {
+            "text": "和"
+          },
+          {
+            "text": "增强",
+            "bold": true
+          },
+          {
+            "text": "定义的荒野魔法效果的诅咒。\n\n只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/wild_damage"
+      }
+    ]
+  },
+  "Component: Cause Wild Magic": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "引发荒野魔法"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个法术将引发一个荒野魔法效果。\n\n"
+          },
+          {
+            "text": "精确",
+            "bold": true
+          },
+          {
+            "text": "会缩小荒野魔法效果的选择范围。小于1的值确保只有积极的效果。大于1的值确保只有负面效果。\n\n只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/cause_wild_magic"
+      }
+    ]
+  },
+  "Dice": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "骰子"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "一个重要的物品，结合了世界的偶然性。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/dice_six"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/dice_twenty"
+      }
+    ]
+  },
+  "Smiting Ring": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "惩戒之戒"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "我的攻击比以往任何时候都更强大，但我的对手也变得更强大了。我需要进一步提高我的打击！\n\n有了这个戒指，我使用打击造成的最大伤害增加了5点。\n\n它只含有有限的魔力，最终需要充能。它可以利用魔力晶体碎片。\n\n\n只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/smiting_ring"
+      }
+    ]
+  },
+  "Blood Lust Bracelet": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "嗜血手镯"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "当我从别人身上汲取力量时，我感觉重焕新生。\n\n这个手镯在我使用打击时会给我一个短暂的恢复效果。\n\n它只含有有限的魔力，最终需要充能。它可以利用"
+          },
+          {
+            "text": "魔力晶体碎片",
+            "color": "blue"
+          },
+          {
+            "text": "。\n\n此物品只能由与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人制作。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/blood_lust_bracelet"
+      }
+    ]
+  },
+  "Black Cat Bracelet": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "黑猫手镯"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "当我用"
+          },
+          {
+            "text": "徒手",
+            "color": "dark_purple"
+          },
+          {
+            "text": "击打他人时，这个手镯会将我的魔法的不可预测性传递给他人。然而，与我不同的是，他们无法从荒野魔法中得到任何快乐。\n\n它只含有有限的魔力，最终需要充能。它可以利用"
+          },
+          {
+            "text": "魔力晶体碎片",
+            "color": "blue"
+          },
+          {
+            "text": "。\n\n只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/black_cat_bracelet"
+      }
+    ]
+  },
+  "Ring of the Four Leaf Clover": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "四叶草之戒"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个戒指会保护我免受非常糟糕的荒野魔法和法术调整效果的影响。\n\n它只含有有限的魔力，最终需要充能。它可以利用"
+          },
+          {
+            "text": "魔力晶体碎片",
+            "color": "blue"
+          },
+          {
+            "text": "。\n\n\n只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/four_leaf_clover_ring"
+      }
+    ]
+  },
+  "Wild Pickaxe": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "荒野稿"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个镐子在我挖掘一个矿石时会掉落一个随机的矿石。\n\n当我手持这个镐子并使用破坏法术或另一个镐子时，效果也会发生。\n\n只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/wild_pickaxe"
+      }
+    ]
+  },
+  "Glittering Potato": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "闪光土豆"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个土豆富含荒野魔法。它除了可以喂饱我之外，还有80%的几率会治愈我2颗心。然而，仍然有20%的几率会引发爆炸。\n\n只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/glittering_potato"
+      }
+    ]
+  },
+  "Blessed Bow": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "神佑之弓"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "是时候恪守我的誓言了！有了这弓，我将终结地狱的恶魔！\n\n这弓的箭矢携带着我"
+          },
+          {
+            "text": "打击",
+            "color": "dark_purple"
+          },
+          {
+            "text": "的力量"
+          },
+          {
+            "text": "飞向远方",
+            "color": "dark_purple"
+          },
+          {
+            "text": "！\n\n（是的...我们圣骑士对于远程法术来说太酷了）"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/blessed_bow"
+      }
+    ]
+  },
+  "Brimstone Sword": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "硫磺剑"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "我的效忠是为了生者，但当我将我的武器与地狱的力量结合在一起时，我可以更好地保护生者。\n\n当我用这把剑进行打击时，我会得到"
+          },
+          {
+            "text": "一半的打击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "作为生命值回复。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/brimstone_sword"
+      }
+    ]
+  },
+  "Deck of Many": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "一堆牌组"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这个遗物施展了一种极端的荒野魔法！我不知道它是好是坏，只知道它是极端的，而且没有办法抵挡命运之心！"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "你有胆量抽牌吗？",
+            "italic": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/deck_of_many"
+      }
+    ]
+  },
+  "Divine Armor": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "神圣盔甲"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "我站在这里如一块岩石，保护着生者的领域免受黑暗的侵袭。\n\n这套盔甲已经提供了很好的保护，但它还能减少50%的魔法伤害。此外，我的打击的持续时间增加了50%。\n\n（如果安装了DM&R，可以用来制作神龙巫师盔甲）"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_helmet"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_chestplate"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_legging"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_boots"
+      }
+    ]
+  },
+  "Mischief Armor": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "诡计盔甲"
+      },
+      {
+        "type": "text",
+        "value": "The wild magic has neither a form nor a place, but many associates of it appear with a stroke of the gods. And we, as wild magicians, take advantage of this call and make the armor in the image of the god of mischief.  The armor itself is as strong as a knight's plate armor, and while wearing it, it seems that Wild Magic favors me. Likewise, there is a 50% chance that casting a spell will change it in a positive way.",
+        "json": [
+          {
+            "text": "荒野魔法既没有形式也没有地方，但许多与之相关的事物都伴随着神的一击而出现。而我们，作为荒野魔法师，利用这种呼唤，将盔甲打造成了诡计之神的形象。\n\n这套盔甲本身就像骑士的板甲一样坚固，穿上它时，似乎荒野魔法偏爱着我。\n\n同样，施放法术有50%的几率以积极的方式改变它。\n\n（如果安装了DM&R，可以用来制作神龙巫师盔甲）"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_helmet"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_chestplate"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_legging"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_boots"
+      }
+    ]
+  },
+  "Ritual of the Pact": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "誓约仪式"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "在这份盟约中，我立誓捍卫那些无法自保者，毁灭那些加害他人者，融入伟大的"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "之列。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location": "fnc:rituals/pact"
+      }
+    ]
+  },
+  "Ritual of the Wild": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "荒野仪式"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这一仪式让荒野魔法在你体内流淌，并使你成为"
+          },
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "的一员。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location": "fnc:rituals/wild_energy"
+      }
+    ]
+  },
+  "Faction: Wild Courts": {
+    "index": 10,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "派系：荒野之庭"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "荒野之庭",
+            "color": "gold"
+          },
+          {
+            "text": "以其最纯粹、最不受驯化的形式使用魔法。\n\n他们的魔法既强大又危险。每当他们接触到它时，荒野魔法会造成随机事件的小概率。\n\n荒野造物包括诸如"
+          },
+          {
+            "text": "一堆牌组",
+            "color": "gold"
+          },
+          {
+            "text": "之类的物品，将荒野魔法发挥到了极致，以及诸如"
+          },
+          {
+            "text": "荒野伤害",
+            "color": "gold"
+          },
+          {
+            "text": "和"
+          },
+          {
+            "text": "引发荒野魔法",
+            "color": "gold"
+          },
+          {
+            "text": "等法术组件。\n\n他们与"
+          },
+          {
+            "text": "仙女之庭",
+            "color": "dark_green"
+          },
+          {
+            "text": "结盟。\n\n当查看奥秘之眼时，任何需要荒野派系的内容都将用以下图标标记："
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "location": "fnc:textures/guide/faction_icon_wild.png",
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location": "fnc:rituals/wild_energy"
+      }
+    ]
+  },
+  "Faction: Paladin": {
+    "index": 10,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "派系：圣骑士"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "将魔法与武术技巧相结合。这使得他们成为非常优秀的守卫、战士和执行者。\n\n圣骑士造物包括多用途的盔甲和强大的武器，比如"
+          },
+          {
+            "text": "神圣盔甲",
+            "color": "gray"
+          },
+          {
+            "text": "，它大幅减少了魔法造成的伤害。圣骑士的法术组件包括强大的打击。\n\n打击是一种短效果，它会增加玩家的"
+          },
+          {
+            "text": "近战攻击",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害，并以额外的方式影响近战目标。多种打击效果可以同时生效，但通过叠加打击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。\n\n圣骑士与"
+          },
+          {
+            "text": "远古巫师议会",
+            "color": "blue"
+          },
+          {
+            "text": "结盟。\n\n当查看奥秘之眼时，任何需要圣骑士派系的内容都将用以下图标标记："
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "location": "fnc:textures/guide/faction_icon_paladin.png",
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location": "fnc:rituals/pact"
+      }
+    ]
+  },
+  "version": "1.2.5"
+}
