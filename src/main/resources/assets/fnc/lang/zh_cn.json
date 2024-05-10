@@ -102,14 +102,14 @@
     "event.fnc.faction_ally_paladin": "你的忠诚赋予你确保正义的力量。你已经与圣骑士结盟！",
     "event.fnc.faction_ally_wild": "你感受到周围魔法的不可预测性与你融为一体。你已经与荒野法庭结盟！",
 
-    "item.fnc.mischief_dragon_mage_boots": "诡计龙巫师靴",
-    "item.fnc.mischief_dragon_mage_chestplate": "诡计龙巫师胸甲",
-    "item.fnc.mischief_dragon_mage_helmet": "诡计龙巫师头盔",
-    "item.fnc.mischief_dragon_mage_leggings": "诡计龙巫师护腿",
-    "item.fnc.divine_dragon_mage_boots": "神圣龙巫师靴",
-    "item.fnc.divine_dragon_mage_chestplate": "神圣龙巫师胸甲",
-    "item.fnc.divine_dragon_mage_helmet": "神圣龙巫师头盔",
-    "item.fnc.divine_dragon_mage_leggings": "神圣龙巫师护腿",
+    "item.fnc.mischief_dragon_mage_boots": "诡计神龙巫师靴",
+    "item.fnc.mischief_dragon_mage_chestplate": "诡计神龙巫师胸甲",
+    "item.fnc.mischief_dragon_mage_helmet": "诡计神龙巫师头盔",
+    "item.fnc.mischief_dragon_mage_leggings": "诡计神龙巫师护腿",
+    "item.fnc.divine_dragon_mage_boots": "神圣神龙巫师靴",
+    "item.fnc.divine_dragon_mage_chestplate": "神圣神龙巫师胸甲",
+    "item.fnc.divine_dragon_mage_helmet": "神圣神龙巫师头盔",
+    "item.fnc.divine_dragon_mage_leggings": "神圣神龙巫师护腿",
 
 
     "item.fnc.upgrade_seal_smite_duration": "升级雕符：惩击持续时间",
