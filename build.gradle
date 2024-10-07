@@ -132,7 +132,7 @@ dependencies {
 
     // M&A and its API
     // compileOnly "com.mithion:mna:${mna_version}:api" //api, compilation only
-    implementation fg.deobf("com.mithion:mna-forge-${minecraft_version}:${mna_version}:all") //mod itself, deobf for runtime
+    implementation fg.deobf("curse.maven:mana-and-artifice-${mna_projectId}:${mna_fileId}")
 
     //DM&R
     implementation fg.deobf("curse.maven:dragonmagicandrelics-785039:${dmnr_curse_version_id}")
