@@ -45,10 +45,13 @@ public class MagicEventHandler {
      */
     @SubscribeEvent
     public static void onSpellCast(SpellCastEvent event){
-        Player caster = event.getCaster();
+        LivingEntity caster = event.getSource().getCaster();
 
-        if(caster.getItemBySlot(EquipmentSlot.OFFHAND).getItem() instanceof DebugOrbSpellAdjustmentItem debugOrbSpellAdjustmentItem){
-            debugOrbSpellAdjustmentItem.useSpellAdjustment(caster.level(), caster, caster.getItemBySlot(EquipmentSlot.OFFHAND), event);
+        if (caster instanceof Player)
+        {
+            if(caster.getItemBySlot(EquipmentSlot.OFFHAND).getItem() instanceof DebugOrbSpellAdjustmentItem debugOrbSpellAdjustmentItem){
+                debugOrbSpellAdjustmentItem.useSpellAdjustment(caster.level(), (Player)caster, caster.getItemBySlot(EquipmentSlot.OFFHAND), event);
+            }
         }
 
         //todo: outsource as Event
