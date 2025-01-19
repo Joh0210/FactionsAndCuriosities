@@ -1,0 +1,17 @@
+{
+  "type": "mna:component",
+  "tier": 4,
+  "output": "fnc:components/booming_smite",
+  "items": [
+    "minecraft:diamond_sword",
+    "minecraft:gunpowder",
+    "minecraft:tnt",
+    "mna:mote_fire",
+    "mna:desert_nova"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/diamond",
+    "mna:manaweave_patterns/square"
+  ]
+}

@@ -127,6 +127,81 @@
     ]
   },
 
+  "Component: Booming Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Booming Smite"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This Smite collects the magic in my opponents and lets it rapidly escape in an explosion.\nWith maximum precision you will be spared from the explosion, but the explosion will only have half the power!"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smites"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smites are short effects that increase the player's "
+          },
+          {
+            "text": "melee attack damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": "and influence the melee target in an additional way.\n\nMultiple Smites can be active at the same time, but the "
+          },
+          {
+            "text": "maximum damage",
+            "color": "dark_purple"
+          },
+          {
+            "text": " that can be achieved through Smite stacking is "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": " (can be set via the config)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/booming_smite"
+      }
+    ]
+  },
   "Component: Burning Smite": {
     "index": "2",
     "category": "sorcery",

@@ -34,9 +34,9 @@ public class AddonDmnrArmorUpgradeInit {
     }
 
     static {
-        AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK = new WildMagicLuckArmorUpgrade(RLoc.create("armorupgrade/wild_magic_luck"), 7);
-        AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT = new ArmorUpgrade(RLoc.create("armorupgrade/random_spell_adjustment"), 2, true, 4);
-        AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE = new MagicResistanceArmorUpgrade(RLoc.create("armorupgrade/magic_resistance"), 2, true, 4);
-        AddonDmnrArmorUpgradeInit.SMITE_DURATION = new MagicResistanceArmorUpgrade(RLoc.create("armorupgrade/smite_duration"), 1, true, 3);
+        AddonDmnrArmorUpgradeInit.WILD_MAGIC_LUCK = new WildMagicLuckArmorUpgrade(RLoc.create("armorupgrade/wild_magic_luck"), AddonDmnrItemInit.UPGRADE_SEAL_WILD_MAGIC_LUCK, 7);
+        AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT = new ArmorUpgrade(RLoc.create("armorupgrade/random_spell_adjustment"), 2, AddonDmnrItemInit.UPGRADE_SEAL_RANDOM_SPELL_ADJUSTMENT, true, 4);
+        AddonDmnrArmorUpgradeInit.MAGIC_RESISTANCE = new MagicResistanceArmorUpgrade(RLoc.create("armorupgrade/magic_resistance"), 2, AddonDmnrItemInit.UPGRADE_SEAL_MAGIC_RESISTANCE, true, 4);
+        AddonDmnrArmorUpgradeInit.SMITE_DURATION = new MagicResistanceArmorUpgrade(RLoc.create("armorupgrade/smite_duration"), 1, AddonDmnrItemInit.UPGRADE_SEAL_SMITE_DURATION, true, 3);
     }
 }

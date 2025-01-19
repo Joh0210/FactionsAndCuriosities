@@ -6,6 +6,7 @@ import com.mna.api.spells.base.ISpellDefinition;
 import de.joh.fnc.api.event.PerformSpellAdjustmentEvent;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.util.Registries;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +47,7 @@ public class SpellAdjustmentHelper {
      */
     public static @Nullable SpellAdjustment getRandomSpellAdjustment(int rolls, boolean chooseHigherQuality, @NotNull SpellCastEvent spellCastEvent, @NotNull SpellAdjustmentFilters spellAdjustmentFilter){
         Random random = new Random();
-        SpellAdjustment[] spellAdjustments = Arrays.stream(getAllSpellAdjustment()).filter(rs -> rs.canBePerformed(spellCastEvent) && spellAdjustmentFilter.condition(rs, spellCastEvent.getCaster(), spellCastEvent.getSpell())).toArray(SpellAdjustment[]::new);
+        SpellAdjustment[] spellAdjustments = Arrays.stream(getAllSpellAdjustment()).filter(rs -> rs.canBePerformed(spellCastEvent) && spellAdjustmentFilter.condition(rs, spellCastEvent.getSource().getCaster(), spellCastEvent.getSpell())).toArray(SpellAdjustment[]::new);
         int weightedListLength = Arrays.stream(spellAdjustments).mapToInt(rs -> rs.frequency).sum();
 
         if(weightedListLength < 1){
@@ -100,8 +101,8 @@ public class SpellAdjustmentHelper {
      * @return false if canceled or if it could not be performed
      */
     public static boolean performSpellAdjustment(@NotNull SpellAdjustment spellAdjustment, @NotNull SpellCastEvent spellCastEvent){
-        if(spellAdjustment.canBePerformed(spellCastEvent)){
-            PerformSpellAdjustmentEvent event = new PerformSpellAdjustmentEvent(spellAdjustment, spellCastEvent, spellCastEvent.getSpell().getComponent(0).getPart().getUseTag());
+        if(spellAdjustment.canBePerformed(spellCastEvent) && spellCastEvent.getSource().getCaster() instanceof Player){
+            PerformSpellAdjustmentEvent event = new PerformSpellAdjustmentEvent(spellAdjustment, spellCastEvent, (Player) spellCastEvent.getSource().getCaster(), spellCastEvent.getSpell().getComponent(0).getPart().getUseTag());
             MinecraftForge.EVENT_BUS.post(event);
             if(event.isCanceled()) {
                 return false;
@@ -119,8 +120,8 @@ public class SpellAdjustmentHelper {
      * @return true if the Wild Magic was performed
      */
     public static boolean performRandomSpellAdjustment(@NotNull SpellCastEvent spellCastEvent, @NotNull SpellAdjustmentFilters spellAdjustmentFilter){
-        if(!spellCastEvent.getCaster().level().isClientSide()){
-            int wildMagicLuck = WildMagicHelper.getWildMagicLuck(spellCastEvent.getCaster());
+        if(!spellCastEvent.getSource().getCaster().level().isClientSide()){
+            int wildMagicLuck = WildMagicHelper.getWildMagicLuck(spellCastEvent.getSource().getCaster());
             SpellAdjustment spellAdjustment = getRandomSpellAdjustment(
                     Math.abs(wildMagicLuck) + 1,
                     wildMagicLuck >= 0,
@@ -146,6 +147,6 @@ public class SpellAdjustmentHelper {
         /**
          * @return true if the spellAdjustment should potentially be selected & performed by {@link SpellAdjustmentHelper#performRandomSpellAdjustment(SpellCastEvent, SpellAdjustmentFilters) performRandomSpellAdjustment()}
          */
-        boolean condition(@NotNull SpellAdjustment spellAdjustment, @NotNull Player caster, @NotNull ISpellDefinition spell);
+        boolean condition(@NotNull SpellAdjustment spellAdjustment, @NotNull LivingEntity caster, @NotNull ISpellDefinition spell);
     }
 }

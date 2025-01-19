@@ -41,16 +41,16 @@ public class ShareSpellAdjustment extends SpellAdjustment {
 
     @Override
     protected void performSpellAdjustment(@NotNull SpellCastEvent event) {
-        Player caster = event.getCaster();
-
-        event.getSpell().getComponents().forEach(comp -> {
-            int delay = (int)(comp.getValue(com.mna.api.spells.attributes.Attribute.DELAY) * 20.0F);
-            if (delay > 0) {
-                DelayedEventQueue.pushEvent(caster.level(), new TimedDelayedSpellEffect(comp.getPart().getRegistryName().toString(), delay, new SpellSource(caster, InteractionHand.MAIN_HAND), new SpellTarget(caster), comp, new SpellContext(caster.level(), event.getSpell())));
-            } else {
-                comp.getPart().ApplyEffect(new SpellSource(caster, InteractionHand.MAIN_HAND), new SpellTarget(caster), comp, new SpellContext(caster.level(), event.getSpell()));
-            }
-        });
+        if(event.getSource().getCaster() instanceof Player caster) {
+            event.getSpell().getComponents().forEach(comp -> {
+                int delay = (int) (comp.getValue(com.mna.api.spells.attributes.Attribute.DELAY) * 20.0F);
+                if (delay > 0) {
+                    DelayedEventQueue.pushEvent(caster.level(), new TimedDelayedSpellEffect(comp.getPart().getRegistryName().toString(), delay, new SpellSource(caster, InteractionHand.MAIN_HAND), new SpellTarget(caster), comp, new SpellContext(caster.level(), event.getSpell())));
+                } else {
+                    comp.getPart().ApplyEffect(new SpellSource(caster, InteractionHand.MAIN_HAND), new SpellTarget(caster), comp, new SpellContext(caster.level(), event.getSpell()));
+                }
+            });
+        }
     }
 
     @Override

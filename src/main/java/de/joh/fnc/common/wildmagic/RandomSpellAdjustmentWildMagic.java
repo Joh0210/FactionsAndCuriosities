@@ -26,7 +26,7 @@ public class RandomSpellAdjustmentWildMagic extends WildMagicPotionEffect {
      * @param frequency     How often does the entry appear in the random-selection-list?
      */
     public RandomSpellAdjustmentWildMagic(@NotNull ResourceLocation registryName, int frequency) {
-        super(registryName, frequency, true, 1000000 , 1);
+        super(registryName, frequency, true, -1 , 1);
     }
 
     @Override

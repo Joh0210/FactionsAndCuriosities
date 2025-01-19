@@ -30,6 +30,7 @@
   "fnc:mischief_armor_set_bonus": "(4) Set Bonus:\n+1 Wild Magic Luck\n50% chance for a positive random SpellAdjustment",
 
   "effect.fnc.bad_wild_magic": "Bad Wild Magic",
+  "effect.fnc.booming_smite": "Booming Smite",
   "effect.fnc.burning_smite": "Burning Smite",
   "effect.fnc.crippling_smite": "Crippling Smite",
   "effect.fnc.dispelling_smite": "Dispelling Smite",
@@ -62,6 +63,11 @@
   "fnc:shapes/paladin_smite.desc.damage": "The damage increase caused by the Smite.",
 
   "fnc.component.smite.no_player.error" : "The spell can only target players",
+  "fnc:components/booming_smite": "Booming Smite",
+  "fnc:components/booming_smite.desc.damage": "The damage increase caused by the Smite.",
+  "fnc:components/booming_smite.desc.delay": "A delay in seconds before applying this component.",
+  "fnc:components/booming_smite.desc.magnitude": "Determines the strength of the explosion.",
+  "fnc:components/booming_smite.desc.precision": "Determines whether the explosion causes damage to blocks. \nWith maximum precision you will be spared from the explosion, but the explosion will only have half the power",
   "fnc:components/burning_smite": "Burning Smite",
   "fnc:components/burning_smite.desc.damage": "The damage increase caused by the Smite.",
   "fnc:components/burning_smite.desc.delay": "A delay in seconds before applying this component.",

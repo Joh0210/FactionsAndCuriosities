@@ -45,6 +45,7 @@ public class EffectInit {
     public static final RegistryObject<SmiteMobEffect> DISPELLING_SMITE = EFFECTS.register("dispelling_smite", DispellingSmite::new);
     public static final RegistryObject<SmiteMobEffect> SILENCING_SMITE = EFFECTS.register("silencing_smite", SilencingSmite::new);
     public static final RegistryObject<SmiteMobEffect> HEXING_SMITE = EFFECTS.register("hexing_smite", HexingSmite::new);
+    public static final RegistryObject<SmiteMobEffect> BOOMING_SMITE = EFFECTS.register("booming_smite", BoomingSmite::new);
 
 
     public static void register(IEventBus eventBus){

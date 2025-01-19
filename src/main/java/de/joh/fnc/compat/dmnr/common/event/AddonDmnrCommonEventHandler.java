@@ -16,6 +16,7 @@ import de.joh.fnc.common.item.MischiefArmorItem;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrArmorUpgradeInit;
 import de.joh.fnc.compat.dmnr.common.init.AddonDmnrItemInit;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -81,13 +82,16 @@ public class AddonDmnrCommonEventHandler {
 
     @SubscribeEvent
     public static void onSpellCast(SpellCastEvent event){
-        Player caster = event.getCaster();
-        //todo: outsource as Event!
-        Random random = new Random();
-        int level = ArmorUpgradeHelper.getUpgradeLevel(caster, AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT);
-        if(level >= 1 && random.nextInt(100) < 25 * level){
-            SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(Objects.requireNonNull(s.getComponent(0)).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
+        LivingEntity caster = event.getSource().getCaster();
+        if (caster instanceof Player) {
+            //todo: outsource as Event!
+            Random random = new Random();
+            int level = ArmorUpgradeHelper.getUpgradeLevel((Player) caster, AddonDmnrArmorUpgradeInit.RANDOM_SPELL_ADJUSTMENT);
+            if(level >= 1 && random.nextInt(100) < 25 * level){
+                SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(Objects.requireNonNull(s.getComponent(0)).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
+            }
         }
+
     }
 
     @SubscribeEvent

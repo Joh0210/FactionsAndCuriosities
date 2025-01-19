@@ -26,8 +26,8 @@ public class PerformSpellAdjustmentEvent extends PlayerEvent {
 
     public final SpellPartTags componentTag;
 
-    public PerformSpellAdjustmentEvent(@NotNull SpellAdjustment spellAdjustment, @NotNull SpellCastEvent spellCastEvent, @NotNull SpellPartTags componentTag) {
-        super(spellCastEvent.getCaster());
+    public PerformSpellAdjustmentEvent(@NotNull SpellAdjustment spellAdjustment, @NotNull SpellCastEvent spellCastEvent, @NotNull Player caster, @NotNull SpellPartTags componentTag) {
+        super(caster);
         this.spellAdjustment = spellAdjustment;
         this.spellCastEvent = spellCastEvent;
         this.componentTag = componentTag;

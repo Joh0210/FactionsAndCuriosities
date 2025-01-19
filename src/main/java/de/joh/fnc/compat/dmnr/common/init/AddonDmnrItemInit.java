@@ -1,11 +1,10 @@
 package de.joh.fnc.compat.dmnr.common.init;
 
-import de.joh.dmnr.common.item.UpgradeSealItem;
+import de.joh.dmnr.api.item.UpgradeSealItem;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.common.util.RLoc;
 import de.joh.fnc.compat.dmnr.common.item.DivineDragonMageArmorItem;
 import de.joh.fnc.compat.dmnr.common.item.MischiefDragonMageArmorItem;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;

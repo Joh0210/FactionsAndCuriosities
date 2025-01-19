@@ -136,7 +136,7 @@ public class MagicEventHandler {
             if(source instanceof Player){
                 ((Player) source).displayClientMessage(Component.translatable("fnc.feedback.wildmagic.accident_protection"), true);
             }
-            source.level().playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
+            source.level().playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
         }
     }
 
@@ -152,7 +152,7 @@ public class MagicEventHandler {
         ){
             event.setCanceled(true);
             source.displayClientMessage(Component.translatable("fnc.feedback.wildmagic.accident_protection"), true);
-            source.level().playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
+            source.level().playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
         }
     }
 

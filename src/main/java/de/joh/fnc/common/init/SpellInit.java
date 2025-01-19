@@ -33,6 +33,7 @@ public class SpellInit {
     public static SpellEffect DISPELLING_SMITE;
     public static SpellEffect SILENCING_SMITE;
     public static SpellEffect HEXING_SMITE;
+    public static SpellEffect BOOMING_SMITE;
 
     @SubscribeEvent
     public static void register(RegisterEvent event) {
@@ -46,6 +47,7 @@ public class SpellInit {
             helper.register(RLoc.create("components/dispelling_smite"), DISPELLING_SMITE);
             helper.register(RLoc.create("components/silencing_smite"), SILENCING_SMITE);
             helper.register(RLoc.create("components/hexing_smite"), HEXING_SMITE);
+            helper.register(RLoc.create("components/booming_smite"), BOOMING_SMITE);
         });
     }
 
@@ -72,5 +74,9 @@ public class SpellInit {
                 10, Affinity.ENDER, EffectInit.HEXING_SMITE,
                 new AttributeValuePair(Attribute.DURATION, 5.0F, 5.0F, 20.0F, 1.0F, 5.0F),
                 new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 4.0F, 1.0F, 10F));
+        SpellInit.BOOMING_SMITE = new SmiteComponent(RLoc.create("textures/spell/component/booming_smite.png"),
+                20, Affinity.FIRE, EffectInit.BOOMING_SMITE,
+                new AttributeValuePair(Attribute.MAGNITUDE, 5.0F, 5.0F, 15.0F, 1.0F, 6.0F),
+                new AttributeValuePair(Attribute.PRECISION, 1.0F, 0.0F, 3.0F, 1.0F, 10.0F));
     }
 }

@@ -1,12 +1,14 @@
 package de.joh.fnc.api.wildmagic;
 
-import com.ibm.icu.impl.IllegalIcuArgumentException;
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
+import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.util.AttributeInit;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.api.event.PerformWildMagicEvent;
 import de.joh.fnc.common.util.Registries;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Random;
+
+import static com.mojang.text2speech.Narrator.LOGGER;
 
 /**
  * Helper Functions for using Wild Magic
@@ -77,14 +81,14 @@ public class WildMagicHelper {
     /**
      * @param count: Starting at 1, position of Wild Magic weighted list in which each Wild Magic appears as often as its frequency corresponds
      * @param wildMagics: List of the filtered Wild Magics to choose from (not weighted)
-     * @throws IllegalIcuArgumentException when count lower than 1 or higher than the number of entries
      * @return Selected Wild Magic
      */
     private static WildMagic getWildMagicAt(int count, WildMagic[] wildMagics){
         //todo: wildMagics min size = 1!
 
         if(count < 1){
-            throw new IllegalIcuArgumentException("input count was lower than 1");
+            LOGGER.error(FactionsAndCuriosities.MOD_ID + ": When attempting to select wild magic, a value less than 1 was selected. This value is invalid, so no magic can be selected. If this error occurs again, please contact the modder. ");
+            return WildMagic.INSTANCE;
         }
 
         for(WildMagic wildMagic : wildMagics){
@@ -94,8 +98,8 @@ public class WildMagicHelper {
             }
         }
 
-        throw new IllegalIcuArgumentException("input count was higher than the number of entries");
-        //return WildMagic.INSTANCE;
+        LOGGER.error(FactionsAndCuriosities.MOD_ID + ": When attempting to select wild magic, a value greater than the maximum was selected. This value is invalid, so no magic can be selected. If this error occurs again, please contact the modder. ");
+        return WildMagic.INSTANCE;
     }
 
     /**
@@ -136,6 +140,7 @@ public class WildMagicHelper {
             if(event.isCanceled() && cancelable) {
                 return false;
             }
+            source.level().playSound(null, source.getX(), source.getY(), source.getZ(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 0.9F + (float)Math.random() * 0.2F);
             wildMagic.performWildMagic(source, target, componentTag);
             return true;
         }

@@ -30,6 +30,7 @@
     "fnc:mischief_armor_set_bonus": "(4) 套装奖励:\n+1 荒野魔法运气\n50% 的几率获得随机的增益法术调整",
 
     "effect.fnc.bad_wild_magic": "不良荒野魔法",
+    "effect.fnc.booming_smite": "轰鸣之击",
     "effect.fnc.burning_smite": "燃烧惩击",
     "effect.fnc.crippling_smite": "致残惩击",
     "effect.fnc.dispelling_smite": "驱散惩击",
@@ -62,6 +63,11 @@
     "fnc:shapes/paladin_smite.desc.damage": "圣骑惩击造成的伤害增加。",
 
     "fnc.component.smite.no_player.error" : "该法术只能对玩家使用",
+    "fnc:components/booming_smite": "轰鸣之击",
+    "fnc:components/booming_smite.desc.damage":  "由惩击造成的伤害增加。",
+    "fnc:components/booming_smite.desc.delay": "此组件生效之前的延迟（以秒为单位）。",
+    "fnc:components/booming_smite.desc.magnitude": "确定爆炸的强度。",
+    "fnc:components/booming_smite.desc.precision": "确定爆炸是否会对方块造成伤害。\nWith maximum precision you will be spared from the explosion, but the explosion will only have half the power",
     "fnc:components/burning_smite": "燃烧惩击",
     "fnc:components/burning_smite.desc.damage": "由惩击造成的伤害增加。",
     "fnc:components/burning_smite.desc.delay": "此组件生效之前的延迟（以秒为单位）。",

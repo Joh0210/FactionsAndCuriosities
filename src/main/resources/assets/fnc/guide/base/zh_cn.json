@@ -124,6 +124,81 @@
       }
     ]
   },
+  "Component: Booming Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "轰鸣之击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "这项打击会收集我对手的魔力，然后让其迅速爆发\nWith maximum precision you will be spared from the explosion, but the explosion will only have half the power!"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "惩击"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "惩击是一种短期效果，它增加玩家的"
+          },
+          {
+            "text": "近战攻击伤害",
+            "color": "dark_purple"
+          },
+          {
+            "text": "，并以额外的方式影响近战目标。\n\n多种惩击效果可以同时生效，但通过叠加惩击效果可以达到的"
+          },
+          {
+            "text": "最大",
+            "color": "dark_purple"
+          },
+          {
+            "text": "伤害是"
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "（可以通过配置进行设置）。"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "只有那些与"
+          },
+          {
+            "text": "圣骑士",
+            "color": "gray"
+          },
+          {
+            "text": "结盟的人才能制作它。"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/booming_smite"
+      }
+    ]
+  },
   "Component: Burning Smite": {
     "index": "2",
     "category": "sorcery",
