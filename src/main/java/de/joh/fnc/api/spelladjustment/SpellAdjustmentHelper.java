@@ -1,8 +1,8 @@
 package de.joh.fnc.api.spelladjustment;
 
-import com.ibm.icu.impl.IllegalIcuArgumentException;
 import com.mna.api.events.SpellCastEvent;
 import com.mna.api.spells.base.ISpellDefinition;
+import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.event.PerformSpellAdjustmentEvent;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.util.Registries;
@@ -14,6 +14,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Random;
+
+import static com.mojang.text2speech.Narrator.LOGGER;
 
 /**
  * Helper Functions for using Spell Adjustments
@@ -74,14 +76,14 @@ public class SpellAdjustmentHelper {
     /**
      * @param count: Starting at 1, position of Spell Adjustment weighted list in which each Spell Adjustment appears as often as its frequency corresponds
      * @param spellAdjustments: List of the filtered Wild Magics to choose from (not weighted)
-     * @throws IllegalIcuArgumentException when count lower than 1 or higher than the number of entries
      * @return Selected Wild Magic
      */
     private static SpellAdjustment getSpellAdjustmentAt(int count, SpellAdjustment[] spellAdjustments){
-        //todo: wildMagics min size = 1!
+        //todo: min size = 1!
 
         if(count < 1){
-            throw new IllegalIcuArgumentException("input count was lower than 1");
+            LOGGER.error(FactionsAndCuriosities.MOD_ID + ": When attempting to select spell adjustment, a value less than 1 was selected. This value is invalid, so no magic can be selected. If this error occurs again, please contact the modder. ");
+            return SpellAdjustment.INSTANCE;
         }
 
         for(SpellAdjustment spellAdjustment : spellAdjustments){
@@ -91,8 +93,8 @@ public class SpellAdjustmentHelper {
             }
         }
 
-        throw new IllegalIcuArgumentException("input count was higher than the number of entries");
-        //return WildMagic.INSTANCE;
+        LOGGER.error(FactionsAndCuriosities.MOD_ID + ": When attempting to select spell adjustment, a value greater than the maximum was selected. This value is invalid, so no magic can be selected. If this error occurs again, please contact the modder. ");
+        return SpellAdjustment.INSTANCE;
     }
 
     /**
