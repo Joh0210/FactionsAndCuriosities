@@ -334,8 +334,8 @@ public class WildMagicInit {
         WildMagicInit.STRENGTH_TARGET = new WildMagicMCPotionEffect(RLoc.create("wildmagic/strength_target"), 4, false, MobEffects.DAMAGE_BOOST, 1200, 2);
         WildMagicInit.TIME_DAY = new TimeWildMagic(RLoc.create("wildmagic/time_day"), 1, true);
         WildMagicInit.TIME_NIGHT = new TimeWildMagic(RLoc.create("wildmagic/time_night"), 1, false);
-        WildMagicInit.TRUE_INVISIBILITY_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/true_invisibility_self"), 2, true, EffectInit.TRUE_INVISIBILITY, 1200, 1, true, false);
-        WildMagicInit.TRUE_INVISIBILITY_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/true_invisibility_target"), 1, false, EffectInit.TRUE_INVISIBILITY, 1200, 1, true, false);
+        WildMagicInit.TRUE_INVISIBILITY_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/true_invisibility_self"), 2, true, EffectInit.GREATER_INVISIBILITY, 1200, 1, true, false);
+        WildMagicInit.TRUE_INVISIBILITY_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/true_invisibility_target"), 1, false, EffectInit.GREATER_INVISIBILITY, 1200, 1, true, false);
         WildMagicInit.WATERY_GRAVE_SELF = new WateryGraveWildMagic(RLoc.create("wildmagic/watery_grave_self"), 2, true);
         WildMagicInit.WATERY_GRAVE_TARGET = new WateryGraveWildMagic(RLoc.create("wildmagic/watery_grave_target"), 5, false);
         WildMagicInit.WATER_BREATHING_SELF = new WaterBreathingWildMagic(RLoc.create("wildmagic/water_breathing_self"), 7, true);
