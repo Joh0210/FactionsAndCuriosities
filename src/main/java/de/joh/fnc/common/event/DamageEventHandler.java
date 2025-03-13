@@ -13,10 +13,12 @@ import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
 import de.joh.fnc.common.item.DivineArmorItem;
+import de.joh.fnc.common.spell.shape.CounterAttackShape;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -35,6 +37,7 @@ import net.minecraftforge.fml.common.Mod;
 public class DamageEventHandler {
     /**
      * @see HexMobEffect
+     * @see CounterAttackShape
      */
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
@@ -51,6 +54,11 @@ public class DamageEventHandler {
             }
         }
 
+
+        Entity attacker = event.getSource().getEntity();
+        if(targetEntity instanceof Player && attacker instanceof LivingEntity){
+            CounterAttackShape.applyCounterAttack((Player) targetEntity, (LivingEntity) attacker);
+        }
     }
 
     /**

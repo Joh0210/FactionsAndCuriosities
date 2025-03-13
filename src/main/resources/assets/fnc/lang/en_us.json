@@ -22,6 +22,7 @@
   "item.fnc.mischief_helmet": "Mischief Helmet",
   "item.fnc.mischief_legging": "Mischief Legging",
   "item.fnc.smiting_ring": "Smiting Ring",
+  "item.fnc.ring_of_wild_luck": "Ring of Wild Luck",
   "item.fnc.wild_pickaxe": "Wild Pickaxe",
 
   "enchantment.fnc.holy_smite": "Holy Smite",
@@ -48,6 +49,7 @@
   "effect.fnc.wild_magic": "Wild Magic",
   "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
   "effect.fnc.paladin_smite": "Paladin Smite",
+  "effect.fnc.counter_attack": "Counter Attack",
 
   "death.attack.fnc_smite": "%s was smited to death",
   "death.attack.fnc_smite.player": "%s was smited to death by %s",
@@ -61,6 +63,9 @@
 
   "fnc:shapes/paladin_smite": "Paladin Smite",
   "fnc:shapes/paladin_smite.desc.damage": "The damage increase caused by the Smite.",
+  "fnc:shapes/counter_attack": "Counter Attack",
+  "fnc:shapes/counter_attack.desc.duration": "The maximum duration of the Counter Attack effect.",
+  "fnc:shapes/counter_attack.desc.magnitude": "Number of times a counter attack can occur.",
 
   "fnc.component.smite.no_player.error" : "The spell can only target players",
   "fnc:components/booming_smite": "Booming Smite",
@@ -95,6 +100,9 @@
   "fnc:components/silencing_smite.desc.damage": "The damage increase caused by the Smite.",
   "fnc:components/silencing_smite.desc.delay": "A delay in seconds before applying this component.",
   "fnc:components/silencing_smite.desc.duration": "The duration of the silence.",
+  "fnc:components/wild_magic_cooldown": "Wild Magic Cooldown",
+  "fnc:components/wild_magic_cooldown.desc.duration": "The duration of the cooldown.",
+  "fnc:components/wild_magic_cooldown.desc.delay": "A delay in seconds before applying this component.",
   "fnc:components/wild_damage": "Wild Damage",
   "fnc:components/wild_damage.desc.damage": "The maximum damage dealt to affected targets.",
   "fnc:components/wild_damage.desc.delay": "A delay in seconds before applying this component.",

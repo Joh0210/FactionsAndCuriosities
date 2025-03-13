@@ -33,6 +33,7 @@ public class ItemInit {
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER_RING = ITEMS.register("four_leaf_clover_ring", FourLeafCloverRingItem::new);
     public static final RegistryObject<Item> DECK_OF_MANY = ITEMS.register("deck_of_many", DeckOfManyItem::new);
     public static final RegistryObject<Item> WILD_PICKAXE = ITEMS.register("wild_pickaxe", WildPickaxeItem::new);
+    public static final RegistryObject<Item> RING_OF_WILD_LUCK = ITEMS.register("ring_of_wild_luck", RingOfWildLuckItem::new);
     public static final RegistryObject<Item> GLITTERING_POTATO = ITEMS.register("glittering_potato", GlitteringPotatoItem::new);
     public static final RegistryObject<Item> BRIMSTONE_SWORD = ITEMS.register("brimstone_sword", () -> new PaladinSwordItem(ToolMaterials.LIVE_RIP, 2, -2.4F, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant()));
 

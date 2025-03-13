@@ -11,6 +11,8 @@ import de.joh.fnc.api.spell.component.SmiteComponent;
 import de.joh.fnc.common.spell.component.CauseWildMagicComponent;
 import de.joh.fnc.common.spell.component.RandomTpComponent;
 import de.joh.fnc.common.spell.component.WildDamageComponent;
+import de.joh.fnc.common.spell.component.WildMagicCooldown;
+import de.joh.fnc.common.spell.shape.CounterAttackShape;
 import de.joh.fnc.common.spell.shape.PaladinSmiteShape;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,8 +26,10 @@ import net.minecraftforge.registries.RegisterEvent;
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SpellInit {
     public static Shape SMITE;
+    public static Shape COUNTER_ATTACK;
 
     public static SpellEffect WILD_DAMAGE;
+    public static SpellEffect WILD_MAGIC_COOLDOWN;
     public static SpellEffect CAUSE_WILD_MAGIC;
     public static SpellEffect RANDOM_TP;
     public static SpellEffect BURNING_SMITE;
@@ -37,9 +41,13 @@ public class SpellInit {
 
     @SubscribeEvent
     public static void register(RegisterEvent event) {
-        event.register(Registries.Shape.get().getRegistryKey(), (helper) -> helper.register(RLoc.create("shapes/paladin_smite"), SMITE));
+        event.register(Registries.Shape.get().getRegistryKey(), (helper) -> {
+            helper.register(RLoc.create("shapes/paladin_smite"), SMITE);
+            helper.register(RLoc.create("shapes/counter_attack"), COUNTER_ATTACK);
+        });
         event.register(Registries.SpellEffect.get().getRegistryKey(), (helper) -> {
             helper.register(RLoc.create("components/wild_damage"), WILD_DAMAGE);
+            helper.register(RLoc.create("components/wild_magic_cooldown"), WILD_MAGIC_COOLDOWN);
             helper.register(RLoc.create("components/cause_wild_magic"), CAUSE_WILD_MAGIC);
             helper.register(RLoc.create("components/random_tp"), RANDOM_TP);
             helper.register(RLoc.create("components/burning_smite"), BURNING_SMITE);
@@ -53,8 +61,10 @@ public class SpellInit {
 
     static {
         SpellInit.SMITE = new PaladinSmiteShape(RLoc.create("textures/spell/shape/paladin_smite.png"));
+        SpellInit.COUNTER_ATTACK = new CounterAttackShape(RLoc.create("textures/spell/shape/counter_attack.png"));
 
         SpellInit.WILD_DAMAGE = new WildDamageComponent(RLoc.create("textures/spell/component/wild_damage.png"));
+        SpellInit.WILD_MAGIC_COOLDOWN = new WildMagicCooldown(RLoc.create("textures/spell/component/wild_magic_cooldown.png"));
         SpellInit.CAUSE_WILD_MAGIC = new CauseWildMagicComponent(RLoc.create("textures/spell/component/cause_wild_magic.png"));
         SpellInit.RANDOM_TP = new RandomTpComponent(RLoc.create("textures/spell/component/random_tp.png"));
         SpellInit.BURNING_SMITE = new SmiteComponent(RLoc.create("textures/spell/component/burning_smite.png"),

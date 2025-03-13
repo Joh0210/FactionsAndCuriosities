@@ -27,6 +27,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.Objects;
 import java.util.Random;
@@ -55,49 +56,51 @@ public class MagicEventHandler {
         }
 
         //todo: outsource as Event
-        if(caster.hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
+        if(caster != null && caster.hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> true);
             caster.removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
             caster.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.getWildMagicCooldown(), 0));
-        } else if(caster.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmorItem mischiefArmorItem
+        } else if(caster != null && caster.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmorItem mischiefArmorItem
                 && mischiefArmorItem.isSetEquipped(caster)
                 && new Random().nextBoolean()
         ){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> rs.getQuality(Objects.requireNonNull(s.getComponent(0)).getPart().getUseTag()).ordinal() >= Quality.NEUTRAL.ordinal());
         }
 
-        IModifiedSpellPart<Shape> shape = event.getSpell().getShape();
 
-        int maximizedLevel = 0;
-        MobEffectInstance instance = caster.getEffect(EffectInit.MAXIMIZED.get());
-        if(instance != null){
-            maximizedLevel += instance.getAmplifier() + 1;
-        }
+        if (caster != null){
+            IModifiedSpellPart<Shape> shape = event.getSpell().getShape();
+            int maximizedLevel = 0;
+            MobEffectInstance instance = caster.getEffect(EffectInit.MAXIMIZED.get());
+            if(instance != null){
+                maximizedLevel += instance.getAmplifier() + 1;
+            }
+            instance = caster.getEffect(EffectInit.MINIMIZED.get());
+            if(instance != null){
+                maximizedLevel -= instance.getAmplifier() + 1;
+            }
 
-        instance = caster.getEffect(EffectInit.MINIMIZED.get());
-        if(instance != null){
-            maximizedLevel -= instance.getAmplifier() + 1;
-        }
-        if(maximizedLevel > 0 && shape != null){
-            event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
-                    .filter(attribute -> attribute != Attribute.DELAY)
-                    .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMaximumValue(attribute))));
-        } else if(maximizedLevel < 0 && shape != null){
-            event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
-                    .filter(attribute -> attribute != Attribute.DELAY)
-                    .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMinimumValue(attribute))));
-        }
+            if(maximizedLevel > 0 && shape != null){
+                event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
+                        .filter(attribute -> attribute != Attribute.DELAY)
+                        .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMaximumValue(attribute))));
+            } else if(maximizedLevel < 0 && shape != null){
+                event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
+                        .filter(attribute -> attribute != Attribute.DELAY)
+                        .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getMinimumValue(attribute))));
+            }
 
-        instance = caster.getEffect(EffectInit.EMPOWERED.get());
-        if(instance != null && shape != null){
-            int level = instance.getAmplifier() + 1;
-            event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
-                    .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
-                    .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute))));
+            instance = caster.getEffect(EffectInit.EMPOWERED.get());
+            if(instance != null && shape != null){
+                int level = instance.getAmplifier() + 1;
+                event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
+                        .filter(attribute -> attribute != Attribute.DELAY && attribute != Attribute.PRECISION)
+                        .forEach(attribute -> modifiedSpellPart.setValue(attribute, modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute))));
 
-            event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
-                    .filter(attribute -> attribute == Attribute.PRECISION)
-                    .forEach(attribute -> modifiedSpellPart.setValue(attribute, Math.min(modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute), modifiedSpellPart.getMaximumValue(attribute)))));
+                event.getSpell().getComponents().forEach(modifiedSpellPart -> modifiedSpellPart.getContainedAttributes().stream()
+                        .filter(attribute -> attribute == Attribute.PRECISION)
+                        .forEach(attribute -> modifiedSpellPart.setValue(attribute, Math.min(modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute), modifiedSpellPart.getMaximumValue(attribute)))));
+            }
         }
     }
 
@@ -121,6 +124,20 @@ public class MagicEventHandler {
             }
         }
     }
+
+    /**
+     * Processing of {@link RingOfWildLuckItem} protection
+     */
+    @SubscribeEvent
+    public static void onShouldCauseWildMagic(ShouldCauseWildMagicEvent event){
+        LivingEntity source = event.getEntity();
+        if(!event.isPossible()){
+            CuriosApi.getCuriosHelper().findFirstCurio(source, ItemInit.RING_OF_WILD_LUCK.get()).ifPresent((t) -> {
+                event.setChance(CommonConfig.WILD_MAGIC_CHANCE.get());
+            });
+        }
+    }
+
 
     /**
      * Processing of {@link FourLeafCloverRingItem} protection

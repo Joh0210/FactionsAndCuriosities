@@ -9,23 +9,27 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 
 /**
- * A Player only capability for managing Smites
+ * A Player only capability for managing Smites and CounterAttacks
  * @see PlayerCapabilityProvider
  * @see SmiteMobEffect
+ * @see de.joh.fnc.common.spell.shape.CounterAttackShape
  * @author Joh0210
  */
 public class SmitePlayerCapability {
     private ArrayList<SmiteEntry> smites = new ArrayList<>();
 
     private @Nullable CompoundTag smiteRecipe = null;
+    private @Nullable CompoundTag counterAttack = null;
 
     public void copyFrom(SmitePlayerCapability source, boolean wasDeath) {
         if(wasDeath){
             this.smites = new ArrayList<>();
             this.smiteRecipe = null;
+            this.counterAttack = null;
         } else {
             this.smites = source.smites;
             this.smiteRecipe = source.smiteRecipe;
+            this.counterAttack = source.counterAttack;
         }
     }
 
@@ -47,6 +51,10 @@ public class SmitePlayerCapability {
 
         if(smiteRecipe != null){
             nbt.put("smite_shape", smiteRecipe);
+        }
+
+        if(counterAttack != null){
+            nbt.put("counter_attack", counterAttack);
         }
 
         compound.put("fnc_smite_data", nbt);
@@ -71,7 +79,23 @@ public class SmitePlayerCapability {
             } else {
                 smiteRecipe = null;
             }
+
+            if(nbt.contains("counter_attack")){
+                counterAttack = nbt.getCompound("counter_attack");
+            } else {
+                counterAttack = null;
+            }
         }
+    }
+
+    public void addCounterAttackFromShape(ISpellDefinition counterAttack){
+        CompoundTag counterAttackShape = new CompoundTag();
+        counterAttack.writeToNBT(counterAttackShape);
+        this.counterAttack = counterAttackShape;
+    }
+
+    public void removeCounterAttackFromShape(){
+        this.counterAttack = null;
     }
 
     public void addSmiteFromShape(ISpellDefinition smite){
@@ -109,5 +133,10 @@ public class SmitePlayerCapability {
     @Nullable
     public ISpellDefinition getSmiteFromShape(){
         return smiteRecipe == null ? null : SpellRecipe.fromNBT(smiteRecipe);
+    }
+
+    @Nullable
+    public ISpellDefinition getCounterAttackFromShape(){
+        return counterAttack == null ? null : SpellRecipe.fromNBT(counterAttack);
     }
 }

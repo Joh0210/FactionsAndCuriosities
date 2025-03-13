@@ -126,6 +126,48 @@
       }
     ]
   },
+  "Shape: Counter Attack": {
+    "index": "1",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Shape: Counter Attack"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "My attack is perfected, now it's time for my defense. With this shape I can channel a spell onto myself. If an opponent then attacks me, the channeled component is applied to the attacker.",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "It can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:shapes/counter_attack"
+      }
+    ]
+  },
 
   "Component: Booming Smite": {
     "index": "2",
@@ -705,6 +747,51 @@
       }
     ]
   },
+  "Component: Wild Magic Cooldown": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wild Magic Cooldown"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "The wild may be a part of me, but in some cases i need a bit more precision.\n\nWith this spell i can force a greater cooldown of my wild magic."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": ". \n\nIt can only be crafted by those that have aligned themselves with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/wild_magic_cooldown"
+      }
+    ]
+  },
   "Component: Cause Wild Magic": {
     "index": "2",
     "category": "sorcery",
@@ -938,6 +1025,41 @@
       {
         "type": "manaweaving_altar",
         "location":"fnc:manaweaving/four_leaf_clover_ring"
+      }
+    ]
+  },
+  "Ring of Wild Luck": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ring of Wild Luck"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This ring will increase my luck with Wild Magic even further!\n\nIn addition, if I give this ring to one of friends who are not yet touched by Wild Magic, they will also be able to trigger Wild Magic events."
+          },
+          {
+            "text": " \n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/ring_of_wild_luck"
       }
     ]
   },

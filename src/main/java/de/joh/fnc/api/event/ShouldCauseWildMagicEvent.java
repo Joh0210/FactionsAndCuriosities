@@ -48,8 +48,9 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
             return;
         }
 
+        this.autoFail = false;
+
         if(entity.hasEffect(EffectInit.WILD_MAGIC.get()) || entity.hasEffect(EffectInit.BAD_WILD_MAGIC.get()) || entity.hasEffect(EffectInit.GOOD_WILD_MAGIC.get())){
-            this.autoFail = false;
             this.chance = CommonConfig.FORCED_WILD_MAGIC_CHANCE.get();
             return;
         }
@@ -57,22 +58,22 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
         AtomicBoolean isWildMage = new AtomicBoolean(false);
         entity.getCapability(ManaAndArtificeMod.getProgressionCapability()).ifPresent((p)-> isWildMage.set(p.getAlliedFaction() == FactionInit.WILD));
         if(isWildMage.get()){
-            this.autoFail = false;
             this.chance = CommonConfig.WILD_MAGIC_CHANCE.get();
             return;
         }
 
-        autoFail = true;
         this.chance = 0;
     }
 
+    public boolean isPossible(){
+        return !autoFail && this.chance > 0;
+    }
+
     public void setChance(int chance) {
-        autoFail = false;
         this.chance = chance;
     }
 
     public void addChance(int increase) {
-        autoFail = false;
         this.chance += chance;
     }
 
@@ -81,17 +82,13 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
         chance = 100;
     }
 
-    public void setAutoFail(boolean autoFail) {
-        this.autoFail = autoFail;
-    }
-
     /**
      * The chance that true occurs corresponds to the {@link ShouldCauseWildMagicEvent#chance this.chane}
      * <br>If {@link ShouldCauseWildMagicEvent#autoFail this.autoFail} == ture, the result will always be false
      * @return if true Wild Magic is triggered
      */
     public boolean shouldCauseWildMagic(){
-        if(autoFail){
+        if(autoFail || this.chance == 0){
             return false;
         }
 

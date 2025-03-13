@@ -27,6 +27,7 @@ Paladins  use magic in combination with martial techniques. This makes them very
 - Glittering Potato (Wild only)
 - Mischief Armor (Wild only) 
 - Ring of the Four Leaf Clover (Wild only)
+- Ring of Wild Luck (Wild only)
 - Smiting Ring (Paladin only)
 - Wild Pickaxe (Wild only)
 
@@ -36,7 +37,9 @@ Paladins  use magic in combination with martial techniques. This makes them very
 
 ## New Spells
 - Cause Wild Magic (Wild only)
+- Counter Attack (Shape; Paladin only)
 - Wild Damage (Wild only)
+- Wild Magic Cooldown (Wild only)
 - Burning Smite (Paladin only)
 - Crippling Smite (Paladin only)
 - Dispelling Smite (Paladin only)

@@ -33,6 +33,7 @@ public class CreativeModeTabInit {
                         pOutput.accept(ItemInit.GLITTERING_POTATO.get());
                         pOutput.accept(ItemInit.BLACK_CAT_BRACELET.get());
                         pOutput.accept(ItemInit.FOUR_LEAF_CLOVER_RING.get());
+                        pOutput.accept(ItemInit.RING_OF_WILD_LUCK.get());
 
                         pOutput.accept(ItemInit.DIVINE_HELMET.get());
                         pOutput.accept(ItemInit.DIVINE_CHESTPLATE.get());
