@@ -21,7 +21,7 @@ public class RingOfWildLuckItem extends TieredItem implements IFactionSpecific, 
     private static final AttributeModifier LUCK_BOOST = new AttributeModifier("ring_of_wild_luck_item_bonus", 1, AttributeModifier.Operation.ADDITION);
 
     public RingOfWildLuckItem() {
-        super(new Item.Properties());
+        super(new Item.Properties().stacksTo(1));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package de.joh.fnc.common.event;
 
+import de.joh.dmnr.DragonMagicAndRelics;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.util.ModTags;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
@@ -7,7 +8,6 @@ import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.item.WildPickaxeItem;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -37,13 +37,18 @@ public class CommonEventHandler {
      */
     @SubscribeEvent
     public static void onBreak(final BlockEvent.BreakEvent event){
-        if(ModTags.isBlockIn(event.getState().getBlock(), ModTags.Blocks.ORES)
-                && !event.isCanceled() && ForgeHooks.isCorrectToolForDrops(event.getState(), event.getPlayer())
-                && (event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxeItem || event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem || event.getPlayer().hasEffect(EffectInit.RANDOM_ORE_MINER.get()))){
+        DragonMagicAndRelics.LOGGER.warn(Boolean.toString(event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem));
+        if(ModTags.isBlockIn(event.getState().getBlock(), ModTags.Blocks.ORES) && !event.isCanceled() && (
+            event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxeItem   ||
+                    event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem ||
+                    event.getPlayer().hasEffect(EffectInit.RANDOM_ORE_MINER.get()
+            )
+        )){
 
             if(event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxeItem wp){
                 wp.usedByPlayer(event.getPlayer());
             }
+
 
             if(event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem wp){
                 wp.usedByPlayer(event.getPlayer());
