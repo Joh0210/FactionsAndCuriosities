@@ -8,6 +8,7 @@ import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
+import de.joh.fnc.common.faction.PaladinFaction;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
@@ -41,6 +42,10 @@ public class DamageEventHandler {
      */
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
+        if(PaladinFaction.eventHandlePaladinDamageAdjustment(event)){
+            return;
+        }
+
         LivingEntity targetEntity = event.getEntity();
         MobEffectInstance instance = targetEntity.getEffect(EffectInit.HEX.get());
         if (instance != null && event.getAmount() >= 1){

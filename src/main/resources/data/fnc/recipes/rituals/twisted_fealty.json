@@ -1,47 +1,41 @@
 {
   "type": "mna:ritual",
-  "tier": 2,
+  "tier": 3,
   "pattern":
   [
-    [ 0, 0, 0, 5, 0, 0, 0 ],
-    [ 0, 0,16, 4,17, 0, 0 ],
-    [ 0, 2, 1, 0, 7, 8, 0 ],
-    [ 0, 0,15,10,18, 0, 0 ],
-    [ 0, 0, 0,11, 0, 0, 0 ],
-    [ 0, 0, 0,12, 0, 0, 0 ],
-    [ 0, 0, 0,13, 0, 0, 0 ]
+    [0, 0, 4, 0, 0],
+    [0, 0, 0, 0, 0],
+    [3, 0, 1, 0, 5],
+    [0, 0, 0, 0, 0],
+    [0, 7, 8, 9, 0]
   ],
   "displayPattern":
   [
-    [ 0, 0, 0, 5, 0, 0, 0 ],
-    [ 0, 0,16, 4,17, 0, 0 ],
-    [ 0, 2, 1, 0, 7, 8, 0 ],
-    [ 0, 0,15,10,18, 0, 0 ],
-    [ 0, 0, 0,11, 0, 0, 0 ],
-    [ 0, 0, 0,12, 0, 0, 0 ],
-    [ 0, 0, 0,13, 0, 0, 0 ]
+    [0, 0, 4, 0, 0],
+    [0, 0, 0, 0, 0],
+    [3, 0, 1, 0, 5],
+    [0, 0, 0, 0, 0],
+    [0, 7, 8, 9, 0]
   ],
   "reagents":
   [
-    "   G   ",
-    "  GGG  ",
-    " GG GG ",
-    "  GPG  ",
-    "   I   ",
-    "   I   ",
-    "   I   "
+    "  G  ",
+    "     ",
+    "G P G",
+    "     ",
+    " III "
   ],
   "keys":
   {
     "G":
     {
-      "item": "minecraft:gold_ingot",
+      "item": "minecraft:iron_ingot",
       "optional": false,
       "consume": true
     },
     "I":
     {
-      "item": "minecraft:iron_ingot",
+      "item": "minecraft:gold_ingot",
       "optional": false,
       "consume": true
     },
@@ -62,10 +56,10 @@
   ],
   "parameters":
   {
-    "innerColor": "0x111111",
+    "innerColor": "0xc0c0c0",
     "outerColor": "0x808080",
     "displayIndexes": false,
     "connectBeam": false,
-    "beamColor": "0xc0c0c0"
+    "beamColor": "0x111111"
   }
 }

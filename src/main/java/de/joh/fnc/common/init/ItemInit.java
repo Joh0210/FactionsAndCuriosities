@@ -21,6 +21,7 @@ public class ItemInit {
     public static final RegistryObject<Item> DEBUG_ROD = ITEMS.register("debug_orb_wild_magic", DebugOrbWildMagicItem::new);
     public static final RegistryObject<Item> DEBUG_ROD_SPELL_ADJUSTMENT = ITEMS.register("debug_orb_spell_adjustment", DebugOrbSpellAdjustmentItem::new);
     public static final RegistryObject<Item> DEBUG_ROD_SMITE = ITEMS.register("debug_orb_smite", DebugOrbSmiteItem::new);
+    public static final RegistryObject<Item> SHIELD_ICON = ITEMS.register("shield_icon", () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> DICE = ITEMS.register("dice_six", () -> new DiceItem(6));
     public static final RegistryObject<Item> DICE_20 = ITEMS.register("dice_twenty", () -> new DiceItem(20));
     public static final RegistryObject<Item> MISCHIEF_HELMET = ITEMS.register("mischief_helmet", () -> new MischiefArmorItem(ArmorItem.Type.HELMET));

@@ -9,6 +9,7 @@ public class ResourceIDs {
     public static final ResourceLocation FACTION_WILD_ICON = RLoc.create("textures/guide/faction_icon_wild.png");
 
     public static final ResourceLocation FACTION_PALADIN_ID = RLoc.create("paladin");
-    public static final ResourceLocation PALADIN_MANA = RLoc.create("paladin_mana");
+    public static final ResourceLocation PALADIN_MANA_SHIELD = RLoc.create("paladin_mana_shield");
+    public static final ResourceLocation PALADIN_MANA_SWORD = RLoc.create("paladin_mana_sword");
     public static final ResourceLocation FACTION_PALADIN_ICON = RLoc.create("textures/guide/faction_icon_paladin.png");
 }

@@ -1,13 +1,16 @@
 package de.joh.fnc.common.ritual;
 
+import com.mna.api.capabilities.IPlayerMagic;
 import com.mna.api.capabilities.IPlayerProgression;
 import com.mna.api.rituals.IRitualContext;
 import com.mna.api.rituals.RitualEffect;
+import com.mna.capabilities.playerdata.magic.PlayerMagicProvider;
 import com.mna.capabilities.playerdata.progression.PlayerProgressionProvider;
 import de.joh.fnc.common.init.FactionInit;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -42,7 +45,8 @@ public class PactRitual extends RitualEffect {
     protected boolean applyRitualEffect(IRitualContext context) {
         if (context.getCaster() != null) {
             IPlayerProgression progression = context.getCaster().getCapability(PlayerProgressionProvider.PROGRESSION).orElse(null);
-            if (progression != null && progression.getTier() < 5) {
+            IPlayerMagic magic = context.getCaster().getCapability(PlayerMagicProvider.MAGIC).orElse(null);
+            if (progression != null && magic != null && progression.getTier() < 5) {
                 if (progression.getAlliedFaction() == null) {
                     progression.setAlliedFaction(FactionInit.PALADIN, context.getCaster());
                     context.getCaster().displayClientMessage(Component.translatable("event.fnc.faction_ally_paladin"), false);
@@ -51,6 +55,15 @@ public class PactRitual extends RitualEffect {
                 if (progression.getAlliedFaction() == FactionInit.PALADIN) {
                     progression.setTier(progression.getTier() + 1, context.getCaster());
                     context.getCaster().displayClientMessage(Component.translatable("mna:progresscondition.advanced", progression.getTier()), false);
+
+                    boolean sword = !context.getCollectedReagents((i) -> i.getItem() == Items.IRON_SWORD).isEmpty();
+                    if (!sword) {
+                        context.getCaster().getPersistentData().putInt("faction_casting_resource_idx", 0);
+                    } else {
+                        context.getCaster().getPersistentData().putInt("faction_casting_resource_idx", 1);
+                    }
+
+                    magic.setCastingResourceType(FactionInit.PALADIN.getCastingResource(context.getCaster()));
                     return true;
                 }
             }

@@ -8,6 +8,7 @@
   "item.fnc.debug_orb_spell_adjustment": "Debug Orb: Spell Adjustment",
   "item.fnc.debug_orb_wild_magic": "Debug Orb: Wild Magic",
   "item.fnc.deck_of_many": "Deck of Many",
+  "item.fnc.shield_icon": "Shield Icon",
   "item.fnc.dice_six": "Dice (D6)",
   "item.fnc.blessed_bow": "Blessed Bow",
   "item.fnc.dice_twenty": "Dice (D20)",
@@ -111,8 +112,10 @@
   "fnc:components/wild_damage.desc.precision": "Makes the damage trend more towards average numbers.",
 
   "fnc:rituals/pact": "Ritual of the Pact",
+  "fnc:rituals/twisted_fealty": "Ritual of the Twisted Fealty",
   "fnc:rituals/wild_energy": "Ritual of the Wild",
 
+  "ritual.fnc.twisted_fealty.wrong_faction": "Only Paladins with mistrust in their devotion are able to complete this ritual.",
   "event.fnc.faction_ally_paladin": "Your loyalty gives you the strength to ensure justice.  You have allied yourself with the Paladins!",
   "event.fnc.faction_ally_wild": "You feel the unpredictability of the magic around you, uniting with you.  You have allied yourself with the Wilde Courts!",
 

@@ -1,33 +1,46 @@
 package de.joh.fnc.common.faction.castingresource;
 
+import com.mna.api.capabilities.resource.ICastingResourceGuiProvider;
 import com.mna.api.capabilities.resource.SimpleCastingResource;
 import com.mna.api.config.GeneralConfigValues;
-import com.mna.api.capabilities.resource.ICastingResourceGuiProvider;
 import de.joh.fnc.common.faction.ResourceIDs;
-import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
-public class WildCastingResource extends SimpleCastingResource {
-    public WildCastingResource() {
+public class PaladinSwordCastingResource extends SimpleCastingResource {
+    public PaladinSwordCastingResource() {
         super(GeneralConfigValues.TotalManaRegenTicks);
     }
 
+    @Override
     public int getRegenerationRate(LivingEntity caster) {
-        return (int)((float)GeneralConfigValues.TotalManaRegenTicks * this.getRegenerationModifier(caster));
+        return (int)(this.ticks_for_regeneration * this.getRegenerationModifier(caster));
     }
 
 
     @Override
     public ResourceLocation getRegistryName() {
-        return ResourceIDs.WILD_MANA;
+        return ResourceIDs.PALADIN_MANA_SWORD;
     }
 
     @Override
     public void setMaxAmountByLevel(int level) {
-        this.setMaxAmount((float)(50 + 25 + 15 * level));
+        int amount = 100;
+
+        if(level > 60){
+            amount += 100 + 20 * 45 + 15 * 15 + 10 * (level-60);
+        }
+        else if(level > 45){
+            amount += 100 + 20 * 45 + 15 * (level-45);
+        }
+        else {
+            amount += 100 + 20 * level;
+        }
+
+        this.setMaxAmount((float)(amount));
     }
 
     public static class ResourceGui implements ICastingResourceGuiProvider {
@@ -41,15 +54,15 @@ public class WildCastingResource extends SimpleCastingResource {
         }
 
         public int getBarColor() {
-            return 0xff006600;
+            return 0xFF111111;
         }
 
         public int getBarManaCostEstimateColor() {
-            return 0xff009000;
+            return 0xff5A575A;
         }
 
         public int getResourceNumericTextColor() {
-            return 0xffb3871a;
+            return 0xFFEEF6F8;
         }
 
         public int getBadgeSize() {
@@ -73,7 +86,7 @@ public class WildCastingResource extends SimpleCastingResource {
         }
 
         public ItemStack getBadgeItem() {
-            return new ItemStack(ItemInit.DICE.get());
+            return new ItemStack(Items.NETHERITE_SWORD);
         }
 
         public int getBadgeItemOffsetY() {

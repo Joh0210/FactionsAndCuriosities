@@ -1383,6 +1383,44 @@
           {
             "text": "Paladins",
             "color": "gray"
+          },
+          {
+            "text": "!",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Oaths"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "\"With this ",
+            "color": ""
+          },
+          {
+            "text": "shield",
+            "color": "gray"
+          },
+          {
+            "text": ", I devote myself to the protection of others. From this moment on, I suffer 15% less damage.\"",
+            "color": ""
+          },
+          {
+            "text": "\n\n\"With this ",
+            "color": ""
+          },
+          {
+            "text": "sword",
+            "color": "gray"
+          },
+          {
+            "text": ", I surrender myself to vengeance and retribution. From this moment on, all shall feel 15% more damage from my strike.\"",
+            "color": ""
           }
         ]
       }
@@ -1391,6 +1429,83 @@
       {
         "type": "ritual",
         "location":"fnc:rituals/pact"
+      }
+    ]
+  },
+  "Ritual of the Twisted Fealty": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ritual of the Twisted Fealty"
+      },
+
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Conviction is the source of a ",
+            "color": ""
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "strength, yet even conviction may change with time. Through this ritual, a ",
+            "color": ""
+          },
+          {
+            "text": "Paladin",
+            "color": "gray"
+          },
+          {
+            "text": "may swear their Oath anew.\n\n",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Oaths"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "\"With this ",
+            "color": ""
+          },
+          {
+            "text": "shield",
+            "color": "gray"
+          },
+          {
+            "text": ", I devote myself to the protection of others. From this moment on, I suffer 15% less damage.\"",
+            "color": ""
+          },
+          {
+            "text": "\n\n\"With this ",
+            "color": ""
+          },
+          {
+            "text": "sword",
+            "color": "gray"
+          },
+          {
+            "text": ", I surrender myself to vengeance and retribution. From this moment on, all shall feel 15% more damage from my strike.\"",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/twisted_fealty"
       }
     ]
   },

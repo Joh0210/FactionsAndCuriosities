@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class WildFaction extends BaseFaction {
     public WildFaction() {
-        super(ResourceIDs.FACTION_WILD_ID, ResourceIDs.WILD_MANA);
+        super(ResourceIDs.WILD_MANA);
     }
 
     @Override
