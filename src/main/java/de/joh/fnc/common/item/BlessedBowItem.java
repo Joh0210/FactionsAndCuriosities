@@ -7,6 +7,8 @@ import de.joh.fnc.api.smite.SmiteHelper;
 import de.joh.fnc.api.spell.component.SmiteComponent;
 import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.init.FactionInit;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -16,8 +18,11 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -28,6 +33,14 @@ import java.util.function.Consumer;
  */
 public class BlessedBowItem extends BowItem implements IFactionSpecific, ITieredItem<BlessedBowItem> {
     private int tier = -1;
+
+    @OnlyIn(Dist.CLIENT)
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack, Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+        tooltip.add(Component.translatable("item.fnc.blessed_bow.description").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("  "));
+        super.appendHoverText(stack, world, tooltip, flag);
+    }
 
     public BlessedBowItem() {
         super(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(100));

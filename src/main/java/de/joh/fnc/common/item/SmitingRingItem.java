@@ -5,10 +5,18 @@ import com.mna.api.items.ChargeableItem;
 import com.mna.items.artifice.curio.IPreEnchantedItem;
 import de.joh.fnc.common.event.MagicEventHandler;
 import de.joh.fnc.common.init.FactionInit;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 /**
  * Increases the maximum smites damage by 5
@@ -31,5 +39,14 @@ public class SmitingRingItem extends ChargeableItem implements IPreEnchantedItem
         @Override
         public IFaction getFaction() {
                 return FactionInit.PALADIN;
+        }
+
+
+        @OnlyIn(Dist.CLIENT)
+        @Override
+        public void appendHoverText(@NotNull ItemStack stack, Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                tooltip.add(Component.translatable("item.fnc.smiting_ring.description").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+                tooltip.add(Component.literal("  "));
+                super.appendHoverText(stack, world, tooltip, flag);
         }
 }
