@@ -73,7 +73,7 @@ public class CommonConfig {
         BUILDER.pop();
 
         BUILDER.push("Wild Magic");
-        WILD_MAGIC_COOLDOWN = BUILDER.defineInRange("How many seconds should be waited, till Wild Magic could be applied again?", 5, 2, 300);
+        WILD_MAGIC_COOLDOWN = BUILDER.defineInRange("How many seconds should be waited, till Wild Magic could be applied again?", 30, 2, 300);
         WILD_MAGIC_CHANCE = BUILDER.defineInRange("How likely is a wild magic effect if the target is part of the Wild Faction?", 10, 0, 100);
         FORCED_WILD_MAGIC_CHANCE = BUILDER.defineInRange("How likely is a wild magic effect when the target has a Wild Magic Potion Effect?", 50, 0, 100);
         BUILDER.pop();

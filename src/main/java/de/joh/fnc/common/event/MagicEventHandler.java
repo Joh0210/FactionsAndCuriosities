@@ -116,11 +116,14 @@ public class MagicEventHandler {
         LivingEntity source = event.getSource().getPlayer();
 
         if(source != null) {
-            ShouldCauseWildMagicEvent shouldCauseWildMagicEvent = new ShouldCauseWildMagicEvent(source);
+            ShouldCauseWildMagicEvent shouldCauseWildMagicEvent = new ShouldCauseWildMagicEvent(source, event.getContext());
             MinecraftForge.EVENT_BUS.post(shouldCauseWildMagicEvent);
             if (shouldCauseWildMagicEvent.shouldCauseWildMagic()) {
                 WildMagicHelper.performRandomWildMagic(source, event.getTarget(), event.getComponent().getUseTag(), (wm, s, t, ct) -> true);
                 source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.getWildMagicCooldown(), 0));
+            }
+            else if (shouldCauseWildMagicEvent.isPossible()) {
+                source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), 5, 0, false, false, false));
             }
         }
     }

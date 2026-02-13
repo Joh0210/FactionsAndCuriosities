@@ -1,6 +1,7 @@
 package de.joh.fnc.api.event;
 
 import com.mna.api.ManaAndArtificeMod;
+import com.mna.api.spells.targeting.SpellContext;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.FactionInit;
@@ -32,6 +33,11 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
     private boolean autoFail;
 
     /**
+     * If true, wild magic cannot be caused.
+     */
+    public final SpellContext context;
+
+    /**
      * Chance (0-100) if Wild Magic occurs:
      * <br> - Wild Magic mob effects ({@link EffectInit#WILD_MAGIC Wild Magic}, {@link EffectInit#BAD_WILD_MAGIC Bad Wild Magic}, {@link EffectInit#GOOD_WILD_MAGIC Good Wild Magic}): 50%
      * <br> - {@link FactionInit#WILD Wild Magic Faction}: 10%
@@ -39,8 +45,9 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
      */
     private int chance;
 
-    public ShouldCauseWildMagicEvent(@NotNull LivingEntity entity) {
+    public ShouldCauseWildMagicEvent(@NotNull LivingEntity entity, @NotNull SpellContext context) {
         super(entity);
+        this.context = context;
 
         if(entity.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())){
             this.autoFail = true;
@@ -92,7 +99,13 @@ public class ShouldCauseWildMagicEvent extends LivingEvent {
             return false;
         }
 
+        if(chance == 100){
+            return true;
+        }
+
+        double mod = Math.pow(Math.max(0, Math.min(120, this.context.getSpell().getComplexity())), 1.7) * 3.0f /2500f;
+
         Random random = new Random();
-        return random.nextInt(100) < chance;
+        return random.nextInt(100) < chance * mod;
     }
 }
