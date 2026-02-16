@@ -25,6 +25,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -59,7 +60,7 @@ public class MagicEventHandler {
         if(caster != null && caster.hasEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get())){
             SpellAdjustmentHelper.performRandomSpellAdjustment(event, (rs, c, s) -> true);
             caster.removeEffect(EffectInit.RANDOM_SPELL_ADJUSTMENT.get());
-            caster.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.getWildMagicCooldown(), 0));
+            caster.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.getWildMagicCooldown(), 0, false, false, true));
         } else if(caster != null && caster.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof MischiefArmorItem mischiefArmorItem
                 && mischiefArmorItem.isSetEquipped(caster)
                 && new Random().nextBoolean()
@@ -186,6 +187,12 @@ public class MagicEventHandler {
             event.addDuration((int)(event.getDuration() * 0.5f));
             divineArmor.usedByPlayer(player);
         }
+    }
+
+
+    @SubscribeEvent
+    public static void onPotionAdded(MobEffectEvent.Applicable event){
+        SecondChanceItem.eventSecondDrop(event);
     }
 
     /**

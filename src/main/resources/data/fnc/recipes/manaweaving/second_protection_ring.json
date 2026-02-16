@@ -1,0 +1,17 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "fnc:second_protection_ring",
+  "requiredFaction": "fnc:wild",
+  "tier": 4,
+  "items": [
+    "fnc:dice_twenty",
+    "mna:mundane_ring",
+    "minecraft:black_candle",
+    "mna:brimstone_charm"
+  ],
+  "patterns": [
+    "mna:knot2",
+    "mna:knot3",
+    "mna:knot"
+  ]
+}

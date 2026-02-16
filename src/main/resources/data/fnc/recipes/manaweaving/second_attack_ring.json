@@ -1,0 +1,17 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "fnc:second_attack_ring",
+  "requiredFaction": "fnc:wild",
+  "tier": 4,
+  "items": [
+    "fnc:dice_twenty",
+    "mna:mundane_ring",
+    "minecraft:yellow_candle",
+    "mna:brimstone_charm"
+  ],
+  "patterns": [
+    "mna:knot3",
+    "mna:knot4",
+    "mna:knot3"
+  ]
+}

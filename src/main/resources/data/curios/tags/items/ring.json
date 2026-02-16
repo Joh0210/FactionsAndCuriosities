@@ -3,6 +3,9 @@
   "values": [
     "fnc:ring_of_wild_luck",
     "fnc:four_leaf_clover_ring",
-    "fnc:smiting_ring"
+    "fnc:smiting_ring",
+    "fnc:second_protection_ring",
+    "fnc:second_attack_ring",
+    "fnc:second_drop_ring"
   ]
 }

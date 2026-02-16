@@ -29,6 +29,10 @@ public class CreativeModeTabInit {
                         pOutput.accept(ItemInit.MISCHIEF_LEGGING.get());
                         pOutput.accept(ItemInit.MISCHIEF_BOOTS.get());
                         pOutput.accept(ItemInit.WILD_PICKAXE.get());
+                        pOutput.accept(ItemInit.SECOND_ATTACK_RING.get());
+                        pOutput.accept(ItemInit.SECOND_PROTECTION_RING.get());
+                        pOutput.accept(ItemInit.SECOND_DROP_RING.get());
+
                         pOutput.accept(ItemInit.DECK_OF_MANY.get());
                         pOutput.accept(ItemInit.GLITTERING_POTATO.get());
                         pOutput.accept(ItemInit.BLACK_CAT_BRACELET.get());

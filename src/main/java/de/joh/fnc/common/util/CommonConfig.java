@@ -43,6 +43,18 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> GLITTERING_POTATO_HURT_CHANCE;
 
     /**
+     * How likely is the Second Chance Trigger of an SecondChance-Ring
+     * @see de.joh.fnc.common.item.SecondChanceItem
+     */
+    public static final ForgeConfigSpec.ConfigValue<Integer> SECOND_CHANCE;
+
+    /**
+     * Cooldown of the Second Chance Items
+     * @see de.joh.fnc.common.item.SecondChanceItem
+     */
+    public static final ForgeConfigSpec.ConfigValue<Integer> SECOND_CHANCE_COOLDOWN;
+
+    /**
      * How likely is it for the Glittering Potato to explode?
      */
     public static final ForgeConfigSpec.ConfigValue<Integer> BLOOD_LUST_BRACELET_DURATION;
@@ -80,7 +92,12 @@ public class CommonConfig {
 
         BUILDER.push("Glittering Potato");
         GLITTERING_POTATO_HEAL_AMOUNT = BUILDER.defineInRange("How many HP should be healed with the Glittering Potato?", 4, 1, 20);
-        GLITTERING_POTATO_HURT_CHANCE = BUILDER.defineInRange("How likely is it for the Glittering Potato to explode?", 20, 0, 99);
+        GLITTERING_POTATO_HURT_CHANCE = BUILDER.defineInRange("How likely is it for the Glittering Potato to explode?", 20, 0, 100);
+        BUILDER.pop();
+
+        BUILDER.push("Second Chance");
+        SECOND_CHANCE = BUILDER.defineInRange("How likely is the Second Chance Trigger of an SecondChance-Ring", 20, 1, 100);
+        SECOND_CHANCE_COOLDOWN = BUILDER.defineInRange("Cooldown of the Second Chance Items", 5, 1, 100);
         BUILDER.pop();
 
         BUILDER.push("BloodLustBracelet");

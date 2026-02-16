@@ -23,6 +23,12 @@
   "item.fnc.divine_legging": "Divine Legging",
   "item.fnc.four_leaf_clover_ring": "Ring of the Four Leaf Clover",
   "item.fnc.four_leaf_clover_ring.description": "Protects the user from catastrophic Wild Magic Effects",
+  "item.fnc.second_protection_ring": "Ring of Second Protection",
+  "item.fnc.second_protection_ring.description": "There is a 20% chance that you don't suffer any Damage of an incoming attack",
+  "item.fnc.second_attack_ring": "Ring of Second Attack",
+  "item.fnc.second_attack_ring.description": "There is a 20% chance that an attack of yours connects a second time. On a success, this loops with another 20% Chance. ",
+  "item.fnc.second_drop_ring": "Ring of Second Drop",
+  "item.fnc.second_drop_ring.description": "There is a 20% chance that an Potion Effect is amplified by one. On a success, this loops with another 20% Chance. ",
   "item.fnc.glittering_potato": "Glittering Potato",
   "item.fnc.glittering_potato.description": "A mysterious potato blessed with unstable magic. It may heal for 4 HP or explode. Choose wisely.",
   "item.fnc.mischief_boots": "Mischief Boots",
@@ -39,7 +45,7 @@
   "enchantment.fnc.holy_smite": "Holy Smite",
 
   "fnc:divine_armor_set_bonus": "(4) Set Bonus:\n-50% Magic Damage\n+50% Smite Duration",
-  "fnc:mischief_armor_set_bonus": "(4) Set Bonus:\n+1 Wild Magic Luck\n50% chance for a positive random SpellAdjustment",
+  "fnc:mischief_armor_set_bonus": "(4) Set Bonus:\n+2 Wild Magic Luck\n50% chance for a positive random SpellAdjustment",
 
   "effect.fnc.bad_wild_magic": "Bad Wild Magic",
   "effect.fnc.booming_smite": "Booming Smite",

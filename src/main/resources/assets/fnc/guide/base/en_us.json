@@ -989,6 +989,72 @@
       }
     ]
   },
+  "Rings of Second Chance": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Rings of Second Chance"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Sometimes one attempt isn't enough. How about a second one with a 20% chance?\nThese items benefit from Wild Magic Luck.\n\n- "
+          },
+
+          {
+            "text": "Protection",
+            "color": "gold"
+          },
+          {
+            "text": ": There is a 20% chance that you don't suffer any Damage of an incoming attack.\n- "
+          },
+          {
+            "text": "Attack",
+            "color": "gold"
+          },
+          {
+            "text": ": There is a 20% chance that an attack of yours connects a second time.\n- "
+          },
+          {
+            "text": "Drop",
+            "color": "gold"
+          },
+          {
+            "text": ": There is a 20% chance that an Potion Effect is amplified by one."
+          },
+
+          {
+            "text": "\n\nOn a success, this loops with another 20% Chance.\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/second_protection_ring"
+      },
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/second_attack_ring"
+      },
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/second_drop_ring"
+      }
+    ]
+  },
   "Ring of the Four Leaf Clover": {
     "index": "1",
     "category": "artifice",

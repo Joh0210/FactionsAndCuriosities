@@ -14,6 +14,7 @@ import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
 import de.joh.fnc.common.item.DivineArmorItem;
+import de.joh.fnc.common.item.SecondChanceItem;
 import de.joh.fnc.common.spell.shape.CounterAttackShape;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -43,6 +44,12 @@ public class DamageEventHandler {
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
         if(PaladinFaction.eventHandlePaladinDamageAdjustment(event)){
+            return;
+        }
+        if(SecondChanceItem.eventSecondDamage(event)){
+            return;
+        }
+        if(SecondChanceItem.eventSecondArmor(event)){
             return;
         }
 

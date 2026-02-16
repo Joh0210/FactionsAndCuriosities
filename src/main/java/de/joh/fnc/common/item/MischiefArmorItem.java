@@ -33,7 +33,7 @@ import java.util.function.Consumer;
  * @author Joh0210
  */
 public class MischiefArmorItem extends ArmorItem implements ISetItem, ITieredItem<MischiefArmorItem>, IFactionSpecific, IBrokenArmorReplaceable<MischiefArmorItem> {
-    private static final AttributeModifier LUCK_BOOST = new AttributeModifier("mischief_armor_set_bonus", 1, AttributeModifier.Operation.ADDITION);
+    private static final AttributeModifier LUCK_BOOST = new AttributeModifier("mischief_armor_set_bonus", 2, AttributeModifier.Operation.ADDITION);
     private int tier = -1;
     private static final ResourceLocation mischief_armor_set_bonus = RLoc.create("mischief_armor_set_bonus");
 
