@@ -1,5 +1,6 @@
 package de.joh.fnc.api.smite;
 
+import com.mna.api.sound.SFX;
 import com.mna.api.spells.base.ISpellDefinition;
 import de.joh.fnc.api.event.AddSmiteEvent;
 import de.joh.fnc.api.event.PerformSmiteEvent;
@@ -13,6 +14,7 @@ import de.joh.fnc.common.util.CommonConfig;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -93,6 +95,8 @@ public class SmiteHelper {
                 entry.getSmite().performSmite(source, target, entry.getRange(), entry.getMagnitude(), entry.getDuration(), entry.getPrecision());
             }
         }
+
+        source.level().playSeededSound(null, source.getX(), source.getY(), source.getZ(), SFX.Spell.Cast.KABLAM, SoundSource.PLAYERS, 0.23F, 0.9F + (float)Math.random() * 0.2F, 0);
     }
 
     public static ResourceKey<DamageType> getSmiteDamage(){
