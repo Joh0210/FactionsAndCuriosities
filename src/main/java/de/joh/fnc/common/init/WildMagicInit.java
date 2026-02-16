@@ -59,6 +59,10 @@ public class WildMagicInit {
     public static WildMagic FIRE_5_SELF;
     public static WildMagic FIRE_5_TARGET;
     public static WildMagic FIRE_RESISTANCE_SELF;
+    public static WildMagic FRENZY_I_TARGET;
+    public static WildMagic FRENZY_II_TARGET;
+    public static WildMagic FRENZY_I_SELF;
+    public static WildMagic FRENZY_II_SELF;
     public static WildMagic GRAVITY_WELL_SELF;
     public static WildMagic GRAVITY_WELL_TARGET;
     public static WildMagic HALF_LIVE_SELF;
@@ -169,6 +173,10 @@ public class WildMagicInit {
             helper.register(WildMagicInit.FIRE_5_SELF.getRegistryName(), WildMagicInit.FIRE_5_SELF);
             helper.register(WildMagicInit.FIRE_5_TARGET.getRegistryName(), WildMagicInit.FIRE_5_TARGET);
             helper.register(WildMagicInit.FIRE_RESISTANCE_SELF.getRegistryName(), WildMagicInit.FIRE_RESISTANCE_SELF);
+            helper.register(WildMagicInit.FRENZY_I_TARGET.getRegistryName(), WildMagicInit.FRENZY_I_TARGET);
+            helper.register(WildMagicInit.FRENZY_II_TARGET.getRegistryName(), WildMagicInit.FRENZY_II_TARGET);
+            helper.register(WildMagicInit.FRENZY_I_SELF.getRegistryName(), WildMagicInit.FRENZY_I_SELF);
+            helper.register(WildMagicInit.FRENZY_II_SELF.getRegistryName(), WildMagicInit.FRENZY_II_SELF);
             helper.register(WildMagicInit.GRAVITY_WELL_SELF.getRegistryName(), WildMagicInit.GRAVITY_WELL_SELF);
             helper.register(WildMagicInit.GRAVITY_WELL_TARGET.getRegistryName(), WildMagicInit.GRAVITY_WELL_TARGET);
             helper.register(WildMagicInit.HALF_LIVE_SELF.getRegistryName(), WildMagicInit.HALF_LIVE_SELF);
@@ -280,6 +288,10 @@ public class WildMagicInit {
         WildMagicInit.FIRE_5_SELF = new FireWildMagic(RLoc.create("wildmagic/fire_5_self"), 5, true, 5);
         WildMagicInit.FIRE_5_TARGET = new FireWildMagic(RLoc.create("wildmagic/fire_5_target"), 5, false, 5);
         WildMagicInit.FIRE_RESISTANCE_SELF = new FireResistanceWildMagic(RLoc.create("wildmagic/fire_resistance_self"), 7, true);
+        WildMagicInit.FRENZY_I_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/frenzy_i_target"), 5, false, de.joh.fnc.common.init.EffectInit.FRENZY, 600, 2);
+        WildMagicInit.FRENZY_II_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/frenzy_ii_target"), 2, false, de.joh.fnc.common.init.EffectInit.FRENZY, 600, 6);
+        WildMagicInit.FRENZY_I_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/frenzy_i_self"), 4, true, de.joh.fnc.common.init.EffectInit.FRENZY, 600, 2, true, false);
+        WildMagicInit.FRENZY_II_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/frenzy_ii_self"), 1, true, de.joh.fnc.common.init.EffectInit.FRENZY, 600, 6, true, false);
         WildMagicInit.GRAVITY_WELL_SELF = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/gravity_well_self"), 1, true, EffectInit.GRAVITY_WELL, 600, 1);
         WildMagicInit.GRAVITY_WELL_TARGET = new WildMagicOtherPotionEffect(RLoc.create("wildmagic/gravity_well_target"), 4, false, EffectInit.GRAVITY_WELL, 600, 1);
         WildMagicInit.HALF_LIVE_SELF = new ReduceHPWildMagic(RLoc.create("wildmagic/half_live_self"), 1, true, 0.5f, 50);

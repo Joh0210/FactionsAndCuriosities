@@ -47,6 +47,9 @@ public class CreativeModeTabInit {
                         pOutput.accept(ItemInit.BLESSED_BOW.get());
                         pOutput.accept(ItemInit.SMITING_RING.get());
                         pOutput.accept(ItemInit.BLOOD_LUST_BRACELET.get());
+                        pOutput.accept(ItemInit.FRENZY_RING.get());
+                        pOutput.accept(ItemInit.FRENZY_RING_MAJOR.get());
+
                     })
                     .build());
 

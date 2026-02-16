@@ -6,6 +6,8 @@
     "fnc:smiting_ring",
     "fnc:second_protection_ring",
     "fnc:second_attack_ring",
-    "fnc:second_drop_ring"
+    "fnc:second_drop_ring",
+    "fnc:frenzy_ring",
+    "fnc:frenzy_ring_greater"
   ]
 }

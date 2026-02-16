@@ -10,8 +10,8 @@
     "mna:brimstone_charm"
   ],
   "patterns": [
-    "mna:knot3",
-    "mna:knot4",
-    "mna:knot3"
+    "mna:manaweave_patterns/knot3",
+    "mna:manaweave_patterns/knot4",
+    "mna:manaweave_patterns/knot3"
   ]
 }

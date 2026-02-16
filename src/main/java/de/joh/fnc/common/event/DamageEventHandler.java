@@ -7,6 +7,7 @@ import de.joh.fnc.api.smite.SmiteHelper;
 import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
+import de.joh.fnc.common.effect.beneficial.FrenzyMobEffect;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
 import de.joh.fnc.common.faction.PaladinFaction;
 import de.joh.fnc.common.init.EffectInit;
@@ -14,6 +15,7 @@ import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.BlackCatBraceletItem;
 import de.joh.fnc.common.item.DivineArmorItem;
+import de.joh.fnc.common.item.FrenzyItem;
 import de.joh.fnc.common.item.SecondChanceItem;
 import de.joh.fnc.common.spell.shape.CounterAttackShape;
 import net.minecraft.tags.DamageTypeTags;
@@ -27,6 +29,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -46,12 +49,11 @@ public class DamageEventHandler {
         if(PaladinFaction.eventHandlePaladinDamageAdjustment(event)){
             return;
         }
-        if(SecondChanceItem.eventSecondDamage(event)){
-            return;
-        }
         if(SecondChanceItem.eventSecondArmor(event)){
             return;
         }
+        SecondChanceItem.eventSecondDamage(event);
+        FrenzyMobEffect.eventFrenzyDamage(event);
 
         LivingEntity targetEntity = event.getEntity();
         MobEffectInstance instance = targetEntity.getEffect(EffectInit.HEX.get());
@@ -71,6 +73,11 @@ public class DamageEventHandler {
         if(targetEntity instanceof Player && attacker instanceof LivingEntity){
             CounterAttackShape.applyCounterAttack((Player) targetEntity, (LivingEntity) attacker);
         }
+    }
+
+    @SubscribeEvent
+    public static void onLivingDamage(LivingDeathEvent event) {
+        FrenzyItem.eventFrenzyKill(event);
     }
 
     /**

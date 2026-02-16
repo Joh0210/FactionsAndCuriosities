@@ -23,6 +23,11 @@
   "item.fnc.divine_legging": "Divine Legging",
   "item.fnc.four_leaf_clover_ring": "Ring of the Four Leaf Clover",
   "item.fnc.four_leaf_clover_ring.description": "Protects the user from catastrophic Wild Magic Effects",
+  "item.fnc.frenzy_ring": "Ring of Frenzy",
+  "item.fnc.frenzy_ring.description": "For each kill within 30 seconds, you gain 1 Stack of Frenzy, for up to 5 stacks. Each Stack provides an 20% damage boost.",
+  "item.fnc.frenzy_ring_greater": "Ring of Greater Frenzy",
+  "item.fnc.frenzy_ring_greater.description": "For each kill within one minute, you gain 1 Stack of Frenzy, for up to 10 stacks. Each Stack provides an 20% damage boost.",
+
   "item.fnc.second_protection_ring": "Ring of Second Protection",
   "item.fnc.second_protection_ring.description": "There is a 20% chance that you don't suffer any Damage of an incoming attack",
   "item.fnc.second_attack_ring": "Ring of Second Attack",
@@ -67,6 +72,7 @@
   "effect.fnc.wild_magic_cooldown": "Wild Magic Cooldown",
   "effect.fnc.paladin_smite": "Paladin Smite",
   "effect.fnc.counter_attack": "Counter Attack",
+  "effect.fnc.frenzy": "Frenzy",
 
   "death.attack.fnc_smite": "%s was smited to death",
   "death.attack.fnc_smite.player": "%s was smited to death by %s",

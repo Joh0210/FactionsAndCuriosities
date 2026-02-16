@@ -35,7 +35,7 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
     public final SecondChanceItem.Type type;
 
     public SecondChanceItem(SecondChanceItem.Type type) {
-        super((new Properties()).setNoRepair().rarity(Rarity.RARE).stacksTo(1), 2000.0F);
+        super((new Properties()).setNoRepair().rarity(Rarity.RARE).stacksTo(1), 500.0F);
         this.type = type;
     }
 
@@ -73,7 +73,7 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
         POTION
     }
 
-    public static boolean eventSecondDamage(LivingHurtEvent event){
+    public static void eventSecondDamage(LivingHurtEvent event){
         if(event.getSource().getEntity() instanceof Player attacker && !attacker.level().isClientSide()) {
             MobEffectInstance cooldown = attacker.getEffect(EffectInit.WILD_MAGIC_COOLDOWN.get());
             int cooldownTicks = 0;
@@ -82,7 +82,7 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
             }
 
             // WILD_MAGIC_COOLDOWN <= 5 instead of !has(WILD_MAGIC_COOLDOWN), everytime a 5 Ticks cooldown is applied. This cooldown should be ignored for this item
-            if (cooldownTicks <= 5 && ((SecondChanceItem) ItemInit.SECOND_ATTACK_RING.get()).isEquippedAndHasMana(attacker, 15.0F, true)) {
+            if (cooldownTicks <= 5 && ((SecondChanceItem) ItemInit.SECOND_ATTACK_RING.get()).isEquippedAndHasMana(attacker, 1.0F, true)) {
                 int level = secondChances(attacker);
                 if(level > 0) {
                     event.setAmount(event.getAmount() * (1+level));
@@ -90,13 +90,11 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
                 }
             }
         }
-
-        return false;
     }
 
     public static boolean eventSecondArmor(LivingHurtEvent event){
         if(event.getEntity() instanceof Player defender && !defender.level().isClientSide() && !defender.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())) {
-            if (((SecondChanceItem) ItemInit.SECOND_PROTECTION_RING.get()).isEquippedAndHasMana(defender, 10.0F, true)) {
+            if (((SecondChanceItem) ItemInit.SECOND_PROTECTION_RING.get()).isEquippedAndHasMana(defender, 4.0F, true)) {
                 if(secondChances(defender) > 0){
                     defender.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.SECOND_CHANCE_COOLDOWN.get() * 20, 0, false, false, true));
                     event.setCanceled(true);
@@ -113,7 +111,7 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
         MobEffectInstance original = event.getEffectInstance();
 
         if(original != null && event.getEntity() instanceof Player user && original.getEffect().isBeneficial() && !user.level().isClientSide() && !user.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())) {
-            if (((SecondChanceItem) ItemInit.SECOND_DROP_RING.get()).isEquippedAndHasMana(user, 20.0F, true)) {
+            if (((SecondChanceItem) ItemInit.SECOND_DROP_RING.get()).isEquippedAndHasMana(user, 5.0F, true)) {
                 int level = secondChances(user);
                 if(level > 0){
                     user.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.SECOND_CHANCE_COOLDOWN.get() * 20, 0, false, false, true));

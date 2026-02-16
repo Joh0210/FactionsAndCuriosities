@@ -70,6 +70,11 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer>  SMITE_DURATION;
 
     /**
+     * Frenzy Dmg Boost (in %)
+     */
+    public static final ForgeConfigSpec.ConfigValue<Integer>  FRENZY_BOOST;
+
+    /**
      * Determines the factor by which Dispelling Smite's magnitude is increased when determining whether a mob effect can be removed.
      * <br> Duration (in s) * Amplifier <= Spell-Magnitude * this Factor
      * <br> -> If the equation is True, the effect can be removed
@@ -103,6 +108,12 @@ public class CommonConfig {
         BUILDER.push("BloodLustBracelet");
         BLOOD_LUST_BRACELET_DURATION = BUILDER.defineInRange("How long is the regeneration effect of the Blood Lust Bracelet? ", 10, 1, 100);
         BUILDER.pop();
+
+        BUILDER.push("FrenzyBoost");
+        FRENZY_BOOST = BUILDER.defineInRange("Boost of one Frenzy Stack (of the Frenzy Ring, in %)? ", 20, 1, 1000);
+        BUILDER.pop();
+
+
 
         BUILDER.push("Smite");
         MAX_SMITE_DAMAGE = BUILDER.defineInRange("What is the maximum amount of Damage Smites can do in total (Smite Stacking included)", 10, 1, 100);
