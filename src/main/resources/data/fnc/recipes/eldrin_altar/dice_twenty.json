@@ -2,7 +2,6 @@
   "type": "mna:eldrin-altar",
   "output": "fnc:dice_twenty",
   "tier": 4,
-  "requiredFaction": "fnc:wild",
   "items": [
     "fnc:dice_six",
     "minecraft:obsidian",
