@@ -4,7 +4,7 @@
   "tier": 5,
   "requiredFaction": "fnc:paladin",
   "items": [
-    "mna:mundane_ring",
+    "fnc:frenzy_ring",
     "mna:rune_arcane",
     "minecraft:netherite_ingot",
     "mna:rune_ender",

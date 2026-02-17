@@ -13,10 +13,7 @@ import de.joh.fnc.common.faction.PaladinFaction;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
-import de.joh.fnc.common.item.BlackCatBraceletItem;
-import de.joh.fnc.common.item.DivineArmorItem;
-import de.joh.fnc.common.item.FrenzyItem;
-import de.joh.fnc.common.item.SecondChanceItem;
+import de.joh.fnc.common.item.*;
 import de.joh.fnc.common.spell.shape.CounterAttackShape;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -53,6 +50,7 @@ public class DamageEventHandler {
             return;
         }
         SecondChanceItem.eventSecondDamage(event);
+        HeavyWeaponRingItem.eventHeavyWeapon(event);
         FrenzyMobEffect.eventFrenzyDamage(event);
 
         LivingEntity targetEntity = event.getEntity();

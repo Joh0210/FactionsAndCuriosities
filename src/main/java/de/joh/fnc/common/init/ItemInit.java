@@ -32,6 +32,8 @@ public class ItemInit {
     public static final RegistryObject<Item> SECOND_PROTECTION_RING = ITEMS.register("second_protection_ring", () -> new SecondChanceItem(SecondChanceItem.Type.PROTECTION));
     public static final RegistryObject<Item> FRENZY_RING = ITEMS.register("frenzy_ring", () -> new FrenzyItem(false));
     public static final RegistryObject<Item> FRENZY_RING_MAJOR = ITEMS.register("frenzy_ring_greater", () -> new FrenzyItem(true));
+    public static final RegistryObject<Item> HEAVY_WEAPON_RING = ITEMS.register("heavy_weapon_ring", () -> new HeavyWeaponRingItem(false));
+    public static final RegistryObject<Item> HEAVY_WEAPON_RING_GREATER = ITEMS.register("heavy_weapon_ring_greater", () -> new HeavyWeaponRingItem(true));
     public static final RegistryObject<Item> SECOND_ATTACK_RING = ITEMS.register("second_attack_ring", () -> new SecondChanceItem(SecondChanceItem.Type.ATTACK));
     public static final RegistryObject<Item> SECOND_DROP_RING = ITEMS.register("second_drop_ring", () -> new SecondChanceItem(SecondChanceItem.Type.POTION));
     public static final RegistryObject<Item> BLOOD_LUST_BRACELET = ITEMS.register("blood_lust_bracelet", BloodLustBraceletItem::new);

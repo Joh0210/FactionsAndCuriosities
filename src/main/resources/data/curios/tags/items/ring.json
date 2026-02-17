@@ -8,6 +8,8 @@
     "fnc:second_attack_ring",
     "fnc:second_drop_ring",
     "fnc:frenzy_ring",
-    "fnc:frenzy_ring_greater"
+    "fnc:frenzy_ring_greater",
+    "fnc:heavy_weapon_ring",
+    "fnc:heavy_weapon_ring_greater"
   ]
 }

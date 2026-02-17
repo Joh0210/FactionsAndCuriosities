@@ -110,7 +110,7 @@ public class CommonConfig {
         BUILDER.pop();
 
         BUILDER.push("FrenzyBoost");
-        FRENZY_BOOST = BUILDER.defineInRange("Boost of one Frenzy Stack (of the Frenzy Ring, in %)? ", 20, 1, 1000);
+        FRENZY_BOOST = BUILDER.defineInRange("Boost of one Frenzy Stack (of the Frenzy Ring, in %)? ", 15, 1, 1000);
         BUILDER.pop();
 
 
