@@ -4,7 +4,6 @@ import com.mna.api.faction.IFaction;
 import com.mna.api.items.ChargeableItem;
 import com.mna.items.artifice.curio.IPreEnchantedItem;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
-import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.util.CommonConfig;
@@ -20,7 +19,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
-import net.minecraftforge.eventbus.api.Event;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -31,7 +29,7 @@ import java.util.Random;
  * Similarly, with potion effects, there's a 25% chance that the effect will be increased/decreased by 1.
  * @author Joh0210
  */
-public class SecondChanceItem extends ChargeableItem implements IPreEnchantedItem<BlackCatBraceletItem> {
+public class SecondChanceItem extends ChargeableItem implements IPreEnchantedItem<SecondChanceItem> {
     public final SecondChanceItem.Type type;
 
     public SecondChanceItem(SecondChanceItem.Type type) {
@@ -75,28 +73,19 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
 
     public static void eventSecondDamage(LivingHurtEvent event){
         if(event.getSource().getEntity() instanceof Player attacker && !attacker.level().isClientSide()) {
-            MobEffectInstance cooldown = attacker.getEffect(EffectInit.WILD_MAGIC_COOLDOWN.get());
-            int cooldownTicks = 0;
-            if(cooldown != null){
-                cooldownTicks = cooldown.getDuration();
-            }
-
-            // WILD_MAGIC_COOLDOWN <= 5 instead of !has(WILD_MAGIC_COOLDOWN), everytime a 5 Ticks cooldown is applied. This cooldown should be ignored for this item
-            if (cooldownTicks <= 5 && ((SecondChanceItem) ItemInit.SECOND_ATTACK_RING.get()).isEquippedAndHasMana(attacker, 1.0F, true)) {
+            if (((SecondChanceItem) ItemInit.SECOND_ATTACK_RING.get()).isEquippedAndHasMana(attacker, 1.0F, true)) {
                 int level = secondChances(attacker);
                 if(level > 0) {
                     event.setAmount(event.getAmount() * (1+level));
-                    attacker.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.SECOND_CHANCE_COOLDOWN.get() * 20, 0, false, false, true));
                 }
             }
         }
     }
 
     public static boolean eventSecondArmor(LivingHurtEvent event){
-        if(event.getEntity() instanceof Player defender && !defender.level().isClientSide() && !defender.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())) {
+        if(event.getEntity() instanceof Player defender && !defender.level().isClientSide()) {
             if (((SecondChanceItem) ItemInit.SECOND_PROTECTION_RING.get()).isEquippedAndHasMana(defender, 4.0F, true)) {
                 if(secondChances(defender) > 0){
-                    defender.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.SECOND_CHANCE_COOLDOWN.get() * 20, 0, false, false, true));
                     event.setCanceled(true);
                     event.setAmount(0);
                     return true;
@@ -110,26 +99,21 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
     public static void eventSecondDrop(MobEffectEvent.Applicable event){
         MobEffectInstance original = event.getEffectInstance();
 
-        if(original != null && event.getEntity() instanceof Player user && original.getEffect().isBeneficial() && !user.level().isClientSide() && !user.hasEffect(EffectInit.WILD_MAGIC_COOLDOWN.get())) {
+        if(original != null && event.getEntity() instanceof Player user && original.getEffect().isBeneficial() && !user.level().isClientSide()) {
             if (((SecondChanceItem) ItemInit.SECOND_DROP_RING.get()).isEquippedAndHasMana(user, 5.0F, true)) {
                 int level = secondChances(user);
                 if(level > 0){
-                    user.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), CommonConfig.SECOND_CHANCE_COOLDOWN.get() * 20, 0, false, false, true));
 
-                    // Neuer Verstärker (+2)
                     int newAmplifier = original.getAmplifier() + level;
 
-                    // Neuen Effekt bauen (gleiche Dauer, gleiche Partikel usw.)
-                    MobEffectInstance boosted = new MobEffectInstance(
-                            original.getEffect(),
+                    event.getEffectInstance().update(new MobEffectInstance(
+                            event.getEffectInstance().getEffect(),
                             original.getDuration(),
                             newAmplifier,
-                            original.isAmbient(),
-                            original.isVisible(),
-                            original.showIcon()
-                    );
-                    event.setResult(Event.Result.DENY);
-                    user.addEffect(boosted);
+                            event.getEffectInstance().isAmbient(),
+                            event.getEffectInstance().isVisible(),
+                            event.getEffectInstance().showIcon()
+                    ));
                 }
             }
         }

@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class HeavyWeaponRingItem extends ChargeableItem implements IPreEnchantedItem<BlackCatBraceletItem> {
+public class HeavyWeaponRingItem extends ChargeableItem implements IPreEnchantedItem<HeavyWeaponRingItem> {
     private final boolean major;
 
     public HeavyWeaponRingItem(boolean major) {

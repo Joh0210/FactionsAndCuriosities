@@ -23,7 +23,7 @@ import java.util.List;
  * @see MagicEventHandler
  * @author Joh0210
  */
-public class SmitingRingItem extends ChargeableItem implements IPreEnchantedItem<BlackCatBraceletItem> {
+public class SmitingRingItem extends ChargeableItem implements IPreEnchantedItem<SmitingRingItem> {
         public SmitingRingItem() {
                 super((new Properties()).setNoRepair().rarity(Rarity.RARE), 1000.0F);
         }

@@ -1,0 +1,23 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "tier": 4,
+  "output": "fnc:time_belt",
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "items": [
+    "mna:belt_buckle",
+    "minecraft:chain",
+    "minecraft:clock",
+    "mna:greater_mote_arcane",
+    "mna:stone_rune_yellow",
+    "mna:ritual_focus_greater",
+    "minecraft:nether_wart_block",
+    "minecraft:redstone",
+    "minecraft:glowstone_dust"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/hourglass"
+  ]
+}

@@ -24,7 +24,7 @@ import java.util.List;
  * @see MagicEventHandler
  * @author Joh0210
  */
-public class BloodLustBraceletItem extends ChargeableItem implements IPreEnchantedItem<BlackCatBraceletItem> {
+public class BloodLustBraceletItem extends ChargeableItem implements IPreEnchantedItem<BloodLustBraceletItem> {
         public BloodLustBraceletItem() {
                 super((new Item.Properties()).setNoRepair().rarity(Rarity.UNCOMMON), 1000.0F);
         }

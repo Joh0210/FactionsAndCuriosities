@@ -947,6 +947,38 @@
       }
     ]
   },
+  "Belt of Time": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Belt of Time"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Sometimes all you need is a few more seconds, and this belt ensures that! It doubles the duration of each beneficial Potion effect.\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/time_belt"
+      }
+    ]
+  },
   "Ring of Heavy Weapon": {
     "index": "1",
     "category": "artifice",
@@ -1110,7 +1142,7 @@
             "color": "gold"
           },
           {
-            "text": ": There is a 20% chance that an Potion Effect is amplified by one."
+            "text": ": There is a 20% chance that an beneficial Potion Effect is amplified by one."
           },
 
           {

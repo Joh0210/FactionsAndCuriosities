@@ -34,6 +34,7 @@ public class ItemInit {
     public static final RegistryObject<Item> FRENZY_RING_MAJOR = ITEMS.register("frenzy_ring_greater", () -> new FrenzyItem(true));
     public static final RegistryObject<Item> HEAVY_WEAPON_RING = ITEMS.register("heavy_weapon_ring", () -> new HeavyWeaponRingItem(false));
     public static final RegistryObject<Item> HEAVY_WEAPON_RING_GREATER = ITEMS.register("heavy_weapon_ring_greater", () -> new HeavyWeaponRingItem(true));
+    public static final RegistryObject<Item> TIME_BELT = ITEMS.register("time_belt", TimeBeltItem::new);
     public static final RegistryObject<Item> SECOND_ATTACK_RING = ITEMS.register("second_attack_ring", () -> new SecondChanceItem(SecondChanceItem.Type.ATTACK));
     public static final RegistryObject<Item> SECOND_DROP_RING = ITEMS.register("second_drop_ring", () -> new SecondChanceItem(SecondChanceItem.Type.POTION));
     public static final RegistryObject<Item> BLOOD_LUST_BRACELET = ITEMS.register("blood_lust_bracelet", BloodLustBraceletItem::new);

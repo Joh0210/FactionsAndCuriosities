@@ -193,6 +193,7 @@ public class MagicEventHandler {
     @SubscribeEvent
     public static void onPotionAdded(MobEffectEvent.Applicable event){
         SecondChanceItem.eventSecondDrop(event);
+        TimeBeltItem.eventHeavyWeapon(event);
     }
 
     /**
