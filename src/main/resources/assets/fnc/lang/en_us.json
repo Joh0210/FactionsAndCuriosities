@@ -25,6 +25,8 @@
   "item.fnc.four_leaf_clover_ring.description": "Protects the user from catastrophic Wild Magic Effects",
   "item.fnc.time_belt": "Belt of Time",
   "item.fnc.time_belt.description": "Doubles the duration of each beneficial Potion effect",
+  "item.fnc.aura_fraud_ring": "Ring of Aura Fraud",
+  "item.fnc.aura_fraud_ring.description": "This ring allows to ignore the mana costs of auras.",
   "item.fnc.heavy_weapon_ring": "Ring of Heavy Weapon",
   "item.fnc.heavy_weapon_ring.description": "Weapon damage is increased by 25%, as long as you aren't wielding anything in your off-hand.",
   "item.fnc.heavy_weapon_ring_greater": "Ring of Greater Heavy Weapon",

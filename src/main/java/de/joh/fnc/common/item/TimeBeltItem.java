@@ -24,7 +24,7 @@ import java.util.List;
 
 public class TimeBeltItem extends TieredItem implements IFactionSpecific {
     public TimeBeltItem() {
-        super((new Properties()).setNoRepair());
+        super((new Properties()).setNoRepair().stacksTo(1));
     }
 
     @Override

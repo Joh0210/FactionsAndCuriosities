@@ -947,6 +947,38 @@
       }
     ]
   },
+  "Ring of Aura Fraud": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ring of Aura Fraud"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "With a small one-time investment, this ring will free me from the mana costs of auras in the future!\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Paladins",
+            "color": "gray"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/aura_fraud_ring"
+      }
+    ]
+  },
   "Belt of Time": {
     "index": "1",
     "category": "artifice",

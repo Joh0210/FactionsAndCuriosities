@@ -51,7 +51,9 @@ public class CreativeModeTabInit {
                         pOutput.accept(ItemInit.FRENZY_RING_MAJOR.get());
                         pOutput.accept(ItemInit.HEAVY_WEAPON_RING.get());
                         pOutput.accept(ItemInit.HEAVY_WEAPON_RING_GREATER.get());
+                        pOutput.accept(ItemInit.AURA_FRAUD_RING.get());
                         pOutput.accept(ItemInit.TIME_BELT.get());
+
 
 
                     })

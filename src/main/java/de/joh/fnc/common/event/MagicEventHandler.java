@@ -1,5 +1,6 @@
 package de.joh.fnc.common.event;
 
+import com.mna.api.events.AuraEvent;
 import com.mna.api.events.ComponentApplyingEvent;
 import com.mna.api.events.SpellCastEvent;
 import com.mna.api.spells.attributes.Attribute;
@@ -127,6 +128,11 @@ public class MagicEventHandler {
                 source.addEffect(new MobEffectInstance(EffectInit.WILD_MAGIC_COOLDOWN.get(), 5, 0, false, false, false));
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void onAuraNumerics(AuraEvent.Numerics event){
+        AuraFraudItem.eventAuraFraud(event);
     }
 
     /**
