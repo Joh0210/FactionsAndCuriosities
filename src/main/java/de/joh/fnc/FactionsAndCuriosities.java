@@ -61,7 +61,9 @@ public class FactionsAndCuriosities {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        ModItemProperties.addCustomItemProperties();
+        event.enqueueWork(() -> {
+            ModItemProperties.addCustomItemProperties();
+        });
     }
 
     /**
