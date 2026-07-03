@@ -13,6 +13,9 @@ description='''
 A mod that expands the world of magic to include additional factions!
 '''
 
+[[mixins]]
+config = "fnc.mixins.json"
+
 [[dependencies.fnc]]
 modId="forge"
 mandatory=true

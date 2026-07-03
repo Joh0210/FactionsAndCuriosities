@@ -31,9 +31,12 @@ public class WildCastingResource extends SimpleCastingResource {
     }
 
     public static class ResourceGui implements ICastingResourceGuiProvider {
+        /**
+         * Handled via Mixins since tha api does not provide a way to get the texture.
+         * @see de.joh.fnc.mixins.CastingResourceMixin
+         */
         public ResourceLocation getTexture() {
-            // TODO: this texture is not being loaded, and the default MnA texture is being used instead.
-            return RLoc.create("textures/gui/resource_bars.png");
+            return RLoc.create("gui/resource_bars.png");
         }
 
         public int getXPBarColor() {
@@ -69,7 +72,7 @@ public class WildCastingResource extends SimpleCastingResource {
         }
 
         public int getFrameV() {
-            return 0;
+            return 72;
         }
 
         public ItemStack getBadgeItem() {

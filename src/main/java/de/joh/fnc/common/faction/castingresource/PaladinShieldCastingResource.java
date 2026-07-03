@@ -44,9 +44,12 @@ public class PaladinShieldCastingResource extends SimpleCastingResource {
     }
 
     public static class ResourceGui implements ICastingResourceGuiProvider {
+        /**
+         * Handled via Mixins since tha api does not provide a way to get the texture.
+         * @see de.joh.fnc.mixins.CastingResourceMixin
+         */
         public ResourceLocation getTexture() {
-            // TODO: this texture is not being loaded, and the default MnA texture is being used instead.
-            return RLoc.create("textures/gui/resource_bars.png");
+            return RLoc.create("gui/resource_bars.png");
         }
 
         public int getXPBarColor() {
@@ -73,16 +76,16 @@ public class PaladinShieldCastingResource extends SimpleCastingResource {
             return 0;
         }
 
+        public int getFrameV() {
+            return 24;
+        }
+
         public int getFrameWidth() {
             return 153;
         }
 
         public int getFrameHeight() {
             return 24;
-        }
-
-        public int getFrameV() {
-            return 0;
         }
 
         public ItemStack getBadgeItem() {
@@ -93,12 +96,16 @@ public class PaladinShieldCastingResource extends SimpleCastingResource {
             return 9;
         }
 
+        public int getBadgeItemOffsetX() {
+            return 11;
+        }
+
         public int getFillWidth() {
             return 128;
         }
 
         public int getLevelDisplayY() {
-            return this.getFrameHeight() - 1;
+            return this.getFrameHeight() - 2;
         }
     }
 }
