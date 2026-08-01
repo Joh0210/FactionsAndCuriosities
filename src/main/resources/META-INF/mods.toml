@@ -3,8 +3,8 @@ loaderVersion="[47,)"
 license = "MIT"
 
 [[mods]]
-modId="fnc"
-version="1.2.10"
+modId="${mod_id}"
+version="${mod_version}"
 displayName="Factions And Curiosities"
 logoFile="factions_and_curiosities.png"
 credits="Thanks to Fhyx for creating some of the textures! Also thanks to Ceddi and Nico for helping with testing and balancing."
@@ -14,7 +14,7 @@ A mod that expands the world of magic to include additional factions!
 '''
 
 [[mixins]]
-config = "fnc.mixins.json"
+config = "${mod_id}.mixins.json"
 
 [[dependencies.fnc]]
 modId="forge"
