@@ -1,0 +1,1927 @@
+{
+  "Holy Smite": {
+    "category": "enchantments",
+    "sections": [
+      {
+        "type": "title",
+        "value": "홀리 스마이트"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 마법부여가 적용되면 Smite(스마이트)가 마법 피해로 판정되며 "
+          },
+          {
+            "text": "방어구를 관통합니다",
+            "color": "dark_purple"
+          },
+          {
+            "text": "!"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 마법부여는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "fnc:manaweaving/enchanting/holy_smite"
+      }
+    ]
+  },
+
+  "Shape: Paladin Smite": {
+    "index": "1",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Shape: Paladin Smite(팔라딘 스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "내 Smite(스마이트)는 강해졌고, 이전보다 훨씬 강력해졌습니다. 이제 가장 신성한 Smite(스마이트)의 형태, 직접 Smite(스마이트)를 벼려내는 법을 익힐 차례입니다!\n\n이 형상은 내가 자신에게 거는 다른 Smite(스마이트) 주문 효과처럼 작동합니다. 다만, ",
+            "color": ""
+          },
+          {
+            "text": "Smite(스마이트)가 발동시키는 효과는 내가 직접 정합니다!",
+            "color": "dark_purple"
+          },
+          {
+            "text": "\n\n이 유형의 Smite(스마이트)는 한 번에 하나만 활성화할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다.\n\n여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 형상은 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:shapes/paladin_smite"
+      }
+    ]
+  },
+
+  "Shape: Counter Attack": {
+    "index": "1",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Shape: Counter Attack(카운터 어택)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "공격은 완성되었습니다. 이제는 방어를 익힐 차례입니다. 이 형상을 사용하면 주문을 내 몸에 채널링할 수 있습니다. 이후 적이 나를 공격하면, 채널링해 둔 컴포넌트가 공격자에게 적용됩니다.",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 형상은 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:shapes/counter_attack"
+      }
+    ]
+  },
+
+  "Component: Booming Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Booming Smite(부밍 스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 Smite(스마이트)는 상대 안에 있는 마법을 끌어모은 뒤, 폭발로 한꺼번에 터져 나오게 합니다.\n정밀도를 최대로 올리면 폭발에 휘말리지 않지만, 폭발 위력은 절반으로 줄어듭니다!"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smite(스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다.\n\n여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 컴포넌트는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/booming_smite"
+      }
+    ]
+  },
+
+  "Component: Burning Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Burning Smite(버닝 스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 Smite(스마이트)는 지정한 지속 시간 동안 대상을 불태웁니다."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smite(스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다.\n\n여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 컴포넌트는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/burning_smite"
+      }
+    ]
+  },
+
+  "Component: Crippling Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Crippling Smite(크리플링 스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 Smite(스마이트)는 짧은 시간 동안 대상에게 나약함과 느려짐을 걸어 약화시킵니다."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smite(스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다.\n\n여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 컴포넌트는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/crippling_smite"
+      }
+    ]
+  },
+
+  "Component: Dispelling Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Dispelling Smite(디스펠링 스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 Smite(스마이트)는 대상에게 걸린 이로운 물약 효과를 제거합니다.\n\n하지만 이 효과가 전능한 것은 아닙니다. 더 강하거나 오래 지속되는 효과는 제거하지 못할 수도 있습니다. Smite(스마이트)의 위력을 높이려면 Magnitude(강도)를 올리면 됩니다."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smite(스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다.\n\n여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 컴포넌트는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/dispelling_smite"
+      }
+    ]
+  },
+
+  "Component: Hexing Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Hexing Smite(헥싱 스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 Smite(스마이트)는 대상에게 "
+          },
+          {
+            "text": "Hex(헥스) 효과",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 부여합니다. 이 효과가 걸린 대상은 회복할 수 없고, 받는 피해가 레벨당 25%씩 증가합니다."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smite(스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다.\n\n여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 컴포넌트는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/hexing_smite"
+      }
+    ]
+  },
+
+  "Component: Silencing Smite": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Silencing Smite(사일런싱 스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 Smite(스마이트)는 짧은 시간 동안 대상이 주문을 시전하지 못하게 합니다."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Smite(스마이트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Smite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다.\n\n여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 컴포넌트는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/silencing_smite"
+      }
+    ]
+  },
+
+  "Component: Random Teleport": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Random Teleport(랜덤 텔레포트)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "거친 야생 마법을 사용해 대상을 사라지게 만들 수 있습니다.",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 주문은 대상을 지정한 반경 안의 무작위 위치로 순간이동시킵니다",
+            "color": ""
+          },
+          {
+            "text": ". \n\n이 컴포넌트는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/random_tp"
+      }
+    ]
+  },
+  "Component: Wild Damage": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wild Damage(와일드 데미지)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "다른 피해 주문과 달리, 이 주문은 예측할 수 없습니다! 최대 피해를 줄 수도 있지만, 똑같은 확률로 피해를 1만 줄 수도 있습니다..."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "평균값이 더 자주 나오게 하려면 "
+          },
+          {
+            "text": "Precision(정밀도)",
+            "bold": true
+          },
+          {
+            "text": "를 높이면 됩니다. 이렇게 하면 극단적으로 낮은 수치가 나올 확률은 줄어들지만, 극단적으로 높은 수치가 나올 확률도 함께 줄어듭니다."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "주문의 대상은 "
+          },
+          {
+            "text": "Duration(지속 시간)",
+            "bold": true
+          },
+          {
+            "text": "과 "
+          },
+          {
+            "text": "Magnitude(강도)",
+            "bold": true
+          },
+          {
+            "text": "로 정해지는 Wild Magic(와일드 매직) 효과에 걸립니다. \n\n이 컴포넌트는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/wild_damage"
+      }
+    ]
+  },
+  "Component: Wild Magic Cooldown": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wild Magic Cooldown(와일드 매직 쿨다운)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "와일드 매직은 내 일부와도 같지만, 때로는 조금 더 정밀한 제어가 필요합니다.\n\n이 주문을 사용하면 내 Wild Magic(와일드 매직)에 더 긴 쿨다운을 강제로 부여할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 컴포넌트는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/wild_magic_cooldown"
+      }
+    ]
+  },
+  "Component: Cause Wild Magic": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Cause Wild Magic(코즈 와일드 매직)"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 주문은 Wild Magic(와일드 매직) 효과를 일으킵니다.\n\n"
+          },
+          {
+            "text": "Precision(정밀도)",
+            "bold": true
+          },
+          {
+            "text": "는 선택될 Wild Magic(와일드 매직) 효과의 범위를 좁힙니다. 값이 1보다 낮으면 이로운 효과만 나오고, 값이 1보다 높으면 해로운 효과만 나오게 됩니다."
+          },
+          {
+            "text": "\n\n이 컴포넌트는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/cause_wild_magic"
+      }
+    ]
+  },
+
+  "Dice": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "주사위"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "세계의 우연을 한데 엮어 담은 중요한 아이템입니다.",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/dice_six"
+      },
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/dice_twenty"
+      }
+    ]
+  },
+  "Smiting Ring": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "스마이팅 반지"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "내 타격은 이전보다 강해졌지만, 상대 역시 점점 더 강해지고 있습니다. 내 Smite(스마이트)를 더욱 강화할 필요가 있습니다!\n\n이 반지를 착용하면 Smite(스마이트)로 줄 수 있는 최대 피해가 5 증가합니다.\n\n이 아이템에 담긴 마법은 한정되어 있어, 언젠가는 다시 충전해야 합니다. 충전에는 "
+          },
+          {
+            "text": "마나 수정 조각",
+            "color": "blue"
+          },
+          {
+            "text": "을 사용할 수 있습니다. \n\n이 반지는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/smiting_ring"
+      }
+    ]
+  },
+  "Ring of Frenzy": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "광란의 반지"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "가끔은 걷잡을 수 없는 광란에 빠져들 때가 있습니다. 30초 안에 적을 처치할 때마다 Frenzy(광란) 중첩을 1 얻으며, 최대 5중첩까지 쌓을 수 있습니다. 각 중첩은 피해를 15% 증가시킵니다.\n\n이 반지의 상급 버전은 지속 시간이 1분으로 늘어나고, 최대 10중첩까지 쌓을 수 있습니다.\n\n이 아이템에 담긴 마법은 한정되어 있어, 언젠가는 다시 충전해야 합니다. 충전에는 "
+          },
+          {
+            "text": "마나 수정 조각",
+            "color": "blue"
+          },
+          {
+            "text": "을 사용할 수 있습니다. \n\n이 반지는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/frenzy_ring"
+      },
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/frenzy_ring_greater"
+      }
+    ]
+  },
+  "Ring of Aura Fraud": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "오라 무임승차 반지"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "처음에 약간의 비용만 투자하면, 이 반지가 앞으로 오라의 마나 비용에서 나를 해방시켜 줄 것입니다!\n\n이 반지는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/aura_fraud_ring"
+      }
+    ]
+  },
+  "Belt of Time": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "시간의 허리띠"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "때로는 몇 초만 더 있어도 충분합니다. 이 허리띠는 바로 그 시간을 확보해 줍니다! 이로운 물약 효과의 지속 시간을 두 배로 늘립니다.\n\n이 허리띠는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/time_belt"
+      }
+    ]
+  },
+  "Ring of Heavy Weapon": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "중무기의 반지"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "어떤 무기는 양손으로 다룰 때 더 효과적입니다. 보조 손에 아무것도 들고 있지 않다면 무기 피해가 25% 증가합니다. 이 보너스는 상급 버전에서 50%로 증가합니다. \n\n이 아이템에 담긴 마법은 한정되어 있어, 언젠가는 다시 충전해야 합니다. 충전에는 "
+          },
+          {
+            "text": "마나 수정 조각",
+            "color": "blue"
+          },
+          {
+            "text": "을 사용할 수 있습니다. \n\n이 반지는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/heavy_weapon_ring"
+      },
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/heavy_weapon_ring_greater"
+      }
+    ]
+  },
+  "Blood Lust Bracelet": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "피의 갈망 팔찌"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "다른 이에게서 빼앗을 때, 나는 살아 있음을 느낍니다.\n이 팔찌는 내가 Smite(스마이트)를 사용할 때 짧은 재생 효과를 부여합니다.\n\n이 아이템에 담긴 마법은 한정되어 있어, 언젠가는 다시 충전해야 합니다. 충전에는 "
+          },
+          {
+            "text": "마나 수정 조각",
+            "color": "blue"
+          },
+          {
+            "text": "을 사용할 수 있습니다. \n\n이 팔찌는 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/blood_lust_bracelet"
+      }
+    ]
+  },
+  "Black Cat Bracelet": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "검은 고양이 팔찌"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 팔찌는 내가 "
+          },
+          {
+            "text": "맨손 공격",
+            "color": "dark_purple"
+          },
+          {
+            "text": "으로 적을 때릴 때, 내 마법의 예측 불가능함을 상대에게 옮깁니다. 하지만 나와 달리, 그들은 Wild Magic(와일드 매직)에서 어떤 즐거움도 얻지 못합니다. \n\n이 아이템에 담긴 마법은 한정되어 있어, 언젠가는 다시 충전해야 합니다. 충전에는 "
+          },
+          {
+            "text": "마나 수정 조각",
+            "color": "blue"
+          },
+          {
+            "text": "을 사용할 수 있습니다. \n\n이 팔찌는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/black_cat_bracelet"
+      }
+    ]
+  },
+  "Rings of Second Chance": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "두 번째 기회의 반지"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "때로는 한 번의 시도로는 충분하지 않습니다. 20% 확률로 두 번째 기회를 얻는 건 어떨까요?\n이 아이템들은 Wild Magic Luck(와일드 매직 럭)의 영향을 받습니다.\n\n- "
+          },
+
+          {
+            "text": "Protection(프로텍션)",
+            "color": "gold"
+          },
+          {
+            "text": ": 받는 공격 피해를 입지 않을 확률이 20% 있습니다.\n- "
+          },
+          {
+            "text": "Attack(어택)",
+            "color": "gold"
+          },
+          {
+            "text": ": 내 공격이 한 번 더 적중할 확률이 20% 있습니다.\n- "
+          },
+          {
+            "text": "Drop(드롭)",
+            "color": "gold"
+          },
+          {
+            "text": ": 이로운 물약 효과가 한 단계 강화될 확률이 20% 있습니다."
+          },
+
+          {
+            "text": "\n\n성공하면, 다시 20% 확률로 같은 판정이 반복됩니다.\n\n이 반지들은 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/second_protection_ring"
+      },
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/second_attack_ring"
+      },
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/second_drop_ring"
+      }
+    ]
+  },
+  "Ring of the Four Leaf Clover": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "네잎클로버 반지"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 반지는 아주 나쁜 Wild Magic(와일드 매직) 효과와 Spell Adjustment(스펠 어저스트먼트) 효과로부터 나를 보호해 줍니다.\n\n이 아이템에 담긴 마법은 한정되어 있어, 언젠가는 다시 충전해야 합니다. 충전에는 "
+          },
+          {
+            "text": "마나 수정 조각",
+            "color": "blue"
+          },
+          {
+            "text": "을 사용할 수 있습니다. \n\n이 반지는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/four_leaf_clover_ring"
+      }
+    ]
+  },
+  "Ring of Wild Luck": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "와일드 행운의 반지"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 반지는 Wild Magic(와일드 매직)에 대한 내 행운을 더욱 높여 줍니다!\n\n또한 아직 Wild Magic(와일드 매직)에 닿지 않은 친구에게 이 반지를 건네주면, 그들도 Wild Magic(와일드 매직) 이벤트를 일으킬 수 있게 됩니다."
+          },
+          {
+            "text": " \n\n이 반지는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/ring_of_wild_luck"
+      }
+    ]
+  },
+  "Wild Pickaxe": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "와일드 곡괭이"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 곡괭이로 광석을 채굴하면 무작위 광석을 떨어뜨립니다.\n\n곡괭이를 손에 들고 Break(브레이크) 주문이나 다른 곡괭이를 사용할 때도 이 효과가 발동합니다.\n\n이 곡괭이는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/wild_pickaxe"
+      }
+    ]
+  },
+  "Glittering Potato": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "반짝이는 감자"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 감자에는 Wild Magic(와일드 매직)이 주입되어 있습니다. 먹을 수 있다는 점은 물론이고, 80% 확률로 하트 2칸을 회복시킵니다. 하지만 여전히 20% 확률로 폭발을 일으킬 수도 있습니다.\n\n이 감자는 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location":"fnc:manaweaving/glittering_potato"
+      }
+    ]
+  },
+
+  "Blessed Bow": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "축복받은 활"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이제 내 맹세를 증명할 때입니다! 이 활로 지옥의 악마들에게 끝을 안겨 주겠습니다!\n\n이 활의 화살은 내 "
+          },
+          {
+            "text": "Smite(스마이트)",
+            "color": "dark_purple"
+          },
+          {
+            "text": "의 힘을 "
+          },
+          {
+            "text": "먼 거리",
+            "color": "dark_purple"
+          },
+          {
+            "text": "까지 실어 나릅니다!\n(그래요... 우리 팔라딘은 원거리 주문 따위 없어도 충분히 멋지니까요.)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 활은 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/blessed_bow"
+      }
+    ]
+  },
+  "Brimstone Sword": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "브림스톤 검"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "내 소속은 산 자들에게 있지만, 내 무기에 지옥의 힘을 더한다면 산 자들을 더 잘 지킬 수 있습니다.\n\n이 검으로 Smite(스마이트)를 사용하면, "
+          },
+          {
+            "text": "Smite(스마이트) 피해의 절반",
+            "color": "dark_purple"
+          },
+          {
+            "text": "을 체력으로 돌려받습니다."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 검은 "
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/brimstone_sword"
+      }
+    ]
+  },
+  "Deck of Many": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "수많은 것의 덱"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 유물은 "
+          },
+          {
+            "text": "극단적인 ",
+            "bold": true
+          },
+          {
+            "text": "Wild Magic(와일드 매직)을 일으킵니다! 좋은 결과일지 나쁜 결과일지는 모릅니다. 확실한 건 그저 극단적이라는 것, 그리고 카드의 심장에는 저항할 방법이 없다는 것입니다!"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "감히 카드를 뽑아 보시겠습니까?",
+            "italic": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 유물은 "
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": " 진영에 속한 이들만 제작할 수 있습니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location":"fnc:eldrin_altar/deck_of_many"
+      }
+    ]
+  },
+  "Divine Armor": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "신성한 갑옷"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "나는 산 자들의 영역을 어둠으로부터 지키기 위해 바위처럼 굳건히 섭니다.\n\n이 갑옷은 그 자체로도 뛰어난 방어력을 제공하지만, 마법 피해도 50% 줄여 줍니다. 또한 내 Smite(스마이트)의 지속 시간이 50% 증가합니다.\n\n(Dragon Magic and Relics가 설치되어 있다면 드래곤 마법사 갑옷을 만드는 데 사용할 수 있습니다.)"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_helmet"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_chestplate"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_legging"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/divine_boots"
+      }
+    ]
+  },
+  "Mischief Armor": {
+    "index": 0,
+    "category": "eldrin_altar",
+    "sections": [
+      {
+        "type": "title",
+        "value": "장난의 갑옷"
+      },
+      {
+        "type": "text",
+        "value": "와일드 매직에는 정해진 형태도, 머무는 장소도 없지만, 그와 관련된 많은 존재들은 신들의 변덕스러운 손길과 함께 모습을 드러냅니다. 그리고 우리 와일드 마법사들은 그 부름을 이용해 장난의 신을 본뜬 갑옷을 만들어 냅니다. 갑옷 자체는 기사의 판금 갑옷만큼 튼튼하며, 착용하고 있으면 Wild Magic(와일드 매직)이 나를 편드는 것 같습니다. 마찬가지로, 주문을 시전할 때 50% 확률로 주문이 이로운 방향으로 변화합니다.",
+        "json": [
+          {
+            "text": "와일드 매직에는 정해진 형태도, 머무는 장소도 없지만, 그와 관련된 많은 존재들은 신들의 변덕스러운 손길과 함께 모습을 드러냅니다. 그리고 우리 와일드 마법사들은 그 부름을 이용해 장난의 신을 본뜬 갑옷을 만들어 냅니다.\n\n갑옷 자체는 기사의 판금 갑옷만큼 튼튼하며, 착용하고 있으면 Wild Magic(와일드 매직)이 나를 편드는 것 같습니다. \n\n마찬가지로, 주문을 시전할 때 50% 확률로 주문이 이로운 방향으로 변화합니다.\n\n(Dragon Magic and Relics가 설치되어 있다면 드래곤 마법사 갑옷을 만드는 데 사용할 수 있습니다.)"
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_helmet"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_chestplate"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_legging"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "fnc:eldrin_altar/mischief_boots"
+      }
+    ]
+  },
+
+  "Ritual of the Pact": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "맹세의 의식"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 맹세를 통해 나는 스스로를 지키지 못하는 이들을 보호하고, 다른 이들에게 해를 끼치는 자들을 쓰러뜨리며, 위대한 ",
+            "color": ""
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": "의 일원이 될 것을 맹세합니다!",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "맹세"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "\"이 ",
+            "color": ""
+          },
+          {
+            "text": "방패",
+            "color": "gray"
+          },
+          {
+            "text": "와 함께, 나는 다른 이들을 지키는 일에 헌신합니다. 지금 이 순간부터 내가 받는 피해는 15% 감소합니다.\"",
+            "color": ""
+          },
+          {
+            "text": "\n\n\"이 ",
+            "color": ""
+          },
+          {
+            "text": "검",
+            "color": "gray"
+          },
+          {
+            "text": "과 함께, 나는 복수와 응징에 몸을 바칩니다. 지금 이 순간부터 모두가 내 일격으로부터 15% 더 큰 피해를 받게 될 것입니다.\"",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/pact"
+      }
+    ]
+  },
+  "Ritual of the Twisted Fealty": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "뒤틀린 충성의 의식"
+      },
+
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "신념은 ",
+            "color": ""
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": " 힘의 근원입니다. 하지만 신념조차 시간이 지나며 달라질 수 있습니다. 이 의식을 통해 ",
+            "color": ""
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": "은 자신의 맹세를 새롭게 할 수 있습니다.\n\n",
+            "color": ""
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "맹세"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "\"이 ",
+            "color": ""
+          },
+          {
+            "text": "방패",
+            "color": "gray"
+          },
+          {
+            "text": "와 함께, 나는 다른 이들을 지키는 일에 헌신합니다. 지금 이 순간부터 내가 받는 피해는 15% 감소합니다.\"",
+            "color": ""
+          },
+          {
+            "text": "\n\n\"이 ",
+            "color": ""
+          },
+          {
+            "text": "검",
+            "color": "gray"
+          },
+          {
+            "text": "과 함께, 나는 복수와 응징에 몸을 바칩니다. 지금 이 순간부터 모두가 내 일격으로부터 15% 더 큰 피해를 받게 될 것입니다.\"",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/twisted_fealty"
+      }
+    ]
+  },
+  "Ritual of the Wild": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "와일드의 의식"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "이 의식은 Wild Magic(와일드 매직)이 당신 안을 흐르게 하며, 당신을 ",
+            "color": ""
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": "의 일원으로 만듭니다."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/wild_energy"
+      }
+    ]
+  },
+
+  "Faction: Wild Courts": {
+    "index": 10,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "와일드 궁정"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": ""
+          },
+          {
+            "text": "와일드 궁정",
+            "color": "gold"
+          },
+          {
+            "text": "은 가장 순수하고 길들여지지 않은 형태의 마법을 사용합니다.\n\n그들의 마법은 강력한 만큼 위험합니다. 이 힘에 접근할 때마다, 와일드 매직이 무작위 사건을 일으킬 작은 확률이 있습니다. 더 강한 주문일수록 Wild Magic(와일드 매직)이 발동할 확률도 높아집니다."
+          },
+          {
+            "text": ".\n\n와일드 아티팩트에는 와일드 매직을 극단까지 끌어올리는 "
+          },
+          {
+            "text": "수많은 것의 덱",
+            "color": "gold"
+          },
+          {
+            "text": " 같은 아이템과 "
+          },
+          {
+            "text": "Wild Damage(와일드 데미지)",
+            "color": "gold"
+          },
+          {
+            "text": ", "
+          },
+          {
+            "text": "Cause Wild Magic(코즈 와일드 매직)",
+            "color": "gold"
+          },
+          {
+            "text": " 같은 컴포넌트가 포함됩니다.\n\n그들은 "
+          },
+          {
+            "text": "페이 궁정",
+            "color": "dark_green"
+          },
+          {
+            "text": "과 동맹입니다.\n\n오큘러스를 볼 때, 와일드 진영을 요구하는 항목은 다음 아이콘으로 표시됩니다:"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "location": "fnc:textures/guide/faction_icon_wild.png",
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/wild_energy"
+      }
+    ]
+  },
+  "Faction: Paladin": {
+    "index": 10,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "팔라딘"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": ""
+          },
+          {
+            "text": "팔라딘",
+            "color": "gray"
+          },
+          {
+            "text": "은 무술과 마법을 함께 사용합니다. 이 덕분에 매우 뛰어난 수호자이자, 전사이며, 집행자가 될 수 있습니다."
+          },
+          {
+            "text": ".\n\n팔라딘 아티팩트에는 마법으로 인한 피해를 크게 줄여 주는 "
+          },
+          {
+            "text": "마녀 사냥꾼의 갑옷",
+            "color": "gray"
+          },
+          {
+            "text": " 같은 다재다능한 갑옷과 강력한 무기가 포함됩니다. 팔라딘의 컴포넌트는 강력한 "
+          },
+          {
+            "text": "Smite(스마이트)",
+            "color": "gray"
+          },
+          {
+            "text": "로 이루어져 있습니다.\n\nSmite(스마이트)는 플레이어의 "
+          },
+          {
+            "text": "근접 공격 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "를 증가시키고, 근접 공격 대상에게 추가 효과를 주는 짧은 지속 효과입니다. 여러 Smite(스마이트)를 동시에 활성화할 수 있지만, Smite(스마이트) 중첩으로 얻을 수 있는 "
+          },
+          {
+            "text": "최대 피해",
+            "color": "dark_purple"
+          },
+          {
+            "text": "는 "
+          },
+          {
+            "text": "10",
+            "color": "dark_purple"
+          },
+          {
+            "text": "입니다. (설정에서 변경 가능)"
+          },
+          {
+            "text": ".\n\n팔라딘은 "
+          },
+          {
+            "text": "의회",
+            "color": "blue"
+          },
+          {
+            "text": "와 동맹입니다.\n\n오큘러스를 볼 때, 팔라딘 진영을 요구하는 항목은 다음 아이콘으로 표시됩니다:"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "location": "fnc:textures/guide/faction_icon_paladin.png",
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/pact"
+      }
+    ]
+  },
+
+
+  "version": "1.0.0a"
+}
