@@ -43,7 +43,7 @@ public class CastingResourceMixin {
                         .getGuiProvider(magic.getCastingResource().getRegistryName());
                 if (provider != null) {
                     if(progression.getAlliedFaction() != null) {
-                        if(progression.getAlliedFaction().is(ResourceIDs.FACTION_PALADIN_ID) || progression.getAlliedFaction().is(ResourceIDs.FACTION_WILD_ID)) {
+                        if(progression.getAlliedFaction().is(ResourceIDs.FACTION_PALADIN_ID) || progression.getAlliedFaction().is(ResourceIDs.FACTION_WILD_ID) || progression.getAlliedFaction().is(ResourceIDs.FACTION_BLOOD_MAGE_ID)) {
                             return RLoc.create("gui/resource_bars.png");
                         }
                     }

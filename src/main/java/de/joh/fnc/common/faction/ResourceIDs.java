@@ -12,4 +12,8 @@ public class ResourceIDs {
     public static final ResourceLocation PALADIN_MANA_SHIELD = RLoc.create("paladin_mana_shield");
     public static final ResourceLocation PALADIN_MANA_SWORD = RLoc.create("paladin_mana_sword");
     public static final ResourceLocation FACTION_PALADIN_ICON = RLoc.create("textures/guide/faction_icon_paladin.png");
+
+    public static final ResourceLocation FACTION_BLOOD_MAGE_ID = RLoc.create("blood_mage");
+    public static final ResourceLocation BLOOD_MAGIC = RLoc.create("blood_magic");
+    public static final ResourceLocation FACTION_BLOOD_MAGE_ICON = RLoc.create("textures/guide/faction_icon_blood_mage.png");
 }

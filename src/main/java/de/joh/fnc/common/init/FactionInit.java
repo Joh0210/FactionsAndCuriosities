@@ -6,9 +6,11 @@ import com.mna.api.faction.IFaction;
 import com.mna.capabilities.playerdata.magic.resources.CastingResourceGuiRegistry;
 import com.mna.capabilities.playerdata.magic.resources.CastingResourceRegistry;
 import de.joh.fnc.FactionsAndCuriosities;
+import de.joh.fnc.common.faction.BloodMageFaction;
 import de.joh.fnc.common.faction.PaladinFaction;
 import de.joh.fnc.common.faction.ResourceIDs;
 import de.joh.fnc.common.faction.WildFaction;
+import de.joh.fnc.common.faction.castingresource.BloodCastingResource;
 import de.joh.fnc.common.faction.castingresource.PaladinShieldCastingResource;
 import de.joh.fnc.common.faction.castingresource.PaladinSwordCastingResource;
 import de.joh.fnc.common.faction.castingresource.WildCastingResource;
@@ -22,6 +24,7 @@ import net.minecraftforge.registries.RegisterEvent;
 @Mod.EventBusSubscriber(modid = FactionsAndCuriosities.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class FactionInit {
     public static final BaseFaction WILD = new WildFaction();
+    public static final BaseFaction BLOOD_MAGE = new BloodMageFaction();
     public static final IFaction PALADIN = new PaladinFaction();
 
 
@@ -29,6 +32,7 @@ public class FactionInit {
     public static void registerFactions(RegisterEvent event) {
         event.register(Registries.Factions.get().getRegistryKey(), (helper) -> {
             helper.register(ResourceIDs.FACTION_WILD_ID, WILD);
+            helper.register(ResourceIDs.FACTION_BLOOD_MAGE_ID, BLOOD_MAGE);
             helper.register(ResourceIDs.FACTION_PALADIN_ID, PALADIN);
         });
     }
@@ -38,6 +42,7 @@ public class FactionInit {
         CastingResourceRegistry.Instance.register(ResourceIDs.PALADIN_MANA_SHIELD, PaladinShieldCastingResource.class);
         CastingResourceRegistry.Instance.register(ResourceIDs.PALADIN_MANA_SWORD, PaladinSwordCastingResource.class);
         CastingResourceRegistry.Instance.register(ResourceIDs.WILD_MANA, WildCastingResource.class);
+        CastingResourceRegistry.Instance.register(ResourceIDs.BLOOD_MAGIC, BloodCastingResource.class);
     }
 
 
@@ -48,6 +53,7 @@ public class FactionInit {
             CastingResourceGuiRegistry.Instance.registerResourceGui(ResourceIDs.PALADIN_MANA_SHIELD, new PaladinShieldCastingResource.ResourceGui());
             CastingResourceGuiRegistry.Instance.registerResourceGui(ResourceIDs.PALADIN_MANA_SWORD, new PaladinSwordCastingResource.ResourceGui());
             CastingResourceGuiRegistry.Instance.registerResourceGui(ResourceIDs.WILD_MANA, new WildCastingResource.ResourceGui());
+            CastingResourceGuiRegistry.Instance.registerResourceGui(ResourceIDs.BLOOD_MAGIC, new BloodCastingResource.ResourceGui());
         }
     }
 }
