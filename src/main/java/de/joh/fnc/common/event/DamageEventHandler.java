@@ -9,6 +9,7 @@ import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
 import de.joh.fnc.common.effect.beneficial.FrenzyMobEffect;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
+import de.joh.fnc.common.effect.neutral.GamblersBlowMobEffect;
 import de.joh.fnc.common.faction.PaladinFaction;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.EnchantmentInit;
@@ -44,6 +45,9 @@ public class DamageEventHandler {
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
         if(PaladinFaction.eventHandlePaladinDamageAdjustment(event)){
+            return;
+        }
+        if(GamblersBlowMobEffect.eventHandleDamageAdjustment(event)){
             return;
         }
         if(SecondChanceItem.eventSecondArmor(event)){

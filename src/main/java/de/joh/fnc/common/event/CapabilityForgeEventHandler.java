@@ -1,10 +1,13 @@
 package de.joh.fnc.common.event;
 
 import de.joh.fnc.FactionsAndCuriosities;
+import de.joh.fnc.common.capability.GamblerBlowCapability;
+import de.joh.fnc.common.capability.GamblerBlowCapabilityProvider;
 import de.joh.fnc.common.capability.SmitePlayerCapability;
 import de.joh.fnc.common.capability.PlayerCapabilityProvider;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -26,6 +29,9 @@ public class CapabilityForgeEventHandler {
         if (event.getObject() instanceof Player) {
             event.addCapability(RLoc.create("dnc_player_data"), new PlayerCapabilityProvider());
         }
+        if (event.getObject() instanceof LivingEntity) {
+            event.addCapability(RLoc.create("gambler_blow_data"), new GamblerBlowCapabilityProvider());
+        }
     }
 
     @SubscribeEvent
@@ -37,11 +43,16 @@ public class CapabilityForgeEventHandler {
                 (newSmite) -> original.getCapability(PlayerCapabilityProvider.PLAYER_SMITE).ifPresent(
                         originalSmite -> newSmite.copyFrom(originalSmite, event.isWasDeath())
                 ));
+        player.getCapability(GamblerBlowCapabilityProvider.GAMBLER_BLOW).ifPresent(
+                (newBlow) -> original.getCapability(GamblerBlowCapabilityProvider.GAMBLER_BLOW).ifPresent(
+                        newBlow::copyFrom
+                ));
         event.getOriginal().invalidateCaps();
     }
 
     @SubscribeEvent
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         event.register(SmitePlayerCapability.class);
+        event.register(GamblerBlowCapability.class);
     }
 }

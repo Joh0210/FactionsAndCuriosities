@@ -1,6 +1,8 @@
 package de.joh.fnc.common.effect.neutral;
 
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
+import de.joh.fnc.common.capability.GamblerBlowCapability;
+import de.joh.fnc.common.capability.GamblerBlowCapabilityProvider;
 import de.joh.fnc.common.init.EffectInit;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -16,7 +18,7 @@ public class GamblersBlowMobEffect extends MobEffect {
         super(MobEffectCategory.NEUTRAL, 0x009000);
     }
 
-    static boolean eventHandleDamageAdjustment(LivingHurtEvent event){
+    public static boolean eventHandleDamageAdjustment(LivingHurtEvent event){
         if(event.isCanceled()) return true;
 
         AtomicReference<Float> amount = new AtomicReference<>(event.getAmount());
@@ -24,13 +26,14 @@ public class GamblersBlowMobEffect extends MobEffect {
         LivingEntity defender = event.getEntity();
         if(defender.hasEffect(EffectInit.GAMBLERS_BLOW_DEFENSIVE.get())){
             MobEffectInstance gamblersBlow = defender.getEffect(EffectInit.GAMBLERS_BLOW_DEFENSIVE.get());
-            amount.set(generateModifier(defender, gamblersBlow.getAmplifier(), 1 /* todo */, false) * amount.get());
-
+            int precision = defender.getCapability(GamblerBlowCapabilityProvider.GAMBLER_BLOW).map(GamblerBlowCapability::getDefensivePrecision).orElse(1);
+            amount.set(generateModifier(defender, gamblersBlow.getAmplifier(), precision, false) * amount.get());
         }
 
         if(event.getSource().getEntity() instanceof LivingEntity attacker && attacker.hasEffect(EffectInit.GAMBLERS_BLOW_OFFENSIVE.get())){
             MobEffectInstance gamblersBlow = attacker.getEffect(EffectInit.GAMBLERS_BLOW_OFFENSIVE.get());
-            amount.set(generateModifier(attacker, gamblersBlow.getAmplifier(), 1 /* todo */, true) * amount.get());
+            int precision = attacker.getCapability(GamblerBlowCapabilityProvider.GAMBLER_BLOW).map(GamblerBlowCapability::getOffensivePrecision).orElse(1);
+            amount.set(generateModifier(attacker, gamblersBlow.getAmplifier(), precision, true) * amount.get());
         }
 
         event.setAmount(amount.get());
