@@ -8,10 +8,7 @@ import com.mna.api.spells.parts.Shape;
 import com.mna.api.spells.parts.SpellEffect;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.spell.component.SmiteComponent;
-import de.joh.fnc.common.spell.component.CauseWildMagicComponent;
-import de.joh.fnc.common.spell.component.RandomTpComponent;
-import de.joh.fnc.common.spell.component.WildDamageComponent;
-import de.joh.fnc.common.spell.component.WildMagicCooldown;
+import de.joh.fnc.common.spell.component.*;
 import de.joh.fnc.common.spell.shape.CounterAttackShape;
 import de.joh.fnc.common.spell.shape.PaladinSmiteShape;
 import de.joh.fnc.common.util.RLoc;
@@ -30,6 +27,8 @@ public class SpellInit {
 
     public static SpellEffect WILD_DAMAGE;
     public static SpellEffect WILD_MAGIC_COOLDOWN;
+    public static SpellEffect GAMBLERS_BLOW_DEFENSIVE;
+    public static SpellEffect GAMBLERS_BLOW_OFFENSIVE;
     public static SpellEffect CAUSE_WILD_MAGIC;
     public static SpellEffect RANDOM_TP;
     public static SpellEffect BURNING_SMITE;
@@ -56,6 +55,8 @@ public class SpellInit {
             helper.register(RLoc.create("components/silencing_smite"), SILENCING_SMITE);
             helper.register(RLoc.create("components/hexing_smite"), HEXING_SMITE);
             helper.register(RLoc.create("components/booming_smite"), BOOMING_SMITE);
+            helper.register(RLoc.create("components/gamblers_blow_defensive"), GAMBLERS_BLOW_DEFENSIVE);
+            helper.register(RLoc.create("components/gamblers_blow_offensive"), GAMBLERS_BLOW_OFFENSIVE);
         });
     }
 
@@ -64,9 +65,11 @@ public class SpellInit {
         SpellInit.COUNTER_ATTACK = new CounterAttackShape(RLoc.create("textures/spell/shape/counter_attack.png"));
 
         SpellInit.WILD_DAMAGE = new WildDamageComponent(RLoc.create("textures/spell/component/wild_damage.png"));
-        SpellInit.WILD_MAGIC_COOLDOWN = new WildMagicCooldown(RLoc.create("textures/spell/component/wild_magic_cooldown.png"));
+        SpellInit.WILD_MAGIC_COOLDOWN = new WildMagicCooldownComponent(RLoc.create("textures/spell/component/wild_magic_cooldown.png"));
         SpellInit.CAUSE_WILD_MAGIC = new CauseWildMagicComponent(RLoc.create("textures/spell/component/cause_wild_magic.png"));
         SpellInit.RANDOM_TP = new RandomTpComponent(RLoc.create("textures/spell/component/random_tp.png"));
+        SpellInit.GAMBLERS_BLOW_DEFENSIVE = new GamblersBlowComponent(RLoc.create("textures/spell/component/gamblers_blow_defensive.png"), true);
+        SpellInit.GAMBLERS_BLOW_OFFENSIVE = new GamblersBlowComponent(RLoc.create("textures/spell/component/gamblers_blow_offensive.png"), false);
         SpellInit.BURNING_SMITE = new SmiteComponent(RLoc.create("textures/spell/component/burning_smite.png"),
                 10, Affinity.FIRE, EffectInit.BURNING_SMITE,
                 new AttributeValuePair(Attribute.DURATION, 3.0F, 0.0F, 10.0F, 1.0F, 2.0F));

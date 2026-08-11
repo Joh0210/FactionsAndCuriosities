@@ -15,8 +15,8 @@ import net.minecraft.resources.ResourceLocation;
  * @see de.joh.fnc.api.event.ShouldCauseWildMagicEvent
  * @author Joh0210
  */
-public class WildMagicCooldown extends PotionEffectComponent {
-    public WildMagicCooldown(ResourceLocation icon) {
+public class WildMagicCooldownComponent extends PotionEffectComponent {
+    public WildMagicCooldownComponent(ResourceLocation icon) {
         super(icon, EffectInit.WILD_MAGIC_COOLDOWN, new AttributeValuePair(Attribute.DURATION, 30.0F, 15.0F, 600.0F, 30.0F, 5.0F));
     }
 
@@ -30,7 +30,7 @@ public class WildMagicCooldown extends PotionEffectComponent {
 
     @Override
     public SpellPartTags getUseTag() {
-        return SpellPartTags.FRIENDLY;
+        return SpellPartTags.UTILITY;
     }
 
     public float initialComplexity() {

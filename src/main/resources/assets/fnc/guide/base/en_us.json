@@ -672,6 +672,85 @@
       }
     ]
   },
+  "Component: Gamblers Blow": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Gambler's Blow"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This spell applies a unique effect to the target, randomly adjusting all damage outcomes within an interval of [1/1.33 to 1.33]. There are two versions of this spell: the Offensive version modifies outgoing damage, while the Defensive version alters incoming damage."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Increasing the "
+          },
+          {
+            "text": "precision",
+            "bold": true
+          },
+          {
+            "text": " makes average values more likely to occur. This reduces the chance of rolling extremely low numbers, but also limits extremely high ones."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "By increasing the "
+          },
+          {
+            "text": "magnitude",
+            "bold": true
+          },
+          {
+            "text": ", the modifier variance expands by +0.33.\n\nTip: If you apply "
+          },
+          {
+            "text": "wild magic luck or bad luck",
+            "bold": true
+          },
+          {
+            "text": ", you can skew the results toward your preferred outcome.\n\nThis component can only be crafted by those who have aligned themselves with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "fnc:components/gamblers_blow_offensive"
+      },
+      {
+        "type": "spell_part",
+        "location": "fnc:components/gamblers_blow_defensive"
+      }
+    ]
+  },
   "Component: Wild Damage": {
     "index": "2",
     "category": "sorcery",

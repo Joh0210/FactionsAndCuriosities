@@ -16,16 +16,16 @@ Paladins  use magic in combination with martial techniques. This makes them very
 
 ## Content
 The Codex has all the necessary information about the added elements. (But the content is only displayed when playing in American English (en_us))
-- 14 Items 
-- 9 Spells & Shapes
-- 2 Rituals
+- 30+ Items 
+- 11 Spells & Shapes
+- 3 Rituals
 
 This mod has optional compatibility with [Dragon Magic And Relics](https://www.curseforge.com/minecraft/mc-mods/dragon-magic-and-relics):
 - 2 more items
 - 4 Dragon Mage Armor Upgrades
 
 ## Credits
-Thanks to Fhyx for creating some of the textures. The full credits can be viewed [here](https://github.com/Joh0210/FactionsAndCuriosities/blob/master/CREDITS.md).
+Thanks to Fhyx for creating some textures. The full credits can be viewed [here](https://github.com/Joh0210/FactionsAndCuriosities/blob/master/CREDITS.md).
 
 ## Feedback & Contribution
 I welcome all feedback! Let me know about bugs, balancing suggestions, or ideas for new content.

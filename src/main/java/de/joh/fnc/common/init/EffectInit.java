@@ -29,6 +29,8 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> FRENZY = EFFECTS.register("frenzy", FrenzyMobEffect::new);
 
     // neutral
+    public static final RegistryObject<MobEffect> GAMBLERS_BLOW_OFFENSIVE = EFFECTS.register("gamblers_blow_offensive", GamblersBlowMobEffect::new);
+    public static final RegistryObject<MobEffect> GAMBLERS_BLOW_DEFENSIVE = EFFECTS.register("gamblers_blow_defensive", GamblersBlowMobEffect::new);
     public static final RegistryObject<MobEffect> WILD_MAGIC_COOLDOWN = EFFECTS.register("wild_magic_cooldown", WildMagicCooldownMobEffect::new);
     public static final RegistryObject<MobEffect> WILD_MAGIC = EFFECTS.register("wild_magic", WildMagicMobEffect::new);
     public static final RegistryObject<MobEffect> RANDOM_SPELL_ADJUSTMENT = EFFECTS.register("random_spell_adjustment", RandomSpellAdjustmentMobEffect::new);
