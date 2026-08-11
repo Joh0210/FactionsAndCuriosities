@@ -914,6 +914,49 @@
     ]
   },
 
+  "Component: Final Dual": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Final Dual"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "A dark spell that binds the fate of the caster and the target in a deadly duel.\n\nWhile the effect is active, both the target and the caster will suffer continuous damage. The duel ends when one of the participants dies or the duration expires. \n\n"
+          },
+          {
+            "text": "Precision",
+            "bold": true
+          },
+          {
+            "text": " determines the lethality of the damage:\n1: Normal damage.\n2: Damage bypasses armor.\n3: Damage bypasses armor and enchantments. Higher Precision also reuses the dmg dealt per tick"
+          },
+          {
+            "text": "\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Blood Mages",
+            "color": "dark_red"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/final_dual"
+      }
+    ]
+  },
+
   "Dice": {
     "index": "1",
     "category": "artifice",

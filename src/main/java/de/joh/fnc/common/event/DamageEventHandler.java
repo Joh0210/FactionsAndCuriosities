@@ -31,6 +31,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import de.joh.fnc.common.capability.GamblerBlowCapabilityProvider;
 
 /**
  * Handler for Forge-Events that revolve around damage and attacks
@@ -78,8 +79,9 @@ public class DamageEventHandler {
     }
 
     @SubscribeEvent
-    public static void onLivingDamage(LivingDeathEvent event) {
+    public static void onLivingDeath(LivingDeathEvent event) {
         FrenzyItem.eventFrenzyKill(event);
+        event.getEntity().getCapability(GamblerBlowCapabilityProvider.GAMBLER_BLOW).ifPresent(cap -> cap.setFinalDualLost(true));
     }
 
     /**

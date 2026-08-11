@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "fnc:spell_magic_smite"
+    "fnc:spell_magic_smite",
+    "fnc:final_dual_bypass_armor",
+    "fnc:final_dual_bypass_all"
   ]
 }
