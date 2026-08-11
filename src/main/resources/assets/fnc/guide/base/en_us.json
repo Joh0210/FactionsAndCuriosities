@@ -1835,6 +1835,131 @@
     ]
   },
 
+  "Wild Magic": {
+    "index": 11,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wild Magic"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Magic is inherently chaotic, and those who tap into its purest form must be prepared for the unpredictable. "
+          },
+          {
+            "text": "Wild Magic",
+            "color": "gold"
+          },
+          {
+            "text": " manifests as random events that can influence you or the spells you weave. These anomalies can be immensely beneficial or terribly unfortunate."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Despite its volatile nature, this magic is bound by ancient laws: "
+          },
+          {
+            "text": "it cannot destroy blocks",
+            "color": "dark_red",
+            "bold": true
+          },
+          {
+            "text": ".\n\nThe likelihood of a surge depends entirely on the spell cast. The greater the power level or mana cost, the higher the chance of the wild answering your call."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Invoking the Wild"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Not just anyone can experience this phenomenon. To invite Wild Magic, you must meet one of the following criteria:\n\n"
+          },
+          {
+            "text": "1. ",
+            "color": "gold"
+          },
+          {
+            "text": "Be aligned with the "
+          },
+          {
+            "text": "Wild Courts",
+            "color": "gold"
+          },
+          {
+            "text": " faction.\n"
+          },
+          {
+            "text": "2. ",
+            "color": "gold"
+          },
+          {
+            "text": "Wear an artifact that grants this ability.\n"
+          },
+          {
+            "text": "3. ",
+            "color": "gold"
+          },
+          {
+            "text": "Have a "
+          },
+          {
+            "text": "Wild Magic",
+            "color": "gold"
+          },
+          {
+            "text": " potion effect active."
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "value": "Control & Chaos"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "To prevent the complete unraveling of reality (and to save your sanity), a natural "
+          },
+          {
+            "text": "Wild Magic Cooldown",
+            "color": "gold"
+          },
+          {
+            "text": " occurs after a surge. While this cooldown is active, no further random events can trigger to prevent spam.\n\nHowever, those who wish to tempt fate directly can use specific spells like "
+          },
+          {
+            "text": "Cause Wild Magic",
+            "color": "gold"
+          },
+          {
+            "text": " or relics like the "
+          },
+          {
+            "text": "Deck of Many",
+            "color": "gold"
+          },
+          {
+            "text": " to invoke a surge on command."
+          }
+        ]
+      }
+    ]
+  },
   "Faction: Wild Courts": {
     "index": 10,
     "category": "basics",
