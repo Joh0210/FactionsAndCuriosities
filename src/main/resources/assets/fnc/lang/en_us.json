@@ -84,6 +84,7 @@
   "effect.fnc.counter_attack": "Counter Attack",
   "effect.fnc.frenzy": "Frenzy",
   "effect.fnc.final_dual": "Final Dual",
+  "effect.fnc.sacrificial_lamb": "Sacrificial Lamb",
 
   "death.attack.fnc_smite": "%s was smited to death",
   "death.attack.fnc_smite.player": "%s was smited to death by %s",
@@ -134,6 +135,9 @@
   "fnc:components/final_dual.desc.magnitude": "Determines the damage dealt.",
   "fnc:components/final_dual.desc.precision": "1: Normal damage\n2: Bypasses armor\n3: Bypasses armor and enchantments",
   "fnc:components/final_dual.desc.delay": "The delay in seconds before the effect activates.",
+  "fnc:components/sacrificial_lamb": "Sacrificial Lamb",
+  "fnc:components/sacrificial_lamb.desc.duration": "Determines how long the target is marked.",
+  "fnc:components/sacrificial_lamb.desc.delay": "The delay in seconds before the effect activates.",
   "fnc:components/gamblers_blow_defensive": "Gambler's Blow: Defensive",
   "fnc:components/gamblers_blow_defensive.desc.duration": "Determines how long the effect lasts.",
   "fnc:components/gamblers_blow_defensive.desc.magnitude": "Amplifies the damage variance adjustment.",

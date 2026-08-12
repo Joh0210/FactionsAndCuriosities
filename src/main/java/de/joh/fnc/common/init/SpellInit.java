@@ -38,6 +38,7 @@ public class SpellInit {
     public static SpellEffect HEXING_SMITE;
     public static SpellEffect BOOMING_SMITE;
     public static SpellEffect FINAL_DUAL;
+    public static SpellEffect SACRIFICIAL_LAMB;
 
     @SubscribeEvent
     public static void register(RegisterEvent event) {
@@ -59,6 +60,7 @@ public class SpellInit {
             helper.register(RLoc.create("components/gamblers_blow_defensive"), GAMBLERS_BLOW_DEFENSIVE);
             helper.register(RLoc.create("components/gamblers_blow_offensive"), GAMBLERS_BLOW_OFFENSIVE);
             helper.register(RLoc.create("components/final_dual"), FINAL_DUAL);
+            helper.register(RLoc.create("components/sacrificial_lamb"), SACRIFICIAL_LAMB);
         });
     }
 
@@ -67,6 +69,7 @@ public class SpellInit {
         SpellInit.COUNTER_ATTACK = new CounterAttackShape(RLoc.create("textures/spell/shape/counter_attack.png"));
 
         SpellInit.FINAL_DUAL = new FinalDualComponent(RLoc.create("textures/spell/component/final_dual.png"));
+        SpellInit.SACRIFICIAL_LAMB = new SacrificialLambComponent(RLoc.create("textures/spell/component/sacrificial_lamb.png"));
         SpellInit.WILD_DAMAGE = new WildDamageComponent(RLoc.create("textures/spell/component/wild_damage.png"));
         SpellInit.WILD_MAGIC_COOLDOWN = new WildMagicCooldownComponent(RLoc.create("textures/spell/component/wild_magic_cooldown.png"));
         SpellInit.CAUSE_WILD_MAGIC = new CauseWildMagicComponent(RLoc.create("textures/spell/component/cause_wild_magic.png"));

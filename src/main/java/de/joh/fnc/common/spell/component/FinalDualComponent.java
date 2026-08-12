@@ -47,7 +47,7 @@ public class FinalDualComponent extends PotionEffectComponent {
     }
 
     public Affinity getAffinity() {
-        return Affinity.ARCANE;
+        return Affinity.BLOOD;
     }
 
     @Override

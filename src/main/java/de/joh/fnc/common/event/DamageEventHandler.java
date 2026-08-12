@@ -9,6 +9,7 @@ import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
 import de.joh.fnc.common.effect.beneficial.FrenzyMobEffect;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
+import de.joh.fnc.common.effect.harmful.SacrificialLambMobEffect;
 import de.joh.fnc.common.effect.neutral.GamblersBlowMobEffect;
 import de.joh.fnc.common.faction.PaladinFaction;
 import de.joh.fnc.common.init.EffectInit;
@@ -103,6 +104,7 @@ public class DamageEventHandler {
                WildMagicHelper.performRandomWildMagic(target, new SpellTarget(target), SpellPartTags.FRIENDLY,(wm, s, t, ct) -> wm.getQuality(SpellPartTags.FRIENDLY).ordinal() <= Quality.NEUTRAL.ordinal());
             }
         }
+        SacrificialLambMobEffect.sacrificeLamb(event);
     }
 
     /**

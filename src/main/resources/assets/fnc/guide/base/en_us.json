@@ -956,6 +956,38 @@
       }
     ]
   },
+  "Component: Sacrificial Lamb": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Sacrificial Lamb"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "This component marks a target. If the marked target takes damage from any source, the damage is converted into mana for the blood mage who cast the spell.\n\nThis is a efficient way to regain mana by using others as your source of power.\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Blood Mages",
+            "color": "dark_red"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/sacrificial_lamb"
+      }
+    ]
+  },
 
   "Dice": {
     "index": "1",

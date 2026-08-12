@@ -42,6 +42,7 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> BAD_WILD_MAGIC = EFFECTS.register("bad_wild_magic", BadWildMagicMobEffect::new);
     public static final RegistryObject<MobEffect> HEX = EFFECTS.register("hex", HexMobEffect::new);
     public static final RegistryObject<MobEffect> FINAL_DUAL = EFFECTS.register("final_dual", FinalDualMobEffect::new);
+    public static final RegistryObject<MobEffect> SACRIFICIAL_LAMB = EFFECTS.register("sacrificial_lamb", SacrificialLambMobEffect::new);
 
 
     // smite

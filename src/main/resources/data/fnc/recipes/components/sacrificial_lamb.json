@@ -1,0 +1,16 @@
+{
+  "type": "mna:component",
+  "tier": 4,
+  "output": "fnc:components/sacrificial_lamb",
+  "items": [
+    "minecraft:mutton",
+    "minecraft:flint",
+    "minecraft:glass_bottle",
+    "minecraft:redstone"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/triangle",
+    "mna:manaweave_patterns/inverted_triangle",
+    "mna:manaweave_patterns/circle"
+  ]
+}

@@ -14,6 +14,7 @@ public class GamblerBlowCapability {
     private int finalDualPrecision = 1;
     private boolean finalDualLost = true;
     private UUID finalDualEnemie = null;
+    private UUID sacrificialLambSource = null;
 
     public void copyFrom(GamblerBlowCapability source) {
         this.offensivePrecision = source.offensivePrecision;
@@ -21,6 +22,7 @@ public class GamblerBlowCapability {
         this.finalDualPrecision = source.finalDualPrecision;
         this.finalDualLost = source.finalDualLost;
         this.finalDualEnemie = source.finalDualEnemie;
+        this.sacrificialLambSource = source.sacrificialLambSource;
     }
 
     public void saveNBT(CompoundTag compound) {
@@ -31,6 +33,9 @@ public class GamblerBlowCapability {
         nbt.putBoolean("finalDualLost", finalDualLost);
         if (finalDualEnemie != null) {
             nbt.putUUID("finalDualEnemie", finalDualEnemie);
+        }
+        if (sacrificialLambSource != null) {
+            nbt.putUUID("sacrificialLambSource", sacrificialLambSource);
         }
         compound.put("fnc_gambler_blow_data", nbt);
     }
@@ -46,6 +51,11 @@ public class GamblerBlowCapability {
                 finalDualEnemie = nbt.getUUID("finalDualEnemie");
             } else {
                 finalDualEnemie = null;
+            }
+            if (nbt.hasUUID("sacrificialLambSource")) {
+                sacrificialLambSource = nbt.getUUID("sacrificialLambSource");
+            } else {
+                sacrificialLambSource = null;
             }
         }
     }
@@ -88,5 +98,13 @@ public class GamblerBlowCapability {
 
     public void setFinalDualEnemie(UUID finalDualEnemie) {
         this.finalDualEnemie = finalDualEnemie;
+    }
+
+    public UUID getSacrificialLambSource() {
+        return sacrificialLambSource;
+    }
+
+    public void setSacrificialLambSource(UUID sacrificialLambSource) {
+        this.sacrificialLambSource = sacrificialLambSource;
     }
 }
