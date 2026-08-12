@@ -969,7 +969,7 @@
         "value": "",
         "json": [
           {
-            "text": "This component marks a target. If the marked target takes damage from any source, the damage is converted into mana for the blood mage who cast the spell.\n\nThis is a efficient way to regain mana by using others as your source of power.\n\nThis can only be crafted by those aligned with the "
+            "text": "This component marks a target. If the marked target takes damage from any source, the damage is converted into mana for the blood mage who cast the spell.\n\nThis is a efficient way to regain mana by using others as your source of power.\n\n It can not be used one yourself! \n\nThis can only be crafted by those aligned with the "
           },
           {
             "text": "Blood Mages",
@@ -985,6 +985,45 @@
       {
         "type": "spell_part",
         "location":"fnc:components/sacrificial_lamb"
+      }
+    ]
+  },
+  "Component: Blood Damage": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Blood Damage"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "A powerful blood magic spell that directly drains the life essence of a target to replenish the caster's mana.\n\n"
+          },
+          {
+            "text": "Magnitude",
+            "bold": true
+          },
+          {
+            "text": " increases the efficiency of the mana siphon.\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Blood Mages",
+            "color": "dark_red"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/blood_sacrifice"
       }
     ]
   },

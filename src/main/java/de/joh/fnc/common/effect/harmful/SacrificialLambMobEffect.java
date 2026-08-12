@@ -30,9 +30,11 @@ public class SacrificialLambMobEffect extends MobEffect {
         if (!event.getEntity().level().isClientSide() && event.getEntity().hasEffect(EffectInit.SACRIFICIAL_LAMB.get())) {
             event.getEntity().getCapability(GamblerBlowCapabilityProvider.GAMBLER_BLOW).ifPresent(cap -> {
                 if (cap.getSacrificialLambSource() != null) {
-                    Player bloodMage = event.getEntity().level().getPlayerByUUID(cap.getSacrificialLambSource());
-                    if (bloodMage != null) {
-                        BloodMagicHelper.regenerateMana(bloodMage, event.getEntity(), event.getAmount());
+                    if(cap.getSacrificialLambSource() != event.getEntity().getUUID()) {
+                        Player bloodMage = event.getEntity().level().getPlayerByUUID(cap.getSacrificialLambSource());
+                        if (bloodMage != null) {
+                            BloodMagicHelper.regenerateMana(bloodMage, event.getEntity(), event.getAmount());
+                        }
                     }
                 }
             });

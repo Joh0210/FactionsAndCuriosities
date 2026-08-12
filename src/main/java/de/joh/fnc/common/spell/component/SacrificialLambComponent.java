@@ -15,6 +15,7 @@ import com.mna.spells.components.PotionEffectComponent;
 import de.joh.fnc.common.capability.GamblerBlowCapabilityProvider;
 import de.joh.fnc.common.init.EffectInit;
 import de.joh.fnc.common.init.FactionInit;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 
@@ -30,6 +31,11 @@ public class SacrificialLambComponent extends PotionEffectComponent {
     @Override
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {
         if (target.isLivingEntity() && source.getCaster() instanceof Player caster) {
+            if (caster == target.getLivingEntity()) {
+                source.getPlayer().displayClientMessage(Component.translatable("fnc:components/alternativerecall.not_self"), true);
+                return ComponentApplicationResult.FAIL;
+            }
+
             target.getLivingEntity().getCapability(GamblerBlowCapabilityProvider.GAMBLER_BLOW).ifPresent(cap -> cap.setSacrificialLambSource(caster.getUUID()));
         }
         return super.ApplyEffect(source, target, modificationData, context);
