@@ -8,6 +8,7 @@ import de.joh.fnc.api.util.Quality;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.effect.beneficial.ExplosionResistanceMobEffect;
 import de.joh.fnc.common.effect.beneficial.FrenzyMobEffect;
+import de.joh.fnc.common.effect.beneficial.PostponementMobEffect;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
 import de.joh.fnc.common.effect.harmful.SacrificialLambMobEffect;
 import de.joh.fnc.common.effect.neutral.GamblersBlowMobEffect;
@@ -17,6 +18,9 @@ import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.*;
 import de.joh.fnc.common.spell.shape.CounterAttackShape;
+import de.joh.fnc.common.util.RLoc;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -46,6 +50,10 @@ public class DamageEventHandler {
      */
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event){
+        if(PostponementMobEffect.postponement(event)){
+            return;
+        }
+
         if(PaladinFaction.eventHandlePaladinDamageAdjustment(event)){
             return;
         }

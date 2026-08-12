@@ -15,6 +15,7 @@ public class GamblerBlowCapability {
     private boolean finalDualLost = true;
     private UUID finalDualEnemie = null;
     private UUID sacrificialLambSource = null;
+    private float postponedDamage = 0.0f;
 
     public void copyFrom(GamblerBlowCapability source) {
         this.offensivePrecision = source.offensivePrecision;
@@ -23,6 +24,7 @@ public class GamblerBlowCapability {
         this.finalDualLost = source.finalDualLost;
         this.finalDualEnemie = source.finalDualEnemie;
         this.sacrificialLambSource = source.sacrificialLambSource;
+        this.postponedDamage = source.postponedDamage;
     }
 
     public void saveNBT(CompoundTag compound) {
@@ -37,6 +39,7 @@ public class GamblerBlowCapability {
         if (sacrificialLambSource != null) {
             nbt.putUUID("sacrificialLambSource", sacrificialLambSource);
         }
+        nbt.putFloat("postponedDamage", postponedDamage);
         compound.put("fnc_gambler_blow_data", nbt);
     }
 
@@ -57,6 +60,7 @@ public class GamblerBlowCapability {
             } else {
                 sacrificialLambSource = null;
             }
+            postponedDamage = nbt.getFloat("postponedDamage");
         }
     }
 
@@ -106,5 +110,17 @@ public class GamblerBlowCapability {
 
     public void setSacrificialLambSource(UUID sacrificialLambSource) {
         this.sacrificialLambSource = sacrificialLambSource;
+    }
+
+    public float getPostponedDamage() {
+        return postponedDamage;
+    }
+
+    public void setPostponedDamage(float postponedDamage) {
+        this.postponedDamage = postponedDamage;
+    }
+
+    public void addPostponedDamage(float postponedDamage) {
+        this.postponedDamage += postponedDamage;
     }
 }

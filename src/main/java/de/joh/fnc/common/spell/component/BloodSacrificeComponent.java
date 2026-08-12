@@ -3,6 +3,7 @@ package de.joh.fnc.common.spell.component;
 import com.mna.api.affinity.Affinity;
 import com.mna.api.config.GeneralConfigValues;
 import com.mna.api.faction.IFaction;
+import com.mna.api.sound.SFX;
 import com.mna.api.spells.ComponentApplicationResult;
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.attributes.Attribute;
@@ -17,6 +18,7 @@ import de.joh.fnc.api.util.BloodMagicHelper;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -92,5 +94,10 @@ public class BloodSacrificeComponent extends SpellEffect implements IDamageCompo
     @Override
     public boolean targetsBlocks() {
         return false;
+    }
+
+    @Override
+    public SoundEvent SoundEffect() {
+        return SFX.Spell.Buff.BLOOD;
     }
 }

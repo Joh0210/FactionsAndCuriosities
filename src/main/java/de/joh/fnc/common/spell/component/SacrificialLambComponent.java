@@ -32,7 +32,7 @@ public class SacrificialLambComponent extends PotionEffectComponent {
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {
         if (target.isLivingEntity() && source.getCaster() instanceof Player caster) {
             if (caster == target.getLivingEntity()) {
-                source.getPlayer().displayClientMessage(Component.translatable("fnc:components/alternativerecall.not_self"), true);
+                source.getPlayer().displayClientMessage(Component.translatable("fnc:components/sacrificial_lamb.not_self"), true);
                 return ComponentApplicationResult.FAIL;
             }
 

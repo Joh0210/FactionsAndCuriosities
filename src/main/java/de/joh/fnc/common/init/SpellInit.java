@@ -40,6 +40,8 @@ public class SpellInit {
     public static SpellEffect FINAL_DUAL;
     public static SpellEffect SACRIFICIAL_LAMB;
     public static SpellEffect BLOOD_SACRIFICE;
+    public static SpellEffect POSTPONEMENT;
+
 
     @SubscribeEvent
     public static void register(RegisterEvent event) {
@@ -63,6 +65,7 @@ public class SpellInit {
             helper.register(RLoc.create("components/final_dual"), FINAL_DUAL);
             helper.register(RLoc.create("components/sacrificial_lamb"), SACRIFICIAL_LAMB);
             helper.register(RLoc.create("components/blood_sacrifice"), BLOOD_SACRIFICE);
+            helper.register(RLoc.create("components/postponement"), POSTPONEMENT);
         });
     }
 
@@ -71,6 +74,8 @@ public class SpellInit {
         SpellInit.COUNTER_ATTACK = new CounterAttackShape(RLoc.create("textures/spell/shape/counter_attack.png"));
 
         SpellInit.FINAL_DUAL = new FinalDualComponent(RLoc.create("textures/spell/component/final_dual.png"));
+        SpellInit.POSTPONEMENT = new PostponementSpellEffect(RLoc.create("textures/spell/component/postponement.png"));
+
         SpellInit.SACRIFICIAL_LAMB = new SacrificialLambComponent(RLoc.create("textures/spell/component/sacrificial_lamb.png"));
         SpellInit.BLOOD_SACRIFICE = new BloodSacrificeComponent(RLoc.create("textures/spell/component/blood_sacrifice.png"));
         SpellInit.WILD_DAMAGE = new WildDamageComponent(RLoc.create("textures/spell/component/wild_damage.png"));

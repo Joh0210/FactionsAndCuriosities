@@ -1027,6 +1027,45 @@
       }
     ]
   },
+  "Component: Postponement": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Postponement"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "A master level blood magic spell that allows the caster to temporarily ignore all incoming damage. \n\nWhile the effect is active, all damage taken is stored. Once the effect ends, the combined damage is immediately inflicted as a single blow that bypasses armor and enchantments.\n\nAfter the effect ends, the target suffers from "
+          },
+          {
+            "text": "Chrono Exhaustion",
+            "color": "dark_purple"
+          },
+          {
+            "text": ", preventing the use of similar effects for a short time.\n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Blood Mages",
+            "color": "dark_red"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/postponement"
+      }
+    ]
+  },
 
   "Dice": {
     "index": "1",

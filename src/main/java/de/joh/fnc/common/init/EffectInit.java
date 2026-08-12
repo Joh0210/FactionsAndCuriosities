@@ -27,6 +27,7 @@ public class EffectInit {
     public static final RegistryObject<MobEffect> PALADIN_SMITE = EFFECTS.register("paladin_smite", PaladinSmiteMobEffect::new);
     public static final RegistryObject<MobEffect> COUNTER_ATTACK = EFFECTS.register("counter_attack", CounterAttackMobEffect::new);
     public static final RegistryObject<MobEffect> FRENZY = EFFECTS.register("frenzy", FrenzyMobEffect::new);
+    public static final RegistryObject<MobEffect> POSTPONEMENT = EFFECTS.register("postponement", PostponementMobEffect::new);
 
     // neutral
     public static final RegistryObject<MobEffect> GAMBLERS_BLOW_OFFENSIVE = EFFECTS.register("gamblers_blow_offensive", GamblersBlowMobEffect::new);
