@@ -2044,6 +2044,40 @@
       }
     ]
   },
+  "Ritual of the Crimson Offering": {
+    "index": 0,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ritual of the Crimson Offering"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "Through the sacrifice of life essence, this ritual binds your soul to the forbidden arts of the ",
+            "color": ""
+          },
+          {
+            "text": "Blood Mages",
+            "color": "dark_red"
+          },
+          {
+            "text": ".",
+            "color": ""
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location":"fnc:rituals/crimson_offering"
+      }
+    ]
+  },
 
   "Wild Magic": {
     "index": 11,
@@ -2325,7 +2359,97 @@
       }
     ]
   },
-
+  "Faction: Blood Mages": {
+    "index": 10,
+    "category": "basics",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Faction: Blood Mages"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "The "
+          },
+          {
+            "text": "Blood Mages",
+            "color": "dark_red"
+          },
+          {
+            "text": " delve into magic in its most visceral and forbidden form. Their path is a bittersweet symphony of immense power and inevitable pain.\n\nThey gain access to devastating abilities, but to harness this power, they must suffer alongside their foes. Their mana does "
+          },
+          {
+            "text": "not regenerate naturally",
+            "color": "dark_red"
+          },
+          {
+            "text": ". Instead, a Blood Mage's mana bar must be replenished with their own life force, most commonly through the ritualistic use of a "
+          },
+          {
+            "text": "Sacrificial Dagger",
+            "color": "dark_red"
+          },
+          {
+            "text": ".\n\nIn exchange for this agonizing toll, Blood Mages boast a "
+          },
+          {
+            "text": "significantly larger pool of blood (mana)",
+            "color": "dark_purple"
+          },
+          {
+            "text": " compared to the natural reserves of a traditional wizard. Furthermore, as their magical mastery and level increase, the efficiency of converting their own life essence into magic becomes far greater.\n\nBlood Mage artefacts and spell components are designed to manipulate life essence in deadly ways. This includes components such as "
+          },
+          {
+            "text": "Blood Damage",
+            "color": "dark_red"
+          },
+          {
+            "text": ", "
+          },
+          {
+            "text": "Final Dual",
+            "color": "dark_red"
+          },
+          {
+            "text": ", and "
+          },
+          {
+            "text": "Postponement",
+            "color": "dark_red"
+          },
+          {
+            "text": ".\n\nThey are allied with the "
+          },
+          {
+            "text": "Undead",
+            "color": "dark_gray"
+          },
+          {
+            "text": ".\n\nWhen looking at the occulus, anything requiring the Blood Mages faction will be marked with the following icon:"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "location": "fnc:textures/guide/faction_icon_blood_mage.png",
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location": "fnc:rituals/crimson_offering"
+      },
+      {
+        "type": "crafting_recipe",
+        "location": "fnc:sacrificial_dagger"
+      }
+    ]
+  },
 
   "version": "1.0.0a"
 }
