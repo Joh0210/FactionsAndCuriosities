@@ -721,7 +721,7 @@
             "bold": true
           },
           {
-            "text": ", the modifier variance expands by +0.33.\n\nTip: If you apply "
+            "text": ", the modifier variance expands by +0.25.\n\nTip: If you apply "
           },
           {
             "text": "wild magic luck or bad luck",
@@ -1063,6 +1063,38 @@
       {
         "type": "spell_part",
         "location":"fnc:components/postponement"
+      }
+    ]
+  },
+  "Component: Hex": {
+    "index": "2",
+    "category": "sorcery",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Hex"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "A sinister blood magic component that places a lingering curse upon the victim. \n\nA hexed target takes increased damage from all sources, and keeps them from regenerating. \n\nThis can only be crafted by those aligned with the "
+          },
+          {
+            "text": "Blood Mages",
+            "color": "dark_red"
+          },
+          {
+            "text": "."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location":"fnc:components/hex"
       }
     ]
   },

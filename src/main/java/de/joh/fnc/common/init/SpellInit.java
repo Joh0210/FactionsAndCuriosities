@@ -41,6 +41,7 @@ public class SpellInit {
     public static SpellEffect SACRIFICIAL_LAMB;
     public static SpellEffect BLOOD_SACRIFICE;
     public static SpellEffect POSTPONEMENT;
+    public static SpellEffect HEX;
 
 
     @SubscribeEvent
@@ -66,6 +67,7 @@ public class SpellInit {
             helper.register(RLoc.create("components/sacrificial_lamb"), SACRIFICIAL_LAMB);
             helper.register(RLoc.create("components/blood_sacrifice"), BLOOD_SACRIFICE);
             helper.register(RLoc.create("components/postponement"), POSTPONEMENT);
+            helper.register(RLoc.create("components/hex"), HEX);
         });
     }
 
@@ -75,6 +77,7 @@ public class SpellInit {
 
         SpellInit.FINAL_DUAL = new FinalDualComponent(RLoc.create("textures/spell/component/final_dual.png"));
         SpellInit.POSTPONEMENT = new PostponementSpellEffect(RLoc.create("textures/spell/component/postponement.png"));
+        SpellInit.HEX = new HexComponent(RLoc.create("textures/spell/component/hex.png"));
 
         SpellInit.SACRIFICIAL_LAMB = new SacrificialLambComponent(RLoc.create("textures/spell/component/sacrificial_lamb.png"));
         SpellInit.BLOOD_SACRIFICE = new BloodSacrificeComponent(RLoc.create("textures/spell/component/blood_sacrifice.png"));
@@ -100,7 +103,7 @@ public class SpellInit {
         SpellInit.HEXING_SMITE = new SmiteComponent(RLoc.create("textures/spell/component/hexing_smite.png"),
                 10, Affinity.ENDER, EffectInit.HEXING_SMITE,
                 new AttributeValuePair(Attribute.DURATION, 5.0F, 5.0F, 20.0F, 1.0F, 5.0F),
-                new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 4.0F, 1.0F, 10F));
+                new AttributeValuePair(Attribute.MAGNITUDE, 1.0F, 1.0F, 3.0F, 1.0F, 15F));
         SpellInit.BOOMING_SMITE = new SmiteComponent(RLoc.create("textures/spell/component/booming_smite.png"),
                 20, Affinity.FIRE, EffectInit.BOOMING_SMITE,
                 new AttributeValuePair(Attribute.MAGNITUDE, 5.0F, 5.0F, 15.0F, 1.0F, 6.0F),

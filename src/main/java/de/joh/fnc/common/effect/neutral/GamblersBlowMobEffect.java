@@ -63,7 +63,7 @@ public class GamblersBlowMobEffect extends MobEffect {
     }
 
     public static float generateRandomFloat(int level, int precision) {
-        float max = 1.33f + (level * 0.33f);
+        float max = 1.25f + (level * 0.25f);
 
         Random random = new Random();
         precision = Math.max(1, precision);
