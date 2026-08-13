@@ -54,6 +54,8 @@
   "item.fnc.ring_of_wild_luck.description": "You gain one level of luck and this allows players from other factions to trigger Wild Magic as well",
   "item.fnc.wild_pickaxe": "Wild Pickaxe",
   "item.fnc.wild_pickaxe.description": "A pickaxe, that drops a random ore, when it mines one",
+  "item.fnc.sacrificial_dagger": "Sacrificial Dagger",
+  "item.fnc.sacrificial_dagger.description": "A sharp dagger used for blood sacrifices. Right-click to sacrifice your own health for mana.",
 
   "enchantment.fnc.holy_smite": "Holy Smite",
 

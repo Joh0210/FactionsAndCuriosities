@@ -46,6 +46,7 @@ public class ItemInit {
     public static final RegistryObject<Item> RING_OF_WILD_LUCK = ITEMS.register("ring_of_wild_luck", RingOfWildLuckItem::new);
     public static final RegistryObject<Item> GLITTERING_POTATO = ITEMS.register("glittering_potato", GlitteringPotatoItem::new);
     public static final RegistryObject<Item> BRIMSTONE_SWORD = ITEMS.register("brimstone_sword", () -> new PaladinSwordItem(ToolMaterials.LIVE_RIP, 2, -2.4F, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant()));
+    public static final RegistryObject<Item> SACRIFICIAL_DAGGER = ITEMS.register("sacrificial_dagger", SacrificialDaggerItem::new);
 
     public static final RegistryObject<Item> DIVINE_HELMET = ITEMS.register("divine_helmet", () -> new DivineArmorItem(ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> DIVINE_CHESTPLATE = ITEMS.register("divine_chestplate", () -> new DivineArmorItem(ArmorItem.Type.CHESTPLATE));

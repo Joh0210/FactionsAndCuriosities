@@ -1607,6 +1607,31 @@
       }
     ]
   },
+  "Sacrificial Dagger": {
+    "index": "1",
+    "category": "artifice",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Sacrificial Dagger"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "The Sacrificial Dagger is a vital tool for any aspiring blood mage. \n\nBy performing a ritualistic sacrifice of your own vitality, you can quickly replenish your mana reserves. Each use drains one heart, but restores a significant amount of mana to your blood network.\n\nWhile particularly useful for blood mages, who rely on sacrifices for mana regeneration, any practitioner can craft and use this tool."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "crafting_recipe",
+        "location": "fnc:sacrificial_dagger"
+      }
+    ]
+  },
 
   "Blessed Bow": {
     "index": 0,
