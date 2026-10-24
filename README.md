@@ -21,8 +21,7 @@ The Codex has all the necessary information about the added elements. (But the c
 - 3 Rituals
 
 This mod has optional compatibility with [Dragon Magic And Relics](https://www.curseforge.com/minecraft/mc-mods/dragon-magic-and-relics):
-- 2 more items
-- 4 Dragon Mage Armor Upgrades
+- 3 more Wild Magics
 
 ## Credits
 Thanks to Fhyx for creating some textures. The full credits can be viewed [here](https://github.com/Joh0210/FactionsAndCuriosities/blob/master/CREDITS.md).

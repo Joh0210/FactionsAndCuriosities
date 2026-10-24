@@ -2,12 +2,9 @@ package de.joh.fnc.common.item;
 
 import com.mna.api.spells.SpellPartTags;
 import com.mna.api.spells.targeting.SpellTarget;
-import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.wildmagic.WildMagic;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
-import de.joh.fnc.client.event.ClientEventHandler;
-import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
-import net.minecraft.nbt.CompoundTag;
+import de.joh.tnl.api.item.ScrollableItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -17,11 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.event.InputEvent;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Magic wand that allows the player to switch back and forth between the different Wild Magics to test them.
@@ -32,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * <br> Only available in creative
  * @author Joh0210
  */
-public class DebugOrbWildMagicItem extends Item {
+public class DebugOrbWildMagicItem extends Item implements ScrollableItem {
     public DebugOrbWildMagicItem() {
         super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
@@ -46,8 +39,8 @@ public class DebugOrbWildMagicItem extends Item {
      */
     public void useWildMagic(Level world, Player source, SpellTarget target, ItemStack stack, SpellPartTags spellPartTag, boolean cancelable){
         if (!world.isClientSide()) {
-            source.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.wildmagic").getString() + Component.translatable(getSelectedWildMagic(stack).toString()).getString()), false);
-            WildMagic wildMagic = getSelectedWildMagic(stack);
+            source.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.wildmagic").getString() + Component.translatable(getSelectedWildMagic(stack, source).toString()).getString()), false);
+            WildMagic wildMagic = getSelectedWildMagic(stack, source);
             if(!WildMagicHelper.performWildMagic(wildMagic, source, target, spellPartTag, cancelable)){
                 source.displayClientMessage(Component.translatable("fnc.feedback.selected.wildmagic.condition_false"), false);
             }
@@ -55,65 +48,39 @@ public class DebugOrbWildMagicItem extends Item {
     }
 
     /**
-     * Selects a new Wild Magic for the used DebugRod
-     * <br>Called by the {@link ClientEventHandler#onMouseScroll(InputEvent.MouseScrollingEvent) ClientEventHandler.onMouseScroll()}
-     * @param stack used DebugRod
-     * @param inverted count down instead of up
-     * @param player Player who uses the Rod
-     * @see ClientEventHandler
-     * @see IncrementSelectedWildMagicC2SPacket
+     * Number of selectable Wild Magics
      */
-    public void incrementWildMagicIterator(ItemStack stack, boolean inverted, Player player){
-        if(!player.level().isClientSide()){
-            AtomicInteger wildMagicIterator = new AtomicInteger(0);
-            AtomicBoolean isInverted = new AtomicBoolean(inverted);
-            if(stack.getTag() != null && stack.getTag().contains(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator")){
-                wildMagicIterator.set(stack.getTag().getInt(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator"));
-                stack.getTag().remove(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator");
-            }
-
-            wildMagicIterator.set(adjustWildMagicIterator(wildMagicIterator.get() + (isInverted.get() ? -1 : +1)));
-
-            CompoundTag nbtData = new CompoundTag();
-            nbtData.putInt(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator", wildMagicIterator.get());
-            if(stack.getTag() == null){
-                stack.setTag(nbtData);
-            } else {
-                stack.getTag().merge(nbtData);
-            }
-
-            player.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.wildmagic").getString() + Component.translatable(getSelectedWildMagic(stack).toString()).getString()), false);
-        }
+    @Override
+    public int getIteratorSize(Player player) {
+        return WildMagicHelper.getAllWildMagic().length;
     }
 
     /**
-     * Makes sure the used Iterator is valid. If not, it will be adjusted
-     * @param wildMagicIterator iterator, which could be over or below the limit
-     * @return adjusted version of the iterator, so it reveres to a Wild Magic
+     * Selects a new Wild Magic for the used DebugRod and tells the player which one is selected now.
+     * <br>Called by the scroll handling of Tomes And Libs
+     * @param stack used DebugRod
+     * @param inverted count down instead of up
+     * @param player Player who uses the Rod
+     * @see ScrollableItem
      */
-    public int adjustWildMagicIterator(int wildMagicIterator){
-        WildMagic[] knowWildMagic = WildMagicHelper.getAllWildMagic();
+    @Override
+    public int incrementIterator(ItemStack stack, boolean inverted, Player player) {
+        int iterator = ScrollableItem.super.incrementIterator(stack, inverted, player);
 
-        if(knowWildMagic.length == 0){
-            return 0;
-        } else {
-            while (wildMagicIterator >= knowWildMagic.length) {
-                wildMagicIterator -= knowWildMagic.length;
-            }
-            while (wildMagicIterator < 0) {
-                wildMagicIterator += knowWildMagic.length;
-            }
-            return wildMagicIterator;
+        if(!player.level().isClientSide()){
+            player.displayClientMessage(Component.literal(Component.translatable("fnc.feedback.selected.wildmagic").getString() + Component.translatable(getSelectedWildMagic(stack, player).toString()).getString()), false);
         }
+
+        return iterator;
     }
 
-    public WildMagic getSelectedWildMagic(ItemStack stack){
+    public WildMagic getSelectedWildMagic(ItemStack stack, Player player){
         WildMagic[] knowWildMagic = WildMagicHelper.getAllWildMagic();
 
         if(knowWildMagic.length == 0){
             return WildMagic.INSTANCE;
         } else {
-            return knowWildMagic[adjustWildMagicIterator(stack.getTag() != null ? stack.getTag().getInt(FactionsAndCuriosities.MOD_ID + "_wild_magic_iterator") : 0)];
+            return knowWildMagic[adjustWildMagicIterator(getIterator(stack), player)];
         }
     }
 

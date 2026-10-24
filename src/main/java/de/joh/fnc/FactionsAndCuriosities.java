@@ -70,9 +70,5 @@ public class FactionsAndCuriosities {
     @SubscribeEvent
     public void onRegisterGuidebooks(final RegisterGuidebooksEvent event) {
         event.getRegistry().addGuidebookPath(RLoc.create("guide/base"));
-
-        if(AddonCompatibleManager.DMNR.isLoaded()){
-            event.getRegistry().addGuidebookPath(RLoc.create("guide/dmnr"));
-        }
     }
 }

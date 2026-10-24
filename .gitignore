@@ -119,5 +119,7 @@ run/
 
 # Avoid ignoring the necessary libs
 # !libs/*
+!libs/tnl-*.jar
+!libs/dmnr-*.jar
 /.idea/
 /server/

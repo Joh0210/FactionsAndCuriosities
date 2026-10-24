@@ -1,10 +1,7 @@
 package de.joh.fnc.networking;
 
-import de.joh.fnc.networking.packet.IncrementSelectedSpellAdjustmentC2SPacket;
-import de.joh.fnc.networking.packet.IncrementSelectedWildMagicC2SPacket;
 import de.joh.fnc.common.util.RLoc;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
@@ -30,18 +27,6 @@ public class Messages {
                 .simpleChannel();
 
         INSTANCE = net;
-
-        net.messageBuilder(IncrementSelectedWildMagicC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(IncrementSelectedWildMagicC2SPacket::new)
-                .encoder((IncrementSelectedWildMagicC2SPacket::toBytes))
-                .consumerMainThread(IncrementSelectedWildMagicC2SPacket::handle)
-                .add();
-
-        net.messageBuilder(IncrementSelectedSpellAdjustmentC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(IncrementSelectedSpellAdjustmentC2SPacket::new)
-                .encoder((IncrementSelectedSpellAdjustmentC2SPacket::toBytes))
-                .consumerMainThread(IncrementSelectedSpellAdjustmentC2SPacket::handle)
-                .add();
     }
 
     public static <MSG> void sendToServer(MSG message){

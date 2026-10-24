@@ -1,6 +1,5 @@
 package de.joh.fnc.common.event;
 
-import de.joh.dmnr.DragonMagicAndRelics;
 import de.joh.fnc.FactionsAndCuriosities;
 import de.joh.fnc.api.util.ModTags;
 import de.joh.fnc.common.effect.harmful.HexMobEffect;
@@ -37,7 +36,6 @@ public class CommonEventHandler {
      */
     @SubscribeEvent
     public static void onBreak(final BlockEvent.BreakEvent event){
-        DragonMagicAndRelics.LOGGER.warn(Boolean.toString(event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem));
         if(ModTags.isBlockIn(event.getState().getBlock(), ModTags.Blocks.ORES) && !event.isCanceled() && (
             event.getPlayer().getMainHandItem().getItem() instanceof WildPickaxeItem   ||
                     event.getPlayer().getOffhandItem().getItem() instanceof WildPickaxeItem ||

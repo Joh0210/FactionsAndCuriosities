@@ -106,29 +106,5 @@
     "fnc:rituals/wild_energy": "荒野仪式",
 
     "event.fnc.faction_ally_paladin": "你的忠诚赋予你确保正义的力量。你已经与圣骑士结盟！",
-    "event.fnc.faction_ally_wild": "你感受到周围魔法的不可预测性与你融为一体。你已经与荒野法庭结盟！",
-
-    "item.fnc.mischief_dragon_mage_boots": "诡计神龙巫师靴",
-    "item.fnc.mischief_dragon_mage_chestplate": "诡计神龙巫师胸甲",
-    "item.fnc.mischief_dragon_mage_helmet": "诡计神龙巫师头盔",
-    "item.fnc.mischief_dragon_mage_leggings": "诡计神龙巫师护腿",
-    "item.fnc.divine_dragon_mage_boots": "神圣神龙巫师靴",
-    "item.fnc.divine_dragon_mage_chestplate": "神圣神龙巫师胸甲",
-    "item.fnc.divine_dragon_mage_helmet": "神圣神龙巫师头盔",
-    "item.fnc.divine_dragon_mage_leggings": "神圣神龙巫师护腿",
-
-
-    "item.fnc.upgrade_seal_smite_duration": "升级雕符：惩击持续时间",
-    "item.fnc.upgrade_seal_magic_resistance": "升级雕符：魔法抗性",
-    "item.fnc.upgrade_seal_random_spell_adjustment": "升级雕符：随机法术调整",
-    "item.fnc.upgrade_seal_wild_magic_luck": "升级雕符：荒野魔法好运",
-
-    "fnc:armorupgrade/smite_duration": "§f惩击持续时间§r",
-    "fnc:armorupgrade/smite_duration.description": "+50% 惩击持续时间。",
-    "fnc:armorupgrade/magic_resistance": "§5魔法抗性§r",
-    "fnc:armorupgrade/magic_resistance.description": "-25% 魔法伤害。",
-    "fnc:armorupgrade/random_spell_adjustment": "§6随机法术调整§r",
-    "fnc:armorupgrade/random_spell_adjustment.description": "25% * 等级 几率获得随机的增益法术调整。",
-    "fnc:armorupgrade/wild_magic_luck": "§6荒野魔法好运§r",
-    "fnc:armorupgrade/wild_magic_luck.description": "增加你的荒野魔法运气。"
+    "event.fnc.faction_ally_wild": "你感受到周围魔法的不可预测性与你融为一体。你已经与荒野法庭结盟！"
 }

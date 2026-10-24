@@ -1807,7 +1807,7 @@
         "value": "",
         "json": [
           {
-            "text": "I stand like a rock to protect the realms of the living from the darkness.\n\nThis armor already offers very good protection, but it also reduces magical damage by 50%. Furthermore, the duration of my Smites is increased by 50%.\n\n(Can be used to create Dragon Mage Armor if Dragon Magic and Relics is installed)"
+            "text": "I stand like a rock to protect the realms of the living from the darkness.\n\nThis armor already offers very good protection, but it also reduces magical damage by 50%. Furthermore, the duration of my Smites is increased by 50%."
           }
         ]
       }
@@ -1844,7 +1844,7 @@
         "value": "The wild magic has neither a form nor a place, but many associates of it appear with a stroke of the gods. And we, as wild magicians, take advantage of this call and make the armor in the image of the god of mischief.  The armor itself is as strong as a knight's plate armor, and while wearing it, it seems that Wild Magic favors me. Likewise, there is a 50% chance that casting a spell will change it in a positive way.",
         "json": [
           {
-            "text": "The wild magic has neither a form nor a place, but many associates of it appear with a stroke of the gods. And we, as wild magicians, take advantage of this call and make the armor in the image of the god of mischief.\n\nThe armor itself is as strong as a knight's plate armor, and while wearing it, it seems that Wild Magic favors me. \n\nLikewise, there is a 50% chance that casting a spell will change it in a positive way.\n\n(Can be used to create Dragon Mage Armor if Dragon Magic and Relics is installed)"
+            "text": "The wild magic has neither a form nor a place, but many associates of it appear with a stroke of the gods. And we, as wild magicians, take advantage of this call and make the armor in the image of the god of mischief.\n\nThe armor itself is as strong as a knight's plate armor, and while wearing it, it seems that Wild Magic favors me. \n\nLikewise, there is a 50% chance that casting a spell will change it in a positive way."
           }
         ]
       }
