@@ -1,0 +1,23 @@
+{
+  "type": "mna:eldrin-altar",
+  "items": [
+    "minecraft:golden_chestplate",
+    "fnc:dice_twenty",
+    "mna:rune_arcane",
+    "mna:rune_air",
+    "mna:runic_silk",
+    "mna:infused_thread",
+    "minecraft:green_wool",
+    "minecraft:green_wool"
+  ],
+  "output": "fnc:mischief_chestplate",
+  "power_requirements": [
+    {
+      "affinity": "ARCANE",
+      "amount": 1500
+    }
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:wild",
+  "tier": 5
+}

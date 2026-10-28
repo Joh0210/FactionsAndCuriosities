@@ -1,0 +1,21 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "items": [
+    "fnc:dice_twenty",
+    "mna:mundane_ring",
+    "minecraft:gold_block",
+    "minecraft:netherite_ingot",
+    "minecraft:gold_block",
+    "minecraft:netherite_ingot",
+    "minecraft:gold_block"
+  ],
+  "output": "fnc:ring_of_wild_luck",
+  "patterns": [
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/split_triangle"
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:wild",
+  "tier": 4
+}

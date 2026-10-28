@@ -1,0 +1,16 @@
+{
+  "type": "mna:component",
+  "items": [
+    "minecraft:diamond_sword",
+    "minecraft:glass_bottle",
+    "minecraft:milk_bucket",
+    "minecraft:ghast_tear"
+  ],
+  "output": "fnc:components/dispelling_smite",
+  "patterns": [
+    "mna:manaweave_patterns/inverted_triangle",
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/circle"
+  ],
+  "tier": 4
+}

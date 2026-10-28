@@ -1,0 +1,16 @@
+{
+  "type": "mna:component",
+  "items": [
+    "minecraft:clock",
+    "minecraft:nether_star",
+    "minecraft:dragon_breath"
+  ],
+  "output": "fnc:components/postponement",
+  "patterns": [
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/infinity",
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/infinity"
+  ],
+  "tier": 5
+}

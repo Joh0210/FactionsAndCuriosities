@@ -1,0 +1,19 @@
+{
+  "type": "mna:shape",
+  "items": [
+    "minecraft:shield",
+    "minecraft:netherite_ingot",
+    "mna:greater_mote_arcane",
+    "minecraft:netherite_ingot",
+    "mna:greater_mote_ender"
+  ],
+  "output": "fnc:shapes/counter_attack",
+  "patterns": [
+    "mna:manaweave_patterns/split_triangle",
+    "mna:manaweave_patterns/infinity",
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/infinity",
+    "mna:manaweave_patterns/inverted_split_triangle"
+  ],
+  "tier": 5
+}

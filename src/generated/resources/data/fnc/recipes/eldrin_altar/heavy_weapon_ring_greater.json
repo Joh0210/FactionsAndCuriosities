@@ -1,0 +1,28 @@
+{
+  "type": "mna:eldrin-altar",
+  "items": [
+    "fnc:heavy_weapon_ring",
+    "mna:greater_mote_earth",
+    "minecraft:netherite_sword",
+    "mna:stone_rune_cyan",
+    "minecraft:netherite_sword",
+    "mna:rune_earth",
+    "minecraft:netherite_sword",
+    "mna:stone_rune_white",
+    "minecraft:netherite_sword"
+  ],
+  "output": "fnc:heavy_weapon_ring_greater",
+  "power_requirements": [
+    {
+      "affinity": "EARTH",
+      "amount": 1200
+    },
+    {
+      "affinity": "ARCANE",
+      "amount": 300
+    }
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "tier": 5
+}

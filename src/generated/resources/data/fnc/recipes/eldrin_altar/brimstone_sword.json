@@ -1,0 +1,26 @@
+{
+  "type": "mna:eldrin-altar",
+  "items": [
+    "minecraft:netherite_sword",
+    "mna:brimstone_charm",
+    "minecraft:ghast_tear"
+  ],
+  "output": "fnc:brimstone_sword",
+  "power_requirements": [
+    {
+      "affinity": "FIRE",
+      "amount": 700
+    },
+    {
+      "affinity": "EARTH",
+      "amount": 500
+    },
+    {
+      "affinity": "ENDER",
+      "amount": 500
+    }
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "tier": 4
+}

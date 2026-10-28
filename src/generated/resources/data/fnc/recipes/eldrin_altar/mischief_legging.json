@@ -1,0 +1,26 @@
+{
+  "type": "mna:eldrin-altar",
+  "items": [
+    "minecraft:golden_leggings",
+    "fnc:dice_twenty",
+    "mna:rune_arcane",
+    "mna:rune_ender",
+    "mna:runic_silk",
+    "mna:infused_thread",
+    "minecraft:green_wool"
+  ],
+  "output": "fnc:mischief_legging",
+  "power_requirements": [
+    {
+      "affinity": "ARCANE",
+      "amount": 750
+    },
+    {
+      "affinity": "ENDER",
+      "amount": 200
+    }
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:wild",
+  "tier": 5
+}

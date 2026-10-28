@@ -1,4 +1,4 @@
-# Factions And Curiosities
+# Factions and Curiosities
 ![CurseForge Download Counter](https://cf.way2muchnoise.eu/full_947536_downloads.svg)
 ![Modrinth Download Counter](https://img.shields.io/modrinth/dt/factions-and-curiosities?logo=modrinth&labelColor=2D2D2D&color=5da545)
 ![availability](https://cf.way2muchnoise.eu/versions/947536.svg)
@@ -25,6 +25,15 @@ This mod has optional compatibility with [Dragon Magic And Relics](https://www.c
 
 ## Credits
 Thanks to Fhyx for creating some textures. The full credits can be viewed [here](https://github.com/Joh0210/FactionsAndCuriosities/blob/master/CREDITS.md).
+
+## Use of AI
+This project contains almost no AI-generated content. However, AI tools are occasionally used during development, e.g. for finding bugs, as an alternative to a search engine, or for creating individual code snippets.
+
+Factions and Curiosities is purely a fun project of mine, and I enjoy coding, so I write the code myself. I do reserve the right to generate smaller code sections or repetitive code with the help of AI tools. Even then, this code is always reviewed by me.
+
+Texts, artworks and game mechanics are **never** AI-generated. All content comes from me, my friends, or ideas from the community.
+<br>(Spelling and the phrasing of longer texts in the Codex are occasionally double-checked with AI.)
+
 
 ## Feedback & Contribution
 I welcome all feedback! Let me know about bugs, balancing suggestions, or ideas for new content.

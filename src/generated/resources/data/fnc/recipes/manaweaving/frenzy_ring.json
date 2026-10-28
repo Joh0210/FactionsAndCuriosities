@@ -1,0 +1,20 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "items": [
+    "mna:mundane_ring",
+    "minecraft:ghast_tear",
+    "minecraft:nether_wart_block",
+    "minecraft:chain",
+    "minecraft:nether_wart_block",
+    "minecraft:chain"
+  ],
+  "output": "fnc:frenzy_ring",
+  "patterns": [
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/knot4",
+    "mna:manaweave_patterns/triangle"
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "tier": 3
+}

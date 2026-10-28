@@ -1,0 +1,14 @@
+{
+  "type": "mna:component",
+  "items": [
+    "fnc:dice_six",
+    "minecraft:clock",
+    "minecraft:repeater"
+  ],
+  "output": "fnc:components/wild_magic_cooldown",
+  "patterns": [
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/circle"
+  ],
+  "tier": 3
+}

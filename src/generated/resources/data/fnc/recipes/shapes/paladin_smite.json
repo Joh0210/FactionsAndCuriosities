@@ -1,0 +1,22 @@
+{
+  "type": "mna:shape",
+  "items": [
+    "minecraft:netherite_sword",
+    "mna:greater_mote_air",
+    "mna:greater_mote_earth",
+    "mna:greater_mote_water",
+    "mna:greater_mote_fire",
+    "mna:greater_mote_arcane",
+    "mna:greater_mote_ender"
+  ],
+  "output": "fnc:shapes/paladin_smite",
+  "patterns": [
+    "mna:manaweave_patterns/infinity",
+    "mna:manaweave_patterns/split_triangle",
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/inverted_split_triangle",
+    "mna:manaweave_patterns/infinity"
+  ],
+  "tier": 5
+}

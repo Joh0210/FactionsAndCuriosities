@@ -1,0 +1,14 @@
+{
+  "type": "mna:component",
+  "items": [
+    "minecraft:diamond_sword",
+    "minecraft:anvil",
+    "minecraft:spider_eye"
+  ],
+  "output": "fnc:components/crippling_smite",
+  "patterns": [
+    "mna:manaweave_patterns/inverted_triangle",
+    "mna:manaweave_patterns/square"
+  ],
+  "tier": 3
+}

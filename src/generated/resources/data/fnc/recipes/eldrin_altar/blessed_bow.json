@@ -1,0 +1,28 @@
+{
+  "type": "mna:eldrin-altar",
+  "items": [
+    "minecraft:bow",
+    "minecraft:netherite_sword",
+    "minecraft:ghast_tear",
+    "minecraft:netherite_sword",
+    "minecraft:nether_star",
+    "minecraft:netherite_sword",
+    "minecraft:wither_skeleton_skull",
+    "minecraft:netherite_sword",
+    "minecraft:blaze_rod"
+  ],
+  "output": "fnc:blessed_bow",
+  "power_requirements": [
+    {
+      "affinity": "ARCANE",
+      "amount": 1000
+    },
+    {
+      "affinity": "EARTH",
+      "amount": 1000
+    }
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "tier": 5
+}

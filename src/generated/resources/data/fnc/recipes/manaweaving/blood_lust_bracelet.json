@@ -1,0 +1,20 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "items": [
+    "minecraft:ghast_tear",
+    "minecraft:golden_apple",
+    "mna:mana_crystal_fragment",
+    "mna:mundane_bracelet",
+    "minecraft:diamond_sword",
+    "mna:stone_rune_red"
+  ],
+  "output": "fnc:blood_lust_bracelet",
+  "patterns": [
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/triangle",
+    "mna:manaweave_patterns/square"
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "tier": 3
+}

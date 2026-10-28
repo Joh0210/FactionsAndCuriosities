@@ -1,0 +1,24 @@
+{
+  "type": "mna:eldrin-altar",
+  "items": [
+    "fnc:frenzy_ring",
+    "mna:rune_arcane",
+    "minecraft:netherite_ingot",
+    "mna:rune_ender",
+    "minecraft:nether_star"
+  ],
+  "output": "fnc:frenzy_ring_greater",
+  "power_requirements": [
+    {
+      "affinity": "ENDER",
+      "amount": 750
+    },
+    {
+      "affinity": "ARCANE",
+      "amount": 750
+    }
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "tier": 5
+}

@@ -1,0 +1,17 @@
+{
+  "type": "mna:component",
+  "items": [
+    "minecraft:netherite_sword",
+    "minecraft:wool",
+    "minecraft:wool",
+    "mna:aum",
+    "mna:arcane_ash"
+  ],
+  "output": "fnc:components/silencing_smite",
+  "patterns": [
+    "mna:manaweave_patterns/infinity",
+    "mna:manaweave_patterns/split_triangle",
+    "mna:manaweave_patterns/diamond"
+  ],
+  "tier": 5
+}

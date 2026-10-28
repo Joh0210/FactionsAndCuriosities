@@ -1,0 +1,23 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "items": [
+    "mna:mundane_ring",
+    "minecraft:iron_block",
+    "minecraft:iron_sword",
+    "minecraft:iron_block",
+    "minecraft:iron_sword",
+    "minecraft:iron_block",
+    "minecraft:iron_sword",
+    "minecraft:iron_block",
+    "minecraft:iron_sword"
+  ],
+  "output": "fnc:heavy_weapon_ring",
+  "patterns": [
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/diamond",
+    "mna:manaweave_patterns/square"
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:paladin",
+  "tier": 3
+}

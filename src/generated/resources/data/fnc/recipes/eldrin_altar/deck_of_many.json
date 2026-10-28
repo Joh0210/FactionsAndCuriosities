@@ -1,0 +1,32 @@
+{
+  "type": "mna:eldrin-altar",
+  "items": [
+    "minecraft:paper",
+    "fnc:dice_twenty",
+    "minecraft:nether_star",
+    "minecraft:tnt",
+    "minecraft:diamond_block",
+    "minecraft:ender_pearl",
+    "mna:rune_air",
+    "mna:rune_arcane",
+    "mna:rune_ender"
+  ],
+  "output": "fnc:deck_of_many",
+  "power_requirements": [
+    {
+      "affinity": "WIND",
+      "amount": 150
+    },
+    {
+      "affinity": "ARCANE",
+      "amount": 500
+    },
+    {
+      "affinity": "ENDER",
+      "amount": 350
+    }
+  ],
+  "quantity": 1,
+  "requiredFaction": "fnc:wild",
+  "tier": 5
+}
