@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "magichem"
+        }
+      ],
+      "recipe": {
+        "type": "magichem:distillation_fabrication",
+        "batch_size": 1,
+        "categories": 1,
+        "components": [
+          {
+            "count": 64,
+            "item": "magichem:admixture_protection"
+          },
+          {
+            "count": 32,
+            "item": "magichem:admixture_light"
+          },
+          {
+            "count": 32,
+            "item": "magichem:admixture_firmament"
+          },
+          {
+            "count": 12,
+            "item": "magichem:essentia_rubedo"
+          }
+        ],
+        "object": {
+          "item": "fnc:divine_chestplate"
+        },
+        "output_rate": 1.0,
+        "wisdom": 6
+      }
+    }
+  ]
+}

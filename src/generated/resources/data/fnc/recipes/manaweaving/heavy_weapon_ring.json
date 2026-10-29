@@ -2,14 +2,12 @@
   "type": "mna:manaweaving-recipe",
   "items": [
     "mna:mundane_ring",
-    "minecraft:iron_block",
+    "mna:mote_earth",
+    "minecraft:anvil",
     "minecraft:iron_sword",
+    "minecraft:iron_axe",
     "minecraft:iron_block",
-    "minecraft:iron_sword",
-    "minecraft:iron_block",
-    "minecraft:iron_sword",
-    "minecraft:iron_block",
-    "minecraft:iron_sword"
+    "minecraft:iron_block"
   ],
   "output": "fnc:heavy_weapon_ring",
   "patterns": [

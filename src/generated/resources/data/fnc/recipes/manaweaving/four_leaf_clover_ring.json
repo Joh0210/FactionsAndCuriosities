@@ -2,14 +2,12 @@
   "type": "mna:manaweaving-recipe",
   "items": [
     "fnc:dice_six",
-    "mna:mana_crystal_fragment",
     "mna:mundane_ring",
+    "mna:rune_defense",
     "minecraft:leaves",
     "minecraft:leaves",
     "minecraft:leaves",
-    "minecraft:leaves",
-    "mna:ma_flowers",
-    "mna:ma_flowers"
+    "minecraft:leaves"
   ],
   "output": "fnc:four_leaf_clover_ring",
   "patterns": [

@@ -4,7 +4,9 @@
     "fnc:dice_twenty",
     "mna:mundane_ring",
     "minecraft:yellow_candle",
-    "mna:brimstone_charm"
+    "mna:greater_mote_air",
+    "minecraft:iron_sword",
+    "minecraft:iron_sword"
   ],
   "output": "fnc:second_attack_ring",
   "patterns": [

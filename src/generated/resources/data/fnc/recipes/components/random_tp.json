@@ -1,10 +1,11 @@
 {
   "type": "mna:component",
   "items": [
+    "fnc:dice_six",
+    "mna:mote_ender",
+    "minecraft:ender_pearl",
     "mna:vinteum_dust",
-    "mna:vinteum_dust",
-    "minecraft:chorus_fruit",
-    "mna:mote_ender"
+    "mna:vinteum_dust"
   ],
   "output": "fnc:components/random_tp",
   "patterns": [

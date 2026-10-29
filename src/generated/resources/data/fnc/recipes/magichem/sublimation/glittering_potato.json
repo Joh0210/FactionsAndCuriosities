@@ -1,0 +1,59 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "magichem"
+        }
+      ],
+      "recipe": {
+        "type": "magichem:sublimation",
+        "object": {
+          "count": 4,
+          "item": "fnc:glittering_potato"
+        },
+        "stages": [
+          {
+            "components": [
+              {
+                "item": "fnc:glittering_potato"
+              },
+              {
+                "item": "minecraft:baked_potato"
+              },
+              {
+                "item": "minecraft:baked_potato"
+              },
+              {
+                "item": "minecraft:baked_potato"
+              }
+            ],
+            "experience": 10,
+            "materia": [
+              {
+                "count": 24,
+                "item": "magichem:admixture_luck"
+              },
+              {
+                "count": 24,
+                "item": "magichem:admixture_satiety"
+              },
+              {
+                "count": 16,
+                "item": "magichem:admixture_healing"
+              },
+              {
+                "count": 16,
+                "item": "magichem:admixture_destruction"
+              }
+            ]
+          }
+        ],
+        "tier": 3,
+        "wisdom": 0
+      }
+    }
+  ]
+}

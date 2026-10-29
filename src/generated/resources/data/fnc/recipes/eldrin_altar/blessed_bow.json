@@ -3,23 +3,23 @@
   "items": [
     "minecraft:bow",
     "minecraft:netherite_sword",
-    "minecraft:ghast_tear",
-    "minecraft:netherite_sword",
-    "minecraft:nether_star",
-    "minecraft:netherite_sword",
-    "minecraft:wither_skeleton_skull",
-    "minecraft:netherite_sword",
-    "minecraft:blaze_rod"
+    "mna:greater_mote_air",
+    "mna:greater_mote_arcane",
+    "mna:rune_air",
+    "minecraft:gold_block",
+    "minecraft:gold_block",
+    "minecraft:spectral_arrow",
+    "minecraft:spectral_arrow"
   ],
   "output": "fnc:blessed_bow",
   "power_requirements": [
     {
-      "affinity": "ARCANE",
-      "amount": 1000
+      "affinity": "WIND",
+      "amount": 2500
     },
     {
-      "affinity": "EARTH",
-      "amount": 1000
+      "affinity": "ARCANE",
+      "amount": 1500
     }
   ],
   "quantity": 1,

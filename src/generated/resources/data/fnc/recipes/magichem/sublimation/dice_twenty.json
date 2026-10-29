@@ -1,0 +1,84 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "magichem"
+        }
+      ],
+      "recipe": {
+        "type": "magichem:sublimation",
+        "object": {
+          "count": 1,
+          "item": "fnc:dice_twenty"
+        },
+        "stages": [
+          {
+            "components": [
+              {
+                "item": "fnc:dice_six"
+              },
+              {
+                "item": "mna:chimerite_gem"
+              },
+              {
+                "item": "minecraft:gold_block"
+              },
+              {
+                "item": "mna:chimerite_gem"
+              }
+            ],
+            "experience": 40,
+            "materia": [
+              {
+                "count": 48,
+                "item": "magichem:admixture_luck"
+              },
+              {
+                "count": 32,
+                "item": "magichem:admixture_change"
+              },
+              {
+                "count": 24,
+                "item": "magichem:admixture_crystal"
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "item": "mna:mana_crystal_fragment"
+              },
+              {
+                "item": "minecraft:gold_block"
+              }
+            ],
+            "experience": 60,
+            "materia": [
+              {
+                "count": 48,
+                "item": "magichem:essentia_arcane"
+              },
+              {
+                "count": 48,
+                "item": "magichem:essentia_air"
+              },
+              {
+                "count": 32,
+                "item": "magichem:admixture_luck"
+              },
+              {
+                "count": 12,
+                "item": "magichem:essentia_citrinitas"
+              }
+            ]
+          }
+        ],
+        "tier": 4,
+        "wisdom": 0
+      }
+    }
+  ]
+}

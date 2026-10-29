@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "magichem"
+        }
+      ],
+      "recipe": {
+        "type": "magichem:distillation_fabrication",
+        "batch_size": 1,
+        "categories": 1,
+        "components": [
+          {
+            "count": 8,
+            "item": "magichem:admixture_blood"
+          },
+          {
+            "count": 6,
+            "item": "magichem:admixture_mana"
+          },
+          {
+            "count": 4,
+            "item": "magichem:admixture_violence"
+          },
+          {
+            "count": 2,
+            "item": "magichem:admixture_metal"
+          },
+          {
+            "count": 2,
+            "item": "magichem:admixture_instrument"
+          }
+        ],
+        "object": {
+          "item": "fnc:sacrificial_dagger"
+        },
+        "output_rate": 1.0,
+        "wisdom": 6
+      }
+    }
+  ]
+}

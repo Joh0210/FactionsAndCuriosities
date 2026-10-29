@@ -13,10 +13,8 @@
   "patterns": [
     "mna:manaweave_patterns/infinity",
     "mna:manaweave_patterns/split_triangle",
-    "mna:manaweave_patterns/circle",
     "mna:manaweave_patterns/hourglass",
-    "mna:manaweave_patterns/inverted_split_triangle",
-    "mna:manaweave_patterns/infinity"
+    "mna:manaweave_patterns/inverted_split_triangle"
   ],
   "tier": 5
 }

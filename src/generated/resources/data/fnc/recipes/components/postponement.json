@@ -1,16 +1,17 @@
 {
   "type": "mna:component",
   "items": [
+    "mna:stone_rune_red",
+    "mna:stone_rune_magenta",
     "minecraft:clock",
-    "minecraft:nether_star",
+    "mna:greater_mote_arcane",
     "minecraft:dragon_breath"
   ],
   "output": "fnc:components/postponement",
   "patterns": [
     "mna:manaweave_patterns/hourglass",
     "mna:manaweave_patterns/infinity",
-    "mna:manaweave_patterns/hourglass",
-    "mna:manaweave_patterns/infinity"
+    "mna:manaweave_patterns/hourglass"
   ],
   "tier": 5
 }

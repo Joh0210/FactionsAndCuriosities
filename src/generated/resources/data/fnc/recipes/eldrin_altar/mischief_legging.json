@@ -3,6 +3,7 @@
   "items": [
     "minecraft:golden_leggings",
     "fnc:dice_twenty",
+    "mna:greater_mote_arcane",
     "mna:rune_arcane",
     "mna:rune_ender",
     "mna:runic_silk",
@@ -13,11 +14,11 @@
   "power_requirements": [
     {
       "affinity": "ARCANE",
-      "amount": 750
+      "amount": 2500
     },
     {
       "affinity": "ENDER",
-      "amount": 200
+      "amount": 1000
     }
   ],
   "quantity": 1,

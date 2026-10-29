@@ -3,16 +3,16 @@
   "items": [
     "fnc:dice_twenty",
     "mna:mundane_ring",
+    "mna:greater_mote_arcane",
+    "minecraft:rabbit_foot",
+    "minecraft:rabbit_foot",
     "minecraft:gold_block",
-    "minecraft:netherite_ingot",
-    "minecraft:gold_block",
-    "minecraft:netherite_ingot",
     "minecraft:gold_block"
   ],
   "output": "fnc:ring_of_wild_luck",
   "patterns": [
     "mna:manaweave_patterns/circle",
-    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/star",
     "mna:manaweave_patterns/split_triangle"
   ],
   "quantity": 1,

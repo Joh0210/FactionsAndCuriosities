@@ -2,14 +2,17 @@
   "type": "mna:manaweaving-recipe",
   "items": [
     "mna:mundane_ring",
-    "minecraft:iron_block",
     "mna:rune_aura",
-    "mna:chimerite_crystal_cyan",
+    "mna:mana_crystal_fragment",
     "mna:mote_arcane",
-    "mna:infused_thread"
+    "mna:chimerite_gem",
+    "mna:purified_vinteum_dust",
+    "mna:purified_vinteum_dust"
   ],
   "output": "fnc:aura_fraud_ring",
   "patterns": [
+    "mna:manaweave_patterns/diamond",
+    "mna:manaweave_patterns/bolt",
     "mna:manaweave_patterns/diamond"
   ],
   "quantity": 1,

@@ -3,23 +3,22 @@
   "items": [
     "fnc:heavy_weapon_ring",
     "mna:greater_mote_earth",
-    "minecraft:netherite_sword",
-    "mna:stone_rune_cyan",
-    "minecraft:netherite_sword",
+    "mna:greater_mote_earth",
     "mna:rune_earth",
-    "minecraft:netherite_sword",
-    "mna:stone_rune_white",
-    "minecraft:netherite_sword"
+    "minecraft:netherite_ingot",
+    "minecraft:anvil",
+    "minecraft:obsidian",
+    "minecraft:obsidian"
   ],
   "output": "fnc:heavy_weapon_ring_greater",
   "power_requirements": [
     {
       "affinity": "EARTH",
-      "amount": 1200
+      "amount": 2500
     },
     {
       "affinity": "ARCANE",
-      "amount": 300
+      "amount": 1000
     }
   ],
   "quantity": 1,

@@ -2,6 +2,7 @@
   "type": "mna:component",
   "items": [
     "fnc:dice_six",
+    "mna:stone_rune_magenta",
     "minecraft:clock",
     "minecraft:repeater"
   ],

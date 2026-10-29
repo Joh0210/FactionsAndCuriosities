@@ -2,24 +2,22 @@
   "type": "mna:eldrin-altar",
   "items": [
     "fnc:dice_six",
-    "minecraft:obsidian",
-    "minecraft:obsidian",
-    "minecraft:obsidian",
-    "mna:greater_mote_air",
     "mna:greater_mote_arcane",
-    "minecraft:gold_block",
+    "mna:mana_crystal_fragment",
+    "mna:chimerite_gem",
+    "mna:chimerite_gem",
     "minecraft:gold_block",
     "minecraft:gold_block"
   ],
   "output": "fnc:dice_twenty",
   "power_requirements": [
     {
-      "affinity": "WIND",
-      "amount": 500
+      "affinity": "ARCANE",
+      "amount": 1000
     },
     {
-      "affinity": "ARCANE",
-      "amount": 500
+      "affinity": "WIND",
+      "amount": 1000
     }
   ],
   "quantity": 1,

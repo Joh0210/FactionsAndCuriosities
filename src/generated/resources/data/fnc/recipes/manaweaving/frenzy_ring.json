@@ -2,10 +2,11 @@
   "type": "mna:manaweaving-recipe",
   "items": [
     "mna:mundane_ring",
-    "minecraft:ghast_tear",
-    "minecraft:nether_wart_block",
+    "mna:mote_fire",
+    "mna:stone_rune_red",
+    "minecraft:blaze_powder",
+    "minecraft:blaze_powder",
     "minecraft:chain",
-    "minecraft:nether_wart_block",
     "minecraft:chain"
   ],
   "output": "fnc:frenzy_ring",

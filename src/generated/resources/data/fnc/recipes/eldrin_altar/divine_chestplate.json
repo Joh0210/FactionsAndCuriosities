@@ -2,12 +2,11 @@
   "type": "mna:eldrin-altar",
   "items": [
     "minecraft:netherite_chestplate",
-    "mna:greater_mote_earth",
+    "minecraft:nether_star",
     "mna:greater_mote_arcane",
-    "mna:rune_pattern_defense",
-    "mna:rune_pattern_defense",
-    "minecraft:diamond_block",
-    "minecraft:gold_block",
+    "mna:greater_mote_arcane",
+    "mna:rune_defense",
+    "mna:rune_defense",
     "minecraft:gold_block",
     "minecraft:gold_block"
   ],
@@ -15,7 +14,7 @@
   "power_requirements": [
     {
       "affinity": "ARCANE",
-      "amount": 1500
+      "amount": 2500
     }
   ],
   "quantity": 1,

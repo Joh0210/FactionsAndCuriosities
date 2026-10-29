@@ -1,9 +1,10 @@
 {
   "type": "mna:component",
   "items": [
-    "minecraft:diamond_sword",
-    "minecraft:anvil",
-    "minecraft:spider_eye"
+    "minecraft:iron_sword",
+    "minecraft:fermented_spider_eye",
+    "minecraft:cobweb",
+    "minecraft:chain"
   ],
   "output": "fnc:components/crippling_smite",
   "patterns": [

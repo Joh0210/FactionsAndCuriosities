@@ -4,7 +4,9 @@
     "fnc:dice_twenty",
     "mna:mundane_ring",
     "minecraft:black_candle",
-    "mna:brimstone_charm"
+    "mna:greater_mote_earth",
+    "minecraft:shield",
+    "minecraft:shield"
   ],
   "output": "fnc:second_protection_ring",
   "patterns": [

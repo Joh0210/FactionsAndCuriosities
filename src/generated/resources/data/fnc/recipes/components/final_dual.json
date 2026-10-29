@@ -1,16 +1,17 @@
 {
   "type": "mna:component",
   "items": [
-    "minecraft:netherite_ingot",
-    "minecraft:wither_skeleton_skull",
-    "minecraft:totem_of_undying"
+    "mna:stone_rune_red",
+    "minecraft:wither_rose",
+    "minecraft:bone",
+    "minecraft:iron_sword",
+    "minecraft:iron_sword"
   ],
   "output": "fnc:components/final_dual",
   "patterns": [
     "mna:manaweave_patterns/triangle",
-    "mna:manaweave_patterns/inverted_triangle",
-    "mna:manaweave_patterns/circle",
-    "mna:manaweave_patterns/square"
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/inverted_triangle"
   ],
   "tier": 4
 }

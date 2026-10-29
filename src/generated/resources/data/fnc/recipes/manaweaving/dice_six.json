@@ -1,21 +1,17 @@
 {
   "type": "mna:manaweaving-recipe",
   "items": [
-    "minecraft:obsidian",
-    "minecraft:obsidian",
-    "minecraft:obsidian",
-    "mna:mote_air",
-    "mna:ritual_focus_lesser",
-    "mna:mote_arcane",
     "minecraft:gold_ingot",
     "minecraft:gold_ingot",
-    "minecraft:gold_ingot"
+    "minecraft:gold_ingot",
+    "minecraft:black_dye",
+    "mna:chimerite_gem",
+    "mna:mote_arcane"
   ],
   "output": "fnc:dice_six",
   "patterns": [
     "mna:manaweave_patterns/square",
-    "mna:manaweave_patterns/triangle",
-    "mna:manaweave_patterns/square"
+    "mna:manaweave_patterns/triangle"
   ],
   "quantity": 1,
   "tier": 2

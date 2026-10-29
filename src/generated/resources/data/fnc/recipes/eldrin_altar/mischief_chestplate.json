@@ -3,8 +3,9 @@
   "items": [
     "minecraft:golden_chestplate",
     "fnc:dice_twenty",
+    "mna:greater_mote_arcane",
+    "mna:greater_mote_arcane",
     "mna:rune_arcane",
-    "mna:rune_air",
     "mna:runic_silk",
     "mna:infused_thread",
     "minecraft:green_wool",
@@ -14,7 +15,7 @@
   "power_requirements": [
     {
       "affinity": "ARCANE",
-      "amount": 1500
+      "amount": 2500
     }
   ],
   "quantity": 1,

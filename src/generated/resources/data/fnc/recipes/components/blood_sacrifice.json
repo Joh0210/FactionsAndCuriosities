@@ -1,10 +1,11 @@
 {
   "type": "mna:component",
   "items": [
+    "fnc:sacrificial_dagger",
+    "mna:stone_rune_red",
     "minecraft:glass_bottle",
-    "minecraft:flint",
-    "minecraft:rotten_flesh",
-    "minecraft:redstone"
+    "minecraft:redstone",
+    "mna:vinteum_dust"
   ],
   "output": "fnc:components/blood_sacrifice",
   "patterns": [

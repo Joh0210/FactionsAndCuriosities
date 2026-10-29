@@ -2,9 +2,9 @@
   "type": "mna:component",
   "items": [
     "fnc:black_cat_bracelet",
+    "fnc:dice_twenty",
     "minecraft:ender_eye",
-    "minecraft:ender_eye",
-    "minecraft:nether_star"
+    "minecraft:ender_eye"
   ],
   "output": "fnc:components/cause_wild_magic",
   "patterns": [

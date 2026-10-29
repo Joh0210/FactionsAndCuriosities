@@ -93,11 +93,21 @@ sourceSets.main.resources {
 configurations {
     localRuntime
     runtimeClasspath.extendsFrom localRuntime
+    // The MagiChem jar as a plain file, never on a classpath: the data run reads the materia of MagiChem from it
+    magichemData {
+        canBeConsumed = false
+        transitive = false
+    }
 }
 
 obfuscation {
     createRemappingConfiguration(configurations.localRuntime)
 }
+
+// MagiChem is not loaded during the data run, so MagiChemRecipeBuilder (TnL) reads its essentia, admixtures and item IDs
+// from its jar (data/magichem/generator/*.json, assets/magichem/models/item/*.json).
+legacyForge.runs.data.systemProperties.put('tnl.magichem_jar',
+        configurations.magichemData.elements.map { it.first().asFile.absolutePath })
 
 repositories {
     // Every repository is restricted to the groups it provides, so Gradle never queries it for anything else.
@@ -144,6 +154,9 @@ dependencies {
     // Development runs only
     modLocalRuntime "top.theillusivec4.caelus:caelus-forge:${caelus_version}"
     modLocalRuntime "curse.maven:jei-238222:${jei_version}"
+
+    // Data run only, see magichemData
+    magichemData "curse.maven:magichem-982204:${magichem_version}"
 }
 
 // Expands the properties below into the files in src/main/templates (mods.toml, pack.mcmeta).
@@ -168,6 +181,7 @@ def generateModMetadata = tasks.register('generateModMetadata', ProcessResources
             curios_version_range   : curios_version_range,
             geckolib_version_range : geckolib_version_range,
             dmnr_version_range     : dmnr_version_range,
+            magichem_version_range : magichem_version_range,
     ]
     inputs.properties replaceProperties
     expand replaceProperties

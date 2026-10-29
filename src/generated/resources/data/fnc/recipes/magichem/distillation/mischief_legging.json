@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "magichem"
+        }
+      ],
+      "recipe": {
+        "type": "magichem:distillation_fabrication",
+        "batch_size": 1,
+        "categories": 1,
+        "components": [
+          {
+            "count": 56,
+            "item": "magichem:admixture_luck"
+          },
+          {
+            "count": 28,
+            "item": "magichem:admixture_change"
+          },
+          {
+            "count": 28,
+            "item": "magichem:admixture_sorcery"
+          },
+          {
+            "count": 12,
+            "item": "magichem:essentia_rubedo"
+          }
+        ],
+        "object": {
+          "item": "fnc:mischief_legging"
+        },
+        "output_rate": 1.0,
+        "wisdom": 6
+      }
+    }
+  ]
+}

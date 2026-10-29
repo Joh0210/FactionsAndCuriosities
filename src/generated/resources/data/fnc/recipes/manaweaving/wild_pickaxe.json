@@ -3,20 +3,16 @@
   "items": [
     "fnc:dice_six",
     "minecraft:golden_pickaxe",
-    "minecraft:copper_ingot",
-    "minecraft:iron_ingot",
-    "minecraft:gold_ingot",
-    "minecraft:coal",
-    "minecraft:lapis_lazuli",
+    "minecraft:netherite_ingot",
+    "mna:mote_earth",
     "minecraft:diamond",
-    "minecraft:emerald"
+    "minecraft:emerald",
+    "minecraft:lapis_lazuli",
+    "minecraft:coal"
   ],
   "output": "fnc:wild_pickaxe",
   "patterns": [
     "mna:manaweave_patterns/split_triangle",
-    "mna:manaweave_patterns/triangle",
-    "mna:manaweave_patterns/circle",
-    "mna:manaweave_patterns/inverted_triangle",
     "mna:manaweave_patterns/square",
     "mna:manaweave_patterns/diamond"
   ],

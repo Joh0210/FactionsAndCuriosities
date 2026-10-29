@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "magichem"
+        }
+      ],
+      "recipe": {
+        "type": "magichem:distillation_fabrication",
+        "batch_size": 1,
+        "categories": 1,
+        "components": [
+          {
+            "count": 96,
+            "item": "magichem:admixture_violence"
+          },
+          {
+            "count": 48,
+            "item": "magichem:admixture_light"
+          },
+          {
+            "count": 24,
+            "item": "magichem:admixture_firmament"
+          },
+          {
+            "count": 10,
+            "item": "magichem:admixture_adornment"
+          },
+          {
+            "count": 16,
+            "item": "magichem:essentia_rubedo"
+          }
+        ],
+        "object": {
+          "item": "fnc:smiting_ring"
+        },
+        "output_rate": 1.0,
+        "wisdom": 6
+      }
+    }
+  ]
+}

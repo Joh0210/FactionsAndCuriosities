@@ -4,7 +4,9 @@
     "fnc:dice_twenty",
     "mna:mundane_ring",
     "minecraft:green_candle",
-    "mna:brimstone_charm"
+    "mna:greater_mote_water",
+    "minecraft:glowstone_dust",
+    "minecraft:glowstone_dust"
   ],
   "output": "fnc:second_drop_ring",
   "patterns": [

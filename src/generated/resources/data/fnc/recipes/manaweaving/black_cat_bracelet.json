@@ -2,18 +2,16 @@
   "type": "mna:manaweaving-recipe",
   "items": [
     "fnc:dice_six",
-    "mna:mana_crystal_fragment",
     "mna:mundane_bracelet",
+    "mna:mote_arcane",
+    "minecraft:fermented_spider_eye",
     "minecraft:black_dye",
     "minecraft:black_dye"
   ],
   "output": "fnc:black_cat_bracelet",
   "patterns": [
     "mna:manaweave_patterns/triangle",
-    "mna:manaweave_patterns/circle",
     "mna:manaweave_patterns/split_triangle",
-    "mna:manaweave_patterns/square",
-    "mna:manaweave_patterns/diamond",
     "mna:manaweave_patterns/diamond"
   ],
   "quantity": 1,

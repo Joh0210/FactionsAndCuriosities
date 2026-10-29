@@ -2,16 +2,15 @@
   "type": "mna:component",
   "items": [
     "fnc:dice_six",
-    "minecraft:golden_sword",
+    "mna:stone_rune_purple",
+    "mna:vinteum_dust",
     "minecraft:golden_sword",
     "minecraft:golden_sword"
   ],
   "output": "fnc:components/wild_damage",
   "patterns": [
     "mna:manaweave_patterns/triangle",
-    "mna:manaweave_patterns/knot",
-    "mna:manaweave_patterns/knot3",
-    "mna:manaweave_patterns/circle"
+    "mna:manaweave_patterns/knot3"
   ],
   "tier": 3
 }

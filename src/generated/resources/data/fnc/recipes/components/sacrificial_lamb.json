@@ -1,10 +1,11 @@
 {
   "type": "mna:component",
   "items": [
+    "fnc:sacrificial_dagger",
+    "mna:stone_rune_red",
     "minecraft:mutton",
-    "minecraft:flint",
-    "minecraft:glass_bottle",
-    "minecraft:redstone"
+    "minecraft:wool",
+    "mna:mote_arcane"
   ],
   "output": "fnc:components/sacrificial_lamb",
   "patterns": [

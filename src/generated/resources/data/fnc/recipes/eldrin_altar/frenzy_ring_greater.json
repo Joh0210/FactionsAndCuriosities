@@ -2,20 +2,23 @@
   "type": "mna:eldrin-altar",
   "items": [
     "fnc:frenzy_ring",
-    "mna:rune_arcane",
-    "minecraft:netherite_ingot",
-    "mna:rune_ender",
-    "minecraft:nether_star"
+    "mna:greater_mote_fire",
+    "mna:rune_fire",
+    "mna:stone_rune_red",
+    "mna:living_flame",
+    "mna:living_flame",
+    "minecraft:blaze_rod",
+    "minecraft:blaze_rod"
   ],
   "output": "fnc:frenzy_ring_greater",
   "power_requirements": [
     {
-      "affinity": "ENDER",
-      "amount": 750
+      "affinity": "FIRE",
+      "amount": 2500
     },
     {
-      "affinity": "ARCANE",
-      "amount": 750
+      "affinity": "ENDER",
+      "amount": 1000
     }
   ],
   "quantity": 1,

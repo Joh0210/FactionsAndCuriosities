@@ -14,16 +14,28 @@
   "output": "fnc:deck_of_many",
   "power_requirements": [
     {
+      "affinity": "WATER",
+      "amount": 1500
+    },
+    {
+      "affinity": "FIRE",
+      "amount": 1500
+    },
+    {
+      "affinity": "EARTH",
+      "amount": 1500
+    },
+    {
       "affinity": "WIND",
-      "amount": 150
+      "amount": 1500
     },
     {
       "affinity": "ARCANE",
-      "amount": 500
+      "amount": 1500
     },
     {
       "affinity": "ENDER",
-      "amount": 350
+      "amount": 1500
     }
   ],
   "quantity": 1,

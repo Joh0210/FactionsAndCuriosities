@@ -8,12 +8,10 @@
   "items": [
     "mna:rune_arcane",
     "minecraft:diamond_sword",
-    "minecraft:totem_of_undying",
-    "minecraft:nether_star",
     "mna:warding_candle",
-    "minecraft:diamond_sword",
-    "mna:greater_mote_ender",
-    "mna:greater_mote_arcane"
+    "mna:greater_mote_arcane",
+    "minecraft:gold_block",
+    "minecraft:glowstone_dust"
   ],
   "patterns": [
     "mna:circle",

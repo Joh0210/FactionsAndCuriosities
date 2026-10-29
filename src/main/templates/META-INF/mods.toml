@@ -65,3 +65,10 @@ description='''${mod_description}'''
     versionRange="${dmnr_version_range}"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="magichem"
+    mandatory=false
+    versionRange="${magichem_version_range}"
+    ordering="NONE"
+    side="BOTH"
