@@ -2,10 +2,9 @@
   "type": "mna:eldrin-altar",
   "items": [
     "fnc:dice_six",
+    "mna:greater_mote_air",
     "mna:greater_mote_arcane",
     "mna:mana_crystal_fragment",
-    "mna:chimerite_gem",
-    "mna:chimerite_gem",
     "minecraft:gold_block",
     "minecraft:gold_block"
   ],

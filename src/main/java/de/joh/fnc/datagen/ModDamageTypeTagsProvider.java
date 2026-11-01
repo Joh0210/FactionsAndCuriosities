@@ -25,6 +25,7 @@ public class ModDamageTypeTagsProvider extends TagsProvider<DamageType> {
     private static final ResourceKey<DamageType> FINAL_DUAL_BYPASS_ARMOR = damageType("final_dual_bypass_armor");
     private static final ResourceKey<DamageType> FINAL_DUAL_BYPASS_ALL = damageType("final_dual_bypass_all");
     private static final ResourceKey<DamageType> POSTPONEMENT_DAMAGE = damageType("postponement_damage");
+    private static final ResourceKey<DamageType> SPELL_MAGIC_SMITE = damageType("spell_magic_smite");
 
     public ModDamageTypeTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, Registries.DAMAGE_TYPE, lookupProvider, FactionsAndCuriosities.MOD_ID, existingFileHelper);
@@ -37,7 +38,7 @@ public class ModDamageTypeTagsProvider extends TagsProvider<DamageType> {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
         tag(DamageTypeTags.BYPASSES_ARMOR).add(BLOOD_SACRIFICE, FINAL_DUAL_BYPASS_ARMOR, FINAL_DUAL_BYPASS_ALL,
-                POSTPONEMENT_DAMAGE);
+                POSTPONEMENT_DAMAGE, SPELL_MAGIC_SMITE);
         tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(FINAL_DUAL_BYPASS_ALL, POSTPONEMENT_DAMAGE);
         tag(TagKey.create(Registries.DAMAGE_TYPE, RLoc.create("is_postponement"))).add(POSTPONEMENT_DAMAGE);
     }

@@ -1057,6 +1057,22 @@
             "text": "."
           }
         ]
+      },
+      {
+        "type": "text",
+        "value": "",
+        "json": [
+          {
+            "text": "If Dragon Magic and Relics is installed, casting Postponement also deepens my understanding of its silver spell "
+          },
+          {
+            "text": "Accelerate Time",
+            "color": "dark_purple"
+          },
+          {
+            "text": ", which only those who bend time itself learn."
+          }
+        ]
       }
     ],
     "related_recipes": [

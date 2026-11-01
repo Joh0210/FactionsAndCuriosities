@@ -4,8 +4,10 @@
     "minecraft:gold_ingot",
     "minecraft:gold_ingot",
     "minecraft:gold_ingot",
+    "mna:mote_air",
     "minecraft:black_dye",
     "mna:chimerite_gem",
+    "mna:ritual_focus_lesser",
     "mna:mote_arcane"
   ],
   "output": "fnc:dice_six",
