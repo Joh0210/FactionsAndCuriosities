@@ -75,6 +75,12 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer>  FRENZY_BOOST;
 
     /**
+     * By how much does the Belt of Time extend durations (in %)
+     * @see de.joh.fnc.common.item.TimeBeltItem
+     */
+    public static final ForgeConfigSpec.ConfigValue<Integer> TIME_BELT_DURATION_BOOST;
+
+    /**
      * Determines the factor by which Dispelling Smite's magnitude is increased when determining whether a mob effect can be removed.
      * <br> Duration (in s) * Amplifier <= Spell-Magnitude * this Factor
      * <br> -> If the equation is True, the effect can be removed
@@ -111,6 +117,10 @@ public class CommonConfig {
 
         BUILDER.push("FrenzyBoost");
         FRENZY_BOOST = BUILDER.defineInRange("Boost of one Frenzy Stack (of the Frenzy Ring, in %)? ", 15, 1, 1000);
+        BUILDER.pop();
+
+        BUILDER.push("Belt of Time");
+        TIME_BELT_DURATION_BOOST = BUILDER.comment("Applies to the duration of beneficial spell components (also beyond their maximum) and to how long Smites stay charged.").defineInRange("By how much does the Belt of Time extend durations (in %)?", 50, 1, 1000);
         BUILDER.pop();
 
 

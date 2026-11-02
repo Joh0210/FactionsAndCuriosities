@@ -45,6 +45,7 @@ public class MagicEventHandler {
      * also:
      * @see DebugOrbSpellAdjustmentItem
      * @see MischiefArmorItem
+     * @see TimeBeltItem
      */
     @SubscribeEvent
     public static void onSpellCast(SpellCastEvent event){
@@ -104,6 +105,9 @@ public class MagicEventHandler {
                         .forEach(attribute -> modifiedSpellPart.setValue(attribute, Math.min(modifiedSpellPart.getValue(attribute) + level * modifiedSpellPart.getStep(attribute), modifiedSpellPart.getMaximumValue(attribute)))));
             }
         }
+
+        // after all other adjustments, so the boost applies to the final duration
+        TimeBeltItem.eventSpellCast(event);
     }
 
     /**
@@ -184,7 +188,7 @@ public class MagicEventHandler {
     }
 
     /**
-     * Processing of {@link DivineArmorItem} Smite Increase
+     * Processing of {@link DivineArmorItem} and {@link TimeBeltItem} Smite Increase
      */
     @SubscribeEvent
     public static void onAddSmite(AddSmiteEvent event){
@@ -193,13 +197,13 @@ public class MagicEventHandler {
             event.addDuration((int)(event.getDuration() * 0.5f));
             divineArmor.usedByPlayer(player);
         }
+        TimeBeltItem.eventAddSmite(event);
     }
 
 
     @SubscribeEvent
     public static void onPotionAdded(MobEffectEvent.Applicable event){
         SecondChanceItem.eventSecondDrop(event);
-        TimeBeltItem.eventHeavyWeapon(event);
     }
 
     /**
