@@ -81,6 +81,12 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer>  FRENZY_BOOST;
 
     /**
+     * By how many Stacks does Dragon Magic raise the maximum number of Frenzy Stacks of the Frenzy Rings
+     * @see de.joh.fnc.common.item.FrenzyItem
+     */
+    public static final ForgeConfigSpec.ConfigValue<Integer> FRENZY_RING_DRAGON_MAGIC_MAX_LEVEL_BONUS;
+
+    /**
      * By how much does the Belt of Time extend durations (in %)
      * @see de.joh.fnc.common.item.TimeBeltItem
      */
@@ -97,6 +103,12 @@ public class CommonConfig {
      * @see de.joh.fnc.common.item.SmitingRingItem
      */
     public static final ForgeConfigSpec.ConfigValue<Integer> SMITING_RING_DRAGON_MAGIC_MAX_DAMAGE_BONUS;
+
+    /**
+     * By how much (in percentage points) does Dragon Magic raise the damage bonus of the Heavy Weapon Rings additionally
+     * @see de.joh.fnc.common.item.HeavyWeaponRingItem
+     */
+    public static final ForgeConfigSpec.ConfigValue<Integer> HEAVY_WEAPON_RING_DRAGON_MAGIC_DAMAGE_BONUS;
 
     /**
      * Determines the factor by which Dispelling Smite's magnitude is increased when determining whether a mob effect can be removed.
@@ -136,6 +148,7 @@ public class CommonConfig {
 
         BUILDER.push("FrenzyBoost");
         FRENZY_BOOST = BUILDER.defineInRange("Boost of one Frenzy Stack (of the Frenzy Ring, in %)? ", 15, 1, 1000);
+        FRENZY_RING_DRAGON_MAGIC_MAX_LEVEL_BONUS = BUILDER.comment("Added to the maximum number of Frenzy Stacks of both Frenzy Rings (5 / 10), e.g. 5 makes them 10 / 15.").defineInRange("By how many Stacks does Dragon Magic raise the maximum number of Frenzy Stacks additionally?", 5, 1, 100);
         BUILDER.pop();
 
         BUILDER.push("Belt of Time");
@@ -147,6 +160,9 @@ public class CommonConfig {
         SMITING_RING_DRAGON_MAGIC_MAX_DAMAGE_BONUS = BUILDER.defineInRange("By how much does Dragon Magic raise the maximum Damage of Smites additionally?", 5, 1, 100);
         BUILDER.pop();
 
+        BUILDER.push("Heavy Weapon Ring");
+        HEAVY_WEAPON_RING_DRAGON_MAGIC_DAMAGE_BONUS = BUILDER.comment("Added to the damage bonus of both Heavy Weapon Rings (25% / 50%), e.g. 10 makes them 35% / 60%.").defineInRange("By how much does Dragon Magic raise the damage bonus of the Heavy Weapon Rings additionally (in %)?", 15, 1, 500);
+        BUILDER.pop();
 
         BUILDER.push("Smite");
         MAX_SMITE_DAMAGE = BUILDER.defineInRange("What is the maximum amount of Damage Smites can do in total (Smite Stacking included)", 10, 1, 100);

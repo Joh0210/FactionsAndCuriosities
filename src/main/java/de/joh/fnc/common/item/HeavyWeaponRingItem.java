@@ -1,10 +1,12 @@
 package de.joh.fnc.common.item;
 
 import com.mna.api.faction.IFaction;
-import com.mna.api.items.ChargeableItem;
 import com.mna.items.artifice.curio.IPreEnchantedItem;
+import de.joh.fnc.common.event.DamageEventHandler;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.init.ItemInit;
+import de.joh.fnc.common.util.CommonConfig;
+import de.joh.tnl.api.item.ChargeableDragonMagicItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -20,12 +22,23 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class HeavyWeaponRingItem extends ChargeableItem implements IPreEnchantedItem<HeavyWeaponRingItem> {
+/**
+ * Increases the damage of your weapon attacks by 25% (Greater Ring: 50%), as long as you aren't wielding anything in your off-hand.
+ * <br>Dragon Magic: Raises the bonus by another {@link CommonConfig#HEAVY_WEAPON_RING_DRAGON_MAGIC_DAMAGE_BONUS}%.
+ * @see DamageEventHandler
+ * @author Joh0210
+ */
+public class HeavyWeaponRingItem extends ChargeableDragonMagicItem implements IPreEnchantedItem<HeavyWeaponRingItem> {
     private final boolean major;
 
     public HeavyWeaponRingItem(boolean major) {
         super((new Properties()).setNoRepair(), major ? 2000.0F : 500.0F);
         this.major = major;
+    }
+
+    @Override
+    public String dragonMagicID() {
+        return "item.fnc.heavy_weapon_ring.dragonmagic";
     }
 
     protected boolean tickEffect(ItemStack stack, Player player, Level world, int slot, float mana, boolean selected) {
@@ -62,7 +75,13 @@ public class HeavyWeaponRingItem extends ChargeableItem implements IPreEnchanted
           return;
         }
 
-        event.setAmount(event.getAmount() * (hasMajor ? 1.5f : 1.25f));
+        HeavyWeaponRingItem ring = hasMajor ? majorRing : minorRing;
+        float multiplier = hasMajor ? 1.5f : 1.25f;
+        if (ring.hasDragonMagic(attacker)) {
+            multiplier += CommonConfig.HEAVY_WEAPON_RING_DRAGON_MAGIC_DAMAGE_BONUS.get() / 100.0f;
+        }
+
+        event.setAmount(event.getAmount() * multiplier);
     }
 
 

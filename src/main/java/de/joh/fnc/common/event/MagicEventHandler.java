@@ -212,9 +212,10 @@ public class MagicEventHandler {
     @SubscribeEvent
     public static void onPerformSmite(PerformSmiteEvent event){
         Player source = event.getSource();
-        if(!event.isCanceled() && !source.hasEffect(MobEffects.REGENERATION) && ((BloodLustBraceletItem) ItemInit.BLOOD_LUST_BRACELET.get()).isEquippedAndHasMana(source, 20.0F, true)
+        BloodLustBraceletItem bloodLustBracelet = (BloodLustBraceletItem) ItemInit.BLOOD_LUST_BRACELET.get();
+        if(!event.isCanceled() && !source.hasEffect(MobEffects.REGENERATION) && bloodLustBracelet.isEquippedAndHasMana(source, 20.0F, true)
         ){
-            source.addEffect(new MobEffectInstance(MobEffects.REGENERATION, CommonConfig.BLOOD_LUST_BRACELET_DURATION.get() * 20));
+            source.addEffect(new MobEffectInstance(MobEffects.REGENERATION, CommonConfig.BLOOD_LUST_BRACELET_DURATION.get() * 20, bloodLustBracelet.getRegenerationAmplifier(source)));
         }
 
         SmitingRingItem smitingRing = (SmitingRingItem) ItemInit.SMITING_RING.get();
