@@ -217,11 +217,12 @@ public class MagicEventHandler {
             source.addEffect(new MobEffectInstance(MobEffects.REGENERATION, CommonConfig.BLOOD_LUST_BRACELET_DURATION.get() * 20));
         }
 
+        SmitingRingItem smitingRing = (SmitingRingItem) ItemInit.SMITING_RING.get();
         if(!event.isCanceled()
                 && event.getDamage(true) > CommonConfig.MAX_SMITE_DAMAGE.get() + event.getMaxDamageMod()
-                && ((SmitingRingItem) ItemInit.SMITING_RING.get()).isEquippedAndHasMana(source, 10.0F, true)
+                && smitingRing.isEquippedAndHasMana(source, 10.0F, true)
         ){
-            event.addMaxDamageMod(5);
+            event.addMaxDamageMod(smitingRing.getMaxDamageBonus(source));
         }
     }
 }

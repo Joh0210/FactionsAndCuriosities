@@ -10,6 +10,7 @@ import de.joh.fnc.api.event.AddSmiteEvent;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.util.CommonConfig;
+import de.joh.tnl.api.item.BaseDragonMagicItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +22,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import com.mna.api.items.IFactionSpecific;
-import com.mna.api.items.TieredItem;
 import top.theillusivec4.curios.api.CuriosApi;
 
 
@@ -31,9 +31,10 @@ import java.util.List;
  * Extends the {@link Attribute#DURATION} of the beneficial spell components the wearer casts (also beyond their maximum)
  * and how long the wearer's Smites stay charged.
  * <br>Boost: {@link CommonConfig#TIME_BELT_DURATION_BOOST}
+ * <br>Dragon Magic: The boost is doubled.
  * @author Joh0210
  */
-public class TimeBeltItem extends TieredItem implements IFactionSpecific {
+public class TimeBeltItem extends BaseDragonMagicItem implements IFactionSpecific {
     public TimeBeltItem() {
         super((new Properties()).setNoRepair().stacksTo(1));
     }
@@ -43,9 +44,19 @@ public class TimeBeltItem extends TieredItem implements IFactionSpecific {
         return FactionInit.PALADIN;
     }
 
+    @Override
+    public String dragonMagicID() {
+        return "item.fnc.time_belt.dragonmagic";
+    }
+
     /**
-     * Only components that help their target are extended, so damage over time and crowd control do not become stronger.
+     * @return The boost of the Belt of Time for this wearer in percent: {@link CommonConfig#TIME_BELT_DURATION_BOOST}, doubled with Dragon Magic.
      */
+    private static int getDurationBoost(LivingEntity wearer) {
+        int boost = CommonConfig.TIME_BELT_DURATION_BOOST.get();
+        return ((TimeBeltItem) ItemInit.TIME_BELT.get()).hasDragonMagic(wearer) ? boost * 2 : boost;
+    }
+
     private static boolean isBeneficial(SpellPartTags useTag) {
         return useTag != SpellPartTags.HARMFUL;
     }
@@ -65,7 +76,7 @@ public class TimeBeltItem extends TieredItem implements IFactionSpecific {
         if (components.isEmpty()) return;
 
         // getValue() already contains the multiplier of M&A, so the value without it is scaled
-        float factor = 1 + CommonConfig.TIME_BELT_DURATION_BOOST.get() * 0.01f;
+        float factor = 1 + getDurationBoost(caster) * 0.01f;
         components.forEach(modifiedSpellPart -> modifiedSpellPart.setValue(Attribute.DURATION, modifiedSpellPart.getValueWithoutMultipliers(Attribute.DURATION) * factor));
         if (caster instanceof Player player) ((TimeBeltItem) ItemInit.TIME_BELT.get()).usedByPlayer(player);
     }
@@ -74,7 +85,7 @@ public class TimeBeltItem extends TieredItem implements IFactionSpecific {
         Player player = event.getEntity();
         if (!isEquipped(player)) return;
 
-        event.addDuration((int)(event.getDuration() * CommonConfig.TIME_BELT_DURATION_BOOST.get() * 0.01f));
+        event.addDuration((int)(event.getDuration() * getDurationBoost(player) * 0.01f));
         ((TimeBeltItem) ItemInit.TIME_BELT.get()).usedByPlayer(player);
     }
 

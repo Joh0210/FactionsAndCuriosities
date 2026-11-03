@@ -18,9 +18,6 @@ import de.joh.fnc.common.init.EnchantmentInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.item.*;
 import de.joh.fnc.common.spell.shape.CounterAttackShape;
-import de.joh.fnc.common.util.RLoc;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -95,15 +92,16 @@ public class DamageEventHandler {
 
     /**
      * @see BlackCatBraceletItem
+     * @see PaladinSwordItem
      */
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent event) {
         if(event.getSource().getEntity() instanceof LivingEntity source
                 && !source.level().isClientSide()
                 && (event.getSource().is(SmiteHelper.getSmiteDamage()) || event.getSource().is(SmiteHelper.getMagicSmiteDamage()))
-                && source.getMainHandItem().getItem() == ItemInit.BRIMSTONE_SWORD.get())
+                && source.getMainHandItem().getItem() instanceof PaladinSwordItem sword)
         {
-            source.heal(event.getAmount()/2);
+            source.heal(event.getAmount() * sword.getHealFactor(source));
         }
 
         if (event.getSource().getEntity() instanceof Player source && source != event.getEntity() && !source.level().isClientSide()) {

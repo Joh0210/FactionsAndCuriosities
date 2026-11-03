@@ -1,12 +1,12 @@
 package de.joh.fnc.common.item;
 
 import com.mna.api.faction.IFaction;
-import com.mna.api.items.ChargeableItem;
 import com.mna.items.artifice.curio.IPreEnchantedItem;
 import de.joh.fnc.api.wildmagic.WildMagicHelper;
 import de.joh.fnc.common.init.FactionInit;
 import de.joh.fnc.common.init.ItemInit;
 import de.joh.fnc.common.util.CommonConfig;
+import de.joh.tnl.api.item.ChargeableDragonMagicItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,9 +27,12 @@ import java.util.Random;
 /**
  * Whenever you deal damage, there's a 25% chance that the damage will be reapplied. (One success, and it repeats.)
  * Similarly, with potion effects, there's a 25% chance that the effect will be increased/decreased by 1.
+ * <br>Dragon Magic: Every roll gets an additional, independent chance of {@link CommonConfig#SECOND_CHANCE_DRAGON_MAGIC}.
+ * Since the roll only fails if both chances fail, the chance of a roll becomes
+ * {@code 100 - (100 - SECOND_CHANCE_DRAGON_MAGIC) * (100 - SECOND_CHANCE) / 100} (%).
  * @author Joh0210
  */
-public class SecondChanceItem extends ChargeableItem implements IPreEnchantedItem<SecondChanceItem> {
+public class SecondChanceItem extends ChargeableDragonMagicItem implements IPreEnchantedItem<SecondChanceItem> {
     public final SecondChanceItem.Type type;
 
     public SecondChanceItem(SecondChanceItem.Type type) {
@@ -37,7 +40,30 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
         this.type = type;
     }
 
-    public static int secondChances(Player player) {
+    @Override
+    public String dragonMagicID() {
+        return "item.fnc.second_drop_ring.dragonmagic";
+    }
+
+    /**
+     * @param player Wearer of the ring
+     * @return Chance (in %) that a single roll of this ring succeeds, before the Wild Magic Luck of the player is applied
+     */
+    public double getChance(Player player) {
+        double chance = CommonConfig.SECOND_CHANCE.get();
+
+        if (this.hasDragonMagic(player)) {
+            chance = 100 - (100 - CommonConfig.SECOND_CHANCE_DRAGON_MAGIC.get()) * (100 - chance) / 100;
+        }
+
+        return chance;
+    }
+
+    /**
+     * @param player Wearer of the ring
+     * @return How many Second Chances in a row the player gets (max. 10)
+     */
+    public int secondChances(Player player) {
         Random random = new Random();
 
         int secondChances = 0;
@@ -48,13 +74,13 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
         // is adv. ore disadv.
         boolean adv = WildMagicHelper.getWildMagicLuck(player) >= 0;
         // base chance for this item
-        int chance = CommonConfig.SECOND_CHANCE.get();
+        double chance = this.getChance(player) / 100.0;
 
         while(success){
             if(adv){
-                success = random.nextInt(100) < (1-Math.pow(1-chance/100.0f, tries))*100;
+                success = random.nextDouble() < 1 - Math.pow(1 - chance, tries);
             } else {
-                success = random.nextInt(100) < Math.pow(chance/100.0f, tries)*100;
+                success = random.nextDouble() < Math.pow(chance, tries);
             }
 
             if(success){
@@ -73,8 +99,9 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
 
     public static void eventSecondDamage(LivingHurtEvent event){
         if(event.getSource().getEntity() instanceof Player attacker && !attacker.level().isClientSide()) {
-            if (((SecondChanceItem) ItemInit.SECOND_ATTACK_RING.get()).isEquippedAndHasMana(attacker, 1.0F, true)) {
-                int level = secondChances(attacker);
+            SecondChanceItem ring = (SecondChanceItem) ItemInit.SECOND_ATTACK_RING.get();
+            if (ring.isEquippedAndHasMana(attacker, 1.0F, true)) {
+                int level = ring.secondChances(attacker);
                 if(level > 0) {
                     event.setAmount(event.getAmount() * (1+level));
                 }
@@ -84,8 +111,9 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
 
     public static boolean eventSecondArmor(LivingHurtEvent event){
         if(event.getEntity() instanceof Player defender && !defender.level().isClientSide()) {
-            if (((SecondChanceItem) ItemInit.SECOND_PROTECTION_RING.get()).isEquippedAndHasMana(defender, 4.0F, true)) {
-                if(secondChances(defender) > 0){
+            SecondChanceItem ring = (SecondChanceItem) ItemInit.SECOND_PROTECTION_RING.get();
+            if (ring.isEquippedAndHasMana(defender, 4.0F, true)) {
+                if(ring.secondChances(defender) > 0){
                     event.setCanceled(true);
                     event.setAmount(0);
                     return true;
@@ -100,8 +128,9 @@ public class SecondChanceItem extends ChargeableItem implements IPreEnchantedIte
         MobEffectInstance original = event.getEffectInstance();
 
         if(original != null && event.getEntity() instanceof Player user && original.getEffect().isBeneficial() && !user.level().isClientSide()) {
-            if (((SecondChanceItem) ItemInit.SECOND_DROP_RING.get()).isEquippedAndHasMana(user, 5.0F, true)) {
-                int level = secondChances(user);
+            SecondChanceItem ring = (SecondChanceItem) ItemInit.SECOND_DROP_RING.get();
+            if (ring.isEquippedAndHasMana(user, 5.0F, true)) {
+                int level = ring.secondChances(user);
                 if(level > 0){
 
                     int newAmplifier = original.getAmplifier() + level;
