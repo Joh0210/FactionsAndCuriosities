@@ -81,10 +81,10 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer>  FRENZY_BOOST;
 
     /**
-     * By how many Stacks does Dragon Magic raise the maximum number of Frenzy Stacks of the Frenzy Rings
+     * By which factor does Dragon Magic multiply the duration of the Frenzy granted by the Frenzy Rings
      * @see de.joh.fnc.common.item.FrenzyItem
      */
-    public static final ForgeConfigSpec.ConfigValue<Integer> FRENZY_RING_DRAGON_MAGIC_MAX_LEVEL_BONUS;
+    public static final ForgeConfigSpec.ConfigValue<Integer> FRENZY_RING_DRAGON_MAGIC_DURATION_MULTIPLIER;
 
     /**
      * By how much does the Belt of Time extend durations (in %)
@@ -148,7 +148,7 @@ public class CommonConfig {
 
         BUILDER.push("FrenzyBoost");
         FRENZY_BOOST = BUILDER.defineInRange("Boost of one Frenzy Stack (of the Frenzy Ring, in %)? ", 15, 1, 1000);
-        FRENZY_RING_DRAGON_MAGIC_MAX_LEVEL_BONUS = BUILDER.comment("Added to the maximum number of Frenzy Stacks of both Frenzy Rings (5 / 10), e.g. 5 makes them 10 / 15.").defineInRange("By how many Stacks does Dragon Magic raise the maximum number of Frenzy Stacks additionally?", 5, 1, 100);
+        FRENZY_RING_DRAGON_MAGIC_DURATION_MULTIPLIER = BUILDER.comment("Multiplies the duration of the Frenzy granted by both Frenzy Rings (30 seconds / 1 minute), e.g. 5 makes it 2.5 minutes / 5 minutes. The maximum number of Stacks is not changed.").defineInRange("By which factor does Dragon Magic multiply the duration of Frenzy?", 5, 1, 100);
         BUILDER.pop();
 
         BUILDER.push("Belt of Time");

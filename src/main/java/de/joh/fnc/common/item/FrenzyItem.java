@@ -24,7 +24,7 @@ import java.util.List;
 
 /**
  * For each kill within one minute, you gain 1 Stack of Frenzy. Each Stack provides an 20% additional damage.
- * <br>Dragon Magic: Raises the maximum number of Frenzy Stacks by {@link CommonConfig#FRENZY_RING_DRAGON_MAGIC_MAX_LEVEL_BONUS}.
+ * <br>Dragon Magic: The Frenzy it grants lasts {@link CommonConfig#FRENZY_RING_DRAGON_MAGIC_DURATION_MULTIPLIER} times as long (the maximum number of Stacks stays the same).
  * @author Joh0210
  */
 public class FrenzyItem extends ChargeableDragonMagicItem implements IPreEnchantedItem<FrenzyItem> {
@@ -42,10 +42,11 @@ public class FrenzyItem extends ChargeableDragonMagicItem implements IPreEnchant
 
         /**
          * @param wearer Wearer of the ring
-         * @return The highest amplifier (= max Frenzy Stacks - 1) the ring can build up for this wearer, raised by {@link CommonConfig#FRENZY_RING_DRAGON_MAGIC_MAX_LEVEL_BONUS} with Dragon Magic.
+         * @return Duration (in ticks) of the Frenzy this ring grants to this wearer, multiplied by {@link CommonConfig#FRENZY_RING_DRAGON_MAGIC_DURATION_MULTIPLIER} with Dragon Magic.
          */
-        private int getMaxAmplifier(LivingEntity wearer) {
-                return (major ? 9 : 4) + (this.hasDragonMagic(wearer) ? CommonConfig.FRENZY_RING_DRAGON_MAGIC_MAX_LEVEL_BONUS.get() : 0);
+        private int getEffectDuration(LivingEntity wearer) {
+                int duration = major ? 1200 : 600;
+                return this.hasDragonMagic(wearer) ? duration * CommonConfig.FRENZY_RING_DRAGON_MAGIC_DURATION_MULTIPLIER.get() : duration;
         }
 
         protected boolean tickEffect(ItemStack stack, Player player, Level world, int slot, float mana, boolean selected) {
@@ -74,22 +75,21 @@ public class FrenzyItem extends ChargeableDragonMagicItem implements IPreEnchant
                 if (!hasMajor && !hasMinor) return;
 
                 FrenzyItem usedRing = hasMajor ? majorRing : minorRing;
-                int maxAmplifier = usedRing.getMaxAmplifier(attacker);
 
                 MobEffectInstance current = attacker.getEffect(EffectInit.FRENZY.get());
 
-                if (current != null && current.getAmplifier() > maxAmplifier) return;
+                if (current != null && current.getAmplifier() > (hasMajor ? 9 : 4)) return;
 
                 int amplifier = 0;
 
                 if (current != null) {
-                        amplifier = Math.min(maxAmplifier, current.getAmplifier() + 1);
+                        amplifier = Math.min(hasMajor ? 9 : 4, current.getAmplifier() + 1);
                 } else {
                         // Mana nur beim ersten Stack verbrauchen
                         usedRing.isEquippedAndHasMana(attacker, hasMajor ? 4.0F : 2.0f, true);
                 }
 
-                attacker.addEffect(new MobEffectInstance(EffectInit.FRENZY.get(),hasMajor ? 1200 : 600, amplifier));
+                attacker.addEffect(new MobEffectInstance(EffectInit.FRENZY.get(), usedRing.getEffectDuration(attacker), amplifier));
         }
 
 

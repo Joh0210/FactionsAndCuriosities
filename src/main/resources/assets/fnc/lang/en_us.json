@@ -37,7 +37,7 @@
   "item.fnc.heavy_weapon_ring_greater.description": "Weapon damage is increased by 50%, as long as you aren't wielding anything in your off-hand.",
   "item.fnc.frenzy_ring": "Ring of Frenzy",
   "item.fnc.frenzy_ring.description": "For each kill within 30 seconds, you gain 1 Stack of Frenzy, for up to 5 stacks. Each Stack provides an 15% damage boost.",
-  "item.fnc.frenzy_ring.dragonmagic": "The maximum number of Frenzy stacks is raised by 5",
+  "item.fnc.frenzy_ring.dragonmagic": "Frenzy lasts 5 times as long",
   "item.fnc.frenzy_ring_greater": "Ring of Greater Frenzy",
   "item.fnc.frenzy_ring_greater.description": "For each kill within one minute, you gain 1 Stack of Frenzy, for up to 10 stacks. Each Stack provides an 15% damage boost.",
 
